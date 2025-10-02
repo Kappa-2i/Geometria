@@ -65,3 +65,118 @@ che associa la coppia di vettori ad uno scalare, dato dalla somma delle componen
     \]
     e così via per gli altri elementi del prodotto.
 }
+
+\section{Sistema Lineare}
+\Definizione{Sistema Lineare}{
+    Siano \(m, n \in \N\), e sia \(K\) un campo. Un \textbf{sistema lineare} di \(m\) equazioni in \(n\) incognite \(x_1, x_2, \dots, x_n\) su un campo \(K\)\ è un insieme di \(m\) equazioni del tipo:
+    \[
+    \SistemaGenerale
+    \]
+    \newline
+    In forma compatta, un sistema lineare può essere scritto come:
+    \[
+        A \vect{x} = \vect{b},
+    \]
+    dove:
+    \begin{itemize}
+        \item \(A \in M_{m,n}(K)\) è la \textbf{matrice dei coefficienti};
+        \item \(\vect{x} \in K^n\) è il \textbf{vettore incognite};
+        \item \(\vect{b} \in K^m\) è il \textbf{vettore dei termini noti}.
+    \end{itemize}
+}
+
+\BoxBlue{Osservazione:}{Soluzioni di un sistema lineare}{
+L’insieme delle soluzioni di un sistema lineare
+è dato da
+\[
+    S_1 \text{ soluzioni della prima equazione } E_1(x)
+\]
+\[
+    S_2 \text{ soluzioni della seconda equazione } E_2(x)
+\]
+\[
+    \dots
+\]
+\[
+    S_m \text{ soluzioni della m-esima equazione } E_m(x)
+\]
+
+Noi siamo interessati a 
+\[
+    S = \bigcap_{i=1}^m S_i,
+\]
+ovvero l’intersezione di tutte le soluzioni del sistema.
+}
+
+\Definizione{Compatibilità di un sistema lineare}{
+Un sistema lineare \(\mathcal{E}\) si dice \textbf{compatibile} se ammette almeno una soluzione,  
+ossia se l’insieme delle soluzioni è diverso dal vuoto. \newline
+
+Altrimenti se \(S = \varnothing\), allora il sistema si dice \textbf{incompatibile}.
+}
+
+\Definizione{Matrice completa e incompleta}{
+Dato un sistema lineare \(\mathcal{E}\) si distinguono due matrici:
+
+\begin{itemize}
+    \item La \textbf{matrice incompleta} (o matrice dei coefficienti) di un sistema lineare contiene solo i coefficienti delle incognite.
+    \[
+        A = 
+        \begin{bmatrix}
+            a_{11} & a_{12} & \dots & a_{1n} \\
+            a_{21} & a_{22} & \dots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots\\
+            a_{m1} & a_{m2} & \dots & a_{mn}
+        \end{bmatrix}
+    \] \newline
+
+    \item La \textbf{matrice completa} (o matrice dei coefficienti estesa) si ottiene aggiungendo a quella incompleta una colonna aggiuntiva con i termini noti del sistema.
+    \[
+        C=(A \,|\, \vect{b}) = 
+        \begin{bmatrix}
+            a_{11} & a_{12} & \dots & a_{1n} & b_1 \\
+            a_{21} & a_{22} & \dots & a_{2n} & b_2 \\
+            \vdots & \vdots & \ddots & \vdots & \vdots \\
+            a_{m1} & a_{m2} & \dots & a_{mn} & b_m
+        \end{bmatrix}
+    \]
+    
+\end{itemize}
+}
+
+
+\BoxBlue{}{Esempi di matrici complete e incomplete}{
+Consideriamo due sistemi lineari in due incognite \(x_1, x_2\).
+
+\begin{itemize}
+    \item \textbf{Sistema omogeneo} \(\mathcal{E}_0\) (con termini noti nulli):
+    \[
+        \mathcal{E}_0 : 
+        \begin{cases}
+            3x_2 - x_2 + 2x_4 = 0 \\[6pt]
+            x_1 +x_2 + 2x_3 = 0
+        \end{cases}
+    \]
+
+    - Matrice incompleta:
+    \[
+        A = \mat{0 & 3 & -1 & 2 \\ 1 & 1 & 2 & 0}
+    \]
+
+    \item \textbf{Sistema non omogeneo} \(\mathcal{E}\) (con termini noti \(\neq 0\)):
+    \[
+        \mathcal{E} : 
+        \begin{cases}
+            3x_2 - x_2 + 2x_4 - 3 = 0 \\[6pt]
+            x_1 +x_2 + 2x_3 + 5 = 0
+        \end{cases}
+    \]
+
+    - Matrice completa:
+    \[
+        A = \mat{0 & 3 & -1 & 2 & | & -3\\ 1 & 1 & 2 & 0 & | & 5}
+    \]
+\end{itemize}
+}
+
+

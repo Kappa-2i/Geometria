@@ -7,3 +7,4 @@
 \contentsline {section}{\numberline {2.2}Prodotto Scalare}{3}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Matrice Conformabile}{3}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Prodotto Riga per Colonna}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Sistema Lineare}{4}{section.2.5}%
