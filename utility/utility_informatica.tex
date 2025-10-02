@@ -1,0 +1,21 @@
+% snippet di codici
+\usepackage{listings}
+\usepackage[ruled, vlined, linesnumbered, boxruled]{algorithm2e}
+\newenvironment{algo}[1][]
+  {\renewcommand{\algorithmcfname}{Algoritmo}%
+   \begin{algorithm}[#1]
+   \long\def\@caption ##1[##2]##3{%
+     \par
+     \begingroup\@parboxrestore
+     \if@minipage\@setminipage\fi
+     \normalsize \@makecaption{\AlCapSty{\AlCapFnt\algorithmcfname}}{\ignorespaces ##3}%
+     \par\endgroup
+   }}
+  {\end{algorithm}}
+  
+\SetKwComment{Comment}{/* }{ */}
+
+\newcommand{\MyFunction}[1]{
+    {\fontfamily{cmtt}\selectfont #1} 
+}
+

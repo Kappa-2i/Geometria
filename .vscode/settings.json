@@ -1,0 +1,48 @@
+{
+  "latex-workshop.latex.outDir": "./build",
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "lualatex",
+      "command": "lualatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-lualatex",
+        "-outdir=build",
+        "-shell-escape",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "latexmk (lualatex)",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-lualatex",
+        "-outdir=build",
+        "%DOC%"
+      ]
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "LuaLaTeX",
+      "tools": ["lualatex"]
+    },
+    {
+      "name": "latexmk (LuaLaTeX)",
+      "tools": ["latexmk (lualatex)"]
+    }
+  ],
+
+  "latex-workshop.latex.recipe.default": "latexmk (LuaLaTeX)",
+  "latex-workshop.latex.autoBuild.run": "never"
+
+}
