@@ -1,13 +1,67 @@
-\documentclass{article}
-\usepackage{graphicx} 
-\include{./utility/utility_matematica}
-\include{./utility/utility}
+\chapter{Lezione 3 - 01/10/2025}
 
+\section{Matrice Trasposta}
+\Definizione{Matrice Trasposta}{
+    Sia \(A \in M_{m,n}(K)\). La trasposta di \(A\), denotata \({}^{t}A\), è la matrice del tipo \([n,m]\) che come righe ha le colonne di A.\newline\newline
+    \({}^{t}A\)=\(\mat{
+        a_{11} & a_{21} & \dots & a_{m1} \\
+        a_{12} & a_{22} & \dots & a_{m2} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{1n} & a_{2n} & \dots & a_{mn}
+    } \in M_{n,m}(K)\), ottenuta scambiando righe e colonne di \(A\).
+}
 
-\begin{document}
+\section{Prodotto Scalare}
+\Definizione{Prodotto scalare}{
+Sia \(K = \mathbb{R}\) e siano due vettori 
+\(\vect{a} = (a_1, a_2, \dots, a_n), \vect{b} = (b_1, b_2, \dots, b_n) \in K^n\).  
 
+Il \textbf{prodotto scalare} è la funzione
+\[
+K^n \times K^n \longrightarrow K, \quad (\vect{a}, \vect{b}) \longmapsto a_1 b_1 + a_2 b_2 + \dots + a_n b_n = \scal{\vect{a}}{\vect{b}},
+\]
+che associa la coppia di vettori ad uno scalare, dato dalla somma delle componenti omonime dei due vettori.
+}
 
-\section{Lezione 3 - 01/10/25}
+\section{Matrice Conformabile}
+\Definizione{Matrice Conformabile}{
+    Due matrici \(A \in M_{m,n}(K)\) e \(B \in M_{p,q}(K)\) si dicono \textbf{conformabili} per il prodotto se e solo se il numero di colonne di \(A\) è uguale al numero di righe di \(B\), cioè \(n = p\). In tal caso, il prodotto \(AB\) è definito ed è una matrice di dimensione \(m \times q\).
 
+    \textbf{Esempio:}  
+    Siano
+    \[
+        A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix} \in M_{3,2}(K), 
+        \quad
+        B = \begin{bmatrix} 7 & 8 & 9 \\ 10 & 11 & 12 \end{bmatrix} \in M_{2,3}(K).
+    \]
+    Allora \(A\) e \(B\) sono conformabili e
+    \[
+        AB = \begin{bmatrix} 1\cdot7+2\cdot10 & 1\cdot8+2\cdot11 & 1\cdot9+2\cdot12 \\
+                             3\cdot7+4\cdot10 & 3\cdot8+4\cdot11 & 3\cdot9+4\cdot12 \\
+                             5\cdot7+6\cdot10 & 5\cdot8+6\cdot11 & 5\cdot9+6\cdot12
+              \end{bmatrix} \in M_{3,3}(K).
+    \]
+}
 
-\end{document}
+\section{Prodotto Riga per Colonna}
+\Definizione{Prodotto Riga Per Colonna}{
+    Siano \(A \in M_{m,n}(K)\) e \(B \in M_{n,p}(K)\). Il prodotto di una riga \(i\)-esima di \(A\) per una colonna \(j\)-esima di \(B\) è definito come la somma dei prodotti delle componenti corrispondenti:
+    \[
+        (AB)_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}.
+    \]
+    
+    In altre parole, per ottenere l'elemento in posizione \((i,j)\) del prodotto \(AB\), si moltiplicano elemento per elemento la riga \(i\) di \(A\) con la colonna \(j\) di \(B\) e si sommano i risultati.
+
+    \textbf{Esempio:}  
+    Siano
+    \[
+        A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}, \quad
+        B = \begin{bmatrix} 7 & 8 \\ 9 & 10 \\ 11 & 12 \end{bmatrix}.
+    \]
+    Allora
+    \[
+        (AB)_{11} = 1\cdot7 + 2\cdot9 + 3\cdot11 = 58, \quad
+        (AB)_{12} = 1\cdot8 + 2\cdot10 + 3\cdot12 = 68,
+    \]
+    e così via per gli altri elementi del prodotto.
+}

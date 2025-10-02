@@ -1,13 +1,20 @@
+\documentclass[10pt,a4paper]{report}
 
-\include{Lezione1/Lez1}
-\include{Lezione3/Lez3}
+% ---------------- Preamble ----------------
+% Qui includi tutti i pacchetti
+\input{utility/utility_matematica}
+\input{utility/utility}
 
+% Puoi aggiungere anche pacchetti extra specifici
+% \usepackage{...}
+
+% ---------------- Document ----------------
 \begin{document}
 
+\tableofcontents
 
-\section{Lez1}
-\section{Lez3}
-
-
+% Includi le lezioni
+\include{Lezione1/Lez1}
+\include{Lezione3/Lez3}
 
 \end{document}
