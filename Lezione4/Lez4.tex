@@ -1,0 +1,183 @@
+\chapter{Lezione 4 - 3/10 (Teams)}
+
+\Teorema{Algoritmo di Gauss}{
+Ogni matrice su un campo \(K\) può essere ridotta o completamente ridotta a gradini mediante un numero finito di operazioni elementari.
+
+\vspace{1em} % Spazio prima della dimostrazione
+
+\textcolor{myred}{\textbf{Dimostrazione (per induzione)}}\\[0.5em]
+Procediamo per induzione sul numero di righe \(m\):
+
+\begin{itemize}
+    \item \textbf{Per \(m = 1\):}  
+    \[
+        A = (a_{11}, a_{12}, \dots, a_{1n})
+    \]
+    Se \(a_{1j}\) è il pivot, basta eseguire la seguente operazione di normalizzazione (ridurre a 1):  
+    \[
+        a^{(1)} \;\to\; \frac{1}{a_{1j}}\, a^{(1)}.
+    \]
+
+    \item \textbf{Per \(m > 1\):}  
+    Dimostriamo che, se vale per \(m - 1\), allora vale anche per \(m\).  
+    Prima di tutto, individuiamo la prima riga non nulla:
+    \[
+        A =
+        \begin{bmatrix}
+            a_{11} & a_{1j} & \dots & a_{1n} \\
+            a_{21} & a_{2j} & \dots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{mj} & \dots & a_{mn}
+        \end{bmatrix}.
+    \]
+
+    Sia
+    \[
+        j = \min\{\, l \in \{1, \dots, n\} \mid a_l \neq 0 \,\}
+    \]
+    la posizione del primo elemento non nullo nella prima riga.
+
+    Analogamente, poniamo
+    \[
+        k = \min\{\, i \in \{1, \dots, m\} \mid a_{ij} \neq 0 \,\},
+    \]
+    cioè l'indice della prima riga (a partire dall'alto) che contiene un elemento non nullo nella colonna \(j\).
+
+    Una volta individuati tali indici, scambiamo la riga \(a_k\) con la prima riga \(a_1\):
+    \[
+        a_k \;\longleftrightarrow\; a_1.
+    \]
+
+    Dopo lo scambio, otteniamo:
+    \[
+        A' =
+        \begin{bmatrix}
+            a'_{11} & a'_{1j} & \dots & a'_{1n} \\
+            a'_{21} & a'_{2j} & \dots & a'_{2n} \\
+            \vdots  & \vdots  & \ddots & \vdots \\
+            a'_{m1} & a'_{mj} & \dots & a'_{mn}
+        \end{bmatrix}.
+    \]
+
+    Dato \(a'_{1j}\) (pivot della prima riga, diverso da 0), dobbiamo annullare tutti gli elementi sottostanti.  
+    Per la riga 2, dobbiamo avere:
+    \[
+        a'_{2J} + B a'_{1J} = 0.
+    \]
+    Basta prendere \(B = -\dfrac{a'_{2J}}{a'_{1J}}\).
+
+    Procediamo quindi in questo modo per tutte le righe sottostanti, ottenendo:
+    \[
+    \begin{aligned}
+        a^{(2)} &\;\to\; a^{(2)} - \frac{a'_{2J}}{a'_{1J}}\, a^{(1)}, \\
+        a^{(3)} &\;\to\; a^{(3)} - \frac{a'_{3J}}{a'_{1J}}\, a^{(1)}, \\
+        &\;\;\vdots \\
+        a^{(m)} &\;\to\; a^{(m)} - \frac{a'_{mJ}}{a'_{1J}}\, a^{(1)}.
+    \end{aligned}
+    \]
+
+
+    Se si vuole la matrice completamente ridotta, bisogna normalizzare il pivot \(a''_{kj}\) di ogni riga e annullare gli elementi della
+    stessa riga che si trovano sopra ai pivot delle righe successive. 
+
+\end{itemize}
+                
+
+}
+
+\BoxBlue{Osservazione:}{Derivata dal Teorema di Rouchè-Capelli}{
+Un sistema lineare \Sigma: Ax=b è compatibile \Leftrightarrow la matrice completa una volta ridotta 
+a gradini, tramite operazioni elementari, non presenta una riga in cui tutti gli elementi della matrice
+dei coefficienti sono 0 ma l'elemento nella colonna dei termini noti è diverso da 0. 
+
+\[
+\Sigma : 
+\begin{cases}
+x_1 + x_2 = 1 \\[2mm]
+2x_1 + 2x_2 = 3
+\end{cases}
+\]
+
+\[
+\text{Matrice completa:} \quad
+C =
+\begin{bmatrix}
+1 & 1 & | & 1 \\
+2 & 2 & | & 3
+\end{bmatrix}
+\]
+
+\[
+\text{Applichiamo } R_2 \to R_2 - 2 R_1:
+\]
+
+\[
+C =
+\begin{bmatrix}
+1 & 1 & | & 1 \\
+0 & 0 & | & 1
+\end{bmatrix}
+\]
+
+\[
+\text{ il sistema è impossibile.}
+\]
+
+
+} 
+
+\Teorema{Teorema di struttura dell'insieme delle soluzioni di un sistema lineare}{
+Sia 
+\(\Sigma : A \mathbf{x} = \mathbf{b}\) un sistema lineare di equazioni in \(n\) incognite e sia 
+\(\Sigma_0: A \mathbf{x} = \mathbf{0}\)
+il sistema lineare omogeneo associato.
+
+Sia 
+\[
+\mathbf{S} = \{ (y_1, \dots, y_n) \in K^n \mid A 
+\begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} = \mathbf{b} \}
+\] 
+l'insieme delle soluzioni di \(\Sigma\), e sia 
+\[
+\mathbf{S}_0 = \{ (z_1, \dots, z_n) \in K^n \mid A 
+\begin{pmatrix} z_1 \\ \vdots \\ z_n \end{pmatrix} = \mathbf{0} \}
+\] 
+l'insieme delle soluzioni di \(\Sigma_0\).
+
+Allora, se \((\bar{y}_1, \dots, \bar{y}_n) \in \mathbf{S}\), si ha
+\[
+\mathbf{S} = \{ (\bar{y}_1, \dots, \bar{y}_n) + (z_1, \dots, z_n) \mid (z_1, \dots, z_n) \in \mathbf{S}_0 \} = \mathbf{X} .
+\]
+
+
+
+\vspace{0.5em}
+\textcolor{myred}{\textbf{Dimostrazione:}}\\[0.5em]
+Mostriamo che \(\mathbf{S} \subseteq \mathbf{X}\) verificando le due inclusioni:
+
+\begin{enumerate}
+    \item \(\mathbf{S} \subseteq \mathbf{X}\) :  
+    Sia \((y_1, \dots, y_n)\) \in \mathbf{S}.  
+    Consideriamo \((z_1, \dots, z_n) = (y_1, \dots, y_n) - (\bar{y}_1, \dots, \bar{y}_n)\).  
+    Poiché 
+    \[
+        A\mathbf{z} = A(\mathbf{y} - \bar{\mathbf{y}}) = A\mathbf{y} - A\bar{\mathbf{y}} = \mathbf{b} - \mathbf{b} = \mathbf{0},
+    \]
+    si ha \(\mathbf{z} \in \mathbf{S}_0\). Quindi \(\mathbf{y} = \bar{\mathbf{y}} + \mathbf{z} \in \mathbf{X}\).
+
+    \item \(\mathbf{X} \subseteq \mathbf{S}\) :  
+    Sia \(\mathbf{x} \in \mathbf{X}\). Allora \(\mathbf{x} = \bar{\mathbf{y}} + \mathbf{z}\) con \(\mathbf{z} \in \mathbf{S}_0\).  
+    Allora
+    \[
+        A\mathbf{x} = A(\bar{\mathbf{y}} + \mathbf{z}) = A\bar{\mathbf{y}} + A\mathbf{z} = \mathbf{b} + \mathbf{0} = \mathbf{b},
+    \]
+    quindi \(\mathbf{x} \in \mathbf{S}\).
+\end{enumerate}
+
+Da queste due inclusioni segue che \(\mathbf{S} = \mathbf{X}\). \(\quad \square\)
+}
+
+
+
+
+

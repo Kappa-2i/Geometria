@@ -8,3 +8,4 @@
 \contentsline {section}{\numberline {2.3}Matrice Conformabile}{3}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Prodotto Riga per Colonna}{4}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Sistema Lineare}{4}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Lezione 4 - 3/10 (Teams)}{6}{chapter.3}%

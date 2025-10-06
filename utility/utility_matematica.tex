@@ -46,7 +46,7 @@
 \newtcolorbox{empty_green}{enhanced, toprule=0pt, bottomrule=0pt, rightrule=0pt, leftrule=3pt, arc=0mm, skin=enhancedlast jigsaw, sharp corners,
 colframe=mygreen, colbacktitle=mygreen}
 
-\newtcolorbox{empty_red}{enhanced, toprule=0pt, bottomrule=0pt, rightrule=0pt, leftrule=3pt, arc=0mm, skin=enhancedlast jigsaw, sharp corners,
+\newtcolorbox{empty_red}{breakable, enhanced, toprule=0pt, bottomrule=0pt, rightrule=0pt, leftrule=3pt, arc=0mm, skin=enhancedlast jigsaw, sharp corners,
 colframe=myred, colbacktitle=myred}
 
 \newtcolorbox{empty_blue}{enhanced, toprule=0pt, bottomrule=0pt, rightrule=0pt, leftrule=3pt, arc=0mm, skin=enhancedlast jigsaw, sharp corners,
@@ -100,7 +100,7 @@ colframe=myyellow, colbacktitle=myyellow}
 \newcommand{\Dimostrazione}[1]{
     \begin{empty_blue}
         \textcolor{myblue}{\textbf{Dimostrazione}}\\
-        \noindent \textcolor{myblue}{#1}
+        \noindent #1
     \end{empty_blue}
 }
 
