@@ -179,4 +179,37 @@ Consideriamo due sistemi lineari in due incognite \(x_1, x_2\).
 \end{itemize}
 }
 
+\section{Operazioni o Trasformazioni Elementari sulle Righe di una Matrice}
+
+\Definizione{Operazioni elementari sulle righe}{
+    Sia \(A \in M_{m,n}(K)\) una matrice.  
+    Si chiamano \textbf{operazioni elementari sulle righe} le seguenti trasformazioni che possono essere applicate alle righe di \(A\):
+
+    \begin{enumerate}
+        \item \textbf{Scambio di due righe:}  
+        per ogni \(h, k \in \{1, \dots, m\}\),
+        \[
+            \vect{b}^{(h)} \longleftrightarrow \vect{b}^{(k)}.
+        \]
+        
+        \item \textbf{Moltiplicazione di una riga per uno scalare non nullo:}  
+        per ogni \(h \in \{1, \dots, m\}\) e per ogni \(\lambda \in K \setminus \{0\}\),
+        \[
+            \vect{b}^{(h)} \longrightarrow \lambda \vect{b}^{(h)}.
+        \]
+        
+        \item \textbf{Somma di una riga con un multiplo di un’altra:}  
+        per ogni \(h, k \in \{1, \dots, m\}\) e per ogni \(\beta \in K\),
+        \[
+            \vect{b}^{(h)} \longrightarrow \vect{b}^{(h)} + \beta \vect{b}^{(k)}.
+        \]
+    \end{enumerate}
+}
+
+\BoxBlue{Osservazione:}{Invarianza dell’insieme delle soluzioni}{
+    Le operazioni elementari sulle righe di una matrice (e quindi sul sistema lineare associato)
+    \textbf{modificano la forma del sistema}, ma \textbf{non alterano il suo insieme delle soluzioni}.  
+    \newline
+}
+
 
