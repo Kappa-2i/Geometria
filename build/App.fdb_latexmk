@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1759822966.99919 "/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex" "build/App.pdf" "App" 1759822969.03828 0
+["lualatex"] 1759850356.29924 "/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex" "build/App.pdf" "App" 1759850358.73372 0
   "/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex" 1759744258.78089 435 63e8e4f80ffafbecb5a08353effc0f3d ""
   "/Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/hb/74fe9f906fe1bc602e87863714a3988819168bb5b97d2048d42e5480f4f1becc.luc" 1759313238.57809 163568 cdf1d29019b9fc492e2458a958da8e55 ""
   "/Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-bold.luc" 1759313237.50117 128410 3f752579a721aabb697cb5411c2b5223 ""
@@ -17,6 +17,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf" 1255129361 118828 4d461c73423fe2666dad2ff0dfc3ca68 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" 1255129361 111536 ae9d1b331000d544f47e5223081b7b54 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf" 1255129361 110496 b9c8767d4cc3bf3f4b21f676bf89aa78 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf" 1255129361 110792 5c4b6a3d7f194f073a529b5124a181af ""
   "/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf" 1255129361 111892 bcd3166022befea094c973b521411001 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -293,15 +294,15 @@
   "/usr/local/texlive/2025/texmf-var/tex/generic/config/language.dat" 1741450487 6800 9c9ef492eea78dd7e00ee60aa47828ff ""
   "/usr/local/texlive/2025/texmf-var/web2c/luahbtex/lualatex.fmt" 1759312019 5582845 0ef4b1991c96839760c310126c5b34f8 ""
   "App.tex" 1759744258.78089 435 63e8e4f80ffafbecb5a08353effc0f3d ""
-  "Lezione1/Lez1.tex" 1759567000.3263 84 6c6f9660a2672779d2037338300d6c02 ""
+  "Lezione1/Lez1.tex" 1759850355.17332 12313 d53d3bb7fcda31a07450fdf65d9f7d9f ""
   "Lezione3/Lez3.tex" 1759822939.42205 7557 1b4d08ffb8c6692f1d52d4ef25fe891c ""
   "Lezione4/Lez4.tex" 1759759267.71822 8822 834a9d8afe3cbec4f6c8816f7136b36d ""
-  "build/App.aux" 1759822968.86591 478 2ea6da06fa5f615aa7fa48f724c427f0 "lualatex"
-  "build/App.out" 1759822968.8677 2672 bb1d7ec101797383a2b3c1d2df87cca5 "lualatex"
-  "build/App.toc" 1759822968.86798 1258 327fe2f5f8450656ed5e1434b18ed637 "lualatex"
-  "build/Lezione1/Lez1.aux" 1759822968.4994 1253 cd8970368feba9a069b531775a479eb2 "lualatex"
-  "build/Lezione3/Lez3.aux" 1759822968.65623 1904 c6aba60baa570f4638580ff1f2a327c7 "lualatex"
-  "build/Lezione4/Lez4.aux" 1759822968.86538 1695 055c3f7a3366cfe202f1016fcf9d10c0 "lualatex"
+  "build/App.aux" 1759850358.53331 478 7541d5ee4532b83c9c8b9f16df9f595e "lualatex"
+  "build/App.out" 1759850358.53539 3279 aeb64fcc0734510f5113e0bb6b77ba22 "lualatex"
+  "build/App.toc" 1759850358.53571 1662 e161f2980e3a9caf7cb85d128747f146 "lualatex"
+  "build/Lezione1/Lez1.aux" 1759850358.16778 1859 2c73a699750fd5c4ebec2da8dbb42f4b "lualatex"
+  "build/Lezione3/Lez3.aux" 1759850358.32908 1908 941c2fa84c5cf57d844d225c9678026a "lualatex"
+  "build/Lezione4/Lez4.aux" 1759850358.5328 1699 bfaa14853ef5c9c4a7d627c50ec01ddf "lualatex"
   "utility/utility.tex" 1759567166.3578 1457 1b577d26ea3e4c7d1963c2150252c9c7 ""
   "utility/utility_matematica.tex" 1759756089.61998 4246 4938688a2d36131c5f2eaf550b79e99c ""
   (generated)

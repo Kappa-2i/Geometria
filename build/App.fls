@@ -307,12 +307,12 @@ INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 OUTPUT build/Lezione1/Lez1.aux
 INPUT ./Lezione1/Lez1.tex
 INPUT /Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc
+INPUT /Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-italic.luc
 OUTPUT build/Lezione3/Lez3.aux
 INPUT ./Lezione3/Lez3.tex
 INPUT /Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmromandemi10-regular.luc
 OUTPUT build/Lezione4/Lez4.aux
 INPUT ./Lezione4/Lez4.tex
-INPUT /Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-italic.luc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm

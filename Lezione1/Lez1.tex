@@ -1,4 +1,301 @@
-\chapter{Lezione 1 - Napoli}
+\chapter{Lezione 1 - 24/09}
 
-\section{Introduzione}
-Contenuto della prima lezione.
+\section{Operazione Binaria}
+\Definizione{Operazioni su Insiemi}{
+    Siano \(A, B, C\) insiemi. Diremo \textbf{operazione binaria} ogni applicazione
+    \[\varphi : A \times B \rightarrow C.\]
+    \begin{itemize}
+        \item Se in particolare \(A = B = C\), allora diremo che \(\varphi : A \times A \rightarrow A\) è
+        un operazione binaria interna su \(A\).
+        \item Se \(B = C\), allora diremo che \(\varphi\) si dice esterna con operatori in A.
+    \end{itemize}
+}
+
+\section{Strutture Algebriche}
+
+\BoxBlue{Ricorda:}{Strutture Algebriche}{
+    \begin{itemize}
+        \item \((S,\perp)\) si dice \textbf{semigruppo} se \(\perp\) è associativa;
+        \item \((S,\perp)\) si dice \textbf{semigruppo commutativo} se \(\perp\) è semigruppo con commutatività;
+        \item \((S,\perp)\) si dice \textbf{monoide} se \(\perp\) è semigruppo dotato di neutro;
+        \item \((S,\perp)\) si dice \textbf{monoide commutativo} se \(\perp\) è monoide con commutatività;
+        \item \((S,\perp)\) si dice \textbf{gruppo} se \(\perp\) è monoide dove ogni elemento è simmetrizzabile;
+        \item \((S,\perp)\) si dice \textbf{gruppo abeliano} se \(\perp\) è gruppo con commutatività.
+    \end{itemize}
+}
+
+\Definizione{Struttura Algebrica}{
+    Per \textbf{struttura algebrica} si intende una \(n\)-upla costituita da insiemi e operazioni su di essi.
+    La più semplice struttura algebrica, spesso detta \emph{gruppoide}, è una coppia
+    \((X, \perp)\), dove \(X\) è un insieme e \(\perp\) è un operazione binaria interna su \(X\).
+}
+
+
+
+
+
+
+
+
+\subsection{Gruppo}
+
+\Definizione{Gruppo}{
+    Un \textbf{gruppo} è una struttura algebrica \((G, \perp)\) formata da un insieme \(G\) e da un'operazione binaria interna 
+    \(\perp : G \times G \to G\), che soddisfa le seguenti proprietà:
+
+    \begin{enumerate}
+        \item \textbf{Associatività:} \(\forall\, a,b,c \in G,\; (a \perp b) \perp c = a \perp (b \perp c)\);
+        \item \textbf{Elemento neutro:} esiste un elemento \(e \in G\) tale che \(\forall\, a \in G,\; a \perp e = e \perp a = a\);
+        \item \textbf{Elemento inverso:} per ogni \(a \in G\) esiste un elemento \(\bar{a} \in G\) tale che 
+            \(a \perp \bar{a} = \bar{a} \perp a = e\).
+    \end{enumerate}
+
+    Se inoltre vale la \textbf{proprietà commutativa}
+    \[
+        a \perp b = b \perp a \quad \forall\, a,b \in G,
+    \]
+    allora il gruppo si dice \textbf{abeliano}.
+}
+
+\Proposizione{Proprietà elementari in un gruppo}{
+Sia \((X,\perp)\) un gruppoide (cioè \(X\) insieme non vuoto con un'operazione binaria \(\perp\) su \(X\)). Valgono le seguenti proprietà.
+
+\begin{enumerate}
+  \item Se \((X,\perp)\) ammette un elemento neutro, questo è unico.
+  \item Se \((X,\perp)\) ammette un elemento neutro \(e\) e \(\perp\) è associativa, allora per ogni \(x\in X\) invertibile l'inverso di \(x\) è unico.
+  \item Inoltre, se \(\perp\) è associativa e ha elemento neutro \(u \in A\) e abbiamo \(x, y \in A\) che hanno i loro inversi \(\bar{x}, \bar{y}\), allora \(x \perp y\) è invertibile e il suo inverso è \(\bar{y} \perp \bar{x}\).
+  
+\end{enumerate}
+
+\textcolor{myred}{\textbf{Dimostrazioni:}}\\[0.5em]
+
+\begin{proof}[Dimostrazione della proprietà 1 (unicità dell'elemento neutro)]
+Supponiamo che \(e\) ed \(e'\) siano due elementi neutri in \((X,\perp)\). Per definizione di elemento neutro:
+\[
+\forall x\in X:\quad e\perp x = x \quad\text{e}\quad e'\perp x = x.
+\]
+In particolare, considerando \(x=e'\) nella prima uguaglianza e \(x=e\) nella seconda otteniamo
+\[
+e\perp e' = e' \quad\text{e}\quad e'\perp e = e.
+\]
+Se non assumiamo necessariamente commutatività, bperpa usare una delle due uguaglianze applicata all'altro neutro:
+usando \(e\perp e' = e'\) e insieme \(e'\perp e = e\) otteniamo
+\[
+e = e'\quad(\text{poiché } e = e'\perp e = e').
+\]
+Quindi \(e = e'\) e l'elemento neutro è unico.
+\end{proof}
+
+\begin{proof}[Dimostrazione della proprietà 2 (unicità dell'inverso e formula dell'inverso del prodotto)]
+Sia \((X,\perp)\) associativo e con elemento neutro \(e\). 
+
+\emph{Unicità dell'inverso.} Sia \(x\in X\) e supponiamo che \(y\) e \(y'\) siano due inversi di \(x\), cioè
+\[
+x\perp y = e = y\perp x,\qquad x\perp y' = e = y'\perp x.
+\]
+Allora, usando l'associatività,
+\[
+y = y\perp e = y\perp (x\perp y') = (y\perp x)\perp y' = e\perp y' = y'.
+\]
+Quindi \(y=y'\) e l'inverso è unico.
+\end{proof}
+
+\begin{proof}[Dimostrazione della proprietà 3]
+    Siano \((A,\perp)\) un insieme con operazione binaria \(\perp\), associativa, e dotato di elemento neutro \(u\in A\).
+    Supponiamo \(x,y\in A\) invertibili e indichiamo con \(\overline{x}\) e \(\overline{y}\) i loro inversi, cioè
+    \[
+    x\perp\overline{x}=\overline{x}\perp x = u,\qquad
+    y\perp\overline{y}=\overline{y}\perp y = u.
+    \]
+    
+    Consideriamo il candidato \( \overline{y}\perp\overline{x} \) come possibile inverso di \(x\perp y\).
+    Calcoliamo il prodotto a destra:
+    \[
+    \begin{aligned}
+    (x\perp y)\perp(\overline{y}\perp\overline{x})
+    &\stackrel{\text{(assoc.)}}{=}
+    x\perp\bigl(y\perp(\overline{y}\perp\overline{x})\bigr) \\
+    &= x\perp\bigl((y\perp\overline{y})\perp\overline{x}\bigr) \\
+    &= x\perp(u\perp\overline{x}) \\
+    &= x\perp\overline{x} \\
+    &= u.
+    \end{aligned}
+    \]
+    
+    Analogamente, il prodotto a sinistra:
+    \[
+    \begin{aligned}
+    (\overline{y}\perp\overline{x})\perp(x\perp y)
+    &\stackrel{\text{(assoc.)}}{=}
+    \overline{y}\perp\bigl(\overline{x}\perp(x\perp y)\bigr) \\
+    &= \overline{y}\perp\bigl((\overline{x}\perp x)\perp y\bigr) \\
+    &= \overline{y}\perp(u\perp y) \\
+    &= \overline{y}\perp y \\
+    &= u.
+    \end{aligned}
+    \]
+    
+    Quindi \(\overline{y}\perp\overline{x}\) è sia inverso a destra sia inverso a sinistra di \(x\perp y\). 
+    Poiché in una struttura con elemento neutro e operazione associativa l'inverso (se esiste) è unico, segue che
+    \[
+    \overline{(x\perp y)} = \overline{y}\perp\overline{x},
+    \]
+    come volevamo dimostrare.
+\end{proof}
+    
+    
+}
+
+
+
+
+\subsection{Anello}
+
+\Definizione{Anello}{
+  Un \textbf{anello} è una struttura algebrica \((A, +, \cdot)\) formata da un insieme \(A\) e da due operazioni binarie interne:
+  \[
+    + : A \times A \to A, \qquad \cdot : A \times A \to A,
+  \]
+  tali che valgono le seguenti proprietà:
+
+  \begin{enumerate}
+    \item \((A, +)\) è un \textbf{gruppo abeliano}
+    \item L’operazione \(\cdot\) (detta \emph{moltiplicazione}) è associativa
+    \item La moltiplicazione è distributiva rispetto all’addizione:
+      \[
+        a \cdot (b + c) = a \cdot b + a \cdot c, \quad 
+        (a + b) \cdot c = a \cdot c + b \cdot c, \quad \forall\, a,b,c \in A.
+      \]
+  \end{enumerate}
+
+  \vspace{0.5em}
+  Se esiste un elemento \(1 \in A\) tale che \(1 \cdot a = a \cdot 1 = a\) per ogni \(a \in A\), 
+  l’anello si dice \textbf{unitario} o \textbf{con elemento neutro moltiplicativo}.  
+
+  Se inoltre la moltiplicazione è commutativa, l’anello si dice \textbf{commutativo}.
+}
+
+
+
+
+
+
+
+\subsection{Campo}
+\Definizione{Campo}{
+  Un \textbf{campo} è una struttura algebrica \((K, +, \cdot)\) formata da un insieme \(K\) e da due operazioni binarie interne:
+  \[
+    + : K \times K \to K, \qquad \cdot : K \times K \to K,
+  \]
+  che soddisfano le seguenti proprietà:
+
+  \begin{enumerate}
+    \item \((K, +)\) è un \textbf{gruppo abeliano}:
+    \item \((K \setminus \{0\}, \cdot)\) è un \textbf{gruppo abeliano} rispetto alla moltiplicazione:
+    \item Le due operazioni sono collegate dalle proprietà distributive:
+  \end{enumerate}
+
+  \vspace{0.5em}
+  In altre parole, un campo è un \textbf{anello commutativo con elemento unità} in cui \textbf{ogni elemento non nullo è invertibile}.
+}
+
+
+
+
+
+
+
+\subsection{Spazio Vettoriale}
+
+\Definizione{Spazio vettoriale}{
+Diremo che \((V,\boxplus,\boxdot)\) è \textbf{spazio vettoriale} sul campo \(\mathbb{R}\) se:
+\begin{enumerate}
+    \item \(V \neq \emptyset\) \newline
+          Operazione interna: \(\boxplus  : V \times V \to V\), \((u, v) \mapsto u + v\) \newline
+          Operazione esterna: \(\boxdot : K \times V \to V\), \((\lambda, v) \mapsto \lambda v\)
+    \item \((V,\boxplus)\) è gruppo abeliano, \(\forall \underline{v}, \underline{w}, \underline{z} \in V\)
+        \begin{enumerate}
+            \item Proprietà associativa: \((\underline{v} \boxplus \underline{w} ) \boxplus \underline{z} = \underline{v} \boxplus (\underline{w} \boxplus \underline{z})\)
+            \item Proprietà commutativa: \(\underline{v} \boxplus \underline{w} = \underline{w} \boxplus \underline{v}\)
+            \item Esiste opposto: \(\underline{v} \boxplus (-\underline{v}) = \underline{0}\)
+            \item Esiste elemento neutro: \(\underline{v} \boxplus \underline{0} = \underline{0} \boxplus \underline{v} = \underline{v}\)
+        \end{enumerate}
+    \item Esiste elemento neutro rispetto a \(\boxdot\): \(1 \boxdot \underline{v} = \underline{v} = \underline{v} \boxdot 1\)
+    \item \textbf{Per tutti } \(h,k \in \mathbb{R}, \underline{v}, \underline{w} \in V\) valgono le seguenti proprietà:
+        \begin{enumerate}
+            \item Compatibilità della moltiplicazione scalare: \((h \cdot k) \boxdot \underline{v} = h \boxdot (k \boxdot \underline{v})\)
+            \item Distributività rispetto alla somma scalare: \((h + k) \boxdot \underline{v} = (h \boxdot \underline{v}) \boxplus (k \boxdot \underline{v})\)
+            \item Distributività rispetto alla somma vettoriale: \(h \boxdot (\underline{v} \boxplus \underline{w}) = (h \boxdot \underline{v}) \boxplus (h \boxdot \underline{w})\)
+        \end{enumerate}
+\end{enumerate}
+}
+
+\Proposizione{Proprietà aritmetiche degli Spazi Vettoriali}{
+    Sia \(V\) uno spazio vettoriale sul campo \(\mathbb{K}. \forall \alpha, \beta \in \mathbb{K}, \forall v \in V\) si ha:
+    \begin{enumerate}
+        \item \(\alpha \boxdot v = 0 \iff \alpha = 0\) oppure \(v=0\)
+        \item \((-\alpha)\boxdot v = \alpha \boxdot (-v) = -(\alpha \boxdot v)\)
+        \item se \(\alpha \boxdot v = \beta \boxdot v \) e \(v \neq \varnothing\), allora \(\alpha = \beta\) 
+        \item se \(\alpha \boxdot u = \alpha \boxdot v \) e \(\alpha \neq \varnothing\), allora \(u = v\)
+    \end{enumerate}
+
+    \begin{proof}[Dimostrazione delle proprietà]
+    
+        \textbf{(i)} Dimostriamo che 
+        \[
+            a v = 0 \iff a = 0 \text{ oppure } v = 0.
+        \]
+        \textbf{Direzione ``$\Rightarrow$''}: se \(a = 0\) oppure \(v = 0\), allora chiaramente \(a v = 0\). Infatti:
+        \begin{itemize}
+            \item se \(a = 0\), per le proprietà dello spazio vettoriale abbiamo \(0 \cdot v = 0\);
+            \item se \(v = 0\), allora \(a \cdot 0 = 0\).
+        \end{itemize}
+    
+        \textbf{Direzione ``$\Leftarrow$''}: supponiamo che \(a v = 0\) e \(a \neq 0\).  
+        Poiché \(a \neq 0\), esiste l'inverso \(a^{-1} \in K\). Moltiplicando entrambi i membri per \(a^{-1}\) otteniamo:
+        \[
+            a^{-1}(a v) = a^{-1} \cdot 0 = 0.
+        \]
+        Usando l'associatività della moltiplicazione scalare:
+        \[
+            (a^{-1} a)v = 1 \cdot v = v = 0.
+        \]
+        Quindi, se \(a \neq 0\) e \(a v = 0\), necessariamente \(v = 0\).  
+        Pertanto, la proprietà (i) è dimostrata.
+    
+        \medskip
+        \textbf{(ii)} Dimostriamo ora che
+        \[
+            (-a)v = a(-v) = -(a v).
+        \]
+        Si ha immediatamente:
+        \[
+            a v + (-a)v = (a + (-a))v = 0v = 0,
+        \]
+        e anche
+        \[
+            a v + a(-v) = a(v + (-v)) = a0 = 0.
+        \]
+        Poiché in entrambi i casi la somma è nulla, segue che
+        \[
+            (-a)v = - (a v) = a(-v).
+        \]
+    
+        \medskip
+        \textbf{(iii)} Se \(a v = \beta v\), allora
+        \[
+            (a + (-\beta))v = a v + (-\beta)v = \beta v + (-\beta)v = 0.
+        \]
+        Poiché \(v \neq 0\) per ipotesi, per la proprietà (i) segue che \(a + (-\beta) = 0\), e quindi \(a = \beta\).
+    
+        \medskip
+        \textbf{(iv)} Se \(a u = a v\) e \(a \neq 0\), allora
+        \[
+            a(u + (-v)) = a u + a(-v) = a u - a v = 0.
+        \]
+        Poiché \(a \neq 0\), per la proprietà (i) si ha \(u + (-v) = 0\), cioè \(u = v\).
+    
+    \end{proof}
+    
+        
+}
