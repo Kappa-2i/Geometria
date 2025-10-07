@@ -129,5 +129,38 @@ colframe=myyellow, colbacktitle=myyellow}
     \end{cases}
 }
 
+\newtcolorbox{ProposizioneBox}[2][]{
+  enhanced,
+  colback=white,
+  colframe=myblue,
+  coltitle=black,
+  fonttitle=\bfseries,
+  title={\textbf{Proposizione:} #2},
+  attach boxed title to top left={xshift=0.5em,yshift=-2mm},
+  boxed title style={
+    colback=myblue!10,
+    colframe=myblue,
+    rounded corners,
+    top=2pt,
+    bottom=2pt,
+    left=5pt,
+    right=5pt
+  },
+  sharp corners,
+  boxrule=0.5pt,
+  rounded corners,
+  drop shadow,
+  breakable,
+  before skip=10pt,
+  after skip=10pt
+}
+
+% Comando semplificato per chiamare l'ambiente
+\newcommand{\Proposizione}[2]{
+  \begin{ProposizioneBox}{#1}
+    #2
+  \end{ProposizioneBox}
+}
+
 
 

@@ -1,5 +1,31 @@
 \chapter{Lezione 4 - 3/10 (Teams)}
 
+\section{Matrice a Gradini e Completamente a Gradini}
+
+\Definizione{Matrice ridotta a gradini}{
+  Una matrice si dice a gradini se ha le seguenti proprietà:
+  \begin{itemize}
+    \item Se una riga è nulla, tutte le righe successive sono nulle:  
+    \[
+      \exists\, h \in \{1, \dots, m\} \mid a^h = 0 \;\Rightarrow\; a^i = 0 \;\; \forall i > h
+    \]
+    \item Il primo elemento diverso da zero di una riga non nulla, detto \emph{pivot}, è più a sinistra del primo elemento non nullo delle righe successive:
+    \[
+      \text{Se } a_{ij} \neq 0 \text{ e } a_{ih} = 0, \; \forall\, h < j, \text{ allora } a_{i+1,h} = 0, \; \forall\, h \leq j.
+    \]
+  \end{itemize}
+}
+
+\Definizione{Matrice completamente ridotta a gradini}{
+    Una matrice si dice completamente ridotta a gradini se oltre le precedenti due proprietà verifica anche le seguenti:
+  \begin{itemize}
+    \item il pivot di una qualunque riga non nulla è 1;  
+    \item ogni colonna che contiene il pivot di una riga ha tutti gli altri elementi nulli.
+  \end{itemize}
+}
+
+
+\section{Algoritmo di Gauss}
 \Teorema{Algoritmo di Gauss}{
 Ogni matrice su un campo \(K\) può essere ridotta o completamente ridotta a gradini mediante un numero finito di operazioni elementari.
 
@@ -33,7 +59,7 @@ Procediamo per induzione sul numero di righe \(m\):
 
     Sia
     \[
-        j = \min\{\, l \in \{1, \dots, n\} \mid a_l \neq 0 \,\}
+        j = \min\{\, l \in \{1, \dots, n\} \mid a_{1l} \neq 0 \,\}
     \]
     la posizione del primo elemento non nullo nella prima riga.
 
@@ -59,35 +85,30 @@ Procediamo per induzione sul numero di righe \(m\):
         \end{bmatrix}.
     \]
 
-    Dato \(a'_{1j}\) (pivot della prima riga, diverso da 0), dobbiamo annullare tutti gli elementi sottostanti.  
-    Per la riga 2, dobbiamo avere:
+    Dato \(a'_{1j}\) (pivot della prima riga, diverso da 0), dobbiamo annullare tutti gli elementi sottostanti:  
+    Per la riga 2, basta prendere \(B = -\dfrac{a'_{2j}}{a'_{1j}}\) in modo che
     \[
-        a'_{2J} + B a'_{1J} = 0.
+        a'_{2j} + B a'_{1j} = 0.
     \]
-    Basta prendere \(B = -\dfrac{a'_{2J}}{a'_{1J}}\).
 
     Procediamo quindi in questo modo per tutte le righe sottostanti, ottenendo:
     \[
     \begin{aligned}
-        a^{(2)} &\;\to\; a^{(2)} - \frac{a'_{2J}}{a'_{1J}}\, a^{(1)}, \\
-        a^{(3)} &\;\to\; a^{(3)} - \frac{a'_{3J}}{a'_{1J}}\, a^{(1)}, \\
+        a^{(2)} &\;\to\; a^{(2)} - \frac{a'_{2j}}{a'_{1j}}\, a^{(1)}, \\
+        a^{(3)} &\;\to\; a^{(3)} - \frac{a'_{3j}}{a'_{1j}}\, a^{(1)}, \\
         &\;\;\vdots \\
-        a^{(m)} &\;\to\; a^{(m)} - \frac{a'_{mJ}}{a'_{1J}}\, a^{(1)}.
+        a^{(m)} &\;\to\; a^{(m)} - \frac{a'_{mj}}{a'_{1j}}\, a^{(1)}.
     \end{aligned}
     \]
 
-
     Se si vuole la matrice completamente ridotta, bisogna normalizzare il pivot \(a''_{kj}\) di ogni riga e annullare gli elementi della
-    stessa riga che si trovano sopra ai pivot delle righe successive. 
-
+    stessa colonna che si trovano sopra ai pivot delle righe successive. 
 \end{itemize}
-                
-
 }
 
-\BoxBlue{Osservazione:}{Derivata dal Teorema di Rouchè-Capelli}{
-Un sistema lineare \Sigma: Ax=b è compatibile \Leftrightarrow la matrice completa una volta ridotta 
-a gradini, tramite operazioni elementari, non presenta una riga in cui tutti gli elementi della matrice
+\BoxBlue{Osservazione:}{Derivata dal Teorema di Rouché-Capelli}{
+Un sistema lineare \(\Sigma: A x = b\) è compatibile \(\Leftrightarrow\) la matrice completa, una volta ridotta 
+a gradini tramite operazioni elementari, non presenta una riga in cui tutti gli elementi della matrice
 dei coefficienti sono 0 ma l'elemento nella colonna dei termini noti è diverso da 0. 
 
 \[
@@ -120,11 +141,11 @@ C =
 \]
 
 \[
-\text{ il sistema è impossibile.}
+\text{Il sistema è impossibile.}
 \]
+}
 
-
-} 
+\section{Teorema di struttura}
 
 \Teorema{Teorema di struttura dell'insieme delle soluzioni di un sistema lineare}{
 Sia 
@@ -146,18 +167,16 @@ l'insieme delle soluzioni di \(\Sigma_0\).
 
 Allora, se \((\bar{y}_1, \dots, \bar{y}_n) \in \mathbf{S}\), si ha
 \[
-\mathbf{S} = \{ (\bar{y}_1, \dots, \bar{y}_n) + (z_1, \dots, z_n) \mid (z_1, \dots, z_n) \in \mathbf{S}_0 \} = \mathbf{X} .
+\mathbf{S} = \{ (\bar{y}_1, \dots, \bar{y}_n) + (z_1, \dots, z_n) \mid (z_1, \dots, z_n) \in \mathbf{S}_0 \} = \mathbf{X}.
 \]
-
-
 
 \vspace{0.5em}
 \textcolor{myred}{\textbf{Dimostrazione:}}\\[0.5em]
 Mostriamo che \(\mathbf{S} \subseteq \mathbf{X}\) verificando le due inclusioni:
 
 \begin{enumerate}
-    \item \(\mathbf{S} \subseteq \mathbf{X}\) :  
-    Sia \((y_1, \dots, y_n)\) \in \mathbf{S}.  
+    \item \(\mathbf{S} \subseteq \mathbf{X}\):  
+    Sia \((y_1, \dots, y_n) \in \mathbf{S}\).  
     Consideriamo \((z_1, \dots, z_n) = (y_1, \dots, y_n) - (\bar{y}_1, \dots, \bar{y}_n)\).  
     Poiché 
     \[
@@ -165,7 +184,7 @@ Mostriamo che \(\mathbf{S} \subseteq \mathbf{X}\) verificando le due inclusioni:
     \]
     si ha \(\mathbf{z} \in \mathbf{S}_0\). Quindi \(\mathbf{y} = \bar{\mathbf{y}} + \mathbf{z} \in \mathbf{X}\).
 
-    \item \(\mathbf{X} \subseteq \mathbf{S}\) :  
+    \item \(\mathbf{X} \subseteq \mathbf{S}\):  
     Sia \(\mathbf{x} \in \mathbf{X}\). Allora \(\mathbf{x} = \bar{\mathbf{y}} + \mathbf{z}\) con \(\mathbf{z} \in \mathbf{S}_0\).  
     Allora
     \[
@@ -177,7 +196,57 @@ Mostriamo che \(\mathbf{S} \subseteq \mathbf{X}\) verificando le due inclusioni:
 Da queste due inclusioni segue che \(\mathbf{S} = \mathbf{X}\). \(\quad \square\)
 }
 
+\section{Proprietà dell'insieme \(S_0\) come sottospazio vettoriale}
+\Proposizione{Proprietà dell'insieme delle soluzioni di un sistema lineare omogeneo}{
+Sia \(\Sigma_0 : A\mathbf{x} = \mathbf{0}\) un sistema lineare omogeneo in \(n\) incognite, e sia 
+\[
+\mathbf{S}_0 = \{\, \mathbf{z} \in K^n \mid A\mathbf{z} = \mathbf{0} \,\}
+\]
+l'insieme delle sue soluzioni. Allora valgono le seguenti proprietà:
+
+\begin{enumerate}
+    \item Il vettore nullo \(\mathbf{0}\) appartiene a \(\mathbf{S}_0\).
+    \item Se \(\mathbf{z}, \mathbf{z}' \in \mathbf{S}_0\), allora \(\mathbf{z} + \mathbf{z}' \in \mathbf{S}_0\).
+    \item Se \(\alpha \in K\) e \(\mathbf{z} \in \mathbf{S}_0\), allora \(\alpha \mathbf{z} \in \mathbf{S}_0\).
+\end{enumerate}
+
+\vspace{0.5em}
+In conclusione, \(\mathbf{S}_0\) è chiuso rispetto alla somma e alla moltiplicazione per scalari, e quindi costituisce un sottospazio vettoriale di \(K^n$.
 
 
+}
+
+
+\Definizione{Sottospazio vettoriale}{
+Un sottoinsieme \(V\) si dice \emph{linearmente chiuso} se:
+\begin{enumerate}
+    \item \(V \neq \emptyset\);
+    \item \(\forall\, \mathbf{u}, \mathbf{v} \in V \Rightarrow \mathbf{u} + \mathbf{v} \in V\);
+    \item \(\forall\, \alpha \in K,\, \mathbf{u} \in V \Rightarrow \alpha \mathbf{u} \in V\).
+\end{enumerate}
+
+Poiché \(\mathbf{S}_0\) soddisfa esattamente queste proprietà, segue che l’insieme delle soluzioni
+di un sistema lineare omogeneo è un sottospazio vettoriale di \(K^n\).
+\Proposizione{Sottoinsiemi linearmente chiusi come sottospazi vettoriali}{
+Sia \(V\) uno spazio vettoriale su un campo \(K\) e sia
+\[
+W \subseteq V
+\]
+un sottoinsieme non vuoto tale che:
+\begin{enumerate}
+    \item \(\forall \mathbf{u}, \mathbf{v} \in W \Rightarrow \mathbf{u} + \mathbf{v} \in W\);
+    \item \(\forall \alpha \in K, \mathbf{u} \in W \Rightarrow \alpha \mathbf{u} \in W\).
+\end{enumerate}
+Allora \(W\) è un sottospazio vettoriale di \(V\).
+
+\BoxBlue{Osservazione:}{Operazioni interne}{
+Le proprietà di chiusura rispetto alla somma e al prodotto per scalare garantiscono che le operazioni siano interne anche se considerate come:
+\[
++ : W \times W \to W, \qquad \cdot : K \times W \to W.
+\]
+In altre parole, la somma di due elementi di \(W\) appartiene ancora a \(W\) e il prodotto di uno scalare con un elemento di \(W\) appartiene sempre a \(W\).
+}
+}
+}
 
 

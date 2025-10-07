@@ -1,0 +1,16 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Lezione 1 - Napoli}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduzione}{2}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Lezione 3 - 01/10}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Matrice Trasposta}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Prodotto Scalare}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Matrice Conformabile}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Prodotto Riga per Colonna}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Sistema Lineare}{4}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Operazioni o Trasformazioni Elementari sulle Righe di una Matrice}{6}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Lezione 4 - 3/10 (Teams)}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Matrice a Gradini e Completamente a Gradini}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Algoritmo di Gauss}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Teorema di struttura}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Proprietà dell'insieme \(S_0\) come sottospazio vettoriale}{10}{section.3.4}%
