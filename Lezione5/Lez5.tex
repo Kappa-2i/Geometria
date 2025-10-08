@@ -1,0 +1,103 @@
+\chapter{Lezione 5 - 08/10}
+
+\section{Sistemi di Generatori}
+
+\Definizione{Combinazione Lineare}{
+    Dati due vettori \((u_1,...,u_t) \in V\) e degli scalari \((\alpha_1,...,\alpha_t) \in K\),
+    la \textbf{combinazione lineare} dei vettori dati mediante gli scalari dati è il vettore seguente:
+    \[\mathbf{v} = \alpha_1 u_1 + ... + \alpha_t + u_t\]
+    Se vogliamo permettere che ci siano ripetizioni tra i vettori e gli scalari, allora consideriamo t-uple
+    \((u_1,...,u_t) \in V^t\), \((\alpha_1,...,\alpha_t) \in K^t\). 
+}
+
+\Definizione{Chiusura Lineare}{
+    Dato un sottinsieme \(X \neq \emptyset\) di \(V\), diremo \textbf{chiusura lineare} di \(X\)
+    il sottoinsieme \(L(X)\) di \(V\), costituito da tutti e soli i vettori che sono combinazioni lineari di vettori di \(X\).
+    Se:
+    \begin{itemize}
+        \item \(X = \emptyset\), porremo convenzionalmente \(L(\emptyset) = {0}\)
+        \item \(X={x_1,...,x_t}\) è un insieme finito, scriveremo \(L(x_1,..,x_t)\).
+    \end{itemize}
+
+    Esempio: \(L((2,3),(1,1)) = \{\alpha_1(2,3) + \alpha_2(1,1) | \alpha_1, \alpha_2 \in \mathbb{R}\} \).
+}
+
+\Definizione{Sistema di Generatori}{
+    Un sistema di generatori di \(V\) è un sottinsieme di \(V\) tale che ogni vettore di \(S\) è combinazione lineare di vettori diversi, ossia \(V=L(S)\).
+    Inoltre se lo spazio vettoriale \(V\) ammette un sistema di generatori finito, allora si dirà \textbf{finitamente generato}. 
+}
+
+\Proposizione{Importante sulla chiusura lineare}{
+    Sia \( X \subseteq V \). Allora valgono le seguenti proprietà:
+    \begin{itemize}
+        \item \( X \subseteq L(X) \);
+        \item \( L(X) \) è un sottospazio vettoriale di \( V \);
+        \item Se \( W \subseteq V \) è un sottospazio vettoriale di \( V \) tale che \( X \subseteq W \), allora \( L(X) \subseteq W \).
+    \end{itemize}
+
+    \begin{proof}[Dimostrazione del primo punto]
+        Consideriamo un qualunque \( u \in X \).  
+        Poiché \( u = 1 \cdot u \), ed \( 1 \in K \), si ha che \( u \) è combinazione lineare di un elemento di \( X \).  
+        Dunque \( u \in L(X) \), e quindi:
+        \[
+        X \subseteq L(X).
+        \]
+    \end{proof}
+
+    \begin{proof}[Dimostrazione del secondo punto]
+        Dimostriamo che \( L(X) \) è un sottospazio vettoriale di \( V \).
+
+        \textbf{(1) Non vuoto.}  
+        Poiché \( L(X) \supseteq X \) e \( X \neq \emptyset \), segue immediatamente che \( L(X) \neq \emptyset \).
+
+        \textbf{(2) Chiusura rispetto all’addizione.}  
+        Siano \( u, u' \in L(X) \).  
+        Allora, per definizione di chiusura lineare, esistono \( t, t' \in \mathbb{N} \), vettori \( u_1, \dots, u_t, u'_1, \dots, u'_{t'} \in X \) e scalari \( \alpha_1, \dots, \alpha_t, \alpha'_1, \dots, \alpha'_{t'} \in K \) tali che:
+        \[
+        u = \alpha_1 u_1 + \dots + \alpha_t u_t, \qquad
+        u' = \alpha'_1 u'_1 + \dots + \alpha'_{t'} u'_{t'}.
+        \]
+        Sommando membro a membro otteniamo:
+        \[
+        u + u' = \alpha_1 u_1 + \dots + \alpha_t u_t + \alpha'_1 u'_1 + \dots + \alpha'_{t'} u'_{t'} \in L(X),
+        \]
+        poiché è ancora una combinazione lineare di vettori di \( X \).
+
+        \textbf{(3) Chiusura rispetto alla moltiplicazione per scalare.}  
+        Sia \( \lambda \in K \).  
+        Allora:
+        \[
+        \lambda u = \lambda (\alpha_1 u_1 + \dots + \alpha_t u_t)
+        = (\lambda \alpha_1)u_1 + \dots + (\lambda \alpha_t)u_t \in L(X),
+        \]
+        poiché anche in questo caso otteniamo una combinazione lineare di elementi di \( X \).  
+
+        Pertanto, \( L(X) \) è chiuso rispetto alla somma e alla moltiplicazione per scalare, quindi è un sottospazio vettoriale di \( V \).
+    \end{proof}
+
+    \begin{proof}[Dimostrazione del terzo punto]
+        Ipotizziamo che \( W \) sia un sottospazio vettoriale di \( V \) tale che \( X \subseteq W \).
+
+        Vogliamo mostrare che \( L(X) \subseteq W \); cioè, per ogni \( u \in L(X) \), si ha \( u \in W \).
+
+        Sia dunque \( u \in L(X) \). Per definizione di chiusura lineare, esistono \( u_1, \dots, u_t \in X \) e \( \alpha_1, \dots, \alpha_t \in K \) tali che:
+        \[
+        u = \alpha_1 u_1 + \dots + \alpha_t u_t.
+        \]
+        Poiché \( X \subseteq W \), ciascun \( u_i \in W \).  
+        Poiché \( W \) è sottospazio vettoriale, è chiuso rispetto alla moltiplicazione per scalare:
+        \[
+        \alpha_i u_i \in W \quad \forall i.
+        \]
+        Inoltre, \( W \) è chiuso rispetto all’addizione, dunque:
+        \[
+        \alpha_1 u_1 + \dots + \alpha_t u_t \in W.
+        \]
+        Quindi \( u \in W \), e pertanto \( L(X) \subseteq W \).
+    \end{proof}
+}
+
+\section{Dipendenza e indipendenza lineare}
+
+
+
