@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1759933740.38418 "/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex" "build/App.pdf" "App" 1759933742.8893 0
+["lualatex"] 1759997670.231 "/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex" "build/App.pdf" "App" 1759997672.98699 0
   "/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex" 1759928382.6391 485 8d29593c8ef84e51a4452944e0045231 ""
   "/Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/hb/74fe9f906fe1bc602e87863714a3988819168bb5b97d2048d42e5480f4f1becc.luc" 1759313238.57809 163568 cdf1d29019b9fc492e2458a958da8e55 ""
   "/Users/kappone/Library/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-bold.luc" 1759313237.50117 128410 3f752579a721aabb697cb5411c2b5223 ""
@@ -299,15 +299,15 @@
   "Lezione2/Lez2.tex" 1759926994.36082 66 b29bbd22fc131d2771cbcc3e10b637b4 ""
   "Lezione3/Lez3.tex" 1759822939.42205 7557 1b4d08ffb8c6692f1d52d4ef25fe891c ""
   "Lezione4/Lez4.tex" 1759759267.71822 8822 834a9d8afe3cbec4f6c8816f7136b36d ""
-  "Lezione5/Lez5.tex" 1759933706.67146 4730 0b7f7db2fc2510edd1f880ac5c02d05e ""
-  "build/App.aux" 1759933742.67736 532 6b86855d0a2da9d5459165fe3ba5bdb1 "lualatex"
-  "build/App.out" 1759933742.68419 4135 4669072bca7d99cab488b48f99f6a5db "lualatex"
-  "build/App.toc" 1759933742.68479 2120 199d67c841d169d71602c44059fe8b4b "lualatex"
-  "build/Lezione1/Lez1.aux" 1759933742.18786 1859 2c73a699750fd5c4ebec2da8dbb42f4b "lualatex"
-  "build/Lezione2/Lez2.aux" 1759933742.20465 1359 1b47d99510b61d7203088d1894cce21e "lualatex"
-  "build/Lezione3/Lez3.aux" 1759933742.36696 1908 835c73ae2484983b89d5392fdda12ee8 "lualatex"
-  "build/Lezione4/Lez4.aux" 1759933742.57495 1699 97a230f7218b797b40c1a0acdbbbe4aa "lualatex"
-  "build/Lezione5/Lez5.aux" 1759933742.6767 1402 ef1f4413b83f23e26ea2a13d3b94bdec "lualatex"
+  "Lezione5/Lez5.tex" 1759997669.84092 7735 6c33fbcc519c70435ed33c3f42333526 ""
+  "build/App.aux" 1759997672.77822 532 040492bbdaa64b9ffe6e1ba4a85dfb62 "lualatex"
+  "build/App.out" 1759997672.78235 4135 4669072bca7d99cab488b48f99f6a5db "lualatex"
+  "build/App.toc" 1759997672.7829 2120 199d67c841d169d71602c44059fe8b4b "lualatex"
+  "build/Lezione1/Lez1.aux" 1759997672.22837 1859 2c73a699750fd5c4ebec2da8dbb42f4b "lualatex"
+  "build/Lezione2/Lez2.aux" 1759997672.24151 1359 1b47d99510b61d7203088d1894cce21e "lualatex"
+  "build/Lezione3/Lez3.aux" 1759997672.40769 1908 835c73ae2484983b89d5392fdda12ee8 "lualatex"
+  "build/Lezione4/Lez4.aux" 1759997672.62373 1699 97a230f7218b797b40c1a0acdbbbe4aa "lualatex"
+  "build/Lezione5/Lez5.aux" 1759997672.77753 1402 15bd12e5f4af76a9732345a53b0fa81c "lualatex"
   "utility/utility.tex" 1759567166.3578 1457 1b577d26ea3e4c7d1963c2150252c9c7 ""
   "utility/utility_matematica.tex" 1759756089.61998 4246 4938688a2d36131c5f2eaf550b79e99c ""
   (generated)

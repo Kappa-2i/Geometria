@@ -99,5 +99,77 @@
 
 \section{Dipendenza e indipendenza lineare}
 
+\Definizione{Linearmente dipendente e indipendente}{
+    Una \(n-pla (v_1,...,v_n)\) di vettori di \(V\) sarà detta \textbf{linearmente dipendente} se esiste
+    una \(n-pla (\alpha_1,...,\alpha_n)\) di scalari non tutti nulli, tale che 
+    \[\alpha_1 v_1 + ... + \alpha_n v_n = 0.\]
+    In caso contrario, e cioè se
+    \[(\alpha_1 v_1 + ... + \alpha_n v_n) \Rightarrow (a_i = 0, \forall i \in \mathbb{N}_n)\]
+    la \(n-pla (v_1,...,v_n)\) sarà detta \textbf{linearmente indipendente}.
+    \BoxBlue{Osservazione:}{}{
+       Se \(X \subseteq T \subseteq V\), con \(X\) linearmente \textbf{dipendente} \(\Rightarrow T\) è linearmente \textbf{dipendente}. \newline
+       Se \(Y \subseteq X \subseteq V\), con \(X\) linearmente \textbf{indipendente} \(\Rightarrow Y\) è linearmente \textbf{indipendente}.
+    }
+}
+
+\Teorema{Caratterizzazione della dipendenza lineare}{
+    Un sottoinsieme \(X\) di \(V\) è \textbf{linearmente dipendente} se e solo se 
+    \[
+    \exists\, u \in X \; \text{tale che} \; L(X) = L(X \setminus \{u\}).
+    \]
+
+    Non consideriamo il caso \(X = \emptyset\), poiché l’insieme vuoto è per definizione linearmente indipendente.  
+    Quindi supponiamo \(X \neq \emptyset\).
+    
+    \medskip
+    \textbf{Dimostrazione.}
+
+    \textbf{(Direzione ``\(\Rightarrow\)''):}  
+    Sia \(X\) linearmente dipendente.  
+    Per definizione, esistono \(u_1, \dots, u_t \in X\) e scalari \(\alpha_1, \dots, \alpha_t \in K\), non tutti nulli, tali che:
+    \[
+    \vec{0} = \alpha_1 u_1 + \alpha_2 u_2 + \dots + \alpha_t u_t.
+    \]
+    Sia \(\alpha_t \neq 0\). Allora esiste \(\alpha_t^{-1} \in K\).  
+    Moltiplicando entrambi i membri per \(\alpha_t^{-1}\), otteniamo:
+    \[
+    \vec{0} = (\alpha_t^{-1}\alpha_1)u_1 + \dots + (\alpha_t^{-1}\alpha_{t-1})u_{t-1} + (\alpha_t^{-1}\alpha_t)u_t.
+    \]
+    Ma \(\alpha_t^{-1}\alpha_t = 1\), quindi:
+    \[
+    u_t = -(\alpha_t^{-1}\alpha_1)u_1 - \dots - (\alpha_t^{-1}\alpha_{t-1})u_{t-1}.
+    \]
+    Da cui segue che \(u_t\) è combinazione lineare degli altri vettori \(u_1, \dots, u_{t-1}\), cioè:
+    \[
+    u_t \in L(\{u_1, \dots, u_{t-1}\}) \subseteq L(X \setminus \{u_t\}).
+    \]
+    Quindi:
+    \[
+    L(X) = L(X \setminus \{u_t\}),
+    \]
+    perché rimuovere \(u_t\) non cambia la chiusura lineare dell’insieme.  
+    Ciò dimostra la direzione ``\(\Rightarrow\)``.
+
+    \medskip
+    \textbf{(Direzione ``\(\Leftarrow\)''):}  
+    Supponiamo ora che esista \(u \in X\) tale che \(L(X) = L(X \setminus \{u\})\).  
+    Allora \(u \in L(X \setminus \{u\})\), cioè:
+    \[
+    u = \alpha_1 u_1 + \dots + \alpha_t u_t,
+    \]
+    con \(u_1, \dots, u_t \in X \setminus \{u\}\) e \(\alpha_i \in K\).
+
+    Portando tutto a primo membro otteniamo:
+    \[
+    \vec{0} = (-1)u + \alpha_1 u_1 + \dots + \alpha_t u_t.
+    \]
+    Questa è una combinazione lineare non banale (poiché il coefficiente di \(u\) è \(-1 \neq 0\)) che dà il vettore nullo.  
+    Quindi \(X\) è linearmente dipendente.
+
+    \medskip
+    \(\Box\)
+}
+
+
 
 
