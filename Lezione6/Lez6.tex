@@ -1,0 +1,285 @@
+\chapter{Lezione 6 - 10/10}
+
+\section{Basi}
+\Definizione{Base}{
+    Una \textbf{base} \(B\) di uno spazio vettoriale \(V\) è un insieme di vettori tale che:
+    \begin{itemize}
+        \item \(B\) è \textbf{linearmente indipendente};
+        \item \(B\) è un \textbf{sistema di generatori} di \(V\), cioè \(L(B) = V\).
+    \end{itemize}
+    In altre parole, ogni vettore di \(V\) può essere scritto in modo unico come combinazione lineare dei vettori di \(B\).
+}
+
+\subsection{Teorema di estrazione di una base}
+
+\Teorema{di estrazione di una base}{
+    Sia \(V\) uno spazio vettoriale finitamente generato sul campo \(K\).  
+    Sia \(S = \{v_1, \dots, v_t\}\) un sistema finito di generatori di \(V\).  
+    Allora esiste una base \(B\) di \(V\) tale che \(B \subseteq S\).
+
+    \begin{proof}
+        Consideriamo due casi.
+
+        \medskip
+        \textbf{Caso 1:} \(S = \emptyset.\)  
+        In questo caso, \(V = L(\emptyset) = \{\bar{0}\}\), ossia \(V\) è lo spazio vettoriale nullo.  
+        La base di \(V\) è per definizione l’insieme vuoto stesso, quindi \(B = S = \emptyset\).
+
+        \medskip
+        \textbf{Caso 2:} \(S \neq \emptyset.\)  
+        Verifichiamo se \(S\) è linearmente indipendente.
+        \begin{itemize}
+            \item Se \(S\) è linearmente indipendente, allora essendo anche un sistema di generatori, è già una base di \(V\); dunque \(B = S\).
+            \item Se invece \(S\) è linearmente dipendente, allora per il teorema della dipendenza lineare esiste un vettore \(u \in S\) tale che
+            \[
+            L(S) = L(S \setminus \{u\}).
+            \]
+            Ciò significa che possiamo eliminare \(u\) dall’insieme dei generatori senza modificare lo spazio generato.  
+            Poniamo quindi \(S_1 = S \setminus \{u\}\).
+        \end{itemize}
+
+        Ora applichiamo lo stesso ragionamento a \(S_1\):  
+        \begin{itemize}
+            \item se \(S_1\) è linearmente indipendente, allora \(B = S_1\) è una base di \(V\);
+            \item se \(S_1\) è ancora dipendente, allora esiste \(v \in S_1\) tale che \(L(S_1) = L(S_1 \setminus \{v\})\), e possiamo quindi togliere anche \(v\).
+        \end{itemize}
+
+        Procedendo in questo modo, ad ogni passo eliminiamo un vettore “superfluo” mantenendo lo stesso spazio generato.  
+        Poiché \(S\) è finito, dopo un numero finito di eliminazioni otterremo un sottoinsieme \(B \subseteq S\) che:
+        \[
+        L(B) = V \quad \text{e} \quad B \text{ è linearmente indipendente}.
+        \]
+        Pertanto \(B\) è una base di \(V\) contenuta in \(S\).
+    \end{proof}
+}
+
+\Proposizione{}{
+    Sia \(V\) uno spazio vettoriale su un campo \(K\), e sia 
+    \(S = \{u_1, \dots, u_h\} \subseteq V\) un insieme linearmente indipendente.  
+    Se \(u \in V \setminus L(S)\), allora anche l’insieme 
+    \(S \cup \{u\}\) è linearmente indipendente.
+}
+
+\begin{proof}[Dimostrazione (per assurdo)]
+    Procediamo per assurdo.  
+    Supponiamo che \(S \cup \{u\}\) \emph{non} sia linearmente indipendente.  
+    Allora, per definizione, esistono scalari 
+    \(\alpha_1, \dots, \alpha_h, \beta \in K\), non tutti nulli, tali che:
+    \[
+        \alpha_1 u_1 + \alpha_2 u_2 + \dots + \alpha_h u_h + \beta u = \vec{0}.
+    \]
+
+    \textbf{Caso 1:} \(\beta = 0\).  
+    Allora la relazione diventa:
+    \[
+        \alpha_1 u_1 + \alpha_2 u_2 + \dots + \alpha_h u_h = \vec{0}.
+    \]
+    Ma \(S\) è linearmente indipendente per ipotesi, quindi necessariamente:
+    \[
+        \alpha_1 = \alpha_2 = \dots = \alpha_h = 0.
+    \]
+    Ciò implica che tutti gli scalari sono nulli, il che contraddice l’assunzione iniziale
+    (“non tutti nulli”).  
+    Quindi \(\beta \neq 0\).
+
+    \medskip
+    \textbf{Caso 2:} \(\beta \neq 0\).  
+    Possiamo allora isolare \(u\):
+    \[
+        \beta u = -(\alpha_1 u_1 + \alpha_2 u_2 + \dots + \alpha_h u_h).
+    \]
+    Moltiplicando ambo i membri per \(\beta^{-1}\) (che esiste, poiché \(\beta \neq 0\)):
+    \[
+        u = (-\beta^{-1}\alpha_1) u_1 + (-\beta^{-1}\alpha_2) u_2 + \dots + (-\beta^{-1}\alpha_h) u_h.
+    \]
+    Ma questo significa precisamente che \(u \in L(S)\).
+
+    Tuttavia, per ipotesi, \(u \notin L(S)\).  
+    Questa è una contraddizione.
+
+    \medskip
+    Pertanto, la nostra ipotesi iniziale è falsa, e \(S \cup \{u\}\) deve essere linearmente indipendente.
+    \[
+        \boxed{S \cup \{u\} \text{ è linearmente indipendente.}}
+    \]
+\end{proof}
+
+\Teorema{Lemma di Steinitz}{
+Sia \( V \) uno spazio vettoriale finitamente generato su un campo \( K \) e sia 
+\( S = \{u_1, \dots, u_n\} \) un suo sistema di generatori finito, cioè \( L(S) = V \).  
+
+Sia \( X = \{v_1, \dots, v_m\} \) un insieme di vettori di \( V \).
+
+Se \( m = |X| > n = |S| \), allora \( X \) è linearmente dipendente.
+}
+
+\Proposizione{Corollario}{
+Utilizzando le stesse notazioni del Lemma di Steinitz, se \( X \) è linearmente indipendente, allora:
+\[
+|X| \leq |S|.
+\]
+}
+
+\section{Teorema di equipotenza della base}
+
+\Teorema{Teorema di equipotenza della base}{
+Sia \( V \) uno spazio vettoriale finitamente generato su un campo \( K \).  
+Allora tutte le basi di \( V \) hanno la stessa cardinalità.  
+
+Questa cardinalità comune alle basi di \( V \) viene detta \textbf{dimensione} di \( V \) e si indica con:
+\[
+\dim V.
+\]
+}
+
+\Dimostrazione{
+Poiché \( V \) è finitamente generato, esiste un sistema di generatori finito \( S \subseteq V \).  
+Sia \( B \) una base di \( V \) estratta da \( S \).  
+Allora:
+\[
+|B| = n < +\infty.
+\]
+
+Sia \( B' \) un’altra base di \( V \).
+
+\textbf{1.} Dimostriamo che \( |B'| = h < +\infty \).  
+Se così non fosse, esisterebbe un insieme \( X \subseteq B' \) tale che \( |X| = n + 1 > |B| \),  
+ma questo è impossibile per il \textbf{Lemma di Steinitz}, poiché un insieme di vettori con più elementi di un sistema di generatori sarebbe linearmente dipendente.
+
+\medskip
+
+\textbf{2.} Dimostriamo ora che \( |B'| = |B| \).  
+\begin{itemize}
+    \item Poiché \( B' \) è linearmente indipendente in \( V \) e \( B \) è un sistema di generatori di \( V \), per il Corollario del Lemma di Steinitz si ha:
+    \[
+    |B'| \leq |B|.
+    \]
+    \item Analogamente, poiché \( B \) è linearmente indipendente in \( V \) e \( B' \) è un sistema di generatori di \( V \), si ha:
+    \[
+    |B| \leq |B'|.
+    \]
+\end{itemize}
+
+Dalle due disuguaglianze segue che:
+\[
+|B| = |B'|.
+\]
+
+\medskip
+Quindi tutte le basi di \( V \) hanno la stessa cardinalità, che chiamiamo \textbf{dimensione} di \( V \):
+\[
+\dim V = |B|.
+\]
+\(\Box\)
+}
+
+
+\Proposizione{Caratterizzazione dei sistemi di generatori di dimensione \( n \)}{
+Sia \( V \) uno spazio vettoriale su un campo \( K \), con \( \dim V = n \).  
+Sia \( S = \{u_1, \dots, u_n\} \subseteq V \) un insieme di \( n \) vettori.  
+
+Allora valgono le seguenti equivalenze:
+\[
+S \text{ è un sistema di generatori di } V 
+\;\;\Longleftrightarrow\;\;
+S \text{ è linearmente indipendente.}
+\]
+}
+
+\Dimostrazione{
+\textbf{(\(\Rightarrow\))}  
+Supponiamo per assurdo che \( S \) sia linearmente dipendente.  
+Allora esiste \( v \in S \) tale che:
+\[
+L(S) = L(S \setminus \{v\}).
+\]
+Ma in tal caso \( L(S \setminus \{v\}) \) genererebbe ancora tutto \( V \),  
+pur avendo \( |S \setminus \{v\}| = n - 1 < n = \dim V \),  
+il che è impossibile per la definizione stessa di dimensione (nessun insieme di meno di \( n \) vettori può generare \( V \)).  
+Dunque \( S \) deve essere linearmente indipendente.
+
+\medskip
+
+\textbf{(\(\Leftarrow\))}  
+Supponiamo ora per assurdo che \( S \) sia linearmente indipendente ma non generi \( V \), cioè:
+\[
+L(S) \subsetneq V.
+\]
+Allora esiste \( u \in V \setminus L(S) \).  
+Consideriamo quindi l’insieme \( S' = S \cup \{u\} \).  
+
+Poiché \( u \notin L(S) \), il nuovo insieme \( S' \) risulta ancora linearmente indipendente.  
+Tuttavia:
+\[
+|S'| = n + 1,
+\]
+il che è impossibile per il \textbf{Lemma di Steinitz}, che vieta l’esistenza di un insieme linearmente indipendente con più di \( n \) elementi in uno spazio vettoriale di dimensione \( n \).  
+
+\medskip
+Quindi \( L(S) = V \) e \( S \) è un sistema di generatori.  
+\(\Box\)
+}
+
+\Teorema{Di completamento in una base}{
+    Sia \(V\) uno spazio vettoriale su \(K\) con \(\dim V = n\).
+    Sia \(X = \{v_1,\dots,v_t\}\subseteq V\) un insieme linearmente indipendente.
+    Allora esiste un sottoinsieme \(Y = \{v_{t+1},\dots,v_n\}\subseteq V\) tale che
+    \(B := X\cup Y\) è una base di \(V\).
+}
+\begin{proof}
+    Se \(t=n\), allora \(X\) ha già \(n\) vettori linearmente indipendenti. Poiché la dimensione di \(V\) è \(n\), ogni insieme di \(n\) vettori linearmente indipendenti è una base di \(V\). Quindi in questo caso possiamo prendere \(Y=\varnothing\) e \(B=X\).
+
+    Supponiamo ora \(t<n\). Allora \(X\) non può generare tutto \(V\), cioè \(L(X)\neq V\). Infatti se \(L(X)=V\) avremmo che \(X\) è un sistema di generatori con \(t\) elementi e quindi \(\dim V\le t\), contraddicendo \(t<n\). Quindi esiste almeno un vettore \(v_{t+1}\in V\setminus L(X)\).
+
+    Per la proposizione già vista, poiché \(v_{t+1}\notin L(X)\), l'insieme
+    \[
+      X_1 := X\cup\{v_{t+1}\} = \{v_1,\dots,v_t,v_{t+1}\}
+    \]
+    è ancora linearmente indipendente. Se \(|X_1|=t+1=n\) abbiamo finito: \(B=X_1\) è una base. Altrimenti \(t+1<n\) e ripetiamo lo stesso ragionamento.
+
+    In generale, costruiamo per induzione una successione di insiemi linearmente indipendenti
+    \[
+      X = X_0 \subset X_1 \subset X_2 \subset \cdots
+    \]
+    in cui \(X_{k+1}=X_k\cup\{v_{t+k+1}\}\) con \(v_{t+k+1}\in V\setminus L(X_k)\). Ad ogni passo il numero di vettori aumenta di \(1\). Poiché \(\dim V=n\), non è possibile continuare indefinitamente: non esistono insiemi di più di \(n\) vettori linearmente indipendenti in \(V\). Quindi il processo termina dopo al più \(n-t\) passaggi, producendo un insieme
+    \[
+      B = X_{m} = \{v_1,\dots,v_t,v_{t+1},\dots,v_{t+m}\}
+    \]
+    con \(|B|=n\) e \(B\) linearmente indipendente.
+
+    Un insieme di \(n\) vettori linearmente indipendenti in uno spazio di dimensione \(n\) genera \(V\), dunque \(L(B)=V\) e quindi \(B\) è una base di \(V\). Ponendo \(Y=\{v_{t+1},\dots,v_n\}\) otteniamo la conclusione voluta.
+\end{proof}
+
+\BoxBlue{Osservazioni:}{}{
+    \begin{itemize}
+        \item Sia \(V\) uno spazio vettoriale su \(K\) e siano \(S,T \subseteq V\). Allora
+        \[
+            L(S) = L(T) \iff S \subseteq L(T)\ \text{e}\ T \subseteq L(S).
+        \]
+        \textbf{(\(\Rightarrow\))} Poiché \(S \subseteq L(S)\) e \(L(S)=L(T)\), si ha \(S \subseteq L(T)\); analogamente \(T \subseteq L(S)\).\\
+        \textbf{(\(\Leftarrow\))} Se \(S \subseteq L(T)\) allora \(L(S)\subseteq L(T)\) (perché \(L(T)\) è un sottospazio che contiene \(S\)); analogamente \(T\subseteq L(S)\) implica \(L(T)\subseteq L(S)\). Da entrambe le inclusioni segue \(L(S)=L(T)\).
+
+        \smallskip
+        Da questa osservazione segue la seguente proprietà sulle righe di matrici: se \(A\in M_{m,n}(K)\) e \(B\) è ottenuta da \(A\) mediante un numero finito di operazioni elementari, allora indicando con \(\bar{a^1},\dots,\bar{a^m}\) le righe di \(A\) e con \(\bar{b^1},\dots,\bar{b^m}\) le righe di \(B\), si ha
+        \[
+            \{\bar{b^1},\dots,\bar{b^m}\}\subseteq L(\bar{a^1},\dots,\bar{a^m})
+            \quad\text{e}\quad
+            \{\bar{a^1},\dots,\bar{a^m}\}\subseteq L(\bar{b^1},\dots,\bar{b^m}),
+        \]
+        da cui segue
+        \[
+            L(\bar{b^1},\dots,\bar{b^m}) = L(\bar{a^1},\dots,\bar{a^m}).
+        \]
+
+        \item Per vettori \(u,v,w\in V\) (con \(V\) uno spazio vettoriale) valgono le seguenti equivalenze geometriche:
+        \begin{itemize}
+            \item \(u,v\) sono linearmente dipendenti \(\iff\) \(u\) e \(v\) sono paralleli (cioè uno è multiplo scalare dell'altro);
+            \item \(u,v,w\) sono linearmente dipendenti \(\iff\) \(u,v,w\) sono complanari (cioè esiste un piano che contiene i tre vettori).
+        \end{itemize}
+    \end{itemize}
+}
+
+
+\Definizione{Rango di una matrice}{
+    \(A \in M_{mn}(K)\). Il rango di A è la dimensione dello spazio vettoriale generato dalle sue righe e dallo spazio vettoriale generato dalle sue colonne. 
+}

@@ -25,3 +25,7 @@
 \contentsline {chapter}{\numberline {5}Lezione 5 - 08/10}{16}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Sistemi di Generatori}{16}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Dipendenza e indipendenza lineare}{17}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Lezione 6 - 10/10}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Basi}{19}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Teorema di estrazione di una base}{19}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{20}{section.6.2}%
