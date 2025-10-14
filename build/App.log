@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  10 OCT 2025 16:11
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  14 OCT 2025 11:03
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex"
@@ -1199,7 +1199,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 \openout2 = Lezione2/Lez2.aux
  (./Lezione2/Lez2.tex
 Capitolo 2.
-)
+
 
 [7
 
@@ -1207,6 +1207,12 @@ Capitolo 2.
 
 
 ]
+
+[8]
+
+[9])
+
+[10]
 \openout2 = Lezione3/Lez3.aux
  (./Lezione3/Lez3.tex
 Capitolo 3.
@@ -1217,7 +1223,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
 
 
 
-[8
+[11
 
 
 
@@ -1229,34 +1235,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--116
 
 
 
-[9]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 145--145
 
  []
 
 
 
-[10]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 213--213
 
  []
 
 )
 
-[11]
+[14]
 \openout2 = Lezione4/Lez4.aux
  (./Lezione4/Lez4.tex
 Capitolo 4.
 
 
-[12
+[15
 
 
 
 
 ]
 
-[13]
+[16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 199.
@@ -1267,27 +1273,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[14])
-
-[15]
-\openout2 = Lezione5/Lez5.aux
- (./Lezione5/Lez5.tex
-Capitolo 5.
-
-
-[16
-
-
-
-
-]
-
 [17])
 
 [18]
-\openout2 = Lezione6/Lez6.aux
- (./Lezione6/Lez6.tex
-Capitolo 6.
+\openout2 = Lezione5/Lez5.aux
+ (./Lezione5/Lez5.tex
+Capitolo 5.
 
 
 [19
@@ -1297,38 +1288,53 @@ Capitolo 6.
 
 ]
 
-[20]
+[20])
 
 [21]
+\openout2 = Lezione6/Lez6.aux
+ (./Lezione6/Lez6.tex
+Capitolo 6.
+
+
+[22
+
+
+
+
+]
+
+[23]
+
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 280--280
 
  []
 
 )
 
-[22] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux))
+[25] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `App.out' has not changed.
-(rerunfilecheck)             Checksum: BC721D62094BF15753B1CE9D27F79F74;4822.
+(rerunfilecheck)             Checksum: 03873AEDA47B5B11D02BC79F1F23FC3E;4822.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43129 strings out of 475506
+ 43149 strings out of 475506
  125129,1648299 words of node,token memory allocated
- 1321 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 256 attribute, 62 glue_spec, 130 attribute_list, 4 write nodes
-   avail lists: 1:1,2:3313,3:1345,4:331,5:502,6:119,7:7534,8:59,9:827,10:34,11:776
- 65068 multiletter control sequences out of 65536+600000
+ 1483 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 310 attribute, 62 glue_spec, 157 attribute_list, 4 write nodes
+   avail lists: 2:3313,3:1345,4:331,5:507,6:119,7:7534,8:59,9:827,10:34,11:776
+ 65085 multiletter control sequences out of 65536+600000
  69 fonts using 6714711 bytes
  107i,12n,104p,590b,2087s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on App.pdf (22 pages, 227520 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on App.pdf (25 pages, 260350 bytes).
 
-PDF statistics: 384 PDF objects out of 1000 (max. 8388607)
- 326 compressed objects within 4 object streams
- 93 named destinations out of 1000 (max. 131072)
+PDF statistics: 404 PDF objects out of 1000 (max. 8388607)
+ 341 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 131072)
  248 words of extra memory for PDF output out of 10000 (max. 100000000)
 

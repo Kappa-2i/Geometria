@@ -8,24 +8,24 @@
 \contentsline {subsection}{\numberline {1.2.3}Campo}{5}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4}Spazio Vettoriale}{5}{subsection.1.2.4}%
 \contentsline {chapter}{\numberline {2}Lezione 2 - 26/09}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Matrice}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Polinomi}{7}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Lezione 3 - 01/10}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Matrice Trasposta}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Prodotto Scalare}{8}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Matrice Conformabile}{8}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Prodotto Riga per Colonna}{9}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Sistema Lineare}{9}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Operazioni o Trasformazioni Elementari sulle Righe di una Matrice}{11}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Lezione 4 - 3/10 (Teams)}{12}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Matrice a Gradini e Completamente a Gradini}{12}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Algoritmo di Gauss}{12}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Teorema di struttura}{14}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Proprietà dell'insieme \(S_0\) come sottospazio vettoriale}{15}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Lezione 5 - 08/10}{16}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Sistemi di Generatori}{16}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Dipendenza e indipendenza lineare}{17}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Lezione 6 - 10/10}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Basi}{19}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Teorema di estrazione di una base}{19}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{20}{section.6.2}%
+\contentsline {section}{\numberline {2.1}Polinomi}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Matrici}{9}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Lezione 3 - 01/10}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Matrice Trasposta}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Prodotto Scalare}{11}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Matrice Conformabile}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Prodotto Riga per Colonna}{12}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Sistema Lineare}{12}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Operazioni o Trasformazioni Elementari sulle Righe di una Matrice}{14}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Lezione 4 - 3/10 (Teams)}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Matrice a Gradini e Completamente a Gradini}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Algoritmo di Gauss}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Teorema di struttura}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Proprietà dell'insieme \(S_0\) come sottospazio vettoriale}{18}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Lezione 5 - 08/10}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Sistemi di Generatori}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Dipendenza e indipendenza lineare}{20}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Lezione 6 - 10/10}{22}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Basi}{22}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Teorema di estrazione di una base}{22}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{23}{section.6.2}%

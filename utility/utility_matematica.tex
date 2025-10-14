@@ -163,4 +163,22 @@ colframe=myyellow, colbacktitle=myyellow}
 }
 
 
+% Box per esempi
+\newtcolorbox{exbox}{
+  colback=green!5!white,
+  colframe=green!60!black,
+  title=Esempio,
+  fonttitle=\bfseries,
+  sharp corners,
+  before skip=10pt, after skip=10pt
+}
+
+
+\newcommand{\Esempio}[2]{%
+  \begin{exbox}{#1}
+  #2
+  \end{exbox}
+}
+
+
 
