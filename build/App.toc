@@ -28,4 +28,4 @@
 \contentsline {chapter}{\numberline {6}Lezione 6 - 10/10}{22}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Basi}{22}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Teorema di estrazione di una base}{22}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{23}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{25}{section.6.2}%

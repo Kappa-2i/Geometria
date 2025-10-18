@@ -111,14 +111,100 @@ Sia \( V \) uno spazio vettoriale finitamente generato su un campo \( K \) e sia
 Sia \( X = \{v_1, \dots, v_m\} \) un insieme di vettori di \( V \).
 
 Se \( m = |X| > n = |S| \), allora \( X \) è linearmente dipendente.
-}
-
 \Proposizione{Corollario}{
 Utilizzando le stesse notazioni del Lemma di Steinitz, se \( X \) è linearmente indipendente, allora:
 \[
 |X| \leq |S|.
 \]
 }
+
+\Dimostrazione{
+    % Caso banale
+    Iniziamo con un caso banale: se il vettore nullo \(\mathbf{0} \in X\), allora \(X\) è linearmente dipendente (poiché contiene il sottoinsieme \(\{\mathbf{0}\}\) che è L.D.), e la tesi è dimostrata.
+
+    % Inizio Passo 1
+    Supponiamo quindi \(\mathbf{0} \notin X\). Ciò implica che tutti i vettori \(v_i \in X\) sono non nulli.
+    
+    \textbf{Passo 1: Scambio di \(v_1\)}
+    
+    Consideriamo il primo vettore \(v_1 \in X\). Poiché \(v_1 \in V\) e \(L(S) = V\), \(v_1\) è combinazione lineare dei vettori di \(S\):
+    \[ v_1 = \lambda_1 u_1 + \lambda_2 u_2 + \dots + \lambda_n u_n \]
+    Poiché abbiamo supposto \(v_1 \neq \mathbf{0}\), almeno uno dei coefficienti \(\lambda_1, \dots, \lambda_n\) deve essere non nullo. 
+    A meno di riordinare i vettori \(u_i\) (operazione che non altera \(L(S)\)), possiamo supporre che \(\lambda_1 \neq 0\). 
+    
+    Esistendo \(\lambda_1^{-1} \in K\), possiamo isolare \(u_1\):
+    \[ \lambda_1 u_1 = v_1 - \lambda_2 u_2 - \dots - \lambda_n u_n \]
+    \[ u_1 = \lambda_1^{-1} v_1 - (\lambda_1^{-1} \lambda_2) u_2 - \dots - (\lambda_1^{-1} \lambda_n) u_n \]
+    Questa equazione mostra che \( u_1 \in L(\{v_1, u_2, \dots, u_n\}) \).
+    
+    Definiamo il nuovo insieme \( S_1 = \{v_1, u_2, \dots, u_n\} \).
+    Dimostriamo che \(L(S_1) = V\). 
+    Osserviamo che:
+    \begin{itemize}
+        \item \( u_1 \in L(S_1) \) (come appena mostrato).
+        \item \( u_2, \dots, u_n \in S_1 \subseteq L(S_1) \) (banalmente).
+    \end{itemize}
+    Dato che tutti i generatori originali \(S = \{u_1, \dots, u_n\}\) appartengono a \(L(S_1)\), si ha che \(S \subseteq L(S_1)\).
+    Questo implica \( V = L(S) \subseteq L(S_1) \subseteq V \Rightarrow L(S_1) = V\).
+    Abbiamo quindi sostituito \(u_1\) con \(v_1\) ottenendo un nuovo sistema di \(n\) generatori.
+
+    \textbf{Passo 2: Scambio di \(v_2\)}
+    
+    Consideriamo il secondo vettore \(v_2 \in X\). Per la nostra ipotesi, \(v_2 \neq \mathbf{0}\).
+    Poiché \(v_2 \in V\) e (dal passo precedente) \(V = L(S_1)\), possiamo scrivere \(v_2\) come combinazione lineare dei vettori di \(S_1\):
+    \[ v_2 = \beta_1 v_1 + \beta_2 u_2 + \beta_3 u_3 + \dots + \beta_n u_n \]
+    Ora abbiamo due possibilità:
+    
+    \textbf{Caso A:} Tutti i coefficienti dei vettori \(u_i\) sono nulli.
+    Cioè, \(\beta_2 = \beta_3 = \dots = \beta_n = 0\). L'equazione diventa:
+    \[ v_2 = \beta_1 v_1 \Rightarrow \beta_1 v_1 - v_2 = \mathbf{0} \]
+    Poiché \(v_2 \neq \mathbf{0}\), questa è una combinazione lineare non banale (il coefficiente di \(v_2\) è \(-1\)) di vettori di \(X\). Dunque \(\{v_1, v_2\} \subseteq X\) è linearmente dipendente, e di conseguenza \(X\) è linearmente dipendente. In questo caso, la tesi è dimostrata.
+    
+    \textbf{Caso B:} Almeno uno dei coefficienti \(\beta_2, \dots, \beta_n\) è non nullo.
+    A meno di riordinare i restanti \(u_i\), supponiamo \(\beta_2 \neq 0\). 
+    Possiamo allora isolare \(u_2\):
+    \[ \beta_2 u_2 = v_2 - \beta_1 v_1 - \beta_3 u_3 - \dots - \beta_n u_n \]
+    \[ u_2 = (-\beta_2^{-1} \beta_1) v_1 + \beta_2^{-1} v_2 - (\beta_2^{-1} \beta_3) u_3 - \dots - (\beta_2^{-1} \beta_n) u_n \]
+    Questo mostra che \( u_2 \in L(\{v_1, v_2, u_3, \dots, u_n\}) \).
+    
+    Definiamo \(S_2 = \{v_1, v_2, u_3, \dots, u_n\}\). 
+    Come prima, dimostriamo che \(L(S_2) = V\) osservando che \(S_1 \subseteq L(S_2)\):
+    \begin{itemize}
+        \item \( v_1 \in S_2 \subseteq L(S_2) \).
+        \item \( u_2 \in L(S_2) \) (come appena mostrato).
+        \item \( u_3, \dots, u_n \in S_2 \subseteq L(S_2) \).
+    \end{itemize}
+    Dunque \( V = L(S_1) \subseteq L(S_2) \), e concludiamo \(L(S_2) = V\).
+
+    \textbf{Iterazione e Conclusione}
+    
+    Si ripete questo procedimento ("così via"). Ad ogni passo \(k \leq n\), si considera \(v_k\) e lo si scrive come C.L. dei generatori ottenuti al passo \(k-1\): \(S_{k-1} = \{v_1, \dots, v_{k-1}, u_k, \dots, u_n\}\).
+    
+    O si incontra il \textbf{Caso A} (tutti i coefficienti dei restanti \(u_i\) sono nulli), il che dimostra che \(\{v_1, \dots, v_k\}\) è L.D. e quindi \(X\) è L.D. (e la dimostrazione termina).
+    
+    
+}
+}
+
+\Dimostrazione{
+    Oppure si procede con il \textbf{Caso B} (almeno un coefficiente di un \(u_i\) è non nullo), e si "scambia" quel vettore (diciamo \(u_k\)) con \(v_k\), ottenendo un nuovo sistema di generatori \(S_k = \{v_1, \dots, v_k, u_{k+1}, \dots, u_n\}\).
+    
+    Se non si incontra mai il Caso A, dopo \(n\) passi avremo sostituito tutti i vettori \(u_i\), ottenendo il sistema di generatori:
+    \[ S_n = \{v_1, \dots, v_n\} \]
+    (che hai chiamato \(S''\)).
+
+    Ora usiamo l'ipotesi fondamentale: \( m > n \).
+    Questo significa che in \(X\) esiste almeno un altro vettore, \(v_{n+1}\).
+    Poiché \(v_{n+1} \in V\) e \(V = L(S_n) = L(\{v_1, \dots, v_n\})\), \(v_{n+1}\) deve essere combinazione lineare di \(S_n\):
+    \[ v_{n+1} = \gamma_1 v_1 + \gamma_2 v_2 + \dots + \gamma_n v_n \]
+    Riscrivendo l'equazione, otteniamo:
+    \[ \gamma_1 v_1 + \gamma_2 v_2 + \dots + \gamma_n v_n - v_{n+1} = \mathbf{0} \]
+    Questa è una combinazione lineare non banale (il coefficiente di \(v_{n+1}\) è \(-1 \neq 0\)) dei vettori \(\{v_1, \dots, v_{n+1}\} \subseteq X\).
+    
+    Pertanto, \(X\) è linearmente dipendente. In ogni possibile scenario, la tesi è dimostrata.
+}
+
+
 
 \section{Teorema di equipotenza della base}
 

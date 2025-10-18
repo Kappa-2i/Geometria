@@ -3,12 +3,26 @@
 \section{Sistemi di Generatori}
 
 \Definizione{Combinazione Lineare}{
-    Dati almeno due vettori \((u_1,...,u_t) \in V\) e degli scalari \((\alpha_1,...,\alpha_t) \in K\),
-    la \textbf{combinazione lineare} dei vettori dati mediante gli scalari dati è il vettore seguente:
-    \[\mathbf{v} = \alpha_1 u_1 + ... + \alpha_t u_t\]
+    Consideriamo \((V,+,\cdot)\) uno spazio vettoriale su \(K\). Sia \((u_1,...,u_n)\) una n-upla di vettori di \(V\). Un vettore \(u\) si dice 
+    \textbf{combinazione lineare} di questa n-upla se esiste una n-upla di scalari \((\alpha_1,...,\alpha_n) \in K\) tali che 
+    \[\mathbf{u} = \alpha_1 u_1 + ... + \alpha_n u_n\].
+    
     Se vogliamo permettere che ci siano ripetizioni tra i vettori e gli scalari, allora consideriamo t-uple
     \((u_1,...,u_t) \in V^t\), \((\alpha_1,...,\alpha_t) \in K^t\). 
 }
+
+\Definizione{Sistema di Generatori}{
+    Sia \(V\) uno spazio vettoriale su un campo \(K\).  
+    Un insieme \(S \subseteq V\) si dice \textbf{sistema di generatori} di \(V\) se ogni vettore di \(V\) può essere espresso come combinazione lineare di un numero finito di vettori di \(S\).  
+    In simboli:
+    \[
+        V = L(S) = \left\{ \sum_{i=1}^{n} \lambda_i v_i \ \middle| \ v_i \in S, \ \lambda_i \in K, \ n \in \mathbb{N} \right\}.
+    \]
+    In altre parole, i vettori di \(S\) \emph{generano} lo spazio \(V\).  
+    Se esiste un insieme finito \(S\) che genera \(V\), allora si dice che \(V\) è \textbf{finitamente generato}.
+
+}
+
 
 \Definizione{Chiusura Lineare}{
     Dato un sottinsieme \(X \neq \emptyset\) di \(V\), diremo \textbf{chiusura lineare} di \(X\)
@@ -20,11 +34,6 @@
     \end{itemize}
 
     Esempio: \(L((2,3),(1,1)) = \{\alpha_1(2,3) + \alpha_2(1,1) | \alpha_1, \alpha_2 \in \mathbb{R}\} \).
-}
-
-\Definizione{Sistema di Generatori}{
-    Un sistema di generatori di \(V\) è un sottinsieme di \(V\) tale che ogni vettore di \(S\) è combinazione lineare di vettori diversi, ossia \(V=L(S)\).
-    Inoltre se lo spazio vettoriale \(V\) ammette un sistema di generatori finito, allora si dirà \textbf{finitamente generato}. 
 }
 
 \Proposizione{Importante sulla chiusura lineare}{
@@ -100,10 +109,10 @@
 \section{Dipendenza e indipendenza lineare}
 
 \Definizione{Linearmente dipendente e indipendente}{
-    Una \(n-pla (v_1,...,v_n)\) di vettori di \(V\) sarà detta \textbf{linearmente dipendente} se esiste
-    una \(n-pla (\alpha_1,...,\alpha_n)\) di scalari non tutti nulli, tale che 
+    Una \(n-pla (v_1,...,v_n)\) di vettori di \(V\) spazio vettoriale su \(K\) sarà detta \textbf{linearmente dipendente} se esiste
+    una \(n-pla (\alpha_1,...,\alpha_n) \in K\) di scalari non tutti nulli, tale che 
     \[\alpha_1 v_1 + ... + \alpha_n v_n = 0.\]
-    In caso contrario, e cioè se
+    In caso contrario, e cioè se gli scalari sono tutti nulli
     \[(\alpha_1 v_1 + ... + \alpha_n v_n) \Rightarrow (a_i = 0, \forall i \in \mathbb{N}_n)\]
     la \(n-pla (v_1,...,v_n)\) sarà detta \textbf{linearmente indipendente}.
     \BoxBlue{Osservazione:}{}{
