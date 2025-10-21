@@ -29,3 +29,7 @@
 \contentsline {section}{\numberline {6.1}Basi}{22}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Teorema di estrazione di una base}{22}{subsection.6.1.1}%
 \contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{25}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Lezione 7 - 15/10}{28}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Lemma di Steinitz}{28}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Isomorfismo delle Coordinate}{30}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Proprietà dell'Isomorfismo delle Coordinate}{32}{section.7.3}%

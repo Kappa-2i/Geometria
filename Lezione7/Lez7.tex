@@ -1,0 +1,355 @@
+\chapter{Lezione 7 - 15/10}
+\section{Lemma di Steinitz}
+\Teorema{Lemma di Steinitz (o dello Scambio)}{
+    Sia \( V \) uno spazio vettoriale finitamente generato su un campo \( K \).
+    Sia \( S = \{u_1, \dots, u_n\} \) un sistema di generatori per \( V \), la cui cardinalità è \( |S| = n \).
+    Sia \( X = \{v_1, \dots, v_m\} \) un sottoinsieme di vettori di \( V \), la cui cardinalità è \( |X| = m \).
+
+    Se \( m > n \), allora l'insieme \( X \) è linearmente dipendente.
+}
+
+\Proposizione{Corollario (dalla contronominale)}{
+    Nelle stesse ipotesi del Lemma di Steinitz, se l'insieme \( X = \{v_1, \dots, v_m\} \) è linearmente indipendente, allora \( m \leq n \).
+
+    \textbf{Attenzione:} Non vale il viceversa di questo corollario.
+    Un insieme \( X \) con \( m \leq n \) vettori non è automaticamente linearmente indipendente.
+    
+    (Ad esempio, in \( \mathbb{R}^2 \) generato da \( S = \{(1,0), (0,1)\} \), abbiamo \( n=2 \). L'insieme \( X = \{(1,1), (2,2)\} \) ha \( m=2 \), quindi \( m \leq n \), ma \( X \) è palesemente linearmente dipendente.)
+}
+
+\Dimostrazione{
+    % Caso banale
+    Iniziamo con un caso banale: se il vettore nullo \(\mathbf{0} \in X\), allora \(X\) è linearmente dipendente (poiché contiene il sottoinsieme \(\{\mathbf{0}\}\) che è L.D.), e la tesi è dimostrata.
+
+    % Inizio Passo 1
+    Supponiamo quindi \(\mathbf{0} \notin X\). Ciò implica che tutti i vettori \(v_i \in X\) sono non nulli.
+    
+    \textbf{Passo 1: Scambio di \(v_1\)}
+    
+    Consideriamo il primo vettore \(v_1 \in X\). Poiché \(v_1 \in V\) e \(L(S) = V\), \(v_1\) è combinazione lineare dei vettori di \(S\):
+    \[ v_1 = \lambda_1 u_1 + \lambda_2 u_2 + \dots + \lambda_n u_n \]
+    Poiché abbiamo supposto \(v_1 \neq \mathbf{0}\), almeno uno dei coefficienti \(\lambda_1, \dots, \lambda_n\) deve essere non nullo. 
+    A meno di riordinare i vettori \(u_i\) (operazione che non altera \(L(S)\)), possiamo supporre che \(\lambda_1 \neq 0\). 
+    
+    Esistendo \(\lambda_1^{-1} \in K\), possiamo isolare \(u_1\):
+    \[ \lambda_1 u_1 = v_1 - \lambda_2 u_2 - \dots - \lambda_n u_n \]
+    \[ u_1 = \lambda_1^{-1} v_1 - (\lambda_1^{-1} \lambda_2) u_2 - \dots - (\lambda_1^{-1} \lambda_n) u_n \]
+    Questa equazione mostra che \( u_1 \in L(\{v_1, u_2, \dots, u_n\}) \).
+    
+    Definiamo il nuovo insieme \( S_1 = \{v_1, u_2, \dots, u_n\} \).
+    Dimostriamo che \(L(S_1) = V\). 
+    Osserviamo che:
+    \begin{itemize}
+        \item \( u_1 \in L(S_1) \) (come appena mostrato).
+        \item \( u_2, \dots, u_n \in S_1 \subseteq L(S_1) \) (banalmente).
+    \end{itemize}
+    Dato che tutti i generatori originali \(S = \{u_1, \dots, u_n\}\) appartengono a \(L(S_1)\), si ha che \(S \subseteq L(S_1)\).
+    Questo implica \( V = L(S) \subseteq L(L(S_1)) = L(S_1) \).
+    Poiché banalmente \(L(S_1) \subseteq V\), concludiamo che \(L(S_1) = V\).
+    Abbiamo quindi sostituito \(u_1\) con \(v_1\) ottenendo un nuovo sistema di \(n\) generatori.
+
+    
+}
+
+\Dimostrazione{
+    \textbf{Passo 2: Scambio di \(v_2\)}
+    
+    Consideriamo il secondo vettore \(v_2 \in X\). Per la nostra ipotesi, \(v_2 \neq \mathbf{0}\).
+    Poiché \(v_2 \in V\) e (dal passo precedente) \(V = L(S_1)\), possiamo scrivere \(v_2\) come combinazione lineare dei vettori di \(S_1\):
+    \[ v_2 = \beta_1 v_1 + \beta_2 u_2 + \beta_3 u_3 + \dots + \beta_n u_n \]
+    Ora abbiamo due possibilità:
+    
+    \textbf{Caso A:} Tutti i coefficienti dei vettori \(u_i\) sono nulli.
+    Cioè, \(\beta_2 = \beta_3 = \dots = \beta_n = 0\). L'equazione diventa:
+    \[ v_2 = \beta_1 v_1 \Rightarrow \beta_1 v_1 - v_2 = \mathbf{0} \]
+    Poiché \(v_2 \neq \mathbf{0}\), questa è una combinazione lineare non banale (il coefficiente di \(v_2\) è \(-1\)) di vettori di \(X\). Dunque \(\{v_1, v_2\} \subseteq X\) è linearmente dipendente, e di conseguenza \(X\) è linearmente dipendente. In questo caso, la tesi è dimostrata.
+    
+    \textbf{Caso B:} Almeno uno dei coefficienti \(\beta_2, \dots, \beta_n\) è non nullo.
+    A meno di riordinare i restanti \(u_i\), supponiamo \(\beta_2 \neq 0\). 
+    Possiamo allora isolare \(u_2\):
+    \[ \beta_2 u_2 = v_2 - \beta_1 v_1 - \beta_3 u_3 - \dots - \beta_n u_n \]
+    \[ u_2 = (-\beta_2^{-1} \beta_1) v_1 + \beta_2^{-1} v_2 - (\beta_2^{-1} \beta_3) u_3 - \dots - (\beta_2^{-1} \beta_n) u_n \]
+    Questo mostra che \( u_2 \in L(\{v_1, v_2, u_3, \dots, u_n\}) \).
+    
+    Definiamo \(S_2 = \{v_1, v_2, u_3, \dots, u_n\}\). 
+    Come prima, dimostriamo che \(L(S_2) = V\) osservando che \(S_1 \subseteq L(S_2)\):
+    \begin{itemize}
+        \item \( v_1 \in S_2 \subseteq L(S_2) \).
+        \item \( u_2 \in L(S_2) \) (come appena mostrato).
+        \item \( u_3, \dots, u_n \in S_2 \subseteq L(S_2) \).
+    \end{itemize}
+    Dunque \( V = L(S_1) \subseteq L(S_2) \), e concludiamo \(L(S_2) = V\).
+
+    \textbf{Iterazione e Conclusione}
+    
+    Si ripete questo procedimento ("così via"). Ad ogni passo \(k \leq n\), si considera \(v_k\) e lo si scrive come C.L. dei generatori ottenuti al passo \(k-1\): \(S_{k-1} = \{v_1, \dots, v_{k-1}, u_k, \dots, u_n\}\).
+    
+    O si incontra il \textbf{Caso A} (tutti i coefficienti dei restanti \(u_i\) sono nulli), il che dimostra che \(\{v_1, \dots, v_k\}\) è L.D. e quindi \(X\) è L.D. (e la dimostrazione termina).
+    Oppure si procede con il \textbf{Caso B} (almeno un coefficiente di un \(u_i\) è non nullo), e si "scambia" quel vettore (diciamo \(u_k\)) con \(v_k\), ottenendo un nuovo sistema di generatori \(S_k = \{v_1, \dots, v_k, u_{k+1}, \dots, u_n\}\).
+    
+    Se non si incontra mai il Caso A, dopo \(n\) passi avremo sostituito tutti i vettori \(u_i\), ottenendo il sistema di generatori:
+    \[ S_n = \{v_1, \dots, v_n\} \]
+    (che hai chiamato \(S''\)).
+
+    Ora usiamo l'ipotesi fondamentale: \( m > n \).
+    Questo significa che in \(X\) esiste almeno un altro vettore, \(v_{n+1}\).
+    Poiché \(v_{n+1} \in V\) e \(V = L(S_n) = L(\{v_1, \dots, v_n\})\), \(v_{n+1}\) deve essere combinazione lineare di \(S_n\):
+    \[ v_{n+1} = \gamma_1 v_1 + \gamma_2 v_2 + \dots + \gamma_n v_n \]
+    Riscrivendo l'equazione, otteniamo:
+    \[ \gamma_1 v_1 + \gamma_2 v_2 + \dots + \gamma_n v_n - v_{n+1} = \mathbf{0} \]
+    Questa è una combinazione lineare non banale (il coefficiente di \(v_{n+1}\) è \(-1 \neq 0\)) dei vettori \(\{v_1, \dots, v_{n+1}\} \subseteq X\).
+
+    Pertanto, \(X\) è linearmente dipendente. In ogni possibile scenario, la tesi è dimostrata.
+}
+
+\section{Isomorfismo delle Coordinate}
+\Proposizione{Caratterizzazione delle Basi e Isomorfismo delle Coordinate}{
+    Sia \(V\) uno spazio vettoriale sul campo \(K\) con \(\dim(V) = n\) (per \(n \in \mathbb{N} \cup \{0\}\)).
+    
+    Un'n-upla ordinata \(\mathcal{B} = (l_1, \dots, l_n) \in V^n\) è una \textbf{base} di \(V\)
+    \(\iff\)
+    per ogni vettore \(u \in V\), esiste ed è unica un'n-upla di scalari \((\alpha_1, \dots, \alpha_n) \in K^n\) tale che:
+    \[
+    u = \alpha_1 l_1 + \alpha_2 l_2 + \dots + \alpha_n l_n
+    \]
+    
+    L'n-upla \((\alpha_1, \dots, \alpha_n)\) è detta \textbf{n-upla delle componenti} (o coordinate) di \(u\) rispetto alla base \(\mathcal{B}\).
+    
+    L'applicazione \(\phi_{\mathcal{B}}\) che associa ad ogni vettore le sue componenti:
+    \[
+    \phi_{\mathcal{B}}: V \to K^n
+    \]
+    \[
+    \phi_{\mathcal{B}}(u) = (\alpha_1, \dots, \alpha_n) \quad \text{ (dove } u = \sum_{i=1}^n \alpha_i l_i \text{)}
+    \]
+    è un isomorfismo di spazi vettoriali, detto \textbf{isomorfismo delle coordinate} associato alla base \(\mathcal{B}\).
+
+    \Esempio{}{
+        Sia \(V = \mathbb{R}^2\) come spazio vettoriale sul campo \(K = \mathbb{R}\). La dimensione è \(\dim(V) = n = 2\).
+    
+    Scegliamo una base ordinata (non canonica) \(\mathcal{B}\):
+    \[ \mathcal{B} = (l_1, l_2) = ( (1, 1), (1, 0) ) \]
+    
+    Ora prendiamo un vettore arbitrario \(u \in V\), ad esempio \(u = (3, 4)\).
+    
+    Secondo la proposizione, devono esistere e essere unici due scalari \(\alpha_1, \alpha_2 \in \mathbb{R}\) tali che:
+    \[ u = \alpha_1 l_1 + \alpha_2 l_2 \]
+    \[ (3, 4) = \alpha_1 (1, 1) + \alpha_2 (1, 0) \]
+    
+    Sviluppando i calcoli:
+    \[ (3, 4) = (\alpha_1, \alpha_1) + (\alpha_2, 0) \]
+    \[ (3, 4) = (\alpha_1 + \alpha_2, \alpha_1) \]
+    
+    Questo ci porta a un sistema di equazioni lineari:
+    \[
+    \begin{cases}
+    \alpha_1 + \alpha_2 = 3 \\
+    \alpha_1 = 4
+    \end{cases}
+    \]
+    
+    Risolvendo (per sostituzione) troviamo immediatamente:
+    \[ \alpha_1 = 4 \]
+    \[ 4 + \alpha_2 = 3 \implies \alpha_2 = -1 \]
+    
+    L'unica n-upla (in questo caso, coppia) di componenti è quindi \((4, -1)\).
+    Questo dimostra che \(u = 4 l_1 - 1 l_2\).
+    
+    L'isomorfismo delle coordinate \(\phi_{\mathcal{B}}\) associa quindi il vettore \(u\) a questa coppia:
+    \[ \phi_{\mathcal{B}}(u) = \phi_{\mathcal{B}}( (3, 4) ) = (4, -1) \in \mathbb{R}^2 \]
+    }
+    \Dimostrazione{
+        Sia \(\mathcal{B} = (l_1, \dots, l_n)\) una n-upla ordinata di vettori di \(V\).
+        Dobbiamo dimostrare la doppia implicazione:
+        \[
+        \mathcal{B} \text{ è una base} \iff \forall u \in V, \exists! (\alpha_1, \dots, \alpha_n) \in K^n
+        \]
+
+        \textbf{(Direzione ``\(\Leftarrow\)'')}
+        \textit{(Ipotesi: Esistenza e Unicità delle coordinate \(\implies\) Tesi: \(\mathcal{B}\) è una base)}
+        
+        Per ipotesi, per ogni \(u \in V\) esiste ed è unica un'n-upla \((\alpha_1, \dots, \alpha_n) \in K^n\) tale che \(u = \sum_{i=1}^n \alpha_i l_i\). Dobbiamo dimostrare che \(\mathcal{B}\) è una base, cioè che è un sistema di generatori e che è linearmente indipendente.
+        
+        \begin{itemize}
+            \item \textbf{\(\mathcal{B}\) è un sistema di generatori:}
+            L'ipotesi "esiste ed è unica" (\(\exists!\)) implica in particolare l'"esistenza" (\(\exists\)).
+            Il fatto che per ogni \(u \in V\) esista una n-upla tale che \(u = \sum_{i=1}^n \alpha_i l_i\) è la definizione stessa di sistema di generatori. Quindi \(L(\mathcal{B}) = V\).
+            
+            \item \textbf{\(\mathcal{B}\) è linearmente indipendente:}
+            Dobbiamo dimostrare che l'unica combinazione lineare dei vettori di \(\mathcal{B}\) che dà il vettore nullo è quella con tutti i coefficienti nulli.
+            L'ipotesi di unicità vale per qualsiasi vettore, quindi anche per il vettore nullo \(\mathbf{0} \in V\).
+            Sappiamo che una combinazione per il vettore nullo esiste sempre:
+            \[ \mathbf{0} = 0 l_1 + 0 l_2 + \dots + 0 l_n \]
+            Questa corrisponde all'n-upla \((0, 0, \dots, 0)\).
+            Per l'ipotesi di unicità, questa deve essere l'unica n-upla possibile.
+            Pertanto, l'unica soluzione dell'equazione \(\sum_{i=1}^n \alpha_i l_i = \mathbf{0}\) è \(\alpha_1 = \dots = \alpha_n = 0\). Questa è la definizione di lineare indipendenza.
+        \end{itemize}
+        Avendo dimostrato che \(\mathcal{B}\) è sia un sistema di generatori sia linearmente indipendente, \(\mathcal{B}\) è una base.
+
+        \bigskip % Aggiunge un po' di spazio
+        
+        \textbf{(Direzione ``\(\Rightarrow\)'')}
+        \textit{(Ipotesi: \(\mathcal{B}\) è una base \(\implies\) Tesi: Esistenza e Unicità delle coordinate)}
+        
+        Per ipotesi, \(\mathcal{B}\) è una base di \(V\). Dobbiamo dimostrare due cose per ogni \(u \in V\):
+        
+        \begin{itemize}
+            \item \textbf{Esistenza (\(\exists\)):}
+            Poiché \(\mathcal{B}\) è una base, è (per definizione) un sistema di generatori. La definizione di sistema di generatori è che per ogni \(u \in V\), esiste almeno una n-upla \((\alpha_1, \dots, \alpha_n)\) tale che \(u = \sum_{i=1}^n \alpha_i l_i\).
+            
+            \item \textbf{Unicità (\(\exists!\)):}
+            Dobbiamo dimostrare che tale n-upla è unica. Supponiamo (per assurdo) che esistano due n-uple distinte, \((\alpha_1, \dots, \alpha_n)\) e \((\beta_1, \dots, \beta_n)\), che generano lo stesso vettore \(u\):
+            \begin{align*}
+                u &= \alpha_1 l_1 + \alpha_2 l_2 + \dots + \alpha_n l_n \\
+                u &= \beta_1 l_1 + \beta_2 l_2 + \dots + \beta_n l_n
+            \end{align*}
+            Sottraiamo la seconda equazione dalla prima:
+            \[ u - u = (\alpha_1 l_1 + \dots + \alpha_n l_n) - (\beta_1 l_1 + \dots + \beta_n l_n) \]
+            Raccogliendo i termini comuni:
+            \[ \mathbf{0} = (\alpha_1 - \beta_1) l_1 + (\alpha_2 - \beta_2) l_2 + \dots + (\alpha_n - \beta_n) l_n \]
+            Ora usiamo la seconda parte della nostra ipotesi: \(\mathcal{B}\), essendo una base, è linearmente indipendente.
+            Per la definizione di lineare indipendenza, l'unica combinazione lineare che dà \(\mathbf{0}\) è quella con tutti i coefficienti nulli. Di conseguenza:
+            \[
+            (\alpha_1 - \beta_1) = 0, \quad (\alpha_2 - \beta_2) = 0, \quad \dots, \quad (\alpha_n - \beta_n) = 0
+            \]
+            Questo implica:
+            \[
+            \alpha_1 = \beta_1, \quad \alpha_2 = \beta_2, \quad \dots, \quad \alpha_n = \beta_n
+            \]
+            Le due n-uple non erano distinte, ma sono identiche. Questo dimostra l'unicità della n-upla delle componenti.
+        \end{itemize}
+    }
+}
+
+\section{Proprietà dell'Isomorfismo delle Coordinate}
+\BoxBlue{Osservazione:}{Proprietà di \(\phi_{\mathcal{B}}\)}{
+    Sia \(\mathcal{B} = (l_1, \dots, l_n)\) una base di \(V\) e sia \(\phi_{\mathcal{B}}: V \to K^n\) l'isomorfismo delle coordinate associato.
+    Dimostriamo che \(\phi_{\mathcal{B}}\) è effettivamente un isomorfismo, verificando che sia lineare, iniettiva e suriettiva.
+    
+    Siano \(u, v \in V\) e \(\lambda \in K\). Grazie all'unicità delle coordinate, possiamo scrivere:
+    \[ u = \sum_{i=1}^n \alpha_i l_i \implies \phi_{\mathcal{B}}(u) = (\alpha_1, \dots, \alpha_n) \]
+    \[ v = \sum_{i=1}^n \beta_i l_i \implies \phi_{\mathcal{B}}(v) = (\beta_1, \dots, \beta_n) \]
+
+    \begin{itemize}
+        \item \textbf{\(\phi_{\mathcal{B}}\) è lineare (conserva la somma e il prodotto esterno):}
+        
+        Verifichiamo separatamente le due proprietà della linearità.
+        \begin{enumerate}
+            \item \textbf{Conserva la somma:} Dobbiamo dimostrare \(\phi_{\mathcal{B}}(u+v) = \phi_{\mathcal{B}}(u) + \phi_{\mathcal{B}}(v)\).
+            Calcoliamo \(u+v\):
+            \[ u+v = \left( \sum_{i=1}^n \alpha_i l_i \right) + \left( \sum_{i=1}^n \beta_i l_i \right) = \sum_{i=1}^n (\alpha_i + \beta_i) l_i \]
+            Applicando \(\phi_{\mathcal{B}}\) a \(u+v\), per definizione, otteniamo le sue componenti:
+            \[ \phi_{\mathcal{B}}(u+v) = (\alpha_1 + \beta_1, \dots, \alpha_n + \beta_n) \]
+            Ma questo è esattamente il risultato della somma (definita componente per componente) in \(K^n\):
+            \[ (\alpha_1, \dots, \alpha_n) + (\beta_1, \dots, \beta_n) = \phi_{\mathcal{B}}(u) + \phi_{\mathcal{B}}(v) \]
+            Quindi \(\phi_{\mathcal{B}}(u+v) = \phi_{\mathcal{B}}(u) + \phi_{\mathcal{B}}(v)\).
+            
+            \item \textbf{Conserva il prodotto esterno:} Dobbiamo dimostrare \(\phi_{\mathcal{B}}(\lambda u) = \lambda \phi_{\mathcal{B}}(u)\).
+            Calcoliamo \(\lambda u\):
+            \[ \lambda u = \lambda \left( \sum_{i=1}^n \alpha_i l_i \right) = \sum_{i=1}^n (\lambda \alpha_i) l_i \]
+            Applicando \(\phi_{\mathcal{B}}\) a \(\lambda u\), otteniamo le sue componenti:
+            \[ \phi_{\mathcal{B}}(\lambda u) = (\lambda \alpha_1, \dots, \lambda \alpha_n) \]
+            Questo è esattamente il risultato del prodotto per scalare (definito componente per componente) in \(K^n\):
+            \[ \lambda (\alpha_1, \dots, \alpha_n) = \lambda \phi_{\mathcal{B}}(u) \]
+            Quindi \(\phi_{\mathcal{B}}(\lambda u) = \lambda \phi_{\mathcal{B}}(u)\).
+        \end{enumerate}
+        Avendo dimostrato entrambe le proprietà, \(\phi_{\mathcal{B}}\) è un'applicazione lineare.
+
+        \item \textbf{\(\phi_{\mathcal{B}}\) è iniettiva:}
+        Dobbiamo dimostrare che \(\phi_{\mathcal{B}}(u) = \phi_{\mathcal{B}}(v) \implies u = v\).
+        
+        Supponiamo \(\phi_{\mathcal{B}}(u) = \phi_{\mathcal{B}}(v)\). 
+        Per definizione di \(\phi_{\mathcal{B}}\), questo significa che le n-uple delle loro componenti sono uguali:
+        \[ (\alpha_1, \dots, \alpha_n) = (\beta_1, \dots, \beta_n) \]
+        L'uguaglianza in \(K^n\) implica l'uguaglianza componente per componente, cioè \(\alpha_i = \beta_i\) per ogni \(i = 1, \dots, n\).
+        
+        Ma allora, riconsiderando i vettori \(u\) e \(v\), essi sono la stessa combinazione lineare:
+        \[ u = \sum_{i=1}^n \alpha_i l_i = \sum_{i=1}^n \beta_i l_i = v \]
+        Abbiamo dimostrato \(\phi_{\mathcal{B}}(u) = \phi_{\mathcal{B}}(v) \implies u = v\). L'applicazione è iniettiva.
+    \end{itemize}
+    
+}
+
+\BoxBlue{Osservazione:}{Proprietà di \(\phi_{\mathcal{B}}\)}{
+    \begin{itemize}
+        \item \textbf{\(\phi_{\mathcal{B}}\) è suriettiva:}
+        La Tesi è: \(\forall y \in K^n, \exists v \in V\) tale che \(\phi_{\mathcal{B}}(v) = y\).
+        
+        Sia \(y = (\beta_1, \dots, \beta_n)\) una qualsiasi n-upla in \(K^n\).
+        Basta prendere il vettore \(v \in V\) costruito usando proprio questa n-upla come sue componenti:
+        \[ v = \beta_1 l_1 + \beta_2 l_2 + \dots + \beta_n l_n \]
+        Questo \(v\) appartiene a \(V\) (essendo C.L. di vettori di \(V\)). Per la definizione stessa di \(\phi_{\mathcal{B}}\), l'immagine di \(v\) è proprio l'n-upla delle sue componenti:
+        \[ \phi_{\mathcal{B}}(v) = (\beta_1, \dots, \beta_n) = y \]
+        Abbiamo trovato un vettore \(v\) la cui immagine è \(y\). L'applicazione è suriettiva.
+    \end{itemize}
+
+    Avendo dimostrato che \(\phi_{\mathcal{B}}\) è lineare, iniettiva e suriettiva, \(\phi_{\mathcal{B}}\) è un \textbf{isomorfismo}.
+}
+
+\Proposizione{Relazioni tra la dimensione di uno spazio vettoriale e quella di un suo sottospazio}{
+Sia \( V \) uno spazio vettoriale su un campo \( K \), con \( \dim V = n \).
+Sia \( W \subseteq V \) un sottospazio vettoriale.
+
+Allora valgono le seguenti proprietà:
+\begin{enumerate}
+    \item \(\dim W = 0 \;\Longleftrightarrow\; W = \{\bar{0}\}\);
+    \item \(\dim W \leq \dim V\);
+    \item \(\dim W = \dim V \;\Longleftrightarrow\; W = V.\)
+\end{enumerate}
+}
+
+\Dimostrazione{
+
+\textbf{1)} \(\dim W = 0 \;\Longleftrightarrow\; W = \{\bar{0}\}\)
+
+\smallskip
+Infatti, \(\dim W = 0\) significa che l'unica base di \( W \) è l’insieme vuoto \(\emptyset\).
+Per definizione di sottospazio generato (span), lo span dell'insieme vuoto è il sottospazio contenente solo il vettore nullo:
+\[
+W = L(\emptyset) = \{\bar{0}\}.
+\]
+Viceversa, se \( W = \{\bar{0}\} \), l'unico sottoinsieme linearmente indipendente che si può estrarre da \(W\) è l'insieme vuoto (poiché ogni insieme non vuoto conterrebbe \(\bar{0}\) e sarebbe L.D.).
+Quindi la base è \(\emptyset\) e \(\dim W = 0\).
+
+\medskip
+
+\textbf{2)} \(\dim W \leq \dim V\)
+
+\smallskip
+Sia \(\dim W = h\).
+Sia \( \mathcal{B}_W = \{w_1, \dots, w_h\} \) una base di \( W \).
+Per definizione di base, \(\mathcal{B}_W\) è un insieme di vettori linearmente indipendenti.
+
+Poiché \( W \subseteq V \), l'insieme \(\mathcal{B}_W\) è un sottoinsieme di \( V \) di vettori linearmente indipendenti.
+Per il \textbf{Corollario del Lemma di Steinitz}, il numero di vettori in un qualsiasi insieme linearmente indipendente di \( V \) (in questo caso \(h\)) non può superare la dimensione di \( V \) (cioè \(n\)):
+\[
+h \leq n
+\]
+Dunque \(\dim W \leq \dim V.\)
+
+\medskip
+
+\textbf{3)} \(\dim W = \dim V \;\Longleftrightarrow\; W = V\)
+
+\smallskip
+\textbf{(\(\Leftarrow\))} Se \( W = V \), allora i due insiemi sono identici, e quindi hanno banalmente la stessa dimensione: \(\dim W = \dim V\).
+
+\smallskip
+\textbf{(\(\Rightarrow\))}
+Supponiamo ora che \(\dim W = \dim V = n\).
+Sia \( \mathcal{B}_W = \{w_1, \dots, w_n\} \) una base di \( W \).
+
+Poiché \(\mathcal{B}_W\) è una base di \(W\), i suoi vettori sono linearmente indipendenti.
+Poiché \( W \subseteq V \), \(\mathcal{B}_W\) è un insieme di \(n\) vettori di \(V\) linearmente indipendenti.
+
+Ora, per un \textbf{teorema fondamentale sulle basi} (diretta conseguenza del Lemma di Steinitz), qualsiasi insieme contenente \(n\) vettori linearmente indipendenti in uno spazio \(V\) di dimensione \(n\) è anche un sistema di generatori per \(V\), e quindi è una base di \(V\).
+
+Pertanto, \(\mathcal{B}_W\) è una base sia per \(W\) (per ipotesi) sia per \(V\) (per questo teorema).
+Da ciò segue che:
+\begin{itemize}
+    \item \( W = L(\mathcal{B}_W) \) (perché \(\mathcal{B}_W\) è base di \(W\))
+    \item \( V = L(\mathcal{B}_W) \) (perché \(\mathcal{B}_W\) è base di \(V\))
+\end{itemize}
+Concludiamo che \(W = V\).
+\(\Box\)
+}
