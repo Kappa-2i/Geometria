@@ -39,3 +39,5 @@
 \contentsline {section}{\numberline {8.2}Sottospazio Somma}{36}{section.8.2}%
 \contentsline {section}{\numberline {8.3}Somma di sottospazi generati da insiemi}{37}{section.8.3}%
 \contentsline {section}{\numberline {8.4}Regola di Grassman}{38}{section.8.4}%
+\contentsline {chapter}{\numberline {9}Lezione 9 - 22/10}{43}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Applicazioni Lineari}{43}{section.9.1}%

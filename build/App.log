@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  21 OCT 2025 13:25
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  23 OCT 2025 11:35
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex"
@@ -974,7 +974,7 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \mult@nat@firstbox=\box160
 \colbreak@box=\box161
 \mc@col@check@num=\count394
-)) (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux))
+)) (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux))
 \openout1 = App.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -1400,29 +1400,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--195
 
 [41])
 
-[42] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux))
+[42]
+\openout2 = Lezione9/Lez9.aux
+ (./Lezione9/Lez9.tex
+Capitolo 9.
+
+
+[43
+
+
+
+
+]
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+
+ []
+
+
+
+[45]
+
+[46]
+
+[47])
+
+[48] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `App.out' has not changed.
-(rerunfilecheck)             Checksum: 77552B3C8D7D116D6E247BFEA479081A;7009.
+(rerunfilecheck)             Checksum: A52D8C7E97AB86D3A948C5CBC31EBD8B;7305.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43329 strings out of 475506
+ 43401 strings out of 475506
  125129,1648299 words of node,token memory allocated
- 2139 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 sub_mlist, 1 glyph, 533 attribute, 62 glue_spec, 268 attribute_list, 4 write nodes
-   avail lists: 2:3955,3:1583,4:439,5:602,6:159,7:11454,8:59,9:996,10:34,11:1165
- 65185 multiletter control sequences out of 65536+600000
+ 2355 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 sub_mlist, 1 glyph, 605 attribute, 62 glue_spec, 304 attribute_list, 4 write nodes
+   avail lists: 2:3847,3:1583,4:457,5:627,6:167,7:11454,8:59,9:996,10:34,11:1165
+ 65223 multiletter control sequences out of 65536+600000
  69 fonts using 6714711 bytes
  107i,12n,104p,590b,2087s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on App.pdf (42 pages, 356661 bytes).
+Output written on App.pdf (48 pages, 388223 bytes).
 
-PDF statistics: 538 PDF objects out of 1000 (max. 8388607)
- 457 compressed objects within 5 object streams
- 134 named destinations out of 1000 (max. 131072)
- 328 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 577 PDF objects out of 1000 (max. 8388607)
+ 490 compressed objects within 5 object streams
+ 147 named destinations out of 1000 (max. 131072)
+ 344 words of extra memory for PDF output out of 10000 (max. 100000000)
 

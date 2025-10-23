@@ -1,0 +1,419 @@
+\chapter{Lezione 9 - 22/10}
+
+\section{Applicazioni Lineari}
+
+\Definizione{Applicazione Lineare (Omomorfismo)}{
+    Siano \(V\) e \(W\) due spazi vettoriali definiti sullo stesso campo \(K\).
+    
+    Un'applicazione \(T: V \to W\) si dice \textbf{lineare} (o \textbf{omomorfismo} di spazi vettoriali) se soddisfa le seguenti due proprietà:
+    \begin{enumerate}
+        \item \textbf{Additività:} \( \forall u, v \in V, \quad T(u+v) = T(u) + T(v) \)
+        (Conserva la somma di vettori).
+        \item \textbf{Omogeneità:} \( \forall v \in V, \forall \lambda \in K, \quad T(\lambda v) = \lambda T(v) \)
+        (Conserva il prodotto per scalare).
+    \end{enumerate}
+    
+    In base alle proprietà di \(T\) e agli spazi \(V, W\), un omomorfismo può essere classificato come:
+    \begin{itemize}
+        \item \textbf{Isomorfismo:} se \(T\) è un omomorfismo biettivo (iniettivo e suriettivo).
+        \item \textbf{Monomorfismo:} se \(T\) è un omomorfismo iniettivo.
+        \item \textbf{Epimorfismo:} se \(T\) è un omomorfismo suriettivo.
+        \item \textbf{Endomorfismo:} se lo spazio di partenza e di arrivo coincidono, \(V = W\).
+        \item \textbf{Automorfismo:} se \(V = W\) e \(T\) è biettiva (è un endomorfismo biettivo).
+    \end{itemize}
+}
+
+% \Esempio{}{
+%     Siano \(V = \mathbb{R}^2\) e \(W = \mathbb{R}^3\) (entrambi su campo \(K = \mathbb{R}\)).
+%     Consideriamo l'applicazione \(T: \mathbb{R}^2 \to \mathbb{R}^3\) definita come:
+%     \[
+%     T( (x_1, x_2) ) = (x_1 + x_2, 2x_1, x_2 - x_1)
+%     \]
+%     Dimostriamo che \(T\) è un'applicazione lineare verificando le due proprietà.
+    
+%     Siano \(u = (x_1, x_2)\) e \(v = (y_1, y_2)\) due vettori generici in \(\mathbb{R}^2\), e \(\lambda \in \mathbb{R}\).
+    
+%     \begin{enumerate}
+%         \item \textbf{Additività (\(T(u+v) = T(u) + T(v)\)):}
+        
+%         Calcoliamo prima \(u+v = (x_1+y_1, x_2+y_2)\).
+%         \[
+%         T(u+v) = T( (x_1+y_1, x_2+y_2) ) = ( (x_1+y_1) + (x_2+y_2), 2(x_1+y_1), (x_2+y_2) - (x_1+y_1) )
+%         \]
+%         \[
+%         T(u+v) = ( x_1+y_1+x_2+y_2, 2x_1+2y_1, x_2+y_2-x_1-y_1 )
+%         \]
+        
+%         Calcoliamo ora \(T(u) + T(v)\):
+%         \[
+%         T(u) + T(v) = (x_1+x_2, 2x_1, x_2-x_1) + (y_1+y_2, 2y_1, y_2-y_1)
+%         \]
+%         \[
+%         T(u) + T(v) = ( (x_1+x_2)+(y_1+y_2), 2x_1+2y_1, (x_2-x_1)+(y_2-y_1) )
+%         \]
+%         \[
+%         T(u) + T(v) = ( x_1+x_2+y_1+y_2, 2x_1+2y_1, x_2-x_1+y_2-y_1 )
+%         \]
+%         Confrontando i due risultati (a meno dell'ordine degli addendi), vediamo che \(T(u+v) = T(u) + T(v)\).
+
+%         \item \textbf{Omogeneità (\(T(\lambda v) = \lambda T(v)\)):}
+        
+%         Calcoliamo prima \(\lambda v = (\lambda y_1, \lambda y_2)\).
+%         \[
+%         T(\lambda v) = T( (\lambda y_1, \lambda y_2) ) = ( (\lambda y_1) + (\lambda y_2), 2(\lambda y_1), (\lambda y_2) - (\lambda y_1) )
+%         \]
+%         \[
+%         T(\lambda v) = ( \lambda(y_1+y_2), \lambda(2y_1), \lambda(y_2-y_1) )
+%         \]
+        
+%         Calcoliamo ora \(\lambda T(v)\):
+%         \[
+%         \lambda T(v) = \lambda (y_1+y_2, 2y_1, y_2-y_1)
+%         \]
+%         \[
+%         \lambda T(v) = ( \lambda(y_1+y_2), \lambda(2y_1), \lambda(y_2-y_1) )
+%         \]
+%         I due risultati coincidono.
+%     \end{enumerate}
+%     Avendo verificato entrambe le proprietà, \(T\) è un'applicazione lineare.
+% }
+
+
+\BoxBlue{Osservazioni:}{Proprietà delle Applicazioni Lineari}{
+    Sia \(T: V \to W\) un'applicazione lineare.
+    
+    \begin{itemize}
+        \item \textbf{T manda il vettore nullo nel vettore nullo:}
+        L'immagine del vettore nullo di \(V\) è il vettore nullo di \(W\):
+        \[ T(\bar{0}_V) = \bar{0}_W \]
+        \textit{Dimostrazione:}
+        Sfruttiamo la proprietà \( \bar{0}_V = 0 \cdot v \) (dove \(0\) è lo scalare) e l'omogeneità di \(T\):
+        \[
+        T(\bar{0}_V) = T(0 \cdot \bar{0}_V) \stackrel{\text{omogeneità}}{=} 0 \cdot T(\bar{0}_V) = \bar{0}_W
+        \]
+        (L'ultimo passaggio è vero perché il prodotto di uno scalare zero per qualsiasi vettore di \(W\) dà il vettore nullo \(\bar{0}_W\)).
+
+        \item \textbf{Le applicazioni lineari conservano le combinazioni lineari:}
+        Per ogni \(h \geq 1\), \(\forall u_1, \dots, u_h \in V\) e \(\forall \lambda_1, \dots, \lambda_h \in K\), si ha:
+        \[
+        T(\lambda_1 u_1 + \dots + \lambda_h u_h) = \lambda_1 T(u_1) + \dots + \lambda_h T(u_h)
+        \]
+        \textit{Dimostrazione (per induzione sul numero \(h\) di vettori):}
+        
+        \textbf{Base (h=1):}
+        Dobbiamo dimostrare \( T(\lambda_1 u_1) = \lambda_1 T(u_1) \).
+        Questo è vero per definizione, essendo la proprietà di \textbf{omogeneità} (la seconda proprietà delle applicazioni lineari).
+        
+        \textbf{Passo induttivo (h-1 \(\implies\) h):}
+        Supponiamo (Ipotesi Induttiva) che la tesi sia vera per \(h-1\) vettori, cioè:
+        \[
+        T(\lambda_1 u_1 + \dots + \lambda_{h-1} u_{h-1}) = \lambda_1 T(u_1) + \dots + \lambda_{h-1} T(u_{h-1})
+        \]
+        Vogliamo dimostrare la tesi per \(h\) vettori. Consideriamo la combinazione lineare:
+        \[
+        T(\lambda_1 u_1 + \dots + \lambda_{h-1} u_{h-1} + \lambda_h u_h)
+        \]
+        Possiamo raggruppare i termini e usare le proprietà di \(T\). Sia \(u = \lambda_1 u_1 + \dots + \lambda_{h-1} u_{h-1}\) e \(v = \lambda_h u_h\).
+        \[
+        T(u + v) \stackrel{\text{additività}}{=} T(u) + T(v)
+        \]
+        Sostituendo \(u\) e \(v\):
+        \[
+        T(\lambda_1 u_1 + \dots + \lambda_{h-1} u_{h-1}) + T(\lambda_h u_h)
+        \]
+        Applichiamo ora l'ipotesi induttiva al primo termine e l'omogeneità (passo base) al secondo termine:
+        \[
+        \underbrace{(\lambda_1 T(u_1) + \dots + \lambda_{h-1} T(u_{h-1}))}_{\text{da Ip. Induttiva}} + \underbrace{\lambda_h T(u_h)}_{\text{da Omogeneità}}
+        \]
+        Che è esattamente la tesi per \(h\):
+        \[
+        \lambda_1 T(u_1) + \dots + \lambda_{h-1} T(u_{h-1}) + \lambda_h T(u_h)
+        \]
+        La proposizione è dimostrata.
+    \end{itemize}
+}
+\newpage
+\Proposizione{Le applicazioni lineari conservano la dipendenza lineare}{
+    Sia \(T: V \to W\) un'applicazione lineare tra due K-spazi vettoriali \(V\) e \(W\).
+    
+    Se l'n-upla \((u_1, \dots, u_n)\) di vettori di \(V\) è \textbf{linearmente dipendente},
+    allora la n-upla delle immagini \((T(u_1), \dots, T(u_n))\) è un'n-upla di vettori di \(W\) \textbf{linearmente dipendente}.
+
+    \Dimostrazione{
+        \textbf{Ipotesi:} L'n-upla \((u_1, \dots, u_n)\) è linearmente dipendente.
+        Questo significa che esistono scalari \((\alpha_1, \dots, \alpha_n) \in K^n\), \textbf{non tutti nulli}, tali che:
+        \[
+        \alpha_1 u_1 + \dots + \alpha_n u_n = \bar{0}_V
+        \]
+        (dove \(\bar{0}_V\) è il vettore nullo di \(V\)).
+        
+        \textbf{Tesi:} L'n-upla \((T(u_1), \dots, T(u_n))\) è linearmente dipendente.
+        Dobbiamo cioè dimostrare che esistono scalari \((\beta_1, \dots, \beta_n) \in K^n\), \textbf{non tutti nulli}, tali che:
+        \[
+        \beta_1 T(u_1) + \dots + \beta_n T(u_n) = \bar{0}_W
+        \]
+        (dove \(\bar{0}_W\) è il vettore nullo di \(W\)).
+        
+        \textbf{Svolgimento:}
+        Applichiamo l'applicazione lineare \(T\) ad entrambi i membri dell'equazione che abbiamo per ipotesi:
+        \[
+        T( \alpha_1 u_1 + \dots + \alpha_n u_n ) = T(\bar{0}_V)
+        \]
+        
+        Per la \textbf{linearità} di \(T\) (proprietà di conservare le combinazioni lineari), il primo membro diventa:
+        \[
+        T( \alpha_1 u_1 + \dots + \alpha_n u_n ) = \alpha_1 T(u_1) + \dots + \alpha_n T(u_n)
+        \]
+        
+        Per una proprietà fondamentale delle applicazioni lineari, il secondo membro (l'immagine del vettore nullo) è:
+        \[
+        T(\bar{0}_V) = \bar{0}_W
+        \]
+        
+        Uguagliando i due risultati, otteniamo:
+        \[
+        \alpha_1 T(u_1) + \dots + \alpha_n T(u_n) = \bar{0}_W
+        \]
+        
+        Ora ci basta scegliere \( (\beta_1, \dots, \beta_n) = (\alpha_1, \dots, \alpha_n) \).
+        Poiché per ipotesi gli scalari \(\alpha_i\) non erano tutti nulli, anche i \(\beta_i\) non sono tutti nulli.
+        
+        Abbiamo quindi trovato una combinazione lineare non banale dei vettori \(T(u_i)\) che dà il vettore nullo in \(W\). Questo dimostra la tesi.
+    }
+}
+\bigskip \bigskip \bigskip
+
+\BoxBlue{Osservazioni:}{Altre proprietà delle applicazioni lineari}{
+    \begin{itemize}
+        \item Se \(T: V \to W\) è un isomorfismo, allora la sua applicazione inversa \(T^{-1}: W \to V\) è anch'essa un'applicazione lineare e quindi è un isomorfismo.
+        
+        \item Siano \(T: V \to W\) e \(T': W \to U\) due applicazioni lineari.
+        Allora l'applicazione composta \(T' \circ T: V \to U\) (definita da \((T' \circ T)(v) = T'(T(v))\)) è un'applicazione lineare.
+    \end{itemize}
+}
+
+ 
+\Definizione{Kernel (o nucleo)}{
+    Data un'applicazione lineare \( T : V \to W \), si definisce \textbf{nucleo} (o \textbf{kernel}) di \( T \) l'insieme:
+    \[
+        \ker (T) = \{\, u \in V \mid T(u) = \bar{0}_W \,\}.
+    \]
+
+    In altre parole, il kernel di \( T \) è l'insieme di tutti i vettori di \( V \) che vengono mandati nel vettore nullo di \( W \) tramite \( T \).
+}
+
+\Proposizione{Proprietà fondamentali delle applicazioni lineari}{
+    Sia \( T : V \to W \) un'applicazione lineare. Allora valgono le seguenti proprietà:
+    
+    \begin{enumerate}
+        \item \( T \) è \textbf{suriettiva} se e solo se l'immagine coincide con il codominio:
+        \[
+            \operatorname{Im}(T) = W.
+        \]
+
+        \item \( T \) è \textbf{iniettiva} se e solo se il nucleo è banale (contiene solo il vettore nullo):
+        \[
+            \ker(T) = \{\bar{0}_V\}.
+        \]
+
+        \item Se \( S \subseteq V \) è un sottoinsieme di generatori, allora l'immagine del sottospazio generato da \(S\) è uguale al sottospazio generato dalle immagini dei generatori:
+        \[
+            T(L(S)) = L(T(S)).
+        \]
+    \end{enumerate}
+
+    \Dimostrazione{
+    \textbf{Punto (ii) — iniettività e nucleo banale.}
+
+    \textbf{(}\(\Rightarrow\)\textbf{)}  
+    Supponiamo che \(T\) sia iniettiva. Poiché \(T\) è lineare, \(T(\underline{0}_V)=\underline{0}_W\).
+    Sia ora \(u\in V\) con \(u\neq\underline{0}_V\). Per iniettività deve valere \(T(u)\neq T(\underline{0}_V)=\underline{0}_W\).
+    Quindi non esiste vettore non nullo mandato in \(\underline{0}_W\), ovvero
+    \[
+        \ker(T)=\{\underline{0}_V\}.
+    \]
+
+    \medskip
+
+    \textbf{(}\(\Leftarrow\)\textbf{)}  
+    Supponiamo ora che \(\ker(T)=\{\underline{0}_V\}\) e mostriamo che \(T\) è iniettiva.
+    Siano \(u,v\in V\) tali che \(T(u)=T(v)\). Allora
+    \[
+        T(u)-T(v)=\underline{0}_W \quad\Longrightarrow\quad T(u-v)=\underline{0}_W,
+    \]
+    quindi \(u-v\in\ker(T)=\{\underline{0}_V\}\). Di conseguenza \(u-v=\underline{0}_V\) e quindi \(u=v\).
+    Questo dimostra l'iniettività di \(T\).
+
+    \bigskip
+    \textbf{Punto (iii) — \(T(L(S)) = L(T(S))\).}
+
+    \textbf{Inclusione \(T(L(S)) \subseteq L(T(S))\).} \\
+    Sia \(w\in T(L(S))\). Allora esiste \(u\in L(S)\) tale che \(T(u)=w\).
+    Poiché \(u\in L(S)\), esistono vettori \(u_1,\dots,u_n\in S\) e scalari \(\alpha_1,\dots,\alpha_n\in K\) tali che
+    \[
+        u=\alpha_1 u_1 + \dots + \alpha_n u_n.
+    \]
+    Applicando \(T\) e usando la linearità otteniamo
+    \[
+        w = T(u) = \alpha_1 T(u_1) + \dots + \alpha_n T(u_n),
+    \]
+    cioè \(w\) è una combinazione lineare di vettori di \(T(S)\). Quindi \(w\in L(T(S))\).
+    Abbiamo dimostrato \(T(L(S)) \subseteq L(T(S))\).
+
+    \medskip
+
+    \textbf{Inclusione \(L(T(S)) \subseteq T(L(S))\).} \\
+    Sia \(z\in L(T(S))\). Allora esistono vettori \(w_1,\dots,w_m\in T(S)\) e scalari \(\beta_1,\dots,\beta_m\in K\) tali che
+    \[
+        z = \beta_1 w_1 + \dots + \beta_m w_m.
+    \]
+    Per definizione di \(T(S)\), per ogni \(w_i\) esiste \(v_i\in S\) con \(w_i=T(v_i)\). Quindi
+    \[
+        z = \beta_1 T(v_1) + \dots + \beta_m T(v_m) = T(\beta_1 v_1 + \dots + \beta_m v_m).
+    \]
+    Poiché \(\beta_1 v_1 + \dots + \beta_m v_m \in L(S)\), ne segue che \(z \in T(L(S))\).
+    Abbiamo dunque \(L(T(S)) \subseteq T(L(S))\).
+
+    \medskip
+
+    Combinando le due inclusioni si ottiene l'uguaglianza:
+    \[
+        T(L(S)) = L(T(S)).
+    \]
+    \(\Box\)
+}
+}
+
+
+ 
+\Proposizione{Il nucleo è un sottospazio vettoriale}{
+    Sia \(T: V \to W\) un'applicazione lineare. Allora \(\ker(T)\) è un sottospazio vettoriale di \(V\).
+
+    \Dimostrazione{
+    Per prima cosa osserviamo che \(T\) è lineare, quindi \(T(\underline{0}_V)=\underline{0}_W\).  
+    Dunque \(\underline{0}_V \in \ker(T)\), cioè \(\ker(T)\) non è vuoto.
+
+    \medskip
+
+    Siano ora \(u,v \in \ker(T)\). Per definizione \(T(u)=\underline{0}_W\) e \(T(v)=\underline{0}_W\).  
+    Mostriamo che \(u+v \in \ker(T)\) e \(\alpha u \in \ker(T)\) per ogni \(\alpha\in K\).
+
+    \textbf{Chiusura per addizione.}  
+    \[
+        T(u+v) \overset{(1)}{=} T(u) + T(v) = \underline{0}_W + \underline{0}_W = \underline{0}_W,
+    \]
+    quindi \(u+v \in \ker(T)\).
+
+    \medskip
+
+    \textbf{Chiusura per moltiplicazione per scalare.}  
+    Sia \(\alpha\in K\). Poiché \(T(u)=\underline{0}_W\),
+    \[
+        T(\alpha u) \overset{(2)}{=} \alpha\,T(u) = \alpha\,\underline{0}_W = \underline{0}_W,
+    \]
+    quindi \(\alpha u \in \ker(T)\).
+
+    \medskip
+
+    Avendo verificato che \(\ker(T)\) è non vuoto, chiuso rispetto all'addizione e chiuso rispetto alla moltiplicazione per scalare, concludiamo che \(\ker(T)\) è un sottospazio vettoriale di \(V\).
+    \(\Box\)
+}
+}
+
+\bigskip \bigskip
+ 
+\Proposizione{Conservazione della linearità dell’indipendenza}{
+    Sia \(T : V \to W\) un'applicazione lineare iniettiva.  
+    Se \(u_1, \dots, u_n\) è una \(n\)-upla di vettori linearmente indipendenti di \(V\),  
+    allora \(T(u_1), \dots, T(u_n)\) è una \(n\)-upla di vettori linearmente indipendenti di \(W\).
+
+    \Dimostrazione{
+    Dobbiamo mostrare che se \((\alpha_1, \dots, \alpha_n) \in K^n\) è tale che
+    \[
+        \alpha_1 T(u_1) + \dots + \alpha_n T(u_n) = \underline{0}_W,
+    \]
+    allora necessariamente \(\alpha_1 = \dots = \alpha_n = 0\).
+
+    \medskip
+
+    Per linearità di \(T\) si ha:
+    \[
+        T(\alpha_1 u_1 + \dots + \alpha_n u_n) = \underline{0}_W.
+    \]
+    Questo implica che
+    \[
+        \alpha_1 u_1 + \dots + \alpha_n u_n \in \ker(T).
+    \]
+    Poiché \(T\) è iniettiva, \(\ker(T) = \{\underline{0}_V\}\).  
+    Dunque:
+    \[
+        \alpha_1 u_1 + \dots + \alpha_n u_n = \underline{0}_V.
+    \]
+
+    \medskip
+
+    Ma i vettori \(u_1, \dots, u_n\) sono linearmente indipendenti, quindi
+    \[
+        \alpha_1 = \alpha_2 = \dots = \alpha_n = 0.
+    \]
+
+    \medskip
+
+    Pertanto, \(T(u_1), \dots, T(u_n)\) sono linearmente indipendenti in \(W\).
+    \(\Box\)
+}
+}
+
+
+\newpage
+\Teorema{Teorema dell'Equazione Dimensionale}{
+    Sia \(T: V \to W\) un'applicazione lineare. Supponiamo che \(V\) sia uno spazio vettoriale finitamente generato, con \(\dim V = n\).
+    
+    Allora \(\ker(T)\) e \(\operatorname{Im}(T)\) sono anch'essi finitamente generati e vale la seguente relazione:
+    \[
+    \dim V = \dim(\ker(T)) + \dim(\operatorname{Im}(T))
+    \]
+    (La dimensione dello spazio di partenza è la somma della dimensione del nucleo e della dimensione dell'immagine).
+}
+
+\BoxBlue{Osservazioni:}{conseguenze del Teorema dell'equazione Dimensionale}{
+    Sia \(T: V \to W\) un'applicazione lineare, con \(\dim V = n\) e \(\dim W = m\).
+    \begin{itemize}
+        \item Se \(n > m\) (\(\dim V > \dim W\)), \(T\) \textbf{non può essere iniettiva}.
+        \newline
+        \textit{Dim:} Sappiamo \(\dim(\operatorname{Im}(T)) \leq \dim W = m\).
+        Dalla formula: \(\dim(\ker(T)) = n - \dim(\operatorname{Im}(T)) \geq n - m > 0\).
+        Poiché \(\dim(\ker(T)) > 0\), il nucleo non è banale e \(T\) non è iniettiva.
+        
+        \item Se \(n < m\) (\(\dim V < \dim W\)), \(T\) \textbf{non può essere suriettiva}.
+        \newline
+        \textit{Dim:} Sappiamo \(\dim(\ker(T)) \geq 0\).
+        Dalla formula: \(\dim(\operatorname{Im}(T)) = n - \dim(\ker(T)) \leq n\).
+        Poiché \(\dim(\operatorname{Im}(T)) \leq n < m\), l'immagine non può coincidere con \(W\).
+        
+        \item Se \(n = m\) (\(\dim V = \dim W\)), \(T\) è \textbf{iniettiva} \(\iff\) \(T\) è \textbf{suriettiva}.
+        \newline
+        \textit{Dimostrazione:} Sia \(\dim V = \dim W = n\).
+        Dall'equazione dimensionale sappiamo che \(n = \dim(\ker(T)) + \dim(\operatorname{Im}(T))\).
+        \begin{itemize}
+            \item[\((\Rightarrow)\)] \textbf{(Iniettiva \(\implies\) Suriettiva)}
+            Se \(T\) è iniettiva, allora \(\dim(\ker(T)) = 0\).
+            Sostituendo nell'equazione:
+            \[ n = 0 + \dim(\operatorname{Im}(T)) \implies \dim(\operatorname{Im}(T)) = n \]
+            L'immagine \(\operatorname{Im}(T)\) è un sottospazio di \(W\) che ha la stessa dimensione di \(W\) (\(n\)). Per la proprietà dei sottospazi (punto 3 della prop. precedente), questo implica che \(\operatorname{Im}(T) = W\).
+            Quindi \(T\) è suriettiva.
+            
+            \item[\((\Leftarrow)\)] \textbf{(Suriettiva \(\implies\) Iniettiva)}
+            Se \(T\) è suriettiva, allora \(\operatorname{Im}(T) = W\), e quindi \(\dim(\operatorname{Im}(T)) = \dim W = n\).
+            Sostituendo nell'equazione:
+            \[ n = \dim(\ker(T)) + n \implies \dim(\ker(T)) = 0 \]
+            Poiché \(\dim(\ker(T)) = 0\), il nucleo è banale (\(\ker(T) = \{\bar{0}_V\}\)).
+            Quindi \(T\) è iniettiva.
+        \end{itemize}
+        Di conseguenza, quando le dimensioni coincidono, T è iniettiva se e solo se è suriettiva, e quindi se e solo se è un \textbf{isomorfismo}.
+    \end{itemize}
+}
+ 
+
+
+ 
