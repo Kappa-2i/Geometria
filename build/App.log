@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  23 OCT 2025 11:35
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  23 OCT 2025 11:38
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex"
@@ -1159,6 +1159,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+[2]
 \openout2 = Lezione1/Lez1.aux
  (./Lezione1/Lez1.tex
 Capitolo 1.
@@ -1169,7 +1171,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
 
 
-[2
+[3
 
 
 ]
@@ -1189,30 +1191,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
 
 
-[3]
-
 [4]
 
-[5])
+[5]
 
-[6]
+[6])
+
+[7]
 \openout2 = Lezione2/Lez2.aux
  (./Lezione2/Lez2.tex
 Capitolo 2.
 
 
-[7
+[8
 
 
 
 
 ]
 
-[8]
+[9]
 
-[9])
+[10])
 
-[10]
+[11]
 \openout2 = Lezione3/Lez3.aux
  (./Lezione3/Lez3.tex
 Capitolo 3.
@@ -1228,14 +1230,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--76
 
 
 
-[11
+[12
 
 
 
 
 ]
 
-[12]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 125--125
 
  []
@@ -1247,27 +1249,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--154
 
 
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 222--222
 
  []
 
 )
 
-[14]
+[15]
 \openout2 = Lezione4/Lez4.aux
  (./Lezione4/Lez4.tex
 Capitolo 4.
 
 
-[15
+[16
 
 
 
 
 ]
 
-[16]
+[17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 199.
@@ -1278,45 +1280,45 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[17])
+[18])
 
-[18]
+[19]
 \openout2 = Lezione5/Lez5.aux
  (./Lezione5/Lez5.tex
 Capitolo 5.
 
 
-[19
+[20
 
 
 
 
 ]
 
-[20])
+[21])
 
-[21]
+[22]
 \openout2 = Lezione6/Lez6.aux
  (./Lezione6/Lez6.tex
 Capitolo 6.
 
 
-[22
+[23
 
 
 
 
 ]
 
-[23]
+[24]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 187.
 
 
 
-[24]
+[25]
 
-[25
+[26
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 366--366
@@ -1325,47 +1327,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 366--366
 
 
 
-[26])
+[27])
 
-[27]
+[28]
 \openout2 = Lezione7/Lez7.aux
  (./Lezione7/Lez7.tex
 Capitolo 7.
 
 
-[28
+[29
 
 
 
 
 ]
 
-[29]
-
 [30]
+
+[31]
 Underfull \hbox (badness 1117) in paragraph at lines 271--271
 \TU/lmr/m/n/10 Que-sto è esat-ta-men-te il ri-sul-ta-to del pro-dot-to per sca-la-re (de-fi-ni-to com-po-nen-te per
  []
 
 
 
-[31]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 287--287
 
  []
 
 
 
-[32]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 356--356
 
  []
 
 )
 
-[33]
-
 [34]
+
+[35]
 \openout2 = Lezione8/Lez8.aux
  (./Lezione8/Lez8.tex
 Capitolo 8.
@@ -1376,21 +1378,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
 
 
-[35
+[36
 
 
 
 
 ]
 
-[36]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 195--195
 
  []
 
 
-
-[37]
 
 [38]
 
@@ -1398,57 +1398,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--195
 
 [40]
 
-[41])
+[41]
 
-[42]
+[42])
+
+[43]
 \openout2 = Lezione9/Lez9.aux
  (./Lezione9/Lez9.tex
 Capitolo 9.
 
 
-[43
+[44
 
 
 
 
 ]
 
-[44]
+[45]
 Underfull \hbox (badness 10000) in paragraph at lines 193--193
 
  []
 
 
 
-[45]
-
 [46]
 
-[47])
+[47]
 
-[48] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux))
+[48])
+
+[49] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `App.out' has not changed.
-(rerunfilecheck)             Checksum: A52D8C7E97AB86D3A948C5CBC31EBD8B;7305.
+(rerunfilecheck)             Checksum: 1E4ADCB049E45027418B6E8F7749C185;7626.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43401 strings out of 475506
+ 43406 strings out of 475506
  125129,1648299 words of node,token memory allocated
  2355 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 sub_mlist, 1 glyph, 605 attribute, 62 glue_spec, 304 attribute_list, 4 write nodes
-   avail lists: 2:3847,3:1583,4:457,5:627,6:167,7:11454,8:59,9:996,10:34,11:1165
- 65223 multiletter control sequences out of 65536+600000
+   avail lists: 2:3847,3:1583,4:453,5:624,6:167,7:11454,8:59,9:996,10:34,11:1165
+ 65225 multiletter control sequences out of 65536+600000
  69 fonts using 6714711 bytes
  107i,12n,104p,590b,2087s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on App.pdf (48 pages, 388223 bytes).
+Output written on App.pdf (49 pages, 389218 bytes).
 
-PDF statistics: 577 PDF objects out of 1000 (max. 8388607)
- 490 compressed objects within 5 object streams
- 147 named destinations out of 1000 (max. 131072)
- 344 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 593 PDF objects out of 1000 (max. 8388607)
+ 504 compressed objects within 6 object streams
+ 150 named destinations out of 1000 (max. 131072)
+ 360 words of extra memory for PDF output out of 10000 (max. 100000000)
 

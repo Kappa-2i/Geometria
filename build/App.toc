@@ -1,43 +1,45 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {chapter}{\numberline {1}Lezione 1 - 24/09}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Operazione Binaria}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Strutture Algebriche}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Gruppo}{3}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Anello}{4}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Campo}{5}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Spazio Vettoriale}{5}{subsection.1.2.4}%
-\contentsline {chapter}{\numberline {2}Lezione 2 - 26/09}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Polinomi}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Matrici}{9}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Lezione 3 - 01/10}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Matrice Trasposta}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Prodotto Scalare}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Matrice Conformabile}{11}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Prodotto Riga per Colonna}{12}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Sistema Lineare}{12}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Operazioni o Trasformazioni Elementari sulle Righe di una Matrice}{14}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Lezione 4 - 3/10 (Teams)}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Matrice a Gradini e Completamente a Gradini}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Algoritmo di Gauss}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Teorema di struttura}{17}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Proprietà dell'insieme \(S_0\) come sottospazio vettoriale}{18}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Lezione 5 - 08/10}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Sistemi di Generatori}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Dipendenza e indipendenza lineare}{20}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Lezione 6 - 10/10}{22}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Basi}{22}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Teorema di estrazione di una base}{22}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{25}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Lezione 7 - 15/10}{28}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Lemma di Steinitz}{28}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Isomorfismo delle Coordinate}{30}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Proprietà dell'Isomorfismo delle Coordinate}{32}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Relzioni tra dimensioni di spazio vettoriale e di un suo sottospazio}{33}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Lezione 8 - 17/10}{35}{chapter.8}%
-\contentsline {section}{\numberline {8.1}L'intersezione di sottospazi è un sottospazio}{35}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Sottospazio Somma}{36}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Somma di sottospazi generati da insiemi}{37}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Regola di Grassman}{38}{section.8.4}%
-\contentsline {chapter}{\numberline {9}Lezione 9 - 22/10}{43}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Applicazioni Lineari}{43}{section.9.1}%
+\contentsline {chapter}{\numberline {1}Lezione 1 - 24/09}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Operazione Binaria}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Strutture Algebriche}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Gruppo}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Anello}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Campo}{6}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Spazio Vettoriale}{6}{subsection.1.2.4}%
+\contentsline {chapter}{\numberline {2}Lezione 2 - 26/09}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Polinomi}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Matrici}{10}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Lezione 3 - 01/10}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Matrice Trasposta}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Prodotto Scalare}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Matrice Conformabile}{12}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Prodotto Riga per Colonna}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Sistema Lineare}{13}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Operazioni o Trasformazioni Elementari sulle Righe di una Matrice}{15}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Lezione 4 - 3/10 (Teams)}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Matrice a Gradini e Completamente a Gradini}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Algoritmo di Gauss}{16}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Teorema di struttura}{18}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Proprietà dell'insieme \(S_0\) come sottospazio vettoriale}{19}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Lezione 5 - 08/10}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Sistemi di Generatori}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Dipendenza e indipendenza lineare}{21}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Lezione 6 - 10/10}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Basi}{23}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Teorema di estrazione di una base}{23}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Teorema di equipotenza della base}{26}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Lezione 7 - 15/10}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Lemma di Steinitz}{29}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Isomorfismo delle Coordinate}{31}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Proprietà dell'Isomorfismo delle Coordinate}{33}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Relzioni tra dimensioni di spazio vettoriale e di un suo sottospazio}{34}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Lezione 8 - 17/10}{36}{chapter.8}%
+\contentsline {section}{\numberline {8.1}L'intersezione di sottospazi è un sottospazio}{36}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Sottospazio Somma}{37}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Somma di sottospazi generati da insiemi}{38}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Regola di Grassman}{39}{section.8.4}%
+\contentsline {chapter}{\numberline {9}Lezione 9 - 22/10}{44}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Applicazioni Lineari}{44}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Kernel}{46}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Teorema dell'Equazione Dimensionale}{49}{section.9.3}%
