@@ -43,3 +43,8 @@
 \contentsline {section}{\numberline {9.1}Applicazioni Lineari}{44}{section.9.1}%
 \contentsline {section}{\numberline {9.2}Kernel}{46}{section.9.2}%
 \contentsline {section}{\numberline {9.3}Teorema dell'Equazione Dimensionale}{49}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Lezione 10 - 24/10}{50}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Rango}{51}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Teorema del Rango}{51}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Rango di matrici a gradini}{53}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Teorema di Rouche Capelli}{55}{section.10.4}%

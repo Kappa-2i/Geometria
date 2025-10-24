@@ -1,0 +1,368 @@
+\chapter{Lezione 10 - 24/10}
+
+
+\Esempio{Isomorfismo \(\phi_{\mathcal{B}}\) e Test di Indipendenza}{
+    Sia \(V = \mathbb{R}[x]_{\leq 2}\) lo spazio dei polinomi di grado \(\leq 2\).
+    Sia \(\mathcal{B} = (1+x, 1-x, x^2)\) una sua base.
+    
+    L'isomorfismo delle coordinate è \(\phi_{\mathcal{B}} : \mathbb{R}[x]_{\leq 2} \to \mathbb{R}^3\).
+    
+    Vogliamo trovare la mappatura per un generico polinomio \(p(x) = a_0 + a_1 x + a_2 x^2\).
+    Dobbiamo trovare gli unici scalari \(\alpha_1, \alpha_2, \alpha_3\) tali che:
+    \[
+    a_0 + a_1 x + a_2 x^2 = \alpha_1(1+x) + \alpha_2(1-x) + \alpha_3(x^2)
+    \]
+
+    
+    Raggruppando per potenze di \(x\):
+    \[
+    a_0 + a_1 x + a_2 x^2 = (\alpha_1 + \alpha_2) \cdot 1 + (\alpha_1 - \alpha_2) \cdot x + \alpha_3 \cdot x^2
+    \]
+    
+    Uguagliando i coefficienti, otteniamo il sistema:
+    \[
+    \begin{cases}
+    \alpha_1 + \alpha_2 = a_0 \\
+    \alpha_1 - \alpha_2 = a_1 \\
+    \alpha_3 = a_2
+    \end{cases}
+    \]
+    
+    Risolviamo per \(\alpha_1, \alpha_2, \alpha_3\):
+    \begin{itemize}
+        \item Sommando la prima e la seconda equazione: \(2\alpha_1 = a_0 + a_1 \implies \alpha_1 = \frac{1}{2}a_0 + \frac{1}{2}a_1\)
+        \item Sottraendo la seconda dalla prima: \(2\alpha_2 = a_0 - a_1 \implies \alpha_2 = \frac{1}{2}a_0 - \frac{1}{2}a_1\)
+        \item Dalla terza equazione: \(\alpha_3 = a_2\)
+    \end{itemize}
+    
+    Quindi, l'isomorfismo \(\phi_{\mathcal{B}}\) mappa il polinomio nelle sue coordinate:
+    \[
+    \phi_{\mathcal{B}}(a_0 + a_1 x + a_2 x^2) = \left( \frac{1}{2}a_0 + \frac{1}{2}a_1, \, \frac{1}{2}a_0 - \frac{1}{2}a_1, \, a_2 \right)
+    \]
+    
+    ---
+    
+    \textbf{Applicazione:} Vogliamo testare la lineare indipendenza dell'insieme \(S \subseteq V\):
+    \[
+    S = \{ p_1, p_2, p_3 \} = \{ x^2+7x-5, \quad 2x-3, \quad 70+5x-3x^2 \}
+    \]
+    
+    
+}
+
+\Esempio{}{
+    Per l'osservazione "Gli isomorfismi conservano la L.I.", \(S\) è L.I. \(\iff\) l'insieme delle sue immagini \(\phi_{\mathcal{B}}(S)\) è L.I. in \(\mathbb{R}^3\).
+    
+    Calcoliamo i vettori delle coordinate:
+    \begin{itemize}
+        \item \( p_1 = -5 + 7x + 1x^2 \implies a_0=-5, a_1=7, a_2=1 \)
+        \[ \phi_{\mathcal{B}}(p_1) = \left( \frac{-5+7}{2}, \frac{-5-7}{2}, 1 \right) = (1, -6, 1) \]
+        
+        \item \( p_2 = -3 + 2x + 0x^2 \implies a_0=-3, a_1=2, a_2=0 \)
+        \[ \phi_{\mathcal{B}}(p_2) = \left( \frac{-3+2}{2}, \frac{-3-2}{2}, 0 \right) = \left(-\frac{1}{2}, -\frac{5}{2}, 0\right) \]
+        
+        \item \( p_3 = 70 + 5x - 3x^2 \implies a_0=70, a_1=5, a_2=-3 \)
+        \[ \phi_{\mathcal{B}}(p_3) = \left( \frac{70+5}{2}, \frac{70-5}{2}, -3 \right) = \left(\frac{75}{2}, \frac{65}{2}, -3\right) \]
+    \end{itemize}
+    
+    Per verificare se questi 3 vettori in \(\mathbb{R}^3\) sono L.I., li inseriamo come \textbf{righe} di una matrice \(A\) e ne calcoliamo il rango.
+    \[
+    A = \begin{pmatrix}
+    1 & -6 & 1 \\
+    -\frac{1}{2} & -\frac{5}{2} & 0 \\
+    \frac{75}{2} & \frac{65}{2} & -3
+    \end{pmatrix}
+    \]
+    L'insieme \(S\) è linearmente indipendente se e solo se \(\dim(L(\phi_{\mathcal{B}}(S))) = 3\), che a sua volta è vero se e solo se \(\operatorname{rango}(A) = 3\).
+    
+}
+
+\bigskip \bigskip \bigskip
+
+\section{Rango}
+\Definizione{Rango di una Matrice}{
+    Sia \(A\) una matrice a coefficienti in un campo \(K\).
+    
+    Il \textbf{rango} di \(A\) (scritto \(\operatorname{rango}(A)\) o \(\operatorname{rk}(A)\)) è un numero intero non negativo che corrisponde a:
+    \begin{itemize}
+        \item La dimensione dello spazio vettoriale generato dalle \textbf{colonne} della matrice (detto rango per colonne).
+        \item La dimensione dello spazio vettoriale generato dalle \textbf{righe} della matrice (detto rango per righe).
+    \end{itemize}
+    Per il \textbf{Teorema del Rango}, questi due valori (dimensione dello spazio delle righe e dimensione dello spazio delle colonne) sono sempre uguali.
+    
+}
+
+\bigskip \bigskip \bigskip
+
+\section{Teorema del Rango}
+\Teorema{Teorema del Rango}{
+    Sia \(A\) una matrice a coefficienti in un campo \(K\).
+    Il rango per righe di \(A\) (la dimensione del sottospazio generato dalle righe) è uguale al rango per colonne di \(A\) (la dimensione del sottospazio generato dalle colonne).
+    
+    Di conseguenza, il rango di una matrice è uguale al rango della sua trasposta:
+    \[
+    \operatorname{rango}(A) = \operatorname{rango}(A^t)
+    \]
+}
+
+
+
+\BoxBlue{Osservazione}{Spazio delle Righe e Spazio delle Colonne}{
+    Prendiamo una matrice \(A \in M_{4,5}(K)\) (una matrice con 4 righe e 5 colonne).
+    
+    \begin{itemize}
+        \item Le sue \textbf{righe} \(a^i\) (che sono 4) sono vettori in \(K^5\).
+        Esse generano un sottospazio vettoriale \(W_R = L(a^1, a^2, a^3, a^4) \subseteq K^5\).
+        
+        \item Le sue \textbf{colonne} \(a_j\) (che sono 5) sono vettori in \(K^4\).
+        Esse generano un sottospazio vettoriale \(W_C = L(a_1, a_2, a_3, a_4, a_5) \subseteq K^4\).
+    \end{itemize}
+    
+    Come hai giustamente osservato, \(W_R\) e \(W_C\) sono sottospazi vettoriali \textbf{diversi}, in quanto appartengono a spazi vettoriali "ambiente" diversi (\(K^5\) e \(K^4\)).
+    
+    Il Teorema del Rango ci dice che, nonostante i due sottospazi siano diversi e vivano in spazi diversi, essi hanno \textbf{la stessa dimensione}:
+    \[
+    \dim(W_R) = \dim(W_C) = \operatorname{rango}(A)
+    \]
+}
+
+\Proposizione{Invarianza dello Spazio delle Righe}{
+    Sia \(A \in M_{m,n}(K)\) e sia \(B \in M_{m,n}(K)\) una matrice ottenuta da \(A\) mediante un numero finito di operazioni elementari sulle righe.
+    
+    Siano \(\mathcal{R}(A) = L(a^1, \dots, a^m)\) lo spazio generato dalle righe di \(A\), e \(\mathcal{R}(B) = L(b^1, \dots, b^m)\) lo spazio generato dalle righe di \(B\).
+    
+    Allora i due spazi delle righe coincidono:
+    \[ \mathcal{R}(A) = \mathcal{R}(B) \]
+    Di conseguenza, il loro rango (che è la dimensione di questo spazio) è identico:
+    \[ \operatorname{rango}(A) = \operatorname{rango}(B) \]
+    
+    \Dimostrazione{
+        La dimostrazione si basa sulla \textbf{doppia inclusione} degli spazi generati.
+        È sufficiente dimostrare che \emph{una singola} operazione elementare non altera lo spazio delle righe. Se questo è vero, applicando la logica un numero finito di volte (poiché \(B\) è ottenuta da \(A\) con un numero finito di operazioni), la tesi rimane valida.
+        
+        Sia \(B\) ottenuta da \(A\) con una sola operazione.
+        
+        \textbf{1. \(\mathcal{R}(B) \subseteq \mathcal{R}(A)\)}
+        (Come hai scritto tu: \(\{b^1, \dots, b^m\} \subseteq L(a^1, \dots, a^m)\)).
+        
+        Dobbiamo mostrare che ogni riga \(b^k\) di \(B\) è una combinazione lineare delle righe \(a^1, \dots, a^m\) di \(A\).
+        Analizziamo le tre operazioni elementari:
+        \begin{itemize}
+            \item \textbf{Scambio (\(R_i \leftrightarrow R_j\)):} Le righe di \(B\) sono le stesse righe di \(A\), solo in ordine diverso. Lo spazio generato è banalmente lo stesso.
+            \item \textbf{Prodotto (\(R_i \to \lambda R_i\), con \(\lambda \neq 0\)):} La nuova riga \(b^i = \lambda a^i\). Le altre righe \(b^k = a^k\) (per \(k \neq i\)). Chiaramente, ogni riga di \(B\) è C.L. delle righe di \(A\).
+            \item \textbf{Combinazione (\(R_i \to R_i + \lambda R_j\)):} La nuova riga \(b^i = a^i + \lambda a^j\). Le altre righe \(b^k = a^k\). Anche in questo caso, ogni riga di \(B\) è C.L. delle righe di \(A\).
+        \end{itemize}
+        In ogni caso, ogni riga \(b^k \in \mathcal{R}(A)\). Poiché \(\mathcal{R}(A)\) è un sottospazio vettoriale (chiuso per combinazioni lineari), qualsiasi C.L. di righe di \(B\) (cioè \(\mathcal{R}(B)\)) è contenuta in \(\mathcal{R}(A)\).
+        Abbiamo dimostrato \(\mathcal{R}(B) \subseteq \mathcal{R}(A)\).
+        
+        \textbf{2. \(\mathcal{R}(A) \subseteq \mathcal{R}(B)\)}
+        (Come hai scritto tu: \(\{a^1, \dots, a^m\} \subseteq L(b^1, \dots, b^m)\)).
+        
+        Il punto cruciale è che ogni operazione elementare di riga è \textbf{invertibile} con un'altra operazione elementare:
+        \begin{itemize}
+            \item L'inversa di \(R_i \leftrightarrow R_j\) è \(R_i \leftrightarrow R_j\).
+            \item L'inversa di \(R_i \to \lambda R_i\) è \(R_i \to \lambda^{-1} R_i\).
+            \item L'inversa di \(R_i \to R_i + \lambda R_j\) è \(R_i \to R_i - \lambda R_j\).
+        \end{itemize}
+        Poiché \(B\) è ottenuta da \(A\), possiamo ottenere \(A\) da \(B\) applicando le operazioni inverse.
+        Per la stessa identica logica del punto 1 (applicata alle matrici \(B \to A\)), concludiamo che ogni riga \(a^k\) di \(A\) è una combinazione lineare delle righe di \(B\).
+        Questo implica \(\mathcal{R}(A) \subseteq \mathcal{R}(B)\).
+        
+        \textbf{Conclusione:}
+        Avendo dimostrato la doppia inclusione \(\mathcal{R}(A) \subseteq \mathcal{R}(B)\) e \(\mathcal{R}(B) \subseteq \mathcal{R}(A)\), i due sottospazi sono uguali: \(\mathcal{R}(A) = \mathcal{R}(B)\).
+        
+        Poiché il rango è la dimensione dello spazio delle righe, \(\operatorname{rango}(A) = \dim(\mathcal{R}(A)) = \dim(\mathcal{R}(B)) = \operatorname{rango}(B)\).
+    }
+}
+
+\section{Rango di matrici a gradini}
+\Proposizione{Rango di Matrici a Gradini}{
+    Sia \(A \in M_{m,n}(K)\) una matrice ridotta a gradini.
+    Il rango di \(A\) è uguale al numero di righe non nulle, che è uguale al numero di pivot.
+    
+    \Dimostrazione{
+        Sia \(p\) il numero di righe non nulle (e quindi il numero di pivot) della matrice \(A\).
+        Le righe non nulle siano \(a^1, \dots, a^p\), mentre le righe \(a^{p+1}, \dots, a^m\) sono tutte uguali al vettore nullo \(\bar{0}\).
+        
+        Lo spazio delle righe di \(A\) è:
+        \[ \mathcal{R}(A) = L(a^1, \dots, a^p, a^{p+1}, \dots, a^m) = L(a^1, \dots, a^p) \]
+        (poiché i vettori nulli non contribuiscono allo span).
+        
+        La tesi \(\operatorname{rango}(A) = p\) equivale a dimostrare che l'insieme delle \(p\) righe non nulle \(\{a^1, \dots, a^p\}\) è \textbf{linearmente indipendente}.
+        
+        Procediamo per induzione sul numero \(p\) di pivot.
+        
+        \begin{itemize}
+            \item \textbf{Base (p = 0):}
+            Se \(p=0\), la matrice non ha pivot (e non ha righe non nulle). \(A\) è la matrice nulla.
+            Lo spazio delle righe è \(L(\emptyset) = \{\bar{0}\}\), la cui dimensione è 0.
+            Quindi \(\operatorname{rango}(A) = 0\), che è uguale a \(p\). La tesi è vera.
+            
+            \item \textbf{Passo induttivo (p-1 \(\implies\) p):}
+            Supponiamo (Ipotesi Induttiva) che qualsiasi matrice a gradini con \(p-1\) pivot abbia rango \(p-1\).
+            
+            Sia ora \(A\) una matrice con \(p > 0\) pivot. Visualizziamo la sua struttura:
+            \[
+            A = \begin{pmatrix}
+            0 & \dots & p_1 & \dots & \dots & \dots \\
+            0 & \dots & 0 & \dots & p_2 & \dots \\
+            \vdots & & \vdots & & \vdots & \\
+            0 & \dots & 0 & \dots & 0 & \dots & p_p & \dots \\
+            0 & \dots & 0 & \dots & 0 & \dots & 0 & \dots \\
+            \vdots & & \vdots & & \vdots & & \vdots &
+            \end{pmatrix}
+            \begin{matrix}
+            \leftarrow a^1 \\
+            \leftarrow a^2 \\
+            \vdots \\
+            \leftarrow a^p \\
+            \leftarrow \bar{0} \\
+            \vdots
+            \end{matrix}
+            \]
+            
+            Come hai suggerito, consideriamo la matrice \(A'\) ottenuta da \(A\) \textbf{cancellando la prima riga \(a^1\)}.
+            La matrice \(A'\) è ancora una matrice a gradini, e ha \(p-1\) righe non nulle (le righe \(a^2, \dots, a^p\)).
+            
+            Per l'ipotesi induttiva, \(\operatorname{rango}(A') = p-1\).
+            Questo significa che le sue righe non nulle, l'insieme \(S = \{a^2, \dots, a^p\}\), sono linearmente indipendenti.
+            
+            Ora, come hai notato (l'"attenzione"), dobbiamo dimostrare che:
+            \[
+            a^1 \notin L(a^2, \dots, a^p)
+            \]
+            
+            \textit{(Ecco perché, come hai chiesto):}
+            Sia \(j_1\) la colonna in cui si trova il primo pivot \(p_1\) (quello della riga \(a^1\)).
+            Per definizione di matrice a gradini, tutte le righe sottostanti hanno uno zero in quella colonna.
+            Quindi: \((a^1)_{j_1} = p_1 \neq 0\), mentre \((a^k)_{j_1} = 0\) per ogni \(k=2, \dots, p\).
+            
+            Prendiamo una qualsiasi combinazione lineare \(v\) delle righe di \(S\):
+            \[
+            v = \alpha_2 a^2 + \dots + \alpha_p a^p
+            \]
+            Calcoliamo la componente \(j_1\) di questo vettore \(v\):
+            \[
+            (v)_{j_1} = \alpha_2 (a^2)_{j_1} + \dots + \alpha_p (a^p)_{j_1} = \alpha_2 \cdot 0 + \dots + \alpha_p \cdot 0 = 0
+            \]
+            Poiché \((a^1)_{j_1} \neq 0\) mentre \((v)_{j_1} = 0\), è impossibile che \(a^1 = v\).
+            Questo dimostra che \(a^1\) non può essere scritto come C.L. delle altre righe non nulle.
+            
+            \textit{(Conclusione):}
+            Per un \textbf{teorema fondamentale sull'indipendenza lineare}, se abbiamo un insieme L.I. \(S = \{a^2, \dots, a^p\}\) e aggiungiamo un vettore \(a^1\) che non appartiene allo span di \(S\), il nuovo insieme \(\{a^1\} \cup S = \{a^1, a^2, \dots, a^p\}\) è ancora linearmente indipendente.
+            
+            Dato che lo spazio delle righe \(\mathcal{R}(A)\) è generato da queste \(p\) righe linearmente indipendenti, la sua dimensione è \(p\).
+            \[
+            \operatorname{rango}(A) = \dim(\mathcal{R}(A)) = p
+            \]
+        \end{itemize}
+    }
+}
+
+
+\BoxBlue{Osservazione}{Definizione di Rango}{
+    Sia \(A \in M_{m,n}(K)\).
+    Il \textbf{rango} di \(A\) ( \(\operatorname{rango}(A)\) ) è la dimensione dello spazio vettoriale generato dalle sue righe, che (per il Teorema del Rango) è uguale alla dimensione dello spazio vettoriale generato dalle sue colonne.
+    
+    \[
+    \operatorname{rango}(A) = \dim(L(a^1, \dots, a^m)) = \dim(L(a_1, \dots, a_n))
+    \]
+    
+    In altre parole, il rango è:
+    \begin{itemize}
+        \item il massimo numero di \textbf{righe} linearmente indipendenti;
+        \item (ed è uguale a) il massimo numero di \textbf{colonne} linearmente indipendenti.
+    \end{itemize}
+}
+
+\section{Teorema di Rouche Capelli}
+\Teorema{di Rouché-Capelli}{
+    Sia \(\Sigma\) un sistema di equazioni lineari \(Ax = b\), con \(A \in M_{m,n}(K)\) (m equazioni in n incognite).
+    Sia \(C = (A | b)\) la matrice completa associata al sistema.
+    
+    Il sistema \(\Sigma\) è \textbf{compatibile}
+    \[ \iff \]
+    il rango della matrice incompleta è uguale al rango della matrice completa:
+    \[ \operatorname{rango}(A) = \operatorname{rango}(C) \]
+
+    \Dimostrazione{
+        Sia \(C = (A | b)\) la matrice completa.
+        Applichiamo l'algoritmo di riduzione a gradini (Gauss) alla matrice \(C\) per ottenere la sua forma ridotta \(C' = (A' | b')\).
+        
+        Ricordiamo due fatti fondamentali:
+        \begin{enumerate}
+            \item Le operazioni elementari di riga non alterano il rango:
+            \[ \operatorname{rango}(A) = \operatorname{rango}(A') \quad \text{e} \quad \operatorname{rango}(C) = \operatorname{rango}(C') \]
+            \item Il sistema originale \(Ax=b\) ha le stesse soluzioni del sistema ridotto \(A'x = b'\).
+        \end{enumerate}
+        
+        Il sistema \(\Sigma\) (e quindi \(A'x=b'\)) è \textbf{incompatibile} se e solo se, nella matrice ridotta \(C'\), esiste una riga \(i\) che corrisponde a un'equazione assurda, del tipo:
+        \[ 0x_1 + 0x_2 + \dots + 0x_n = \beta_i \quad \text{con } \beta_i \neq 0 \]
+        
+        Questo significa che, in \(C'\), esiste una riga \(i\) la cui parte in \(A'\) è tutta nulla, ma il cui termine noto \(\beta_i\) non è nullo:
+        \[ (0, 0, \dots, 0 \mid \beta_i \neq 0) \]
+        
+        Questa riga ha un \textbf{pivot} nella colonna dei termini noti (l'ultima colonna).
+        
+        Analizziamo i ranghi:
+        \begin{itemize}
+            \item Se \(\Sigma\) è \textbf{incompatibile}: Esiste quel pivot nell'ultima colonna di \(C'\).
+            Le righe non nulle di \(A'\) (il cui numero è \(\operatorname{rango}(A')\)) non hanno quel pivot.
+            Di conseguenza, \(C'\) ha più pivot di \(A'\).
+            Questo implica \(\operatorname{rango}(C') > \operatorname{rango}(A')\), e quindi:
+            \[ \operatorname{rango}(C) > \operatorname{rango}(A) \]
+            (Nota: non può essere \(\operatorname{rango}(C) < \operatorname{rango}(A)\) perché \(A\) è una sottomatrice di \(C\)).
+            
+            \item Se \(\Sigma\) è \textbf{compatibile}: Non esistono righe del tipo \((0, \dots, 0 \mid \beta_i \neq 0)\).
+            Questo significa che gli unici pivot di \(C'\) si trovano tutti nella parte sinistra, cioè nella matrice \(A'\).
+            Le righe non nulle di \(A'\) e di \(C'\) coincidono.
+            Quindi \(\operatorname{rango}(C') = \operatorname{rango}(A')\), e di conseguenza:
+            \[ \operatorname{rango}(C) = \operatorname{rango}(A) \]
+        \end{itemize}
+        
+        Abbiamo dimostrato entrambe le implicazioni.
+    }
+}
+
+
+\Teorema{Rappresentazione Cartesiana di un Sottospazio}{
+    Sia \(W \subseteq K^n\) un sottospazio vettoriale con \(\dim(W) = h\).
+    
+    Allora esiste un sistema lineare omogeneo \(\Sigma_0: Ax = \bar{0}\) composto da \(n - h\) equazioni in \(n\) incognite, con \(\operatorname{rango}(A) = n-h\), tale che l'insieme delle sue soluzioni \(S_0\) coincida con \(W\).
+    \[ S_0 = W \]
+
+    \Dimostrazione{
+    Sia \(\mathcal{B}_W = \{w_1, \dots, w_h\}\) una base di \(W\).
+    
+    Scriviamo le componenti dei vettori della base (rispetto alla base canonica di \(K^n\)) come colonne:
+    \[
+    w_1 = \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{n1} \end{pmatrix}, \quad
+    w_2 = \begin{pmatrix} a_{12} \\ a_{22} \\ \vdots \\ a_{n2} \end{pmatrix}, \quad \dots, \quad
+    w_h = \begin{pmatrix} a_{1h} \\ a_{2h} \\ \vdots \\ a_{nh} \end{pmatrix}
+    \]
+    Sia \(A = (w_1 | \dots | w_h)\) la matrice \(n \times h\) che ha questi vettori come colonne. Poiché sono una base, \(\operatorname{rango}(A) = h\).
+    
+    Un generico vettore \(x = (x_1, \dots, x_n)^t\) appartiene a \(W\) se e solo se è combinazione lineare di \(w_1, \dots, w_h\).
+    
+    Come hai scritto tu, costruiamo la matrice \(C\) (orlata) accostando \(x\) alle colonne di \(A\):
+    \[
+    C = (A | x) = \begin{pmatrix}
+    a_{11} & \dots & a_{1h} & x_1 \\
+    a_{21} & \dots & a_{2h} & x_2 \\
+    \vdots & \ddots & \vdots & \vdots \\
+    a_{n1} & \dots & a_{nh} & x_n
+    \end{pmatrix}
+    \]
+    Per il Teorema di Rouché-Capelli (visto come test di appartenenza), \(x \in W\) se e solo se:
+    \[
+    \operatorname{rango}(C) = \operatorname{rango}(A)
+    \]
+    Poiché \(\operatorname{rango}(A) = h\), la condizione è:
+    \[
+    x \in W \iff \operatorname{rango}(C) = h
+    \]
+}
+
+
+}
+
