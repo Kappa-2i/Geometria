@@ -1,0 +1,352 @@
+\chapter{Lezione 11 - 29/10}
+
+\section{Teorema di Cramer}
+\Teorema{di Cramer}{
+    Sia \(\Sigma\) un sistema lineare \(Ax = b\), con \(A \in M_n(K)\) (matrice quadrata) su un campo \(K\).
+    
+    Se \(A\) è invertibile (cioè \(\det(A) \neq 0\)), allora il sistema \(\Sigma\) ammette \textbf{una ed una sola soluzione}.
+
+    \Dimostrazione{
+    Per ipotesi, \(A\) è invertibile, quindi esiste la sua matrice inversa \(A^{-1}\).
+    
+    Consideriamo l'equazione del sistema:
+    \[ Ax = b \]
+    
+    Come hai scritto, moltiplichiamo entrambi i membri a sinistra per \(A^{-1}\):
+    \[ A^{-1}(Ax) = A^{-1}b \]
+    
+    Per la proprietà associativa:
+    \[ (A^{-1}A)x = A^{-1}b \]
+    
+    Poiché \(A^{-1}A = I_n\) (la matrice identità):
+    \[ I_n x = A^{-1}b \]
+    
+    E dato che \(I_n x = x\), abbiamo:
+    \[ x = A^{-1}b \]
+    
+    Questo passaggio dimostra che \emph{se} una soluzione esiste, deve essere \emph{unica} e coincidere con il vettore \(x = A^{-1}b\).
+    
+    Ora (come hai indicato nella seconda parte della tua dimostrazione), dobbiamo verificare che questo vettore sia \emph{effettivamente} una soluzione (prova di \emph{esistenza}).
+    Sostituiamo \(x = A^{-1}b\) nell'equazione di partenza \(Ax=b\):
+    \[
+    A(A^{-1}b)
+    \]
+    Per la proprietà associativa:
+    \[
+    (AA^{-1})b = I_n b = b
+    \]
+    Abbiamo ottenuto \(b = b\), il che verifica che \(x = A^{-1}b\) è una soluzione.
+    
+    Avendo dimostrato l'esistenza e l'unicità, l'insieme delle soluzioni \(S\) è:
+    \[ S = \{A^{-1}b\} \]
+}
+}
+
+\section{Tipi di Matrici Quadrate}
+\Definizione{Tipi di Matrici Quadrate}{
+    Sia \(M_n(K)\) l'insieme delle matrici quadrate di ordine \(n\) su un campo \(K\).
+    Sia \(A = (a_{ij}) \in M_n(K)\) una matrice, dove \(a_{ij}\) è l'elemento nella riga \(i\) e colonna \(j\).
+    \[
+    A = \begin{pmatrix}
+    a_{11} & a_{12} & \dots & a_{1n} \\
+    a_{21} & a_{22} & \dots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \dots & a_{nn}
+    \end{pmatrix}
+    \]
+    
+    \begin{itemize}
+        \item \(A\) si dice \textbf{simmetrica} se \(A = A^t\), ovvero:
+        \[ \forall i,j \in \{1,\dots,n\}, \quad a_{ij} = a_{ji} \]
+        
+        \item \(A\) si dice \textbf{antisimmetrica} se \(A = -A^t\), ovvero:
+        \[ \forall i,j \in \{1,\dots,n\}, \quad a_{ij} = -a_{ji} \]
+        (Nota: questo implica che gli elementi sulla diagonale principale sono nulli, \(a_{ii} = 0\), se il campo \(K\) non ha caratteristica 2).
+        
+        \item \(A\) si dice \textbf{triangolare superiore} se tutti gli elementi sotto la diagonale principale sono nulli:
+        \[ \forall i,j \in \{1,\dots,n\}, \quad i > j \implies a_{ij} = 0 \]
+        
+        \item \(A\) si dice \textbf{triangolare inferiore} se tutti gli elementi sopra la diagonale principale sono nulli:
+        \[ \forall i,j \in \{1,\dots,n\}, \quad i < j \implies a_{ij} = 0 \]
+        
+        \item \(A\) si dice \textbf{diagonale} se è contemporaneamente triangolare superiore e inferiore.
+        (Questo significa che gli unici elementi potenzialmente non nulli sono quelli sulla diagonale principale, \(a_{ii}\)).
+    \end{itemize}
+}
+
+\section{Determinante}
+\Definizione{Determinante}{
+    Il \textbf{determinante} è l'unica funzione
+    \[
+    \det: M_n(K) \to K
+    \]
+    \[
+    A \mapsto |A| \text{ (oppure } \det(A) \text{)}
+    \]
+    che soddisfa le seguenti proprietà (assiomi):
+
+    \begin{enumerate}
+        \item \textbf{(Alternanza)} Se \(B\) è la matrice ottenuta da \(A\) scambiando due righe (o due colonne), allora:
+        \[ |B| = - |A| \]
+        
+        \item \textbf{(Omogeneità)} Se \(B\) è la matrice ottenuta da \(A\) moltiplicando una riga (o una colonna) per uno scalare \(\lambda \in K\), allora:
+        \[ |B| = \lambda |A| \]
+        
+        \item \textbf{(Invarianza)} Se \(B\) è la matrice ottenuta da \(A\) mediante un'operazione elementare del 3° tipo (sommare a una riga un multiplo di un'altra riga), allora:
+        \[ |B| = |A| \]
+        
+        \item \textbf{(Normalizzazione)} Il determinante della matrice identità è 1:
+        \[ \det(I_n) = 1 \]
+    \end{enumerate}
+
+    \textbf{Conseguenza:}
+    Se \(B\) è ottenuta da \(A\) mediante un numero finito di operazioni elementari (di qualsiasi tipo), dalle proprietà 1, 2, 3 segue che:
+    \[ |A| \neq 0 \iff |B| \neq 0 \]
+    (Le operazioni elementari possono cambiare il valore del determinante, ma non possono cambiarlo da zero a non-zero, o viceversa, a patto che \(\lambda \neq 0\) nella proprietà 2).
+}
+
+
+\section{Permutazioni}
+
+\Definizione{Permutazioni}{
+    Sia \(X\) un insieme finito non vuoto, con \(|X| = n\).
+    Si definisce \textbf{insieme delle permutazioni su \(X\)} l'insieme delle funzioni biettive da \(X\) in sé:
+    \[
+    \{f: X \to X \mid f \text{ è biettiva} \}
+    \]
+    Se si considera l'insieme \(X = \{1, \dots, n\}\), l'insieme delle permutazioni si denota con \(P_n\):
+    \[
+    P_n = \{f: \{1, \dots, n\} \to \{1, \dots, n\} \mid f \text{ è biettiva}\}
+    \]
+
+    \textbf{Esempi:}
+    \begin{itemize}
+        \item Se \(n = 1\), \(X=\{1\}\). Esiste una sola permutazione (l'identità):
+        \( \text{id}: 1 \mapsto 1 \).
+        
+        \item Se \(n = 2\), \(X=\{1, 2\}\). Esistono \(2! = 2\) permutazioni:
+        \begin{itemize}
+            \item L'identità: \( \text{id}: (1 \mapsto 1, 2 \mapsto 2) \)
+            \item Lo scambio (o trasposizione \(\tau\)): \( \tau: (1 \mapsto 2, 2 \mapsto 1) \)
+        \end{itemize}
+    \end{itemize}
+
+    \textbf{Cardinalità di \(P_n\):}
+    Per costruire una \(f \in P_n\), dobbiamo definire \(f(1), \dots, f(n)\) in modo che le immagini siano tutte distinte (condizione di biettività).
+    \begin{itemize}
+        \item Per l'immagine di 1, \(f(1)\), abbiamo \(n\) scelte possibili.
+        \item Per l'immagine di 2, \(f(2)\), abbiamo \(n-1\) scelte (tutte tranne \(f(1)\)).
+        \item Per l'immagine di 3, \(f(3)\), abbiamo \(n-2\) scelte (tutte tranne \(f(1)\) e \(f(2)\)).
+        \item ...
+        \item Per l'immagine di \(n\), \(f(n)\), abbiamo \(1\) sola scelta (l'ultimo elemento rimasto).
+    \end{itemize}
+    Per il principio di moltiplicazione, la cardinalità totale è:
+    \[
+    |P_n| = n \cdot (n-1) \cdot \dots \cdot 1 = n!
+    \]
+
+    \textbf{Inversioni e Segno:}
+    \begin{itemize}
+        \item Si dice che una permutazione \(f \in P_n\) presenta una \textbf{inversione} se esiste una coppia di indici \((i, j)\) tale che:
+        \[ i < j \quad \text{ma} \quad f(i) > f(j) \]
+        (Cioè, una coppia di elementi che viene "messa fuori posto" da \(f\)).
+        
+        \item Il \textbf{segno} di \(f\), denotato \(\operatorname{sign}(f)\), è un valore in \(\{+1, -1\}\) definito come:
+        \[
+        \operatorname{sign}(f) =
+        \begin{cases} 
+        +1 & \text{se } f \text{ ha un numero pari di inversioni} \\
+        -1 & \text{se } f \text{ ha un numero dispari di inversioni}
+        \end{cases}
+        \]
+    \end{itemize}
+}
+
+\Proposizione{Regola di Sarrus}{
+    La \textbf{Regola di Sarrus} è un metodo mnemonico e computazionale valido \textbf{esclusivamente} per calcolare il determinante di matrici quadrate di ordine 3.
+    
+    Data una matrice \(A \in M_3(K)\):
+    \[
+    A = \begin{pmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+    \end{pmatrix}
+    \]
+    
+    \textbf{Procedimento e Rappresentazione Visiva:}
+    Si ricopiano le prime due colonne a destra della matrice, creando uno schema \(3 \times 5\).
+    \[
+    \begin{pmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+    \end{pmatrix}
+    \begin{matrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\
+    a_{31} & a_{32}
+    \end{matrix}
+    \]
+    
+        
+    Si sommano i prodotti sulle 3 diagonali \(\searrow\) (da sinistra a destra) e si sottraggono i prodotti sulle 3 anti-diagonali \(\nearrow\) (da destra a sinistra).
+    
+    I prodotti positivi (diagonali blu):
+    \[
+    \text{Diag} = \textcolor{blue}{(a_{11} a_{22} a_{33}) + (a_{12} a_{23} a_{31}) + (a_{13} a_{21} a_{32})}
+    \]
+    
+    I prodotti negativi (anti-diagonali rosse):
+    \[
+    \text{AntiDiag} = \textcolor{red}{(a_{13} a_{22} a_{31}) + (a_{11} a_{23} a_{32}) + (a_{12} a_{21} a_{33})}
+    \]
+    
+    Il determinante è:
+    \[
+    |A| = \textcolor{blue}{\text{Diag}} - \textcolor{red}{\text{AntiDiag}}
+    \]
+}
+
+\Proposizione{Regole Generali per il Determinante}{
+    \begin{enumerate}
+        \item \textbf{Proprietà di Trasposizione:} Il determinante di una matrice è uguale al determinante della sua trasposta.
+        \[ |A| = |A^t| \]
+        (Questo implica che ogni proprietà valida per le righe vale anche per le colonne).
+        
+        \item \textbf{Matrici Triangolari:} Se \(A\) è una matrice triangolare (superiore o inferiore), il suo determinante è semplicemente il prodotto degli elementi sulla diagonale principale.
+        \[ |A| = a_{11} \cdot a_{22} \cdot \dots \cdot a_{nn} \]
+    \end{enumerate}
+}
+
+% --- Esempi per le tre definizioni successive ---
+
+\Proposizione{Esempio Unificato per Minori e Complementi}{
+    Usiamo la seguente matrice \(A \in M_{3,4}(K)\) per i primi esempi e la sua sottomatrice \(Q\) per i successivi.
+    \[
+    A = \begin{pmatrix}
+    1 & 2 & 3 & 4 \\
+    5 & 6 & 7 & 8 \\
+    9 & 10 & 11 & 12
+    \end{pmatrix}
+    \qquad
+    Q = \begin{pmatrix}
+    1 & 2 & 3 \\
+    5 & 6 & 7 \\
+    9 & 10 & 11
+    \end{pmatrix}
+    \]
+
+    \Definizione{Minore (di una matrice)}{
+        Data una matrice \(A \in M_{m,n}(K)\), un suo \textbf{minore} è una qualsiasi sottomatrice quadrata ottenuta cancellando \(m-k\) righe e \(n-k\) colonne (con \(k \leq \min(m,n)\)).
+        
+        \textbf{Esempio:} Un minore \(2 \times 2\) di \(A\) (cancellando la riga 3 e le colonne 2, 4) è:
+        \[
+        M = \begin{pmatrix} 1 & 3 \\ 5 & 7 \end{pmatrix}
+        \]
+        (Il determinante di questo minore, \(\det(M) = 7-15 = -8\), è un \textit{minore di ordine 2}).
+    }
+
+    \Definizione{Minore Complementare}{
+        Data una matrice quadrata \(Q \in M_n(K)\), e un elemento \(a_{ij}\) di \(Q\), il \textbf{minore complementare} di \(a_{ij}\) è la sottomatrice quadrata di ordine \(n-1\) che si ottiene cancellando la riga \(i\)-esima e la colonna \(j\)-esima. Lo denotiamo con \(M_{ij}\).
+        
+        \textbf{Esempio:} Sia \(Q\) la matrice definita sopra. Il minore complementare dell'elemento \(a_{23} = 7\) (riga 2, colonna 3) è \(M_{23}\).
+        Si ottiene cancellando la riga 2 e la colonna 3 di \(Q\):
+        \[
+        Q = \begin{pmatrix}
+        1 & 2 & \cancel{3} \\
+        \cancel{5} & \cancel{6} & \cancel{7} \\
+        9 & 10 & \cancel{11}
+        \end{pmatrix}
+        \implies
+        M_{23} = \begin{pmatrix} 1 & 2 \\ 9 & 10 \end{pmatrix}
+        \]
+    }
+
+    \Definizione{Complemento Algebrico (o Cofattore)}{
+        Data una matrice quadrata \(Q \in M_n(K)\) e un elemento \(a_{ij}\), il \textbf{complemento algebrico} (o \textbf{cofattore}) di \(a_{ij}\) è il determinante con segno del suo minore complementare.
+        \[
+        A_{ij} = (-1)^{i+j} |M_{ij}|
+        \]
+        
+        \textbf{Esempio:} Usando \(Q\) e \(M_{23}\) dall'esempio precedente:
+        Vogliamo calcolare il complemento algebrico \(A_{23}\) dell'elemento \(a_{23} = 7\).
+        
+        \begin{enumerate}
+            \item Il minore complementare è \(M_{23} = \begin{pmatrix} 1 & 2 \\ 9 & 10 \end{pmatrix}\).
+            \item Il suo determinante è \(|M_{23}| = (1 \cdot 10) - (2 \cdot 9) = 10 - 18 = -8\).
+            \item Il segno è \( (-1)^{i+j} = (-1)^{2+3} = (-1)^5 = -1 \).
+        \end{enumerate}
+        
+        Il complemento algebrico è:
+        \[
+        A_{23} = (-1) \cdot (-8) = 8
+        \]
+    }
+}
+
+
+\Teorema{di Laplace (o Sviluppo dei Cofattori)}{
+    Sia \(A \in M_n(K)\) una matrice quadrata.
+    
+    \begin{itemize}
+        \item \textbf{Sviluppo lungo la riga \(h\):}
+        Per ogni indice di riga \(h \in \{1, \dots, n\}\), il determinante di \(A\) è la somma dei prodotti degli elementi di quella riga per i rispettivi complementi algebrici:
+        \[
+        |A| = \sum_{j=1}^n a_{hj} A_{hj} = a_{h1} A_{h1} + a_{h2} A_{h2} + \dots + a_{hn} A_{hn}
+        \]
+        
+        \item \textbf{Sviluppo lungo la colonna \(k\):}
+        Per ogni indice di colonna \(k \in \{1, \dots, n\}\), il determinante di \(A\) è la somma dei prodotti degli elementi di quella colonna per i rispettivi complementi algebrici:
+        \[
+        |A| = \sum_{i=1}^n a_{ik} A_{ik} = a_{1k} A_{1k} + a_{2k} A_{2k} + \dots + a_{nk} A_{nk}
+        \]
+    \end{itemize}
+}
+
+\Proposizione{Esempio di Sviluppo di Laplace}{
+    Sia \(A\) la seguente matrice \(3 \times 3\):
+    \[
+    A = \begin{pmatrix}
+    1 & 5 & 0 \\
+    2 & 1 & -1 \\
+    3 & 4 & 2
+    \end{pmatrix}
+    \]
+    
+    Vogliamo calcolare \(|A|\). Scegliamo di sviluppare lungo la \textbf{prima riga (h=1)}, perché contiene uno zero, semplificando i calcoli.
+    
+    La formula è:
+    \[
+    |A| = a_{11} A_{11} + a_{12} A_{12} + a_{13} A_{13}
+    \]
+    
+    Calcoliamo i tre termini:
+    \begin{itemize}
+        \item \( a_{11} A_{11} = 1 \cdot (-1)^{1+1} \left| \begin{matrix} 1 & -1 \\ 4 & 2 \end{matrix} \right| = 1 \cdot (+1) \cdot ((1)(2) - (-1)(4)) = 1 \cdot (2+4) = 6 \)
+        
+        \item \( a_{12} A_{12} = 5 \cdot (-1)^{1+2} \left| \begin{matrix} 2 & -1 \\ 3 & 2 \end{matrix} \right| = 5 \cdot (-1) \cdot ((2)(2) - (-1)(3)) = -5 \cdot (4+3) = -35 \)
+        
+        \item \( a_{13} A_{13} = 0 \cdot (-1)^{1+3} \left| \begin{matrix} 2 & 1 \\ 3 & 4 \end{matrix} \right| = 0 \)
+    \end{itemize}
+    
+    Sommando i risultati:
+    \[
+    |A| = 6 - 35 + 0 = -29
+    \]
+    
+    \textbf{Verifica (Sviluppo lungo la colonna 3, k=3):}
+    \[
+    |A| = a_{13} A_{13} + a_{23} A_{23} + a_{33} A_{33}
+    \]
+    \[
+    |A| = 0 \cdot (\dots) + (-1) \cdot (-1)^{2+3} \left| \begin{matrix} 1 & 5 \\ 3 & 4 \end{matrix} \right| + 2 \cdot (-1)^{3+3} \left| \begin{matrix} 1 & 5 \\ 2 & 1 \end{matrix} \right|
+    \]
+    \[
+    |A| = 0 + (-1) \cdot (-1) \cdot (4 - 15) + 2 \cdot (+1) \cdot (1 - 10)
+    \]
+    \[
+    |A| = 0 + 1 \cdot (-11) + 2 \cdot (-9) = -11 - 18 = -29
+    \]
+    Il risultato è confermato.
+}
