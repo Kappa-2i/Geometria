@@ -53,3 +53,7 @@
 \contentsline {section}{\numberline {11.2}Tipi di Matrici Quadrate}{58}{section.11.2}%
 \contentsline {section}{\numberline {11.3}Determinante}{59}{section.11.3}%
 \contentsline {section}{\numberline {11.4}Permutazioni}{60}{section.11.4}%
+\contentsline {chapter}{\numberline {12}Lezione 12 - 31/10}{64}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Teorema di Binet}{64}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Secondo Teorema di Laplace}{64}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Teorema di Laplace generalizzato}{65}{section.12.3}%
