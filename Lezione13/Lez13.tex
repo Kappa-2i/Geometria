@@ -1,0 +1,405 @@
+\chapter{Lezione 13 - 5/11}
+
+\Esempio{Rappresentazione Cartesiana in Base non Canonica}{
+    Sia \(V = \mathbb{R}[x]_{\leq 2}\) (\(\dim V = 3\)).
+    Sia \(\mathcal{B} = (b_1, b_2, b_3) = (1+x, 1-x, x^2)\) una base di \(V\).
+    Sia \(W = L(x+3x^2)\) un sottospazio di \(V\) (\(\dim W = 1\)).
+    
+    \textbf{Obiettivo:} Trovare la rappresentazione cartesiana \(\Sigma_0\) di \(W\) rispetto alla base \(\mathcal{B}\).
+    (Cioè, un sistema \(A\alpha = 0\) nelle incognite \((\alpha_1, \alpha_2, \alpha_3)\) tale che \(u = \alpha_1 b_1 + \alpha_2 b_2 + \alpha_3 b_3 \in W\)).
+
+    \Proposizione{Passo 1: Definire l'isomorfismo \(\phi_{\mathcal{B}}\)}{
+        Usiamo l'isomorfismo delle coordinate \(\phi_{\mathcal{B}}: V \to \mathbb{R}^3\).
+        Dato \(p(x) = a_0 + a_1 x + a_2 x^2\), cerchiamo \(\phi_{\mathcal{B}}(p) = (\alpha_1, \alpha_2, \alpha_3)\) tale che:
+        \[
+        a_0 + a_1 x + a_2 x^2 = \alpha_1 (1+x) + \alpha_2 (1-x) + \alpha_3 x^2
+        \]
+        \[
+        a_0 + a_1 x + a_2 x^2 = (\alpha_1 + \alpha_2) + (\alpha_1 - \alpha_2)x + \alpha_3 x^2
+        \]
+        Risolvendo il sistema \(\{a_0 = \alpha_1 + \alpha_2; a_1 = \alpha_1 - \alpha_2; a_2 = \alpha_3\}\), troviamo la regola:
+        \[
+        \phi_{\mathcal{B}}(a_0 + a_1 x + a_2 x^2) = \left( \frac{a_0 + a_1}{2}, \frac{a_0 - a_1}{2}, a_2 \right)
+        \]
+    }
+
+    \Proposizione{Passo 2: Tradurre il sottospazio \(W\)}{
+        Per le proprietà degli isomorfismi, \(\phi_{\mathcal{B}}(W) = \phi_{\mathcal{B}}(L(x+3x^2)) = L(\phi_{\mathcal{B}}(x+3x^2))\).
+        
+        Traduciamo il generatore \(w_1 = x+3x^2\), che ha coefficienti \(a_0=0, a_1=1, a_2=3\):
+        \[
+        \phi_{\mathcal{B}}(w_1) = \left( \frac{0 + 1}{2}, \frac{0 - 1}{2}, 3 \right) = \left(\frac{1}{2}, -\frac{1}{2}, 3\right)
+        \]
+        Il nostro problema è ora ridotto a trovare le equazioni cartesiane del sottospazio \(W' = L\left( (\frac{1}{2}, -\frac{1}{2}, 3) \right) \subseteq \mathbb{R}^3\).
+    }
+
+    \Proposizione{Passo 3: Trovare le equazioni di \(W'\)}{
+        Siamo in \(\mathbb{R}^3\) (\(n=3\)) e \(W'\) ha dimensione \(h=1\). Cerchiamo \(n-h = 2\) equazioni.
+        Un generico vettore \(x = (x_1, x_2, x_3) \in \mathbb{R}^3\) appartiene a \(W'\) se e solo se è L.D. con il generatore.
+        Usiamo il metodo del rango, imponendo \(\operatorname{rango}(C) = 1\):
+        \[
+        C = \begin{pmatrix} 1/2 & x_1 \\ -1/2 & x_2 \\ 3 & x_3 \end{pmatrix}
+        \]
+        Riduciamo a gradini (Echelon form):
+        \[
+        \begin{pmatrix}
+        1/2 & x_1 \\
+        -1/2 & x_2 \\
+        3 & x_3
+        \end{pmatrix}
+        \xrightarrow[R_3 \to R_3 - 6R_1]{R_2 \to R_2 + R_1}
+        \begin{pmatrix}
+        1/2 & x_1 \\
+        0 & x_2 + x_1 \\
+        0 & x_3 - 6x_1
+        \end{pmatrix}
+        \]
+        Affinché \(\operatorname{rango}(C) = 1\), le ultime due righe devono essere nulle. Questo ci fornisce il sistema \(\Sigma_0\).
+    }
+    
+    
+}
+
+\BoxBlue{Soluzione}{Rappresentazione Cartesiana di W in \(\mathcal{B}\)}{
+    Il sistema \(\Sigma_0\) trovato:
+    \[
+    \Sigma_0 : \begin{cases}
+    \alpha_1 + \alpha_2 = 0 \\
+    -6\alpha_1 + \alpha_3 = 0
+    \end{cases}
+    \]
+    è la \textbf{rappresentazione cartesiana} di \(W\) \textbf{nella base \(\mathcal{B}\)}.
+
+    \textbf{Cosa possiamo dedurre:}
+    Abbiamo trovato un \textbf{test di appartenenza}. Un qualsiasi vettore \(u \in V\) appartiene al sottospazio \(W\) se e solo se le sue "coordinate" \((\alpha_1, \alpha_2, \alpha_3)\) rispetto alla base \(\mathcal{B}\) soddisfano questo sistema di equazioni.
+}
+
+\bigskip 
+\bigskip
+
+\section{Applicazione Lineare Associata}
+
+\Definizione{Applicazione Lineare Associata (o Omomorfismo Associato)}{
+    Sia \(A \in M_{m,n}(K)\) una matrice (con \(m,n \in \mathbb{N}\) su un campo \(K\)).
+    
+    Si definisce \textbf{applicazione lineare associata} ad \(A\) (rispetto alle basi canoniche) l'applicazione:
+    \[
+    \tilde{T_A}: K^n \to K^m
+    \]
+    definita dal prodotto matrice-vettore: \(x \mapsto A \cdot x\).
+    
+    (Si assume che \(x \in K^n\) sia un vettore colonna \(n \times 1\), e il risultato \(A \cdot x\) è un vettore colonna \(m \times 1\), cioè un elemento di \(K^m\)).
+
+    \BoxBlue{Esempio}{Applicazione Lineare Associata}{
+    Sia \(K = \mathbb{R}\), \(n = 2\), \(m = 3\).
+    Sia \(A = \begin{pmatrix} -2 & 7 \\ \pi & 3 \\ \sqrt{2} & 0 \end{pmatrix}\).
+    
+    L'applicazione associata \(\tilde{T_A}: \mathbb{R}^2 \to \mathbb{R}^3\) mappa un vettore \(x = (x_1, x_2)^t\) come segue:
+    \[
+    \tilde{T_A}(x) = A \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} -2 & 7 \\ \pi & 3 \\ \sqrt{2} & 0 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} -2x_1 + 7x_2 \\ \pi x_1 + 3x_2 \\ \sqrt{2} x_1 \end{pmatrix}
+    \]
+    Come funzione tra n-uple, possiamo scriverla:
+    \[
+    \tilde{T_A}((x_1, x_2)) = (-2x_1 + 7x_2, \ \pi x_1 + 3x_2, \ \sqrt{2} x_1)
+    \]
+}
+}
+
+\Proposizione{Linearità dell'Applicazione Associata a una Matrice}{
+    Per ogni matrice \(A \in M_{m,n}(K)\), l'applicazione associata \(\tilde{T_A}\)
+    \[
+    \tilde{T_A}: K^n \to K^m
+    \]
+    \[
+    x = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} \mapsto A \cdot x
+    \]
+    è un'applicazione lineare.
+
+    \Dimostrazione{
+        Dobbiamo verificare le due proprietà della linearità: additività e omogeneità.
+        Siano \(x, y \in K^n\) (intesi come vettori colonna) e sia \(\lambda \in K\) uno scalare.
+
+        \begin{enumerate}
+            \item \textbf{Additività (Verifica di \( \tilde{T_A}(x+y) = \tilde{T_A}(x) + \tilde{T_A}(y) \)) }
+            
+            Partiamo da \(\tilde{T_A}(x+y)\) e usiamo le definizioni e le proprietà delle matrici:
+            \[
+            \tilde{T_A}(x+y) \stackrel{\text{(def)}}{=} A \cdot (x+y)
+            \]
+            Per la \textbf{proprietà distributiva} del prodotto tra matrici:
+            \[
+            A \cdot (x+y) = A \cdot x + A \cdot y
+            \]
+            Per definizione di \(\tilde{T_A}\), riconosciamo i due termini:
+            \[
+            A \cdot x + A \cdot y \stackrel{\text{(def)}}{=} \tilde{T_A}(x) + \tilde{T_A}(y)
+            \]
+            Quindi la somma è conservata.
+
+            \item \textbf{Omogeneità (Verifica di \( \tilde{T_A}(\lambda x) = \lambda \tilde{T_A}(x) \)) }
+            
+            Partiamo da \(\tilde{T_A}(\lambda x)\):
+            \[
+            \tilde{T_A}(\lambda x) \stackrel{\text{(def)}}{=} A \cdot (\lambda x)
+            \]
+            Per la \textbf{proprietà di fattorizzazione scalare} del prodotto tra matrici:
+            \[
+            A \cdot (\lambda x) = \lambda (A \cdot x)
+            \]
+            Per definizione di \(\tilde{T_A}\):
+            \[
+            \lambda (A \cdot x) \stackrel{\text{(def)}}{=} \lambda \tilde{T_A}(x)
+            \]
+            Quindi anche il prodotto per scalare è conservato.
+        \end{enumerate}
+        Poiché entrambe le proprietà sono verificate, \(\tilde{T_A}\) è un'applicazione lineare.
+    }
+}
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\Proposizione{Esistenza della Matrice Associata}{
+    Siano \(m, n \in \mathbb{N}\) e \(K\) un campo.
+    Se \(T: K^n \to K^m\) è un'applicazione lineare,
+    allora esiste \textbf{un'unica} matrice \(A \in M_{m,n}(K)\) tale che \(T\) coincide con l'applicazione associata ad \(A\), \(\tilde{T_A}\).
+    \[ T = \tilde{T_A} \]
+    Questa matrice è chiamata \textbf{matrice associata a T} (rispetto alle basi canoniche).
+
+    \Dimostrazione{
+    (Costruzione della matrice A)
+    Sia \(T: K^n \to K^m\) l'applicazione lineare data.
+    Consideriamo la \textbf{base canonica} \(\mathcal{B} = (e_1, e_2, \dots, e_n)\) di \(K^n\), dove:
+    \[
+    e_1 = \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \quad
+    e_2 = \begin{pmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{pmatrix}, \quad \dots, \quad
+    e_n = \begin{pmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix}
+    \]
+    Calcoliamo l'immagine di ciascun vettore della base. I risultati sono vettori in \(K^m\), che scriviamo come colonne:
+    \[
+    T(e_1) = \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{m1} \end{pmatrix}, \quad
+    T(e_2) = \begin{pmatrix} a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{pmatrix}, \quad \dots, \quad
+    T(e_n) = \begin{pmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn} \end{pmatrix}
+    \]
+    Definiamo la matrice \(A \in M_{m,n}(K)\) come la matrice che ha questi vettori immagine come sue \textbf{colonne}:
+    \[
+    A = \left( T(e_1) \left| T(e_2) \right| \dots \mid T(e_n) \right) = \begin{pmatrix}
+    a_{11} & a_{12} & \dots & a_{1n} \\
+    a_{21} & a_{22} & \dots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \dots & a_{mn}
+    \end{pmatrix}
+    \]
+    
+    \textbf{Tesi:} Dobbiamo dimostrare che \(T(x) = \tilde{T_A}(x)\) per ogni \(x \in K^n\).
+    Per definizione, \(\tilde{T_A}(x) = A \cdot x\). Quindi la tesi è dimostrare che \(T(x) = A \cdot x\).
+    
+    Sia \(x = (x_1, \dots, x_n)^t\) un vettore generico in \(K^n\).
+    Possiamo scrivere \(x\) come combinazione lineare della base canonica:
+    \[
+    x = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} = x_1 \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} + x_2 \begin{pmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{pmatrix} + \dots + x_n \begin{pmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix} = x_1 e_1 + x_2 e_2 + \dots + x_n e_n
+    \]
+    Ora applichiamo l'applicazione \(T\) a questo vettore \(x\):
+    \[
+    T(x) = T(x_1 e_1 + x_2 e_2 + \dots + x_n e_n)
+    \]
+    Poiché \(T\) è lineare (per ipotesi), possiamo portare fuori le somme e gli scalari:
+    \[
+    T(x) = x_1 T(e_1) + x_2 T(e_2) + \dots + x_n T(e_n)
+    \]
+    Sostituiamo i vettori colonna \(T(e_j)\) che abbiamo usato per costruire \(A\):
+    \[
+    T(x) = x_1 \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{m1} \end{pmatrix} +
+    x_2 \begin{pmatrix} a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{pmatrix} + \dots +
+    x_n \begin{pmatrix} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn} \end{pmatrix}
+    \]
+    Come hai scritto tu, questa somma di vettori colonna scalati è \textbf{esattamente la definizione} del prodotto matrice-vettore \(A \cdot x\):
+    \[
+    T(x) = \begin{pmatrix}
+    a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} x_n \\
+    a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} x_n \\
+    \vdots \\
+    a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} x_n
+    \end{pmatrix} = A \cdot x
+    \]
+    Dato che \(A \cdot x = \tilde{T_A}(x)\), abbiamo dimostrato che \(T(x) = \tilde{T_A}(x)\) per ogni \(x\).
+}
+}
+
+
+\section{Matrice Associata a un'Applicazione Lineare}
+\BoxBlue{Osservazione}{Matrice Associata a un'Applicazione Lineare}{
+    Siano \(V\) e \(W\) due spazi vettoriali su \(K\), finitamente generati, con \(\dim V = n\) e \(\dim W = m\).
+    Siano \(\mathcal{B}_V = (e_1, \dots, e_n)\) una base di \(V\) e \(\mathcal{B}_W = (e'_1, \dots, e'_m)\) una base di \(W\).
+    
+    Sia \(T: V \to W\) un'applicazione lineare.
+    
+    Come sappiamo, possiamo definire gli isomorfismi delle coordinate per \(V\) e \(W\):
+    \[ \phi_{\mathcal{B}_V}: V \to K^n \qquad \text{e} \qquad \phi_{\mathcal{B}_W}: W \to K^m \]
+    E le loro inverse:
+    \[ \phi_{\mathcal{B}_V}^{-1}: K^n \to V \qquad \text{e} \qquad \phi_{\mathcal{B}_W}^{-1}: K^m \to W \]
+    
+    Dalle proposizioni precedenti, sappiamo che \textbf{qualsiasi} applicazione lineare da \(K^n\) a \(K^m\) può essere rappresentata da una matrice \(A \in M_{m,n}(K)\), e la chiamiamo \(\tilde{T_A}\).
+    
+    Consideriamo ora la seguente \textbf{composizione} di applicazioni:
+    \[ \phi_{\mathcal{B}_W} \circ T \circ \phi_{\mathcal{B}_V}^{-1} : K^n \to K^m \]
+    
+    Questa è un'applicazione lineare da \(K^n\) a \(K^m\), e quindi, per la proposizione precedente, deve esistere un'unica matrice \(A\) che la rappresenta.
+    \[
+    \tilde{T_A} = \phi_{\mathcal{B}_W} \circ T \circ \phi_{\mathcal{B}_V}^{-1}
+    \]
+    
+    Questa relazione è fondamentale ed è riassunta dal seguente \textbf{diagramma commutativo}:
+    \[
+    \begin{array}{rcl}
+    V & \xrightarrow{\quad T \quad} & W \\
+    \downarrow \scriptstyle \phi_{\mathcal{B}_V} & & \downarrow \scriptstyle \phi_{\mathcal{B}_W} \\
+    K^n & \xrightarrow{\quad \tilde{T_A} \quad} & K^m
+    \end{array}
+    \]
+    (Il diagramma "commuta", significa che "scendere e poi andare a destra" è uguale a "andare a destra e poi scendere": \(\tilde{T_A} \circ \phi_{\mathcal{B}_V} = \phi_{\mathcal{B}_W} \circ T\)).
+    
+    \Definizione{}{
+        La matrice \(A \in M_{m,n}(K)\) così definita è detta \textbf{matrice associata a T rispetto alle basi \(\mathcal{B}_V\) e \(\mathcal{B}_W\)} e si denota con:
+        \[ A = M_{\mathcal{B}_V, \mathcal{B}_W}(T) \]
+    }
+
+    % --- Ecco la parte che hai chiesto di riscrivere ---
+
+    \bigskip
+    \textbf{Costruzione pratica della matrice A (La Regola delle Colonne)}
+    
+    Come si costruisce \(A\)? Le colonne di \(A\) sono le immagini "tradotte" (mediante \(\phi_{\mathcal{B}_W}\)) dei vettori della base di partenza \(\mathcal{B}_V\).
+    
+    Per ogni vettore \(e_j \in \mathcal{B}_V\):
+    \begin{enumerate}
+        \item Si calcola la sua immagine: \(T(e_j) \in W\).
+        \item Si scrive \(T(e_j)\) come combinazione lineare della base di arrivo \(\mathcal{B}_W\):
+        \[ T(e_j) = a_{1j} e'_1 + a_{2j} e'_2 + \dots + a_{mj} e'_m \]
+        \item I coefficienti \( (a_{1j}, \dots, a_{mj}) \) formano la \(j\)-esima colonna di \(A\).
+    \end{enumerate}
+    Quindi, la \(j\)-esima colonna di \(A\) è \(a_j = \phi_{\mathcal{B}_W}(T(e_j))\).
+    
+    \bigskip
+    
+}
+
+\BoxBlue{Osservazione}{Matrice Associata a un'Applicazione Lineare}{
+    \textbf{Teorema del Rango}
+    
+    Questa costruzione ci porta a una proprietà fondamentale:
+    \[ \operatorname{rango}(A) = \dim(\operatorname{Im}(T)) \]
+    
+}
+
+\section{Caratterizzazione della Matrice Associata}
+\Teorema{Caratterizzazione della Matrice Associata}{
+    Siano \(V\) e \(W\) spazi vettoriali su \(K\), con \(\dim V = n\) e \(\dim W = m\).
+    Sia \(T: V \to W\) un'applicazione lineare.
+    Siano \(\mathcal{B}_V\) una base di \(V\) e \(\mathcal{B}_W\) una base di \(W\).
+    Sia \(A = M_{\mathcal{B}_V, \mathcal{B}_W}(T)\) la matrice associata a \(T\) rispetto a queste basi.
+    
+    Per ogni vettore \(u \in V\), siano:
+    \begin{itemize}
+        \item \(x = \phi_{\mathcal{B}_V}(u) \in K^n\), il vettore delle \textbf{coordinate di partenza} (di \(u\) in base \(\mathcal{B}_V\)).
+        \item \(y = \phi_{\mathcal{B}_W}(T(u)) \in K^m\), il vettore delle \textbf{coordinate di arrivo} (di \(T(u)\) in base \(\mathcal{B}_W\)).
+    \end{itemize}
+    
+    Allora, il calcolo dell'immagine di \(u\) "tradotta" (\(y\)) può essere ottenuto moltiplicando la matrice \(A\) per il vettore delle coordinate di partenza (\(x\)).
+    \[
+    A \cdot x = y
+    \]
+    
+    \textbf{Spiegazione (Il Diagramma Commutativo):}
+    \[
+    \begin{array}{rcl}
+    V & \xrightarrow{\quad T \quad} & W \\
+    \downarrow \scriptstyle \phi_{\mathcal{B}_V} & & \downarrow \scriptstyle \phi_{\mathcal{B}_W} \\
+    K^n & \xrightarrow{\quad \tilde{T_A} \text{ (cioè } x \mapsto A \cdot x \text{)} \quad} & K^m
+    \end{array}
+    \]
+    (La relazione formale è \(\tilde{T_A} \circ \phi_{\mathcal{B}_V} = \phi_{\mathcal{B}_W} \circ T\)).
+
+    \Dimostrazione{
+    Siano \(x = \phi_{\mathcal{B}_V}(u) = (x_1, \dots, x_n)^t\) le coordinate di \(u\) e \(y = \phi_{\mathcal{B}_W}(T(u))\) le coordinate di \(T(u)\).
+    
+    \textbf{1. Verifica della condizione \(A \cdot x = y\)}
+    
+    Partiamo da \(T(u)\). Usiamo la linearità di \(T\) e la definizione di \(A\):
+    
+    Come hai scritto, \(u = x_1 e_1 + \dots + x_n e_n\).
+    \[
+    T(u) = T(x_1 e_1 + \dots + x_n e_n)
+    \]
+    Per la linearità di \(T\), possiamo scrivere:
+    \[
+    T(u) = x_1 T(e_1) + \dots + x_n T(e_n)
+    \]
+    Ora "traduciamo" tutto in coordinate, applicando l'isomorfismo \(\phi_{\mathcal{B}_W}\) a entrambi i membri. Per definizione, \(\phi_{\mathcal{B}_W}(T(u)) = y\).
+    \[
+    y = \phi_{\mathcal{B}_W} (x_1 T(e_1) + \dots + x_n T(e_n))
+    \]
+    Poiché anche \(\phi_{\mathcal{B}_W}\) è lineare:
+    \[
+    y = x_1 \phi_{\mathcal{B}_W}(T(e_1)) + \dots + x_n \phi_{\mathcal{B}_W}(T(e_n))
+    \]
+    Per la "regola delle colonne" con cui abbiamo costruito \(A\), sappiamo che \(\phi_{\mathcal{B}_W}(T(e_j))\) è proprio la \(j\)-esima colonna di \(A\), che chiamiamo \(a_j\).
+    \[
+    y = x_1 a_1 + x_2 a_2 + \dots + x_n a_n
+    \]
+    Questa espressione (somma di vettori colonna scalati per \(x_j\)) è la \textbf{definizione stessa} del prodotto matrice-vettore \(A \cdot x\).
+    \[
+    y = \begin{pmatrix} a_{11} \\ \vdots \\ a_{m1} \end{pmatrix} x_1 + \dots + \begin{pmatrix} a_{1n} \\ \vdots \\ a_{mn} \end{pmatrix} x_n
+    = \begin{pmatrix}
+    a_{11} x_1 + \dots + a_{1n} x_n \\
+    \vdots \\
+    a_{m1} x_1 + \dots + a_{mn} x_n
+    \end{pmatrix}
+    = A \cdot x
+    \]
+    La prima parte è dimostrata.
+    
+    
+    }
+}
+
+\Teorema{Caratterizzazione della Matrice Associata}{
+    \Dimostrazione{
+    
+    \textbf{2. Dimostrazione dell'Unicità}
+    
+    Come hai suggerito, supponiamo che esista un'altra matrice \(B \in M_{m,n}(K)\) che soddisfa la stessa condizione, cioè tale che:
+    \[ B \cdot \phi_{\mathcal{B}_V}(u) = \phi_{\mathcal{B}_W}(T(u)) \quad \text{per ogni } u \in V \]
+    Vogliamo dimostrare che \(B = A\).
+    
+    Per farlo, testiamo questa ipotesi sui vettori della base \(\mathcal{B}_V = (e_1, \dots, e_n)\).
+    
+    Scegliamo un generico vettore base \(u = e_j\).
+    
+    \begin{itemize}
+        \item \textbf{Input Tradotto (\(x\)):} Le coordinate di \(e_j\) rispetto alla sua stessa base \(\mathcal{B}_V\) sono il \(j\)-esimo vettore canonico di \(K^n\):
+        \[ x = \phi_{\mathcal{B}_V}(e_j) = \begin{pmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{pmatrix} \leftarrow (\text{posizione } j) \]
+        
+        \item \textbf{Output Tradotto (\(y\)):} Le coordinate di \(T(e_j)\) rispetto a \(\mathcal{B}_W\) sono, per definizione di \(A\), la \(j\)-esima colonna di \(A\) (il vettore \(a_j\)).
+        \[ y = \phi_{\mathcal{B}_W}(T(e_j)) = a_j \]
+    \end{itemize}
+    
+    Applichiamo l'ipotesi \(B \cdot x = y\):
+    \[
+    B \cdot \begin{pmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{pmatrix} = a_j
+    \]
+    Ma il prodotto di una matrice \(B\) per il \(j\)-esimo vettore canonico \(e_j\) "estrae" esattamente la \(j\)-esima colonna di \(B\).
+    
+    Quindi abbiamo:
+    \[ (\text{j-esima colonna di } B) = (\text{j-esima colonna di } A) \]
+    
+    Dato che questo ragionamento è valido per ogni \(j\) da \(1\) a \(n\), tutte le colonne di \(B\) devono essere identiche alle colonne di \(A\).
+    
+    Questo dimostra che \(B = A\), e quindi la matrice associata \(A\) è unica.
+    }
+}
+    
+
+

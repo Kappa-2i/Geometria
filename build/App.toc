@@ -57,3 +57,7 @@
 \contentsline {section}{\numberline {12.1}Teorema di Binet}{64}{section.12.1}%
 \contentsline {section}{\numberline {12.2}Secondo Teorema di Laplace}{64}{section.12.2}%
 \contentsline {section}{\numberline {12.3}Teorema di Laplace generalizzato}{65}{section.12.3}%
+\contentsline {chapter}{\numberline {13}Lezione 13 - 5/11}{71}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Applicazione Lineare Associata}{73}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Matrice Associata a un'Applicazione Lineare}{76}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Caratterizzazione della Matrice Associata}{77}{section.13.3}%
