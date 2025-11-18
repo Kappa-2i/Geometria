@@ -400,6 +400,45 @@
     Questo dimostra che \(B = A\), e quindi la matrice associata \(A\) è unica.
     }
 }
+
+\section{Casi Particolari e Matrici di Cambiamento Base}
+\BoxBlue{Osservazioni}{Casi Particolari e Matrici di Cambiamento Base}{
+    \begin{itemize}
+        \item \textbf{Matrice di Cambiamento di Base (Passaggio da \(\mathcal{B}\) a \(\bar{\mathcal{B}}\))}
+        
+        Sia \(id_V: V \to V\) l'applicazione identità.
+        Siano \(\mathcal{B} = (e_1, \dots, e_n)\) la base del dominio e \(\bar{\mathcal{B}} = (\bar{e}_1, \dots, \bar{e}_n)\) la base del codominio.
+        
+        La matrice associata all'identità è detta \textbf{matrice di passaggio} (o di cambiamento di coordinate) da \(\mathcal{B}\) a \(\bar{\mathcal{B}}\):
+        \[ P = M_{\mathcal{B}, \bar{\mathcal{B}}}(id_V) \]
+        
+        \textbf{Proprietà:}
+        \begin{enumerate}
+            \item La \(j\)-esima colonna di \(P\) contiene le componenti del vettore \(e_j\) (della base di partenza) rispetto alla base \(\bar{\mathcal{B}}\) (di arrivo).
+            \item \(P\) è sempre invertibile (perché manda una base in una base).
+            \item Se \(X\) sono le coordinate in \(\mathcal{B}\) e \(X'\) sono le coordinate in \(\bar{\mathcal{B}}\), allora:
+            \[ P X = X' \]
+        \end{enumerate}
+        
+        \textbf{Matrice Inversa:}
+        Moltiplicando per \(P^{-1}\), otteniamo \(X = P^{-1} X'\).
+        Questo significa che l'inversa della matrice di passaggio da \(\mathcal{B}\) a \(\bar{\mathcal{B}}\) è la matrice di passaggio inversa (da \(\bar{\mathcal{B}}\) a \(\mathcal{B}\)):
+        \[ P^{-1} = M_{\bar{\mathcal{B}}, \mathcal{B}}(id_V) \]
+
+        \item \textbf{Matrice dell'Inversa}
+        Sia \(T: V \to W\) un isomorfismo. Siano \(\mathcal{B}_V\) e \(\mathcal{B}_W\) le basi rispettive.
+        Se \(A = M_{\mathcal{B}_V, \mathcal{B}_W}(T)\) è la matrice associata a \(T\), allora la matrice associata all'applicazione inversa \(T^{-1}\) è l'inversa della matrice \(A\):
+        \[ A^{-1} = M_{\mathcal{B}_W, \mathcal{B}_V}(T^{-1}) \]
+
+        \item \textbf{Matrice della Composizione}
+        Siano \(T: V \to W\) e \(T': W \to U\).
+        Siano \(\mathcal{B}_V, \mathcal{B}_W, \mathcal{B}_U\) le basi rispettive.
+        Se definiamo le matrici:
+        \[ A = M_{\mathcal{B}_V, \mathcal{B}_W}(T) \quad \text{e} \quad C = M_{\mathcal{B}_W, \mathcal{B}_U}(T') \]
+        Allora la matrice associata alla composizione \(T' \circ T\) è il prodotto delle matrici (nell'ordine corretto, prima \(C\) poi \(A\)):
+        \[ C \cdot A = M_{\mathcal{B}_V, \mathcal{B}_U}(T' \circ T) \]
+    \end{itemize}
+}
     
 
 

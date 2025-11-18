@@ -61,3 +61,8 @@
 \contentsline {section}{\numberline {13.1}Applicazione Lineare Associata}{73}{section.13.1}%
 \contentsline {section}{\numberline {13.2}Matrice Associata a un'Applicazione Lineare}{76}{section.13.2}%
 \contentsline {section}{\numberline {13.3}Caratterizzazione della Matrice Associata}{77}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Casi Particolari e Matrici di Cambiamento Base}{79}{section.13.4}%
+\contentsline {chapter}{\numberline {14}Lezione 14 - 7/11}{80}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Applicazione Lineare Associata ad un Endomorfismo}{80}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Matrici Simili}{81}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Autovalori, Autovettori e Autospazi}{81}{section.14.3}%

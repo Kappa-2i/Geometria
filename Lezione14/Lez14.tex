@@ -1,0 +1,283 @@
+\chapter{Lezione 14 - 7/11}
+
+\section{Applicazione Lineare Associata ad un Endomorfismo}
+
+\Teorema{Applicazione Lineare Associata ad un Endomorfismo}{
+
+    Sia \(T: V \to V\) un endomorfismo (applicazione lineare da \(V\) in se stesso), con \(\dim V = n\).
+    Siano \(\mathcal{B}\) e \(\bar{\mathcal{B}}\) due basi diverse di \(V\).
+    
+    Possiamo associare a \(T\) due matrici diverse, una per ogni base:
+    \begin{itemize}
+        \item \(A = M_{\mathcal{B}}(T)\) (Matrice associata rispetto alla base \(\mathcal{B}\))
+        \item \(\bar{A} = M_{\bar{\mathcal{B}}}(T)\) (Matrice associata rispetto alla base \(\bar{\mathcal{B}}\))
+    \end{itemize}
+    
+   
+    \Dimostrazione{
+        \textbf{Dimostrazione della relazione (Change of Basis):}
+    
+    Sia \(P = M_{\mathcal{B}, \bar{\mathcal{B}}}(id_V)\) la matrice di passaggio dalla base \(\mathcal{B}\) alla base \(\bar{\mathcal{B}}\).
+    Questa matrice trasforma le coordinate "vecchie" (\(X\)) in coordinate "nuove" (\(\bar{X}\)):
+    \[ \bar{X} = P X \quad \text{e analogamente} \quad \bar{Y} = P Y \]
+    
+    Preso un vettore \(u \in V\), consideriamo le sue coordinate e quelle della sua immagine \(T(u)\):
+    \begin{itemize}
+        \item In base \(\mathcal{B}\): \(\phi_{\mathcal{B}}(u) = X\) e \(\phi_{\mathcal{B}}(T(u)) = Y\). Vale la relazione:
+        \[ Y = A X \]
+        
+        \item In base \(\bar{\mathcal{B}}\): \(\phi_{\bar{\mathcal{B}}}(u) = \bar{X}\) e \(\phi_{\bar{\mathcal{B}}}(T(u)) = \bar{Y}\). Vale la relazione:
+        \[ \bar{Y} = \bar{A} \bar{X} \]
+    \end{itemize}
+    
+    Sostituiamo le relazioni di passaggio (\(\bar{X}=PX, \bar{Y}=PY\)) nell'equazione della base \(\bar{\mathcal{B}}\):
+    \[
+    \bar{Y} = \bar{A} \bar{X} \implies P Y = \bar{A} (P X)
+    \]
+    Moltiplichiamo a sinistra per \(P^{-1}\) per isolare \(Y\):
+    \[
+    Y = P^{-1} \bar{A} P X
+    \]
+    Confrontando questa equazione con \(Y = A X\), per l'unicità della matrice associata, otteniamo:
+    \[
+    A = P^{-1} \bar{A} P
+    \]
+    
+    \textbf{Conclusione:} Due matrici che rappresentano lo stesso endomorfismo rispetto a basi diverse sono \textbf{simili}.
+    }
+    
+}
+
+\section{Matrici Simili}
+\Definizione{Matrici Simili}{
+    Due matrici quadrate \(A, \bar{A} \in M_n(K)\) si dicono \textbf{simili} se esiste una matrice invertibile \(P \in M_n(K)\) tale che:
+    \[
+    A = P^{-1} \bar{A} P \quad (\text{oppure } \bar{A} = P A P^{-1})
+    \]
+}
+\section{Autovalori, Autovettori e Autospazi}
+
+\Definizione{Autovalore}{
+    Sia \(T: V \to V\) un endomorfismo su un campo \(K\).
+    Uno scalare \(\lambda \in K\) si dice \textbf{autovalore} di \(T\) \(\iff\) l'insieme:
+    \[ U_\lambda = \{u \in V \mid T(u) = \lambda u\} \]
+    contiene vettori non nulli, ovvero \(U_\lambda \neq \{\bar{0}\}\).
+
+    \textbf{Osservazione:}
+    Consideriamo il caso \(\lambda = 0\).
+    \[ U_0 = \{u \in V \mid T(u) = 0 \cdot u = \bar{0}\} = \ker(T) \]
+    Quindi: \(0\) è autovalore di \(T\) \(\iff \ker(T) \neq \{\bar{0}\} \iff T\) non è iniettiva.
+}
+
+\Proposizione{L'Autospazio è un Sottospazio}{
+    Per ogni \(\lambda \in K\), l'insieme \(U_\lambda\) è un sottospazio vettoriale di \(V\).
+    
+    \Dimostrazione{
+        Verifichiamo le tre proprietà dei sottospazi:
+        \begin{itemize}
+            \item \textbf{Contiene il vettore nullo:}
+            Poiché \(T\) è lineare, \(T(\bar{0}) = \bar{0}\). Inoltre \(\lambda \cdot \bar{0} = \bar{0}\).
+            Quindi \(T(\bar{0}) = \lambda \bar{0} \implies \bar{0} \in U_\lambda\).
+
+            \item \textbf{Chiusura rispetto alla somma:}
+            Siano \(u, v \in U_\lambda\). Ciò significa che \(T(u) = \lambda u\) e \(T(v) = \lambda v\).
+            Calcoliamo \(T(u+v)\):
+            \[ T(u+v) = T(u) + T(v) = \lambda u + \lambda v = \lambda(u+v) \]
+            Quindi \((u+v) \in U_\lambda\).
+
+            \item \textbf{Chiusura rispetto al prodotto per scalare:}
+            Siano \(u \in U_\lambda\) e \(\alpha \in K\).
+            Calcoliamo \(T(\alpha u)\):
+            \[ T(\alpha u) = \alpha T(u) = \alpha (\lambda u) = (\alpha \lambda) u = (\lambda \alpha) u = \lambda (\alpha u) \]
+            Quindi \(\alpha u \in U_\lambda\).
+        \end{itemize}
+    }
+}
+
+\Definizione{Autospazio e Autovettore}{
+    Se \(\lambda\) è un autovalore di \(T\), allora il sottospazio \(U_\lambda\) si definisce \textbf{autospazio} relativo a \(\lambda\).
+    
+    I vettori \textbf{non nulli} appartenenti a \(U_\lambda\) si dicono \textbf{autovettori} relativi all'autovalore \(\lambda\).
+}
+
+
+\BoxBlue{Osservazione}{Calcolo di Autovalori e Autospazi (in \(V\) f.g.)}{
+    Sia \(T: V \to V\) un endomorfismo e sia \(\mathcal{B}\) una base di \(V\).
+    Sia \(A = M_{\mathcal{B}}(T)\) la matrice associata.
+    Poniamo \(X = \phi_{\mathcal{B}}(u)\) (il vettore colonna delle coordinate).
+
+    \textbf{1. Ricerca degli Autovalori (Polinomio Caratteristico)}
+    
+    \(\lambda \in K\) è autovalore di \(T\)
+    \[ \iff \exists u \in V \setminus \{\bar{0}\} : T(u) = \lambda u \]
+    Passando alle coordinate (grazie all'isomorfismo \(\phi_{\mathcal{B}}\)):
+    \[ \iff \exists X \in K^n \setminus \{\bar{0}\} : A X = \lambda X \]
+    Portando tutto a sinistra e raccogliendo la \(X\) (usando la matrice identità \(I_n\)):
+    \[ \iff A X - \lambda I_n X = \bar{0} \]
+    \[ \iff \exists X \neq \bar{0} : (A - \lambda I_n) X = \bar{0} \]
+    
+    Un sistema omogeneo ammette soluzioni non nulle (\(X \neq \bar{0}\)) se e solo se la matrice dei coefficienti \textbf{non è invertibile}, ovvero ha determinante nullo:
+    \[ \iff \det(A - \lambda I_n) = 0 \]
+    
+    Questa equazione è detta \textbf{Equazione Caratteristica}.
+    Il polinomio \(p_A(\lambda) = \det(A - \lambda I_n)\) è detto \textbf{Polinomio Caratteristico}.
+
+    \bigskip
+    \textbf{2. Ricerca degli Autospazi}
+    
+    Per ogni \(\bar{\lambda}\) autovalore trovato (radice del polinomio), l'autospazio \(U_{\bar{\lambda}}\) si trova risolvendo il sistema lineare omogeneo associato:
+    \[ \Sigma_0: (A - \bar{\lambda}I_n)X = \bar{0} \]
+    
+    L'insieme delle soluzioni \(S_0\) di questo sistema rappresenta le coordinate dei vettori dell'autospazio:
+    \[ S_0 = \phi_{\mathcal{B}}(U_{\bar{\lambda}}) \]
+    (Per trovare i vettori "veri" in \(V\), basta applicare l'isomorfismo inverso ai vettori soluzione \(X\)).
+}
+
+\Proposizione{Invarianza del Polinomio Caratteristico per Similitudine}{
+    Siano \(A, \bar{A} \in M_n(K)\).
+    Se \(A\) e \(\bar{A}\) sono simili (cioè esiste \(P\) invertibile tale che \(A = P^{-1} \bar{A} P\)), allora hanno lo stesso polinomio caratteristico:
+    \[
+    |A - \lambda I_n| = |\bar{A} - \lambda I_n|
+    \]
+    (Di conseguenza, hanno gli stessi autovalori con la stessa molteplicità algebrica).
+
+    \Dimostrazione{
+        Partiamo dal polinomio caratteristico di \(A\):
+        \[ |A - \lambda I_n| \]
+        Sostituiamo \(A\) con la sua espressione simile \(P^{-1} \bar{A} P\):
+        \[ = |P^{-1} \bar{A} P - \lambda I_n| \]
+        
+        Qui usiamo il trucco fondamentale: scriviamo la matrice identità come \(I_n = P^{-1} I_n P\). 
+        L'espressione diventa:
+        \[ = |P^{-1} \bar{A} P - \lambda (P^{-1} I_n P)| \]
+        
+        Poiché \(\lambda\) è uno scalare, può essere spostato all'interno del prodotto matriciale:
+        \[ = |P^{-1} \bar{A} P - P^{-1} (\lambda I_n) P| \]
+        
+        Ora possiamo raccogliere \(P^{-1}\) a sinistra e \(P\) a destra (proprietà distributiva delle matrici):
+        \[ = |P^{-1} (\bar{A} - \lambda I_n) P| \]
+        
+        Applichiamo il \textbf{Teorema di Binet} (il determinante del prodotto è il prodotto dei determinanti):
+        \[ = |P^{-1}| \cdot |\bar{A} - \lambda I_n| \cdot |P| \]
+        
+        Poiché i determinanti sono scalari (numeri in \(K\)), il prodotto è commutativo. Possiamo riordinare i termini:
+        \[ = |P^{-1}| \cdot |P| \cdot |\bar{A} - \lambda I_n| \]
+        
+        Sapendo che \(|P^{-1}| = |P|^{-1} = \frac{1}{|P|}\), il prodotto dei determinanti di \(P\) e \(P^{-1}\) fa 1:
+        \[ = 1 \cdot |\bar{A} - \lambda I_n| \]
+        \[ = |\bar{A} - \lambda I_n| \]
+        
+        La tesi è dimostrata.
+    }
+}
+
+\bigskip
+
+\Proposizione{Indipendenza degli Autovettori relativi ad autovalori distinti}{
+    Sia \(T\) un endomorfismo su uno spazio vettoriale \(V\) sul campo \(K\).
+    Siano \(\lambda_1, \dots, \lambda_h\) autovalori di \(T\) \textbf{a due a due distinti} (\(\lambda_i \neq \lambda_j\) per \(i \neq j\)).
+    
+    Per ogni autovalore \(\lambda_i\), consideriamo un autovettore non nullo \(u_i \in U_{\lambda_i} \setminus \{\bar{0}\}\).
+    
+    Allora l'insieme \(\{u_1, \dots, u_h\}\) è \textbf{linearmente indipendente}.
+
+    \Dimostrazione{
+        \begin{itemize}
+            \item \textbf{Preliminare: Intersezione nulla.}
+            Innanzitutto osserviamo che \(U_{\lambda_i} \cap U_{\lambda_j} = \{\bar{0}\}\) con \(i \neq j\).
+            Infatti, sia \(u \in U_{\lambda_i} \cap U_{\lambda_j}\).
+            Allora \(T(u) = \lambda_i u\) e \(T(u) = \lambda_j u\).
+            Uguagliando le due espressioni:
+            \[ \lambda_i u = \lambda_j u \implies (\lambda_i - \lambda_j)u = \bar{0} \]
+            Poiché gli autovalori sono distinti, \((\lambda_i - \lambda_j) \neq 0\), quindi deve essere necessariamente \(u = \bar{0}\).
+
+            \item \textbf{Dimostrazione per induzione su \(h\).}
+            
+            \textbf{Base dell'induzione (\(h=1\)):}
+            L'insieme \(\{u_1\}\) contiene un solo vettore non nullo, quindi è linearmente indipendente.
+            
+            \textbf{Passo induttivo (\(h-1 \implies h\)):}
+            Supponiamo per ipotesi induttiva che \(h-1\) autovettori relativi ad autovalori distinti siano L.I.
+            Consideriamo una combinazione lineare nulla di \(h\) autovettori:
+            \[
+            \alpha_1 u_1 + \dots + \alpha_{h-1} u_{h-1} + \alpha_h u_h = \bar{0} \quad (*).
+            \]
+            Dobbiamo dimostrare che tutti gli scalari \(\alpha_i\) sono nulli.
+            
+            \textbf{Passo A:} Moltiplichiamo l'equazione \((*)\) per lo scalare \(\lambda_h\):
+            \[
+            \lambda_h \alpha_1 u_1 + \dots + \lambda_h \alpha_{h-1} u_{h-1} + \lambda_h \alpha_h u_h = \bar{0} \quad (1)
+            \]
+            
+            \textbf{Passo B:} Applichiamo l'applicazione lineare \(T\) all'equazione \((*)\):
+            \[
+            T(\alpha_1 u_1 + \dots + \alpha_h u_h) = T(\bar{0}) = \bar{0}
+            \]
+            Per la linearità di \(T\) e la definizione di autovettore (\(T(u_i) = \lambda_i u_i\)):
+            \[
+            \alpha_1 \lambda_1 u_1 + \dots + \alpha_{h-1} \lambda_{h-1} u_{h-1} + \alpha_h \lambda_h u_h = \bar{0} \quad (2)
+            \]
+            
+            \textbf{Passo C:} Sottraiamo l'equazione (1) dall'equazione (2):
+            \[
+            \alpha_1 (\lambda_1 - \lambda_h) u_1 + \dots + \alpha_{h-1} (\lambda_{h-1} - \lambda_h) u_{h-1} + \underbrace{\alpha_h (\lambda_h - \lambda_h) u_h}_{=0} = \bar{0}
+            \]
+            Otteniamo una combinazione lineare di soli \(h-1\) vettori:
+            \[
+            \sum_{i=1}^{h-1} \alpha_i (\lambda_i - \lambda_h) u_i = \bar{0}
+            \]
+            Per l'\textbf{ipotesi induttiva}, i vettori \(\{u_1, \dots, u_{h-1}\}\) sono linearmente indipendenti. Quindi, tutti i coefficienti di questa combinazione devono essere nulli:
+            \[
+            \alpha_i (\lambda_i - \lambda_h) = 0 \quad \forall i = 1, \dots, h-1.
+            \]
+            Poiché gli autovalori sono distinti, \(\lambda_i \neq \lambda_h\) per \(i < h\), quindi il termine tra parentesi non è mai zero. Ne consegue che:
+            \[
+            \alpha_1 = 0, \ \alpha_2 = 0, \ \dots, \ \alpha_{h-1} = 0.
+            \]
+            
+            Sostituendo questi valori nell'equazione originale \((*)\), rimane solo \(\alpha_h u_h = \bar{0}\). Dato che \(u_h \neq \bar{0}\), deve essere \(\alpha_h = 0\).
+            Tutti i coefficienti sono nulli, quindi l'insieme è L.I.
+        \end{itemize}
+    }
+}
+
+\BoxBlue{Corollario}{Somma Diretta degli Autospazi}{
+    Sia \(T: V \to V\) un endomorfismo.
+    Siano \(\lambda_1, \dots, \lambda_h\) autovalori a due a due distinti e siano \(U_{\lambda_1}, \dots, U_{\lambda_h}\) i relativi autospazi.
+    
+    Allora la somma degli autospazi è \textbf{diretta}:
+    \[ U_{\lambda_1} + \dots + U_{\lambda_h} = U_{\lambda_1} \oplus \dots \oplus U_{\lambda_h} \]
+    
+    Questo significa che per ogni \(j \in \{1, \dots, h\}\), l'intersezione dell'autospazio \(j\)-esimo con la somma degli altri è banale:
+    \[
+    U_{\lambda_j} \cap \left( \sum_{i \neq j} U_{\lambda_i} \right) = \{\bar{0}\}
+    \]
+
+    \Dimostrazione{
+        Senza perdita di generalità, dimostriamolo per \(j=1\).
+        Dobbiamo dimostrare che \(U_{\lambda_1} \cap (U_{\lambda_2} + \dots + U_{\lambda_h}) = \{\bar{0}\}\).
+        
+        Sia \(u\) un vettore appartenente a questa intersezione:
+        \[ u \in U_{\lambda_1} \quad \text{e} \quad u \in (U_{\lambda_2} + \dots + U_{\lambda_h}) \]
+        
+        Poiché \(u\) appartiene alla somma, esistono dei vettori \(u_2 \in U_{\lambda_2}, \dots, u_h \in U_{\lambda_h}\) tali che:
+        \[ u = u_2 + \dots + u_h \]
+        Portando \(u\) a destra, possiamo scrivere una combinazione lineare nulla:
+        \[ \bar{0} = -u + u_2 + \dots + u_h \]
+        
+        Ora ragioniamo per assurdo.
+        Supponiamo che \(u \neq \bar{0}\) (o che qualche \(u_i \neq \bar{0}\)).
+        \begin{itemize}
+            \item \(u\) è un autovettore relativo a \(\lambda_1\) (o è nullo).
+            \item Ogni \(u_i\) è un autovettore relativo a \(\lambda_i\) (o è nullo).
+        \end{itemize}
+        L'equazione \((-u) + u_2 + \dots + u_h = \bar{0}\) rappresenterebbe una combinazione lineare non banale di autovettori relativi ad autovalori \textbf{distinti} che dà il vettore nullo.
+        
+        Ma per la \textbf{Proposizione precedente}, autovettori relativi ad autovalori distinti sono \textbf{linearmente indipendenti}. L'unica combinazione lineare che dà zero è quella con tutti i vettori nulli.
+        
+        Quindi deve essere necessariamente:
+        \[ u = \bar{0}, \quad u_2 = \bar{0}, \quad \dots, \quad u_h = \bar{0} \]
+        
+        Poiché l'unico vettore nell'intersezione è il vettore nullo, la somma è diretta.
+    }
+}
