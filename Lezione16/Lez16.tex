@@ -1,0 +1,176 @@
+\chapter{Lezione 16 - 21/11}
+
+\section{Spazi Euclidei}
+
+\Definizione{Spazio Vettoriale Euclideo e Prodotto Scalare}{
+    Uno \textbf{spazio vettoriale euclideo} è una coppia \((V, \langle \cdot, \cdot \rangle)\) dove:
+    \begin{itemize}
+        \item \(V\) è uno spazio vettoriale sul campo reale (\(K = \mathbb{R}\));
+        \item \(\langle \cdot, \cdot \rangle : V \times V \to \mathbb{R}\) è un'applicazione, detta \textbf{prodotto scalare}, che associa a ogni coppia di vettori \((u, v)\) un numero reale \(\langle u, v \rangle\).
+    \end{itemize}
+    
+    Tale applicazione deve soddisfare le seguenti proprietà:
+    
+    \begin{enumerate}
+        \item \textbf{Simmetria:}
+        \[ \forall u, v \in V, \quad \langle u, v \rangle = \langle v, u \rangle \]
+        
+        \item \textbf{Additività (Linearità rispetto al secondo argomento):}
+        \[ \forall u, v, w \in V, \quad \langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle \]
+        
+        \item \textbf{Omogeneità (Linearità rispetto allo scalare):}
+        \[ \forall u, v \in V, \forall \alpha \in \mathbb{R}, \quad \langle u, \alpha v \rangle = \alpha \langle u, v \rangle \]
+        \textit{Nota:} Grazie alla proprietà di simmetria (1), la linearità vale anche sul primo argomento:
+        \[ \langle \alpha u, v \rangle = \alpha \langle u, v \rangle \]
+        
+        \item \textbf{Definita Positiva:}
+        \[ \forall u \in V, \quad \langle u, u \rangle \ge 0 \]
+        Inoltre, il prodotto scalare è nullo se e solo se il vettore è nullo (non degenere):
+        \[ \langle u, u \rangle = 0 \iff u = {0} \]
+    \end{enumerate}
+}
+
+\Definizione{Norma di un Vettore}{
+    Sia \((V, \langle \cdot, \cdot \rangle)\) uno spazio vettoriale euclideo.
+    Per ogni vettore \(u \in V\), si definisce \textbf{lunghezza} (o \textbf{modulo} o \textbf{norma}) di \(u\) il numero reale non negativo:
+    \[
+    \|u\| = \sqrt{\langle u, u \rangle}
+    \]
+    \textit{Nota:} Questo valore risulta sempre positivo in quanto la proprietà (4) garantisce \(\langle u, u \rangle \ge 0\).
+}
+
+\BoxBlue{Osservazione}{Proprietà Elementari}{
+    \begin{itemize}
+        \item \textbf{Prodotto scalare con il vettore nullo:}
+        \[ \forall u \in V, \quad \langle \underline{0}, u \rangle = 0 \]
+        
+        \textit{Dimostrazione:}
+        Sfruttiamo il fatto che \(\underline{0} = 0 \cdot \underline{0}\) (lo scalare zero per il vettore nullo).
+        \[
+        \langle \underline{0}, u \rangle = \langle 0 \cdot \underline{0}, u \rangle
+        \]
+        Per le proprietà di simmetria (1) e omogeneità (3), possiamo portare lo scalare fuori:
+        \[
+        \underset{(1) \ e \ (3)}{=} 0 \cdot \langle \underline{0}, u \rangle = 0
+        \]
+
+        \item \textbf{Omogeneità della Norma:}
+        \[ \forall u \in V, \forall \alpha \in \mathbb{R}, \quad \|\alpha u\| = |\alpha| \cdot \|u\| \]
+        
+        \textit{Dimostrazione:}
+        Per definizione di norma:
+        \[
+        \|\alpha u\| = \sqrt{\langle \alpha u, \alpha u \rangle}
+        \]
+        Per le proprietà (1) e (3), portiamo fuori \(\alpha\) da entrambi gli argomenti del prodotto scalare (ottenendo \(\alpha \cdot \alpha = \alpha^2\)):
+        \[
+        \underset{(1) \ e \ (3)}{=} \sqrt{\alpha^2 \langle u, u \rangle}
+        \]
+        Sapendo che \(\sqrt{\alpha^2} = |\alpha|\) e \(\sqrt{\langle u, u \rangle} = \|u\|\):
+        \[
+        = |\alpha| \sqrt{\langle u, u \rangle} = |\alpha| \cdot \|u\|
+        \]
+    \end{itemize}
+}
+
+\Teorema{Disuguaglianza di Schwarz}{
+    Sia \((V, \langle \cdot, \cdot \rangle)\) uno spazio vettoriale euclideo.
+    Per ogni coppia di vettori \(u, v \in V\), vale la seguente relazione:
+    \[
+    |\langle u, v \rangle| \le \|u\| \cdot \|v\|
+    \]
+    In altre parole, il valore assoluto del prodotto scalare è minore o uguale al prodotto delle norme.
+
+    \Dimostrazione{
+        Se \(v = 0\) oppure \(u = 0\) la disuguaglianza è banalmente verificata (\(0 \le 0\)). 
+        
+        Supponiamo \(v,u \neq 0\).
+        Consideriamo un generico scalare \(t \in \mathbb{R}\) e costruiamo il vettore \(u + tv\).
+        Per la proprietà di positività del prodotto scalare (4), la norma al quadrato di qualsiasi vettore è non negativa:
+        \[
+        \|u + tv\|^2 \ge 0 \quad \forall t \in \mathbb{R}
+        \]
+        Esplicitiamo la norma tramite il prodotto scalare (3):
+        \[
+        \langle u + tv, u + tv \rangle \ge 0
+        \]
+        Sviluppando grazie alla bilinearità e alla simmetria (1 e 2):
+        \[
+        \langle u, u \rangle + \langle u, tv \rangle + \langle tv, u \rangle + \langle tv, tv \rangle \ge 0
+        \]
+        \[
+        \|u\|^2 + 2t\langle u, v \rangle + t^2\|v\|^2 \ge 0
+        \]
+        
+        Questa è una disequazione di secondo grado nella variabile \(t\) della forma \(At^2 + Bt + C \ge 0\), con:
+        \[ A = \|v\|^2, \quad B = 2\langle u, v \rangle, \quad C = \|u\|^2 \]
+
+        Ricordiamo le formule risolutive:
+        \[ \Delta = b^2 - 4ac \]
+        \[ x_{1,2} = \frac{-\frac{b}{2} \pm \sqrt{\frac{\Delta}{4}}}{a} \]
+        
+        Essendo una quantità al quadrato sempre positiva porremo il nostro \(\Delta \le 0\).
+        
+        Sostituendo i nostri valori nella formula risolutiva e nel discriminante:
+        \[
+        x = \frac{\langle u, v \rangle \pm \sqrt{\langle u, v \rangle^2 - \|u\|^2 \|v\|^2}}{\|v\|^2}
+        \]
+        Imponendo la condizione sul discriminante:
+        \[
+        (\langle u, v \rangle)^2 - \|v\|^2 \cdot \|u\|^2 \le 0
+        \]
+        Portando il termine negativo a destra:
+        \[
+        (\langle u, v \rangle)^2 \le \|u\|^2 \cdot \|v\|^2
+        \]
+        Estraendo la radice quadrata da entrambi i membri, otteniamo la tesi:
+        \[
+        |\langle u, v \rangle| \le \|u\| \cdot \|v\|
+        \]
+    }
+}
+
+\BoxBlue{Osservazione}{Linearità e Disuguaglianza}{
+    \begin{itemize}
+        \item \textbf{Condizione di dipendenza lineare (tramite norma nulla):}
+        \[
+        \langle u + \beta v, u + \beta v \rangle = 0 \iff u + \beta v = \underline{0} \iff \{u, v\} \text{ sono linearmente dipendenti}
+        \]
+        
+        \item \textbf{Rapporto di Cauchy-Schwarz (Coseno dell'angolo):}
+        Siano \(u, v \in V \setminus \{\underline{0}\}\) (vettori non nulli).
+        Allora le loro norme sono non nulle: \(\|u\| \neq 0\) e \(\|v\| \neq 0\).
+        
+        Prendiamo la disuguaglianza di Cauchy-Schwarz:
+        \[ |\langle u, v \rangle| \le \|u\| \cdot \|v\| \]
+        
+        Dividendo entrambi i membri per il prodotto delle norme (che è positivo):
+        \[
+        \frac{|\langle u, v \rangle|}{\|u\| \cdot \|v\|} \le 1
+        \]
+        
+        Per le proprietà del valore assoluto (\(|x| \le 1 \iff -1 \le x \le 1\)), otteniamo:
+        \[
+        -1 \le \frac{\langle u, v \rangle}{\|u\| \cdot \|v\|} \le 1
+        \]
+        \textit{(Questo rapporto definisce il coseno dell'angolo compreso tra i due vettori).}
+    \end{itemize}
+}
+
+\section{Angoli e Ortogonalità}
+
+\Definizione{Angolo tra due vettori}{
+    Siano \(u, v \in V \setminus \{\underline{0}\}\) due vettori non nulli.
+    Si definisce \textbf{angolo} tra \(u\) e \(v\) l'unico numero reale \(\phi \in [0, \pi]\) tale che:
+    \[
+    \cos \phi = \frac{\langle u, v \rangle}{\|u\| \cdot \|v\|}
+    \]
+}
+
+\Definizione{Vettori Ortogonali}{
+    Siano \(u, v \in V\).
+    I vettori \(u\) e \(v\) si dicono \textbf{ortogonali} (\(u \perp v\)) se il loro prodotto scalare è nullo:
+    \[
+    \langle u, v \rangle = 0
+    \]
+}

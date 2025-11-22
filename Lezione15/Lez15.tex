@@ -1,0 +1,170 @@
+\chapter{Lezione 15 - 19/11}
+
+\section{Polinomi e Radici}
+
+\Definizione{Radice di un Polinomio}{
+    Sia \(p(\lambda) \in K[\lambda]\) un polinomio nella variabile \(\lambda\) a coefficienti nel campo \(K\).
+    Uno scalare \(a \in K\) si dice \textbf{radice} (o soluzione) di \(p(\lambda)\) se e solo se sostituendo \(a\) al posto della variabile il polinomio si annulla:
+    \[
+    p(a) = 0
+    \]
+}
+
+\Teorema{Teorema di Ruffini}{
+    Sia \(p(\lambda) \in K[\lambda]\) un polinomio e sia \(a \in K\) uno scalare.
+    
+    \(a\) è una radice di \(p(\lambda)\) se e solo se il binomio \((\lambda - a)\) divide il polinomio \(p(\lambda)\).
+    
+    In termini formali:
+    \[
+    p(a) = 0 \iff \exists q(\lambda) \in K[\lambda] \text{ tale che } p(\lambda) = q(\lambda)(\lambda - a)
+    \]
+}
+
+\section{Molteplicità degli Autovalori}
+
+\Definizione{Molteplicità Algebrica}{
+    Sia \(x \in K\) una radice del polinomio \(p(\lambda)\).
+    La \textbf{molteplicità algebrica} di \(x\) (come radice di \(p(\lambda)\)) è definita come:
+    \[
+    m_a(x) = \max \{ k \in \mathbb{N} \mid (\lambda - x)^k \text{ divide } p(\lambda) \}
+    \]
+    In termini pratici, è il numero di volte che la radice \(x\) compare nella fattorizzazione del polinomio caratteristico.
+}
+
+\Definizione{Molteplicità Geometrica}{
+    Sia \(\bar{\lambda}\) un autovalore dell'endomorfismo \(T\).
+    La \textbf{molteplicità geometrica} di \(\bar{\lambda}\), indicata con \(m_g(\bar{\lambda})\), è definita come la dimensione del relativo autospazio \(U_{\bar{\lambda}}\):
+    \[
+    m_g(\bar{\lambda}) = \dim(U_{\bar{\lambda}})
+    \]
+    Ovvero, è il numero massimo di autovettori linearmente indipendenti associati a \(\bar{\lambda}\).
+}
+
+\Proposizione{Relazione tra Molteplicità Algebrica e Geometrica}{
+    Sia \(T: V \to V\) un endomorfismo su uno spazio vettoriale \(V\) finitamente generato (con \(\dim V = n\)).
+    Sia \(\bar{\lambda}\) un autovalore di \(T\).
+    
+    Allora vale la disuguaglianza:
+    \[
+    m_g(\bar{\lambda}) \le m_a(\bar{\lambda})
+    \]
+    Inoltre, ricordando che se \(\bar{\lambda}\) è autovalore esiste almeno un autovettore non nullo, vale sempre:
+    \[
+    1 \le m_g(\bar{\lambda}) \le m_a(\bar{\lambda})
+    \]
+}
+
+\section{Diagonalizzabilità}
+
+\Definizione{Endomorfismo Diagonalizzabile}{
+    Sia \(T: V \to V\) un endomorfismo su uno spazio vettoriale \(V\) finitamente generato.
+    \(T\) si dice \textbf{diagonalizzabile} se verifica una delle seguenti condizioni (che sono equivalenti):
+    \begin{itemize}
+        \item Ogni matrice associata a \(T\) è simile ad una matrice diagonale.
+        \item Esiste una matrice associata a \(T\) che è simile ad una matrice diagonale.
+        \item Esiste una base \(\bar{\mathcal{B}}\) di \(V\) (detta base di autovettori) tale che la matrice associata \(\bar{A} = M_{\bar{\mathcal{B}}}(T)\) è una matrice diagonale.
+    \end{itemize}
+}
+
+\Definizione{Matrice Diagonalizzabile}{
+    Una matrice \(A \in M_n(K)\) si dice \textbf{diagonalizzabile} se è simile ad una matrice diagonale.
+    
+    Ovvero, se esiste una matrice invertibile \(Q \in M_n(K)\) (detta \textbf{matrice che diagonalizza} \(A\)) tale che:
+    \[
+    \bar{A} = Q^{-1} A Q
+    \]
+    dove \(\bar{A}\) è una matrice diagonale.
+}
+
+\Teorema{Criteri di Diagonalizzazione}{
+    Sia \(T: V \to V\) un endomorfismo con \(\dim V = n\).
+    Siano \(\lambda_1, \dots, \lambda_h\) gli autovalori distinti di \(T\).
+    
+    Allora sono equivalenti i seguenti fatti:
+    
+    \begin{enumerate}
+        \item[(a)] \(T\) è diagonalizzabile.
+        
+        \item[(b)] Esiste una base \(\bar{\mathcal{B}}\) di \(V\) costituita interamente da autovettori (tale base è detta \textbf{base spettrale}).
+        
+        \item[(c)] La somma delle molteplicità geometriche degli autovalori è uguale alla dimensione dello spazio:
+        \[ \sum_{i=1}^h m_g(\lambda_i) = n \]
+        
+        \item[(d)] Lo spazio \(V\) è somma diretta degli autospazi:
+        \[ U_{\lambda_1} \oplus \dots \oplus U_{\lambda_h} = V \]
+        
+        \item[(e)] Valgono contemporaneamente le seguenti due condizioni:
+        \begin{itemize}
+            \item[i)] La somma delle molteplicità algebriche è \(n\) (ovvero il polinomio caratteristico è totalmente decomponibile nel campo \(K\)):
+            \[ \sum_{i=1}^h m_a(\lambda_i) = n \]
+            \item[ii)] Per ogni autovalore \(\lambda_i\), la molteplicità geometrica coincide con quella algebrica (regolarità degli autovalori):
+            \[ m_g(\lambda_i) = m_a(\lambda_i) \quad \forall i=1, \dots, h \]
+        \end{itemize}
+    \end{enumerate}
+
+    \Dimostrazione{
+        \textbf{a) \(\implies\) b)}
+        Per definizione di diagonalizzabilità, esiste una base \(\bar{\mathcal{B}} = \{\bar{e}_1, \dots, \bar{e}_n\}\) di \(V\) tale che la matrice associata \(\bar{A} = M_{\bar{\mathcal{B}}}(T)\) è diagonale:
+        \[
+        \bar{A} = \begin{pmatrix}
+        \lambda_1 & 0 & \dots & 0 \\
+        0 & \lambda_2 & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \lambda_n
+        \end{pmatrix}
+        \]
+        Ricordiamo che la \(j\)-esima colonna della matrice associata rappresenta le coordinate del vettore immagine \(T(\bar{e}_j)\) rispetto alla base \(\bar{\mathcal{B}}\).
+        
+        Calcoliamo l'immagine del primo vettore \(\bar{e}_1\):
+        \[
+        T(\bar{e}_1) = \lambda_1 \bar{e}_1 + 0 \bar{e}_2 + \dots + 0 \bar{e}_n = \lambda_1 \bar{e}_1
+        \]
+        Questo implica che \(\bar{e}_1\) è un autovettore di autovalore \(\lambda_1\).
+        
+        Procedendo allo stesso modo per un generico vettore \(\bar{e}_j\):
+        \[
+        T(\bar{e}_j) = 0 \bar{e}_1 + \dots + \lambda_j \bar{e}_j + \dots + 0 \bar{e}_n = \lambda_j \bar{e}_j
+        \]
+        Ogni vettore della base \(\bar{\mathcal{B}}\) è un autovettore. Dunque \(\bar{\mathcal{B}}\) è una \textbf{base spettrale}.
+
+        \bigskip
+        
+        \textbf{b) \(\implies\) a)}
+        Per ipotesi esiste una base \(\bar{\mathcal{B}} = \{\bar{e}_1, \dots, \bar{e}_n\}\) costituita da autovettori.
+        Allora per ogni \(j\), \(T(\bar{e}_j) = \lambda_j \bar{e}_j\).
+        Costruendo la matrice associata \(M_{\bar{\mathcal{B}}}(T)\), la \(j\)-esima colonna avrà \(\lambda_j\) nella posizione \(j,j\) e \(0\) altrove. La matrice risultante è diagonale, quindi \(T\) è diagonalizzabile.
+
+        \bigskip
+
+        \textbf{b) \(\implies\) c)}
+        Sia \(\bar{\mathcal{B}}\) una base spettrale. Possiamo raggruppare i vettori di questa base in base al loro autovalore.
+        Siano \(\lambda_1, \dots, \lambda_h\) gli autovalori distinti.
+        Indichiamo con \(r_i\) il numero di autovettori nella base \(\bar{\mathcal{B}}\) relativi all'autovalore \(\lambda_i\).
+        Poiché \(\bar{\mathcal{B}}\) è una base di \(V\), la somma di questi numeri deve dare la dimensione totale \(n\):
+        \[ r_1 + r_2 + \dots + r_n = n \]
+        
+        Consideriamo il gruppo di vettori relative a \(\lambda_1\): \(\{ \bar{e}^1_1, \dots, \bar{e}^1_{r_1} \}\).
+        Questi sono \(r_1\) vettori linearmente indipendenti (perché sottoinsieme di una base) e appartengono all'autospazio \(U_{\lambda_1}\).
+        Ne consegue che la dimensione dell'autospazio è almeno \(r_1\):
+        \[ r_1 \le \dim(U_{\lambda_1}) = m_g(\lambda_1) \]
+        Analogamente vale \(r_i \le m_g(\lambda_i)\) per ogni \(i\).
+        
+        Ora sommiamo le disuguaglianze:
+        \[ n = \sum_{i=1}^n r_i \le \sum_{i=1}^h m_g(\lambda_i) \]
+        Tuttavia, sappiamo dalla teoria generale che la somma delle molteplicità geometriche è sempre minore o uguale alla dimensione dello spazio (\(\sum m_g \le n\)).
+        L'unica possibilità affinché valgano entrambe le disuguaglianze è che valga l'uguaglianza:
+        \[ \sum_{i=1}^h m_g(\lambda_i) = n \]
+
+        \bigskip
+
+        \textbf{d) \(\implies\) b)}
+        Supponiamo che \(V = U_{\lambda_1} \oplus \dots \oplus U_{\lambda_h}\).
+        Per ogni autospazio \(U_{\lambda_i}\), scegliamo una base \(\mathcal{B}_i\).
+        Poiché la somma è diretta, l'unione delle basi dei sottospazi è una base della somma (che è \(V\)):
+        \[ \bar{\mathcal{B}} = \mathcal{B}_1 \cup \mathcal{B}_2 \cup \dots \cup \mathcal{B}_h \]
+        \(\bar{\mathcal{B}}\) è una base di \(V\). Inoltre, ogni vettore in \(\mathcal{B}_i\) è un elemento di \(U_{\lambda_i}\), quindi è un autovettore.
+        Ne consegue che \(\bar{\mathcal{B}}\) è una base di autovettori (base spettrale).
+    }
+}
+
