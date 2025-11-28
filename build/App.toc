@@ -77,3 +77,7 @@
 \contentsline {section}{\numberline {17.1}Teorema di Pitagora}{93}{section.17.1}%
 \contentsline {section}{\numberline {17.2}Disuguaglianza triangolare}{93}{section.17.2}%
 \contentsline {section}{\numberline {17.3}Prodotto Vettoriale}{99}{section.17.3}%
+\contentsline {chapter}{\numberline {18}Lezione 18 - 28/11 (Teams)}{102}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Spazio Affine Euclideo}{102}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Riferimenti Cartesiani}{103}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Cambiamento di Riferimento}{104}{section.18.3}%

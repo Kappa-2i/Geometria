@@ -1,0 +1,286 @@
+\chapter{Lezione 18 - 28/11 (Teams)}
+
+\section{Spazio Affine Euclideo}
+
+\Definizione{Spazio Affine Euclideo}{
+    Uno \textbf{spazio affine euclideo} è una terna \((\vec{\mathcal{E}}, \mathcal{E}, \pi)\) dove:
+    \begin{itemize}
+        \item \(\vec{\mathcal{E}}\) è uno spazio vettoriale euclideo (ovvero dotato di prodotto scalare);
+        \item \(\mathcal{E}\) è un insieme non vuoto i cui elementi sono detti \textbf{punti};
+        \item \(\pi: \mathcal{E} \times \mathcal{E} \to \vec{\mathcal{E}}\) è un'applicazione che associa a ogni coppia di punti un vettore.\[ \pi(P, Q) = \vec{PQ} \in \vec{\mathcal{E}} \]
+    \end{itemize}
+
+    
+    Tale applicazione deve soddisfare i seguenti due assiomi:
+    
+    \begin{enumerate}
+        \item Per ogni punto \(P \in \mathcal{E}\) e per ogni vettore \(u \in \vec{\mathcal{E}}\), esiste un \textbf{unico} punto \(X \in \mathcal{E}\) tale che il vettore che li congiunge sia \(u\):
+        \[
+        \forall P \in \mathcal{E}, \forall u \in \vec{\mathcal{E}}, \exists ! X \in \mathcal{E} : \vec{PX} = u
+        \]
+        
+        \item \textbf{(Relazione di Chasles)} Per ogni terna di punti \(P, Q, R \in \mathcal{E}\), la somma dei vettori consecutivi è uguale al vettore che chiude il triangolo:
+        \[
+        \forall P, Q, R \in \mathcal{E}, \quad \vec{PQ} + \vec{QR} = \vec{PR}
+        \]
+    \end{enumerate}
+}
+
+
+\BoxBlue{Osservazione}{Spazi Affini Generali}{
+    Nella definizione precedente, potremmo prendere uno spazio vettoriale \(V\) \textbf{qualsiasi} al posto dello spazio vettoriale euclideo \(\vec{\mathcal{E}}\).
+    
+    In tal caso, la terna \((V, \mathcal{E}, \pi)\) si definisce semplicemente \textbf{Spazio Affine} (senza l'aggettivo "euclideo").
+    
+    \bigskip
+    
+    \textbf{Nota:}
+    D'ora in poi, negli enunciati verrà utilizzata la dicitura "\textbf{[euclideo]}" (tra parentesi quadre).
+    Questo sta ad indicare che tutte le definizioni, le proposizioni e i teoremi sono validi anche se lo spazio vettoriale non è euclideo.
+}
+
+
+\Proposizione{Proprietà dei Vettori Affini}{
+    Sia \((\vec{\mathcal{E}}, \mathcal{E}, \pi)\) uno spazio affine euclideo.
+    Valgono le seguenti proprietà:
+    
+    \begin{itemize}
+        \item \textbf{Vettore nullo:} Il vettore congiungente due punti è nullo se e solo se i punti coincidono.
+        \[ \forall P, Q \in \mathcal{E}, \quad \vec{PQ} = \underline{0} \iff P = Q \]
+        
+        \item \textbf{Antisimmetria:} Scambiando gli estremi, il vettore cambia segno.
+        \[ \forall P, Q \in \mathcal{E}, \quad \vec{PQ} = -\vec{QP} \]
+    \end{itemize}
+
+\Dimostrazione{
+    \textbf{1. Dimostrazione della prima proprietà:}
+    \begin{itemize}
+        \item \((\Leftarrow)\) Supponiamo \(P = Q\).
+        \[ \vec{QQ} + \vec{QQ} = (2) \vec{QQ} \]
+        Sottraendo il vettore \(\vec{QQ}\) da entrambi i membri (nello spazio vettoriale), otteniamo:
+        \[ \vec{QQ} + \vec{QQ} - \vec{QQ} = \vec{QQ} - \vec{QQ} = \underline{0} \] 
+        
+        \item \((\Rightarrow)\) 
+        \[
+        \begin{gathered}
+        \text{Supponiamo } \vec{PQ} = \underline{0} \text{ e sappiamo che } \vec{PP} = \underline{0} \implies Q = P = X \\
+        P \in \mathcal{E}, \ \underline{0} \in \vec{\mathcal{E}} \implies \exists! X \in \mathcal{E} : \vec{PX} = \underline{0} \\
+        \text{Poiché } \vec{PQ} = \underline{0} \text{ e } \vec{PP} = \underline{0} \implies X = Q \text{ e } X = P \implies P = Q
+        \end{gathered}
+        \]
+    \end{itemize}
+
+    \bigskip
+
+    \textbf{2. Dimostrazione della seconda proprietà:}
+    Consideriamo la somma \(\vec{PQ} + \vec{QP}\).
+    Per la relazione di Chasles (inserendo \(Q\) tra \(P\) e \(P\)):
+    \[ \vec{PQ} + \vec{QP} = \vec{PP} \]
+    Per la proprietà precedente sappiamo che \(\vec{PP} = \underline{0}\), quindi:
+    \[ \vec{PQ} + \vec{QP} = \underline{0} \]
+    Portando \(\vec{QP}\) all'altro membro:
+    \[ \vec{PQ} = -\vec{QP} \]
+}
+}
+
+\section{Riferimenti Cartesiani}
+
+\Definizione{Dimensione dello Spazio Affine}{
+    Sia \((\vec{\mathcal{E}}, \mathcal{E}, \pi)\) uno spazio affine.
+    Se la dimensione dello spazio vettoriale associato è \(n\) (ovvero \(\dim(\vec{\mathcal{E}}) = n\)), allora si pone per definizione:
+    \[
+    \dim(\mathcal{E}) = n
+    \]
+}
+
+\Definizione{Riferimento Cartesiano}{
+    Sia \((\vec{\mathcal{E}}, \mathcal{E}, \pi)\) uno spazio affine euclideo.
+    Un \textbf{riferimento cartesiano} è una coppia \(R = (O, \mathcal{B})\) costituita da:
+    \begin{itemize}
+        \item Un punto \(O \in \mathcal{E}\), detto \textbf{origine} del riferimento;
+        \item Una base ordinata \(\mathcal{B} = \{e_1, \dots, e_n\}\) dello spazio vettoriale \(\vec{\mathcal{E}}\) che sia \textbf{ortonormale}.
+    \end{itemize}
+    
+    \textit{Nota: La richiesta che la base sia ortonormale è specifica per gli spazi euclidei. Se la base è generica (non ortonormale), si parla semplicemente di Riferimento Affine.}
+}
+
+\Definizione{Coordinate di un Punto}{
+    Dato un riferimento cartesiano \(R = (O, \mathcal{B})\) di \(\mathcal{E}\), per ogni punto \(P \in \mathcal{E}\) definiamo le \textbf{coordinate di \(P\) in \(R\)} come le coordinate del vettore posizione \(\vec{OP}\) rispetto alla base \(\mathcal{B}\).
+    
+    In simboli, se \(\phi_{\mathcal{B}}\) è l'isomorfismo coordinato associato alla base:
+    \[
+    P \equiv_R \phi_{\mathcal{B}}(\vec{OP})
+    \]
+}
+
+\Proposizione{Componenti del Vettore tra due Punti}{
+    Sia \(R = (O, \mathcal{B})\) un riferimento cartesiano dello spazio affine \((\vec{\mathcal{E}}, \mathcal{E}, \pi)\) con \(\dim \mathcal{E} = n\).
+    
+    Siano \(P, Q \in \mathcal{E}\) due punti con le seguenti coordinate rispetto a \(R\):
+    \[
+    P \equiv_R (x_1, \dots, x_n) = \phi_{\mathcal{B}}(\vec{OP}) = (x_1, \dots, x_n)
+    \]
+    \[
+    Q \equiv_R (y_1, \dots, y_n) = \phi_{\mathcal{B}}(\vec{OQ}) = (y_1, \dots, y_n)
+    \]
+    
+    Allora le componenti del vettore \(\vec{PQ}\) rispetto alla base \(\mathcal{B}\) sono date dalla differenza delle coordinate:
+    \[
+    \phi_{\mathcal{B}}(\vec{PQ}) = (y_1 - x_1, \dots, y_n - x_n)
+    \]
+
+    \Dimostrazione{
+        Sfruttiamo la relazione di Chasles inserendo l'origine \(O\) tra \(P\) e \(Q\):
+        \[ \vec{PQ} = \vec{PO} + \vec{OQ} \]
+        Ricordando che \(\vec{PO} = -\vec{OP}\), possiamo scrivere:
+        \[ \vec{PQ} = \vec{OQ} - \vec{OP} \]
+        
+        Applichiamo l'isomorfismo delle coordinate \(\phi_{\mathcal{B}}\). Poiché \(\phi_{\mathcal{B}}\) è un'applicazione lineare, separa la somma/differenza:
+        \[
+        \phi_{\mathcal{B}}(\vec{PQ}) = \phi_{\mathcal{B}}(\vec{OQ} - \vec{OP}) = \phi_{\mathcal{B}}(\vec{OQ}) - \phi_{\mathcal{B}}(\vec{OP})
+        \]
+        Sostituendo con le coordinate definite nell'ipotesi:
+        \[
+        = (y_1, \dots, y_n) - (x_1, \dots, x_n)
+        \]
+        \[
+        = (y_1 - x_1, \dots, y_n - x_n)
+        \]
+    }
+}
+
+\section{Cambiamento di Riferimento}
+
+\Proposizione{Formula del Cambiamento di Coordinate}{
+    Sia \((\vec{\mathcal{E}}, \mathcal{E}, \pi)\) uno spazio affine di dimensione \(n\).
+    Siano \(R = (O, \mathcal{B})\) e \(R' = (O', \mathcal{B}')\) due riferimenti cartesiani distinti.
+    
+    Sia \(P \in \mathcal{E}\) un punto generico. Indichiamo con \(X\) e \(X'\) i vettori colonna delle sue coordinate nei due riferimenti:
+    \[
+    X = \phi_{\mathcal{B}}(\vec{OP}) = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}, \quad
+    X' = \phi_{\mathcal{B}'}(\vec{O'P}) = \begin{pmatrix} x'_1 \\ \vdots \\ x'_n \end{pmatrix}
+    \]
+    
+    Sia \(E = M_{\mathcal{B}}^{\mathcal{B}'}(id_{\vec{\mathcal{E}}})\) la matrice di passaggio dalla base \(\mathcal{B}\) alla base \(\mathcal{B}'\).
+    Sia \(C = \phi_{\mathcal{B}'}(\vec{O'O})\) il vettore delle coordinate della \textit{vecchia origine} rispetto al \textit{nuovo riferimento}.
+    
+    Allora vale la seguente relazione matriciale:
+    \[
+    X' = E X + C
+    \]
+    
+    \Dimostrazione{
+        Partiamo dalla relazione vettoriale che lega i punti \(O, O', P\) (Relazione di Chasles), inserendo la vecchia origine \(O\):
+        \[ \vec{O'P} = \vec{O'O} + \vec{OP} \]
+        
+        Applichiamo l'isomorfismo delle coordinate rispetto alla \textbf{nuova base} \(\mathcal{B}'\) a tutta l'equazione:
+        \[ \phi_{\mathcal{B}'}(\vec{O'P}) = \phi_{\mathcal{B}'}(\vec{O'O} + \vec{OP}) \]
+        Per la linearitÃ dell'applicazione coordinata:
+        \[ \phi_{\mathcal{B}'}(\vec{O'P}) = \phi_{\mathcal{B}'}(\vec{O'O}) + \phi_{\mathcal{B}'}(\vec{OP}) \]
+        
+        Analizziamo i termini:
+        \begin{enumerate}
+            \item \(\phi_{\mathcal{B}'}(\vec{O'P}) = X'\) (per definizione).
+            \item \(\phi_{\mathcal{B}'}(\vec{O'O}) = C\) (termine noto di traslazione).
+            \item Per il termine \(\phi_{\mathcal{B}'}(\vec{OP})\), dobbiamo convertire le coordinate del vettore \(\vec{OP}\) dalla base \(\mathcal{B}\) alla base \(\mathcal{B}'\). Per la teoria degli spazi vettoriali, questo si ottiene moltiplicando la matrice di passaggio \(E\) per le coordinate nella base vecchia:
+            \[ \phi_{\mathcal{B}'}(\vec{OP}) = M_{\mathcal{B}}^{\mathcal{B}'}(id) \cdot \phi_{\mathcal{B}}(\vec{OP}) = E X \]
+        \end{enumerate}
+        
+        Sostituendo tutto nell'equazione otteniamo la tesi:
+        \[
+        X' = C + E X
+        \]
+    }
+}
+
+\BoxBlue{Osservazione}{Struttura Affine Canonica su uno Spazio Vettoriale}{
+    Ogni spazio vettoriale \(V\) [euclideo] può essere dotato in modo naturale di una struttura di spazio affine (euclideo) definendo la terna canonica:
+    \[
+    \mathcal{A} = (V, V, \pi_V)
+    \]
+    dove:
+    \begin{itemize}
+        \item Il primo \(V\) rappresenta l'insieme dei \textbf{punti}.
+        \item Il secondo \(V\) rappresenta lo \textbf{spazio vettoriale} delle traslazioni (giacitura).
+        \item L'applicazione \(\pi_V\) è la sottrazione vettoriale:
+        \[
+        \pi_V: V \times V \to V
+        \]
+        \[
+        (u, w) \mapsto \vec{uw} = w - u
+        \]
+    \end{itemize}
+    
+}
+
+\Definizione{Sottospazio Affine (o Euclideo)}{
+    Sia \(\mathcal{E}\) uno spazio affine [euclideo] con spazio vettoriale associato \(\vec{\mathcal{E}}\).
+    
+    Un sottoinsieme non vuoto \(\mathbb{H} \subseteq \mathcal{E}\) si dice \textbf{sottospazio affine} di \(\mathcal{E}\) se valgono le seguenti due condizioni:
+    
+    \begin{itemize}
+        \item \textbf{Giacitura:} L'insieme di tutti i vettori che congiungono coppie di punti di \(\mathbb{H}\):
+        \[
+        \vec{\mathbb{H}} = \pi(\mathbb{H} \times \mathbb{H}) = \{ \vec{PQ} \in \vec{\mathcal{E}} \mid P, Q \in \mathbb{H} \}
+        \]
+        è un \textbf{sottospazio vettoriale} di \(\vec{\mathcal{E}}\). (Tale sottospazio \(\vec{\mathbb{H}}\) è detto \textit{giacitura} o \textit{direzione} di \(\mathbb{H}\)).
+        
+        \item \textbf{Chiusura:} Per ogni punto \(P \in \mathbb{H}\) e per ogni vettore \(u \in \vec{\mathbb{H}}\), il punto \(X\) ottenuto traslando \(P\) di \(u\) appartiene ancora ad \(\mathbb{H}\):
+        \[
+        \forall P \in \mathbb{H}, \forall u \in \vec{\mathbb{H}} \implies (P + u) \in \mathbb{H}
+        \]
+        (Ossia: l'unico punto \(X \in \mathcal{E}\) tale che \(\vec{PX} = u\) deve appartenere a \(\mathbb{H}\)).
+    \end{itemize}
+
+    \BoxBlue{Osservazione}{Struttura Indotta}{
+    \(\mathbb{H}\) è un Sottospazio Affine di \(\mathcal{E}\)
+    \[ \iff \]
+    La tripla \((\mathbb{H}, \vec{\mathbb{H}}, \pi|_{\mathbb{H} \times \mathbb{H}})\) è essa stessa uno spazio affine.
+    
+    \textit{In altre parole, un sottospazio affine è un sottoinsieme che "eredita" la struttura geometrica piatta dallo spazio ambiente.}
+}
+}
+
+\Proposizione{Caratterizzazione dei Sottospazi Affini (Passaggio per un punto)}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine.
+    
+    \begin{enumerate}
+        \item \textbf{Da Sottospazio a Costruzione:}
+        Se \(\mathbb{H} \subseteq \mathcal{E}\) è un sottospazio affine, allora fissato un qualsiasi punto \(P \in \mathbb{H}\), l'insieme \(\mathbb{H}\) coincide con l'insieme dei punti raggiungibili applicando a \(P\) i vettori della giacitura \(\vec{\mathbb{H}}\):
+        \[
+        \mathbb{H} = \{ Q \in \mathcal{E} \mid \vec{PQ} \in \vec{\mathbb{H}} \}
+        \]
+        Questa costruzione si denota spesso con \((P, \vec{\mathbb{H}})\) o con \(P + \vec{\mathbb{H}}\).
+        
+        \item \textbf{Da Costruzione a Sottospazio:}
+        Viceversa, fissato un punto \(P \in \mathcal{E}\) e un sottospazio vettoriale \(U \subseteq \vec{\mathcal{E}}\), l'insieme definito da:
+        \[
+        (P, U) = \{ Q \in \mathcal{E} \mid \vec{PQ} \in U \}
+        \]
+        è sempre un \textbf{sottospazio affine} di \(\mathcal{E}\), passante per \(P\) e avente \(U\) come giacitura (cioè parallelo a \(U\)).
+    \end{enumerate}
+}
+
+\BoxBlue{Osservazione}{Equivalenza delle Definizioni}{
+    Dalla Proposizione si ricava che le \textbf{varietà lineari} (insiemi costruiti come \(P+U\)) sono \textbf{tutti e soli} i sottospazi affini di \(\mathcal{E}\).
+    
+    In pratica, per individuare univocamente un sottospazio affine, è sufficiente (e necessario) assegnare:
+    \begin{itemize}
+        \item Un punto di passaggio \(P\) (l'origine locale).
+        \item Un sottospazio vettoriale \(U\) (la direzione o giacitura).
+    \end{itemize}
+}
+
+\Teorema{Rappresentazione Cartesiana di un Sottospazio Affine}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione \( n \).
+    Fissiamo un riferimento affine \( \mathcal{R} = (O, \mathcal{B}) \).
+    Sia \( \mathbb{H} \subseteq \mathcal{E} \) un sottospazio affine di dimensione \( k \).
+
+    Allora esiste un sistema lineare \( \Sigma: AX = b \) in \( n \) incognite, costituito da \( n-k \) equazioni linearmente indipendenti (quindi con \(\operatorname{rango}(A) = n-k\)), tale che:
+    \[
+    P \in \mathbb{H} \iff \text{le coordinate di } P \text{ in } \mathcal{R} \text{ soddisfano } AX = b
+    \]
+    
+    L'insieme \( S \) delle soluzioni del sistema coincide con l'insieme delle coordinate dei punti di \( \mathbb{H} \).
+    Tale sistema è detto \textbf{rappresentazione cartesiana} di \( \mathbb{H} \) nel riferimento \( \mathcal{R} \).
+}
