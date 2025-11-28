@@ -1,0 +1,424 @@
+\chapter{Lezione 17 - 26/11}
+
+\section{Teorema di Pitagora}
+
+\Teorema{Teorema di Pitagora}{
+    Siano \( u, v \in V \). Allora:
+    \[
+    \|u + v\|^2 = \|u\|^2 + \|v\|^2 \iff u \perp v
+    \]
+    \Dimostrazione{
+        Sviluppiamo il quadrato della norma della somma (che corrisponde a prendere \( u + \beta v \) con \( \beta = 1 \) nel calcolo della norma):
+        \[
+        \|u+v\|^2 = \langle u+v, u+v \rangle
+        \]
+        Per la bilinearità del prodotto scalare:
+        \[
+        = \langle u, u \rangle + \langle u, v \rangle + \langle v, u \rangle + \langle v, v \rangle
+        \]
+        Assumendo di lavorare su un campo reale (dove il prodotto scalare è simmetrico, \(\langle u,v \rangle = \langle v,u \rangle\)):
+        \[
+        = \|u\|^2 + 2\langle u, v \rangle + \|v\|^2
+        \]
+        Affinché valga l'uguaglianza \( \|u+v\|^2 = \|u\|^2 + \|v\|^2 \), confrontando con l'espressione sopra, deve necessariamente essere:
+        \[
+        2\langle u, v \rangle = 0 \iff \langle u, v \rangle = 0
+        \]
+        Per definizione, questo significa che \( u \perp v \).
+    }
+}
+
+\section{Disuguaglianza triangolare}
+\Teorema{Disuguaglianza triangolare}{
+    Per ogni \( u, v \in V \), vale:
+    \[
+    \|u+v\| \leq \|u\| + \|v\|
+    \]
+    \Dimostrazione{
+        Partiamo calcolando il quadrato della norma:
+        \[
+        \|u+v\|^2 = \langle u+v, u+v \rangle = \|u\|^2 + 2\langle u, v \rangle + \|v\|^2
+        \]
+        Poiché un numero reale è sempre minore o uguale al suo modulo (\(x \leq |x|\)), abbiamo:
+        \[
+        \leq \|u\|^2 + 2|\langle u, v \rangle| + \|v\|^2
+        \]
+        Utilizziamo ora la \textbf{Disuguaglianza di Cauchy-Schwarz} (\( |\langle u, v \rangle| \leq \|u\| \cdot \|v\| \)) per maggiorare il termine centrale:
+        \[
+        \leq \|u\|^2 + 2\|u\| \cdot \|v\| + \|v\|^2
+        \]
+        Riconosciamo che questa espressione è il quadrato di un binomio:
+        \[
+        = (\|u\| + \|v\|)^2
+        \]
+        Abbiamo quindi ottenuto:
+        \[
+        \|u+v\|^2 \leq (\|u\| + \|v\|)^2
+        \]
+        Poiché le norme sono quantità non negative, possiamo estrarre la radice quadrata da entrambi i membri mantenendo il verso della disuguaglianza:
+        \[
+        \|u+v\| \leq \|u\| + \|v\|
+        \]
+    }
+}
+
+\Definizione{Basi Ortogonali e Ortonormali}{
+    Sia \(V\) uno spazio vettoriale euclideo con \(\dim(V) = n\). Sia \(\mathcal{B}=(e_1, \dots, e_n)\) una base di \(V\).
+    \begin{itemize}
+        \item \(\mathcal{B}\) si dice \textbf{ortogonale} se i vettori sono a due a due ortogonali:
+        \[ \forall i,j \in \{1, \dots, n\}, i \neq j \implies \langle e_i, e_j \rangle = 0 \]
+        
+        \item \(\mathcal{B}\) si dice \textbf{ortonormale} se è ortogonale e tutti i vettori hanno norma unitaria:
+        \[ \forall j \in \{1, \dots, n\}, \quad \langle e_j, e_j \rangle = \|e_j\|^2 = 1 \implies \|e_j\| = 1 \]
+        (I vettori di norma 1 si chiamano \textit{versori}).
+    \end{itemize}
+}
+
+\Proposizione{Indipendenza di vettori ortogonali}{
+    Siano \(u_1, \dots, u_h \in V \setminus \{\bar{0}\}\) vettori non nulli e a due a due ortogonali.
+    Allora l'insieme \(\{u_1, \dots, u_h\}\) è linearmente indipendente.
+    
+    \Dimostrazione{
+        Siano \(\alpha_1, \dots, \alpha_h \in \mathbb{R}\) scalari tali che:
+        \[ \alpha_1 u_1 + \dots + \alpha_h u_h = \bar{0} \]
+        Dobbiamo dimostrare che \(\alpha_1 = \dots = \alpha_h = 0\).
+        
+        \begin{itemize}
+            \item Moltiplichiamo scalarmente entrambi i membri per \(u_1\):
+            \[
+            0 = \langle u_1, \bar{0} \rangle = \langle u_1, \alpha_1 u_1 + \dots + \alpha_h u_h \rangle
+            \]
+            Per la linearità del prodotto scalare:
+            \[
+            = \alpha_1 \langle u_1, u_1 \rangle + \alpha_2 \langle u_1, u_2 \rangle + \dots + \alpha_h \langle u_1, u_h \rangle
+            \]
+            Per l'ipotesi di ortogonalità, \(\langle u_1, u_j \rangle = 0\) per ogni \(j \neq 1\). Quindi rimaniamo con:
+            \[
+            = \alpha_1 \langle u_1, u_1 \rangle = \alpha_1 \|u_1\|^2
+            \]
+            Poiché \(u_1 \neq \bar{0}\), la norma \(\|u_1\|^2 > 0\). Affinché il prodotto sia zero, deve essere necessariamente \(\alpha_1 = 0\).
+            
+            \item Ripetiamo lo stesso ragionamento per un generico \(u_j\) (con \(j=2, \dots, h\)). Moltiplicando scalarmente l'equazione originale per \(u_j\):
+            \[
+            0 = \langle u_j, \sum_{i=1}^h \alpha_i u_i \rangle = \sum_{i=1}^h \alpha_i \langle u_j, u_i \rangle
+            \]
+            Tutti i termini dove \(i \neq j\) si annullano. Resta solo:
+            \[
+            0 = \alpha_j \langle u_j, u_j \rangle = \alpha_j \|u_j\|^2
+            \]
+            Essendo \(\|u_j\|^2 \neq 0\), segue che \(\alpha_j = 0\).
+        \end{itemize}
+        Avendo dimostrato che \(\alpha_1 = \dots = \alpha_h = 0\), i vettori sono linearmente indipendenti.
+    }
+}
+
+\Proposizione{Coordinate e Prodotto Scalare in Basi Ortonormali}{
+    Sia \(V\) uno spazio euclideo con \(\dim(V) = n\).
+    Sia \(\mathcal{B} = (e_1, \dots, e_n)\) una base \textbf{ortonormale} di \(V\).
+    
+    Siano \(u, v \in V\) due vettori qualsiasi.
+    Siano \((x_1, \dots, x_n) = \phi_{\mathcal{B}}(u)\) le componenti di \(u\) (cioè \(u = \sum_{i=1}^n x_i e_i\)).
+    Siano \((y_1, \dots, y_n) = \phi_{\mathcal{B}}(v)\) le componenti di \(v\) (cioè \(v = \sum_{j=1}^n y_j e_j\)).
+    
+    Allora valgono le seguenti proprietà:
+    \begin{itemize}
+        \item \textbf{Coefficienti di Fourier:} Le componenti di un vettore sono date dal prodotto scalare con i versori della base:
+        \[ \forall j \in \{1, \dots, n\}, \quad x_j = \langle u, e_j \rangle \]
+        
+        \item \textbf{Formula del Prodotto Scalare:} Il prodotto scalare tra due vettori è la somma dei prodotti delle rispettive componenti (prodotto scalare standard in \(K^n\)):
+        \[ \langle u, v \rangle = x_1 y_1 + x_2 y_2 + \dots + x_n y_n = \sum_{i=1}^n x_i y_i \]
+    \end{itemize}
+
+    \Dimostrazione{
+        \textbf{1. Dimostrazione del primo punto:}
+        Fissiamo un indice \(j \in \{1, \dots, n\}\). Calcoliamo il prodotto scalare \(\langle u, e_j \rangle\):
+        \[
+        \langle u, e_j \rangle = \left\langle \sum_{i=1}^n x_i e_i, e_j \right\rangle
+        \]
+        Per la linearità del prodotto scalare rispetto al primo argomento:
+        \[
+        = \sum_{i=1}^n x_i \langle e_i, e_j \rangle
+        \]
+        Espandendo la sommatoria:
+        \[
+        = x_1 \langle e_1, e_j \rangle + \dots + x_j \langle e_j, e_j \rangle + \dots + x_n \langle e_n, e_j \rangle
+        \]
+        Poiché la base \(\mathcal{B}\) è \textbf{ortonormale}, sappiamo che:
+        \[ \langle e_i, e_j \rangle = \delta_{ij} = \begin{cases} 1 & \text{se } i=j \\ 0 & \text{se } i \neq j \end{cases} \]
+        Quindi tutti i termini della somma si annullano tranne quello in cui \(i=j\):
+        \[
+        = 0 + \dots + x_j \cdot 1 + \dots + 0 = x_j
+        \]
+        Dunque \(x_j = \langle u, e_j \rangle\).
+
+        \bigskip
+        \textbf{2. Dimostrazione del secondo punto:}
+        Calcoliamo \(\langle u, v \rangle\) sostituendo le espressioni dei vettori rispetto alla base:
+        \[
+        \langle u, v \rangle = \left\langle \sum_{i=1}^n x_i e_i, \sum_{j=1}^n y_j e_j \right\rangle
+        \]
+        Per la bilinearità del prodotto scalare, possiamo portare fuori entrambe le sommatorie e gli scalari:
+        \[
+        = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \langle e_i, e_j \rangle
+        \]
+        Ancora una volta, sfruttiamo l'ortonormalità della base. Il termine \(\langle e_i, e_j \rangle\) è diverso da zero (e vale 1) solo quando \(i = j\).
+        Quindi, nella doppia somma, sopravvivono solo i termini con indici uguali:
+        \[
+        = \sum_{i=1}^n x_i y_i \cdot 1 = x_1 y_1 + x_2 y_2 + \dots + x_n y_n
+        \]
+        La tesi è dimostrata.
+    }
+}
+
+\Teorema{Metodo di Gram-Schmidt (Esistenza di basi ortonormali)}{
+    Sia \(V\) uno spazio vettoriale euclideo di dimensione \(n\).
+    Sia \(B = (u_1, \dots, u_n)\) una base ordinata qualsiasi di \(V\).
+    
+    Allora esiste una base \(\bar{B} = (e_1, \dots, e_n)\) di \(V\) che è \textbf{ortonormale}.
+    
+    Questa base si ottiene trasformando la base \(B\) mediante un procedimento costruttivo in due fasi.
+
+    \Dimostrazione{
+        \textbf{Fase 1: Ortogonalizzazione}
+        Costruiamo una base ortogonale \( \{v_1, \dots, v_n\} \) a partire da \( \{u_1, \dots, u_n\} \).
+        L'idea è prendere ogni vettore \(u_k\) e sottrargli la sua proiezione ortogonale sul sottospazio generato dai vettori precedenti.
+        
+        \begin{itemize}
+            \item \textbf{Passo 1:} Poniamo il primo vettore uguale al primo della base originale:
+            \[ v_1 = u_1 \]
+            
+            \item \textbf{Passo 2:} Cerchiamo \(v_2\) ortogonale a \(v_1\). Sottraiamo da \(u_2\) la sua componente parallela a \(v_1\):
+            \[ v_2 = u_2 - \frac{\langle u_2, v_1 \rangle}{\|v_1\|^2} v_1 \]
+            
+            \item \textbf{Passo 3:} Cerchiamo \(v_3\) ortogonale a \(v_1\) e \(v_2\):
+            \[ v_3 = u_3 - \frac{\langle u_3, v_1 \rangle}{\|v_1\|^2} v_1 - \frac{\langle u_3, v_2 \rangle}{\|v_2\|^2} v_2 \]
+            
+            \item \textbf{Passo k (Generico):} Per ottenere il k-esimo vettore ortogonale \(v_k\) (con \(2 \le k \le n\)), sottraiamo da \(u_k\) le proiezioni su tutti i vettori \(v_j\) precedentemente calcolati:
+            \[
+            v_k = u_k - \sum_{j=1}^{k-1} \frac{\langle u_k, v_j \rangle}{\|v_j\|^2} v_j
+            \]
+        \end{itemize}
+        Alla fine di questa fase, l'insieme \(\{v_1, \dots, v_n\}\) è una base \textbf{ortogonale} di \(V\).
+
+        \bigskip
+        \textbf{Fase 2: Normalizzazione (Ortonormalizzazione)}
+        Per ottenere una base \textbf{ortonormale}, dobbiamo rendere unitaria la norma di ciascun vettore \(v_k\) dividendolo per la sua norma:
+        
+        \[ e_1 = \frac{v_1}{\|v_1\|}, \quad e_2 = \frac{v_2}{\|v_2\|}, \quad \dots, \quad e_n = \frac{v_n}{\|v_n\|} \]
+        
+        La base cercata è:
+        \[ \bar{B} = (e_1, \dots, e_n) \]
+    }
+}
+
+\Definizione{Matrice Ortogonale}{
+    Una matrice quadrata \(P \in M_n(\mathbb{R})\) si dice \textbf{ortogonale} se è invertibile e la sua inversa coincide con la sua trasposta:
+    \[
+    P^{-1} = P^t
+    \]
+    
+    \textbf{Proprietà equivalenti:}
+    \begin{itemize}
+        \item \( P \cdot P^t = I_n \) (e \( P^t \cdot P = I_n \)).
+        \item Le colonne di \(P\) formano una base \textbf{ortonormale} di \(\mathbb{R}^n\) (rispetto al prodotto scalare standard).
+        \item Le righe di \(P\) formano una base \textbf{ortonormale} di \(\mathbb{R}^n\).
+        \item \(\det(P) = \pm 1\).
+    \end{itemize}
+}
+
+\Proposizione{Cambiamento di Base tra Basi Ortonormali}{
+    Sia \(V\) uno spazio vettoriale euclideo con \(\dim V = n\).
+    Siano \(\mathcal{B}\) e \(\bar{\mathcal{B}}\) due basi \textbf{ortonormali} di \(V\).
+    
+    Allora la matrice di passaggio \(P\) dalla base \(\mathcal{B}\) alla base \(\bar{\mathcal{B}}\) (ovvero \(P = M_{\mathcal{B}, \bar{\mathcal{B}}}(id_V)\)) è una \textbf{matrice ortogonale}.
+    
+    \[ P^{-1} = P^t \]
+}
+
+\BoxBlue{Osservazione}{Parallelismo e Dipendenza Lineare}{
+    Sia \( \mathbf{V}_O \) lo spazio dei vettori liberi e siano \( u, v \in \mathbf{V}_O \setminus \{\bar{0}\} \) due vettori non nulli.
+    
+    L'insieme \( \{u, v\} \) è \textbf{linearmente dipendente} \(\iff\) \( u \) è parallelo a \( v \) (\( u \parallel v \)).
+
+    \Dimostrazione{
+        \textbf{Direzione ``\(\Leftarrow\)''} (Ipotesi: \( u \parallel v \) \(\implies\) Tesi: L.D.)
+        
+        Consideriamo i versori (vettori di lunghezza 1) associati a \(u\) e \(v\):
+        \[ \hat{u} = \frac{1}{\|u\|} u \quad \text{e} \quad \hat{v} = \frac{1}{\|v\|} v \]
+        Per definizione, \(\hat{u} \parallel u\) e \(\hat{v} \parallel v\).
+        Poiché per ipotesi \(u \parallel v\), per la proprietà transitiva del parallelismo si ha \(\hat{u} \parallel \hat{v}\).
+        Dato che due versori paralleli possono essere solo uguali o opposti, si ha:
+        \[ \hat{u} = \pm \hat{v} \]
+        Sostituendo le definizioni:
+        \[ \frac{1}{\|u\|} u = \pm \frac{1}{\|v\|} v \]
+        Isoliamo \(u\):
+        \[ u = \pm \frac{\|u\|}{\|v\|} v \]
+        Portando tutto a sinistra:
+        \[ 1 \cdot u \mp \frac{\|u\|}{\|v\|} v = \bar{0} \]
+        Abbiamo trovato una combinazione lineare uguale a zero con coefficienti non tutti nulli (il coefficiente di \(u\) è \(1 \neq 0\)).
+        Quindi \(\{u, v\}\) è linearmente dipendente.
+    }
+
+    \Dimostrazione{
+        \textbf{Direzione ``\(\Rightarrow\)''} (Ipotesi: L.D. \(\implies\) Tesi: \( u \parallel v \))
+        
+        Se \(\{u, v\}\) è linearmente dipendente, allora per definizione:
+        \[ \exists (\alpha, \beta) \in \mathbb{R}^2 \setminus \{(0,0)\} \text{ tali che } \alpha u + \beta v = \bar{0} \]
+        
+        Supponiamo, senza perdita di generalità, che \(\alpha \neq 0\). Esiste quindi l'inverso \(\alpha^{-1}\).
+        Possiamo isolare \(u\):
+        \[ \alpha u = - \beta v \]
+        \[ u = -\alpha^{-1} \beta v \]
+        \[ u = \left( -\frac{\beta}{\alpha} \right) v \]
+        
+        Poiché \(u\) è uguale a \(v\) moltiplicato per uno scalare \( k = -\frac{\beta}{\alpha} \), concludiamo che \(u\) e \(v\) hanno la stessa direzione.
+        Quindi \( u \parallel v \).
+    }
+}
+
+\Definizione{Basi Concordi e Discordi (Orientazione)}{
+    Sia \( V \) uno spazio vettoriale reale di dimensione \( n \) (nel nostro caso \( n=3 \)).
+    Siano \( \mathcal{B} \) e \( \mathcal{B}' \) due basi \textbf{ordinate} di \( V \).
+
+    Consideriamo la matrice di passaggio \( P \) dalla base \( \mathcal{B} \) alla base \( \mathcal{B}' \) (cioè la matrice le cui colonne sono le componenti dei vettori di \( \mathcal{B}' \) rispetto alla base \( \mathcal{B} \)):
+    \[
+    P = M_{\mathcal{B}, \mathcal{B}'}(id_V)
+    \]
+
+    Poiché \( P \) è una matrice di cambiamento di base, è invertibile, dunque \( \det(P) \neq 0 \). Si distinguono due casi:
+
+    \begin{itemize}
+        \item \textbf{Basi Concordi (o Equiorientate):} se il determinante della matrice di passaggio è positivo:
+        \[ \det(P) > 0 \]
+        In questo caso, le due basi definiscono la \textbf{stessa orientazione}.
+
+        \item \textbf{Basi Discordi (o Contro-orientate):} se il determinante è negativo:
+        \[ \det(P) < 0 \]
+        In questo caso, le due basi definiscono \textbf{orientazioni opposte}.
+    \end{itemize}
+}
+
+\section{Prodotto Vettoriale}
+
+\Definizione{Spazio Orientato}{
+    Una coppia \((V, \mathcal{B})\) si dice \textbf{spazio vettoriale euclideo orientato} quando si è fissata una base \(\mathcal{B}\) che funge da riferimento per determinare l'orientazione "positiva" dello spazio.
+}
+
+\Definizione{Prodotto Vettoriale}{
+    Sia \((V, \bar{\mathcal{B}})\) uno spazio euclideo orientato con \(\dim V = 3\).
+    Per ogni coppia di vettori \(u, v \in V\), il \textbf{prodotto vettoriale} \(u \times v\) (indicato anche con \(u \wedge v\)) è l'\textbf{unico} vettore che soddisfa le seguenti condizioni:
+
+    \begin{itemize}
+        \item \textbf{Caso A:} Se \(\{u, v\}\) sono linearmente dipendenti (paralleli o uno dei due è nullo), allora il prodotto è nullo:
+        \[ u \times v = \bar{0} \]
+        
+        \item \textbf{Caso B:} Se \(\{u, v\}\) sono linearmente indipendenti, allora \(u \times v\) è il vettore definito dalle seguenti tre proprietà geometriche:
+        \begin{enumerate}
+            \item \textbf{Ortogonalità:} Il vettore risultato è ortogonale al piano generato da \(u\) e \(v\).
+            \[ \langle u \times v, u \rangle = 0 \quad \text{e} \quad \langle u \times v, v \rangle = 0 \]
+            
+            \item \textbf{Orientazione:} La terna ordinata \((u, v, u \times v)\) costituisce una base \textbf{concorde} alla base di riferimento \(\bar{\mathcal{B}}\) (rispetta la "regola della mano destra").
+            
+            \item \textbf{Modulo (Norma):} La norma di \(u \times v\) rappresenta l'area del parallelogramma individuato dai due vettori:
+            \[ \|u \times v\| = \|u\| \cdot \|v\| \cdot \sin(\theta) \]
+            dove \(\theta = \widehat{uv}\) è l'angolo convesso tra i vettori (con \(0 \le \theta \le \pi\), quindi \(\sin(\theta) \ge 0\)).
+        \end{enumerate}
+    \end{itemize}
+}
+
+\Proposizione{Calcolo del Prodotto Vettoriale (Componenti)}{
+    Sia \((V, \bar{\mathcal{B}})\) uno spazio vettoriale euclideo orientato di dimensione 3.
+    Sia \(\mathcal{B} = \{e_1, e_2, e_3\}\) una base \textbf{ortonormale} e \textbf{concorde}.
+    
+    Siano \(u, v \in V\) vettori con coordinate (rispetto a \(\mathcal{B}\)):
+    \[
+    \phi_{\mathcal{B}}(u) = (x_1, x_2, x_3), \quad 
+    \phi_{\mathcal{B}}(v) = (y_1, y_2, y_3)
+    \]
+    
+    Per calcolare le componenti, costruiamo formalmente la matrice \(2 \times 3\) delle coordinate:
+    \[
+    \begin{pmatrix}
+    x_1 & x_2 & x_3 \\
+    y_1 & y_2 & y_3
+    \end{pmatrix}
+    \]
+    
+    Le componenti del prodotto vettoriale \(u \times v\) sono date dai determinanti dei minori \(2 \times 2\) ottenuti cancellando una colonna alla volta (con segni alterni \(+, -, +\)):
+    
+    \[
+    \phi_{\mathcal{B}}(u \times v) = 
+    \left( 
+      +\det \begin{pmatrix} x_2 & x_3 \\ y_2 & y_3 \end{pmatrix}, \quad
+      -\det \begin{pmatrix} x_1 & x_3 \\ y_1 & y_3 \end{pmatrix}, \quad
+      +\det \begin{pmatrix} x_1 & x_2 \\ y_1 & y_2 \end{pmatrix} 
+    \right)
+    \]
+    
+    Svolgendo i calcoli:
+    \[
+    \phi_{\mathcal{B}}(u \times v) = \left( (x_2 y_3 - x_3 y_2), \quad -(x_1 y_3 - x_3 y_1), \quad (x_1 y_2 - x_2 y_1) \right)
+    \]
+}
+
+\Definizione{Complemento Ortogonale}{
+    Sia \((V, \langle \cdot, \cdot \rangle)\) uno spazio vettoriale euclideo di dimensione \(n\).
+    Sia \(X \subseteq V\) un sottoinsieme di \(V\).
+    
+    Si definisce \textbf{complemento ortogonale} di \(X\) (e si indica con il simbolo \({}^\perp X\)) l'insieme di tutti i vettori di \(V\) che sono ortogonali a \textbf{tutti} i vettori di \(X\):
+    \[
+    {}^\perp X = \{ v \in V \mid \langle v, u \rangle = 0, \quad \forall u \in X \}
+    \]
+    
+    \textit{Nota: Indipendentemente dal fatto che \(X\) sia o meno un sottospazio, \({}^\perp X\) è sempre un \textbf{sottospazio vettoriale} di \(V\).}
+}
+
+\BoxBlue{Osservazioni}{Proprietà del Complemento Ortogonale}{
+    \begin{itemize}
+        \item \textbf{Doppio Ortogonale (Inclusione):}
+        Per ogni sottoinsieme \(X \subseteq V\), vale:
+        \[
+        X \subseteq {}^\perp({}^\perp X)
+        \]
+        (Se \(X\) è un sottospazio vettoriale, allora vale l'uguaglianza: \(X = {}^\perp({}^\perp X)\)).
+
+        \item \textbf{Inversione dell'Inclusione:}
+        Se \(X\) è contenuto in \(Y\), allora l'ortogonale di \(Y\) è contenuto nell'ortogonale di \(X\) (l'operazione inverte l'ordine):
+        \[
+        X \subseteq Y \implies {}^\perp Y \subseteq {}^\perp X
+        \]
+    \end{itemize}
+}
+
+\Proposizione{Ortogonale del Sottospazio Generato}{
+    Sia \((V, \langle \cdot, \cdot \rangle)\) uno spazio vettoriale euclideo di dimensione finita.
+    Sia \(X \subseteq V\) un sottoinsieme e sia \(U = \operatorname{span}(X)\) il sottospazio vettoriale generato da \(X\).
+    Valgono le seguenti proprietà:
+    \begin{enumerate}
+        \item[i)] L'ortogonale del sottospazio coincide con l'ortogonale dell'insieme dei generatori:
+        \[
+        {}^\perp U = {}^\perp X
+        \]
+        \item[ii)] Il sottospazio coincide con il suo doppio ortogonale (proprietà di riflessività per spazi di dimensione finita):
+        \[
+        U = {}^\perp({}^\perp U)
+        \]
+    \end{enumerate}
+}
+
+\BoxBlue{Osservazione}{Somma Diretta Ortogonale}{
+    Sia \(U\) un sottospazio vettoriale di \(V\).
+    \begin{itemize}
+        \item[a)] \textbf{Intersezione Banale:}
+        L'intersezione tra un sottospazio e il suo complemento ortogonale contiene solo il vettore nullo:
+        \[
+        U \cap {}^\perp U = \{\underline{0}\}
+        \]
+        \item[b)] \textbf{Somma Diretta:}
+        L'intero spazio \(V\) è dato dalla somma diretta di \(U\) e del suo ortogonale:
+        \[
+        V = U \oplus {}^\perp U
+        \]
+        \textit{Nota:} La somma è diretta (\(\oplus\)), condizione garantita dal fatto che l'intersezione è banale (punto a).
+    \end{itemize}
+}
