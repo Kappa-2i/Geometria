@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  28 NOV 2025 16:28
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  5 DEC 2025 13:29
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex"
@@ -976,7 +976,7 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \mult@nat@firstbox=\box160
 \colbreak@box=\box161
 \mc@col@check@num=\count394
-)) (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux))
+)) (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux) (./build/Lezione19/Lez19.aux) (./build/Lezione20/Lez20.aux))
 \openout1 = App.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -1729,29 +1729,75 @@ Capitolo 18.
 
 [106])
 
-[107] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux))
+[107]
+\openout2 = Lezione19/Lez19.aux
+ (./Lezione19/Lez19.tex
+Capitolo 19.
+
+
+[108
+
+
+
+
+]
+
+[109]
+
+[110]
+
+[111]
+
+[112])
+
+[113]
+\openout2 = Lezione20/Lez20.aux
+ (./Lezione20/Lez20.tex
+Capitolo 20.
+
+
+[114
+
+
+
+
+]
+
+[115]
+
+[116]
+
+[117]
+
+[118]
+
+[119]
+
+[120])
+
+[121] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux) (./build/Lezione19/Lez19.aux) (./build/Lezione20/Lez20.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `App.out' has not changed.
-(rerunfilecheck)             Checksum: 726F05C56818CD541BAC9271FC7BC3AF;14324.
+(rerunfilecheck)             Checksum: 1940BFB4B6248B0BA05C28D799C8B896;15396.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44167 strings out of 475506
+ 44324 strings out of 475506
  156420,1648299 words of node,token memory allocated
- 4569 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 sub_mlist, 1 glyph, 1343 attribute, 62 glue_spec, 673 attribute_list, 4 write nodes
-   avail lists: 1:1,2:3781,3:1584,4:453,5:689,6:167,7:11454,8:59,9:1660,10:38,11:1165
- 65661 multiletter control sequences out of 65536+600000
+ 5145 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 sub_mlist, 1 glyph, 1535 attribute, 62 glue_spec, 769 attribute_list, 4 write nodes
+   avail lists: 1:1,2:3493,3:1584,4:453,5:710,6:167,7:11454,8:59,9:1660,10:38,11:1165
+ 65733 multiletter control sequences out of 65536+600000
  70 fonts using 6846399 bytes
  116i,20n,114p,590b,2087s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on App.pdf (107 pages, 667608 bytes).
+Output written on App.pdf (121 pages, 735589 bytes).
 
-PDF statistics: 1081 PDF objects out of 1200 (max. 8388607)
- 925 compressed objects within 10 object streams
- 281 named destinations out of 1000 (max. 131072)
- 664 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1191 PDF objects out of 1200 (max. 8388607)
+ 1020 compressed objects within 11 object streams
+ 324 named destinations out of 1000 (max. 131072)
+ 704 words of extra memory for PDF output out of 10000 (max. 100000000)
 

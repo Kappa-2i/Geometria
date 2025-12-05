@@ -1,0 +1,304 @@
+\chapter{Lezione 19 - 03/12}
+
+\section{Posizione Reciproca di Sottospazi Affini}
+
+\Definizione{Sottospazi Paralleli}{
+    Siano \(\mathbb{H}, \mathbb{H}'\) due sottospazi affini di uno spazio \(\mathcal{E}\).
+    Si dice che \(\mathbb{H}\) e \(\mathbb{H}'\) sono \textbf{paralleli} (\(\mathbb{H} \parallel \mathbb{H}'\)) se le loro giaciture sono una contenuta nell'altra:
+    \[
+    \vec{\mathbb{H}} \subseteq \vec{\mathbb{H}'} \quad \text{oppure} \quad \vec{\mathbb{H}'} \subseteq \vec{\mathbb{H}}.
+    \]
+}
+
+\Definizione{Sottospazi Sghembi}{
+    Siano \(\mathbb{H}, \mathbb{H}'\) due sottospazi affini.
+    \begin{itemize}
+        \item \(\mathbb{H}\) e \(\mathbb{H}'\) si dicono \textbf{sghembi} se non hanno punti in comune e non sono paralleli:
+        \[
+        \mathbb{H} \cap \mathbb{H}' = \emptyset \quad \text{e} \quad \mathbb{H} \nparallel \mathbb{H}'
+        \]
+        \item Si dicono \textbf{strettamente sghembi} se non si intersecano e l'intersezione delle loro giaciture è solo il vettore nullo:
+        \[
+        \mathbb{H} \cap \mathbb{H}' = \emptyset \quad \text{e} \quad \vec{\mathbb{H}} \cap \vec{\mathbb{H}'} = \{\bar{0}\}
+        \]
+    \end{itemize}
+}
+
+\section{Classificazione e Rappresentazione Cartesiana}
+
+Sia \((\vec{\mathcal{E}}, \mathcal{E}, \pi)\) uno spazio affine con \(\dim(\mathcal{E}) = n\).
+Sia \(\mathbb{H} \subseteq \mathcal{E}\) un sottospazio affine di dimensione \(\dim(\mathbb{H}) = h\).
+Usiamo la seguente nomenclatura classica:
+\begin{itemize}
+    \item Se \(h = 0\), \(\mathbb{H}\) è un \textbf{punto}.
+    \item Se \(h = 1\), \(\mathbb{H}\) è una \textbf{retta}.
+    \item Se \(h = 2\), \(\mathbb{H}\) è un \textbf{piano}.
+    \item Se \(h = n-1\), \(\mathbb{H}\) è un \textbf{iperpiano}.
+\end{itemize}
+
+\Teorema{Rappresentazione Cartesiana di un Sottospazio Affine}{
+    Sia \(\mathbb{H}\) un sottospazio affine di dimensione \(h\) in uno spazio \(\mathcal{E}\) di dimensione \(n\).
+    Fissato un riferimento affine \(R = (O, \mathcal{B})\), esiste un sistema lineare \(\Sigma: AX = b\) in \(n\) incognite tale che l'insieme \(S\) delle sue soluzioni è costituito dai vettori delle coordinate in \(K\) dei punti di \(\mathbb{H}\).
+    
+    Inoltre, il sistema omogeneo associato \(AX = 0\) rappresenta la giacitura \(\vec{\mathbb{H}}\) e \(\operatorname{rango}(A) = n-h\).
+
+    \Dimostrazione{
+        Fissiamo un punto \(P \in \mathbb{H}\). Sappiamo che:
+        \[ \mathbb{H} = (P, \vec{\mathbb{H}}) = \{Q \in \mathcal{E} \mid \vec{PQ} \in \vec{\mathbb{H}}\} \]
+        
+        Siano date le coordinate nel riferimento \(R\):
+        \begin{itemize}
+            \item Del punto fisso: \(P \equiv_R (a_1, \dots, a_n)\)
+            \item Del punto generico: \(Q \equiv_R (y_1, \dots, y_n)\)
+        \end{itemize}
+        
+        Seguiamo la catena di equivalenze:
+        
+        \[ Q \in \mathbb{H} \iff \vec{PQ} \in \vec{\mathbb{H}} \]
+        
+        Passando alle coordinate tramite l'isomorfismo \(\phi_{\mathcal{B}}\):
+        \[ \iff \phi_{\mathcal{B}}(\vec{PQ}) \in \phi_{\mathcal{B}}(\vec{\mathbb{H}}) \subseteq K^n \]
+        
+        Per il teorema di rappresentazione dei sottospazi vettoriali, esiste un sistema omogeneo \(\Sigma_0: AX=0\) tale che il suo spazio delle soluzioni \(S_0\) coincide con le coordinate della giacitura (\(S_0 = \phi_{\mathcal{B}}(\vec{\mathbb{H}})\)), con \(\dim(S_0)=h\) e \(\operatorname{rango}(A)=n-h\).
+        
+        Quindi la condizione diventa:
+        \[ \iff A \left( \phi_{\mathcal{B}}(\vec{PQ}) \right) = 0 \]
+        
+        Sapendo che le coordinate del vettore \(\vec{PQ}\) sono la differenza delle coordinate dei punti (\(Y - A_0\)):
+        \[ \iff A \begin{pmatrix} y_1 - a_1 \\ \vdots \\ y_n - a_n \end{pmatrix} = 0 \]
+        
+        Sviluppando il prodotto matriciale:
+        \[ \iff A \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} - A \begin{pmatrix} a_1 \\ \vdots \\ a_n \end{pmatrix} = 0 \]
+        
+        Portando il termine noto a destra:
+        \[ \iff A \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} = A \begin{pmatrix} a_1 \\ \vdots \\ a_n \end{pmatrix} \]
+        
+        Ponendo \(b = A \cdot (a_1 \dots a_n)^t\) (che è un vettore costante), abbiamo dimostrato che:
+        \[ (y_1, \dots, y_n) \text{ è soluzione di } AX = b \]
+    }
+}
+
+\BoxGreen{Esempio}{Rappresentazione di una retta nel piano}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine con \(\dim \mathcal{E} = 2\) e riferimento \(R = (O, \mathcal{B})\).
+    Vogliamo rappresentare la retta \(r\) passante per i punti \(P(2,1)\) e \(P'(3, -1)\).
+
+    \textbf{1. Calcolo della Giacitura}
+    La retta è definita da un punto di passaggio (es. \(P\)) e dalla sua direzione (giacitura) \(\vec{r}\):
+    \[ r = P + \vec{r}, \quad \text{dove } \vec{r} = L(\vec{PP'}) \]
+    Calcoliamo le componenti del vettore direttore rispetto alla base \(\mathcal{B}\):
+    \[ \phi_{\mathcal{B}}(\vec{PP'}) = (3-2, -1-1) = (1, -2) \]
+    Quindi la giacitura è generata dal vettore \( v = (1, -2) \).
+
+    \textbf{2. Metodo Cartesiano (tramite Rango/Determinante)}
+    Un punto generico \(Q(x_1, x_2)\) appartiene a \(r\) se e solo se il vettore \(\vec{PQ}\) appartiene alla giacitura \(\vec{r}\) (cioè è parallelo a \(v\)).
+    \[ \vec{PQ} \equiv (x_1 - 2, x_2 - 1) \]
+    La condizione è che i vettori \(\vec{PQ}\) e \(v\) siano linearmente dipendenti. Costruiamo la matrice delle coordinate:
+    \[
+    A = \begin{pmatrix} 1 & x_1 - 2 \\ -2 & x_2 - 1 \end{pmatrix}
+    \]
+    Imponiamo che il rango sia 1 (cioè determinante nullo):
+    \[ \det(A) = 1(x_2 - 1) - (-2)(x_1 - 2) = 0 \]
+    \[ x_2 - 1 + 2x_1 - 4 = 0 \]
+    \[ 2x_1 + x_2 - 5 = 0 \quad (\text{Equazione Cartesiana}) \]
+
+    \textbf{3. Metodo Parametrico}
+    Alternativamente, \(Q \in r\) se esiste un parametro \(t \in \mathbb{R}\) tale che \(\vec{PQ} = t \cdot v\).
+    \[ (x_1 - 2, x_2 - 1) = t(1, -2) \]
+    Uguagliando componente per componente otteniamo il sistema parametrico:
+    \[
+    \begin{cases}
+    x_1 - 2 = t \\
+    x_2 - 1 = -2t
+    \end{cases}
+    \implies
+    \begin{cases}
+    x_1 = 2 + t \\
+    x_2 = 1 - 2t
+    \end{cases}
+    \]
+    \textit{Passaggio alla forma cartesiana:} Ricaviamo \(t\) dalla prima equazione e sostituiamo nella seconda:
+    \[ t = x_1 - 2 \implies x_2 = 1 - 2(x_1 - 2) \]
+    \[ x_2 = 1 - 2x_1 + 4 \implies 2x_1 + x_2 - 5 = 0 \]
+}
+
+\BoxGreen{Esempio}{Rappresentazione di una retta nello spazio}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine con \(\dim \mathcal{E} = 3\) e riferimento \(R = (O, \mathcal{B})\).
+    Vogliamo rappresentare la retta \(r\) passante per \(P(1, 2, -2)\) e \(P'(3, 3, 1)\).
+
+    \textbf{1. Calcolo della Giacitura (Direzione)}
+    La giacitura della retta è generata dal vettore differenza tra i due punti:
+    \[ \vec{r} = L(\vec{PP'}) \]
+    Calcoliamo le componenti:
+    \[ \vec{v} = \vec{PP'} = (3-1, \ 3-2, \ 1-(-2)) = (2, 1, 3) \]
+
+    \textbf{2. Rappresentazione Parametrica}
+    Un generico punto \(Q(x_1, x_2, x_3)\) appartiene alla retta se e solo se il vettore \(\vec{PQ}\) è multiplo di \(\vec{v}\).
+    \[ \vec{PQ} = t \cdot \vec{v} \implies (x_1-1, x_2-2, x_3+2) = t(2, 1, 3) \]
+    Uguagliando le componenti, otteniamo il sistema parametrico:
+    \[
+    \begin{cases}
+    x_1 = 1 + 2t \\
+    x_2 = 2 + t \\
+    x_3 = -2 + 3t
+    \end{cases}
+    \quad \text{con } t \in \mathbb{R}
+    \]
+
+    \textbf{3. Rappresentazione Cartesiana (Eliminazione del parametro)}
+    Per trovare le equazioni cartesiane, ricaviamo \(t\) da una delle equazioni (ad esempio la seconda, che è la più semplice) e sostituiamo nelle altre due.
+    
+    Dalla seconda equazione: \( t = x_2 - 2 \).
+    
+    Sostituiamo nella prima:
+    \[ x_1 = 1 + 2(x_2 - 2) \implies x_1 = 1 + 2x_2 - 4 \implies x_1 - 2x_2 + 3 = 0 \]
+    
+    Sostituiamo nella terza:
+    \[ x_3 = -2 + 3(x_2 - 2) \implies x_3 = -2 + 3x_2 - 6 \implies -3x_2 + x_3 + 8 = 0 \]
+    
+    Il sistema cartesiano \(\Sigma\) che descrive la retta è l'intersezione di due piani:
+    \[
+    \Sigma : \begin{cases}
+    x_1 - 2x_2 + 3 = 0 \\
+    -3x_2 + x_3 + 8 = 0
+    \end{cases}
+    \]
+
+    \textbf{4. Verifica (Giacitura)}
+    Il sistema omogeneo associato \(\Sigma_0\) descrive la giacitura \(\vec{r}\):
+    \[
+    \Sigma_0 : \begin{cases}
+    x_1 - 2x_2 = 0 \\
+    -3x_2 + x_3 = 0
+    \end{cases}
+    \]
+    Possiamo verificare se il vettore direttore \((2, 1, 3)\) soddisfa questo sistema:
+    \begin{itemize}
+        \item \(2 - 2(1) = 0\) (Vero)
+        \item \(-3(1) + 3 = 0\) (Vero)
+    \end{itemize}
+    I conti tornano.
+}
+
+\BoxGreen{Esempio}{Rappresentazione Cartesiana di un Piano}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine con \(\dim \mathcal{E} = 3\) e riferimento \(R=(O, \mathcal{B})\).
+    Vogliamo rappresentare il piano \(\mathbb{H}\) passante per i tre punti:
+    \[ P_0=(0,-2,1), \quad P_1=(1,1,-1), \quad P_2=(2,1,0) \]
+
+    \textbf{1. Calcolo della Giacitura}
+    Il piano è individuato da un punto (es. \(P_0\)) e dalla giacitura generata dai vettori che collegano i punti:
+    \[ \vec{\mathbb{H}} = L(\vec{P_0 P_1}, \vec{P_0 P_2}) \]
+    Calcoliamo le componenti dei vettori direttori:
+    \begin{itemize}
+        \item \(\vec{P_0 P_1} = (1-0, 1-(-2), -1-1) = (1, 3, -2)\)
+        \item \(\vec{P_0 P_2} = (2-0, 1-(-2), 0-1) = (2, 3, -1)\)
+    \end{itemize}
+    Verifica di indipendenza: i due vettori non sono proporzionali, quindi sono linearmente indipendenti. Ciò implica che \(P_0, P_1, P_2\) sono \textbf{affinemente indipendenti} (non allineati) e generano effettivamente un piano (dimensione 2).
+
+    \textbf{2. Costruzione della Matrice (Rouché-Capelli)}
+    Un punto generico \(Q(x_1, x_2, x_3)\) appartiene al piano \(\mathbb{H}\) se e solo se il vettore \(\vec{P_0 Q}\) appartiene alla giacitura \(\vec{\mathbb{H}}\) (cioè è combinazione lineare di \(\vec{P_0 P_1}\) e \(\vec{P_0 P_2}\)).
+    
+    Calcoliamo \(\vec{P_0 Q} = (x_1 - 0, \ x_2 - (-2), \ x_3 - 1) = (x_1, x_2+2, x_3-1)\).
+    
+    La condizione è:
+    \[
+    Q \in \mathbb{H} \iff \operatorname{rango} \begin{pmatrix} 
+    1 & 2 & x_1 \\ 
+    3 & 3 & x_2+2 \\ 
+    -2 & -1 & x_3-1 
+    \end{pmatrix} = 2
+    \]
+
+    \textbf{3. Riduzione a Gradini}
+    Riduciamo la matrice per trovare l'equazione (imponendo che l'ultima riga si annulli).
+    \[
+    \begin{pmatrix} 1 & 2 & x_1 \\ 3 & 3 & x_2+2 \\ -2 & -1 & x_3-1 \end{pmatrix}
+    \xrightarrow[R_3 \to R_3 + 2R_1]{R_2 \to R_2 - 3R_1}
+    \begin{pmatrix} 1 & 2 & x_1 \\ 0 & -3 & (x_2+2) - 3x_1 \\ 0 & 3 & (x_3-1) + 2x_1 \end{pmatrix}
+    \]
+    
+    Procediamo con l'ultimo passaggio per eliminare il pivot nella seconda colonna:
+    \[
+    \xrightarrow{R_3 \to R_3 + R_2}
+    \begin{pmatrix} 
+    1 & 2 & x_1 \\ 
+    0 & -3 & -3x_1 + x_2 + 2 \\ 
+    0 & 0 & \mathbf{(x_3 - 1 + 2x_1) + (-3x_1 + x_2 + 2)} 
+    \end{pmatrix}
+    \]
+
+    \textbf{4. Equazione Finale}
+    Affinché il rango sia 2, l'elemento nell'ultima riga e ultima colonna deve essere nullo:
+    \[
+    x_3 - 1 + 2x_1 - 3x_1 + x_2 + 2 = 0
+    \]
+    \[
+    -x_1 + x_2 + x_3 + 1 = 0
+    \]
+    
+    Questa è la rappresentazione cartesiana del piano \(\mathbb{H}\).
+}
+
+\Proposizione{Sistemi Lineari e Sottospazi Affini}{
+    Sia \( \Sigma: AX = b \) un sistema lineare compatibile su un campo \( K \) in \( n \) incognite.
+    Sia \( \rho = \operatorname{rango}(A) \).
+    
+    Allora l'insieme delle soluzioni \( S \) del sistema rappresenta le coordinate di un \textbf{sottospazio affine} \( \mathbb{H} \) di uno spazio affine \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) di dimensione \( n \), rispetto a un riferimento fissato \( R = (O, \mathcal{B}) \).
+    
+    La dimensione del sottospazio è data dalla codimensione del rango:
+    \[ \dim(\mathbb{H}) = n - \rho \]
+
+    \Dimostrazione{
+        Dal teorema di struttura dei sistemi lineari, sappiamo che la soluzione generale si scrive come somma di una soluzione particolare e della soluzione del sistema omogeneo associato.
+        
+        \begin{enumerate}
+            \item \textbf{Punto di passaggio (Soluzione Particolare):}
+            Poiché il sistema è compatibile, esiste almeno una soluzione \( (a_1, \dots, a_n) \).
+            Sia \( P \) il punto dello spazio affine che ha queste coordinate nel riferimento \( R \):
+            \[ P \equiv_R (a_1, \dots, a_n) \]
+            
+            \item \textbf{Giacitura (Sistema Omogeneo):}
+            Consideriamo il sistema omogeneo associato \( \Sigma_0: AX = 0 \).
+            L'insieme delle sue soluzioni \( S_0 \) è un sottospazio vettoriale di \( K^n \).
+            Definiamo la giacitura \( \vec{\mathbb{H}} \) come il sottospazio di \( \vec{\mathcal{E}} \) che corrisponde a \( S_0 \) tramite l'isomorfismo inverso delle coordinate:
+            \[ \vec{\mathbb{H}} = \phi_{\mathcal{B}}^{-1}(S_0) \]
+            Per il teorema del rango (applicato ai sistemi omogenei), la dimensione dello spazio delle soluzioni è il numero di incognite meno il rango della matrice:
+            \[ \dim(\vec{\mathbb{H}}) = \dim(S_0) = n - \rho \]
+        \end{enumerate}
+        
+        Pertanto, l'insieme delle soluzioni di \( \Sigma \) descrive il sottospazio affine passante per \( P \) con giacitura \( \vec{\mathbb{H}} \):
+        \[ \mathbb{H} = (P, \vec{\mathbb{H}}) = P + \vec{\mathbb{H}} \]
+    }
+}
+
+\Esempio{Calcolo di un Iperpiano in \(\mathbb{R}^4\)}{
+    Sia \( \dim(\mathcal{E}) = 4 \). Consideriamo il sottospazio affine \( \mathbb{H} \) definito dall'equazione cartesiana:
+    \[ \Sigma: 3x_1 - x_2 + 4x_3 + x_4 = 2 \]
+    
+    \textbf{1. Analisi del Rango e Dimensione}
+    La matrice dei coefficienti è \( A = (3, -1, 4, 1) \).
+    Il rango è \(\rho = 1\) (c'è almeno un elemento non nullo).
+    La dimensione di \( \mathbb{H} \) sarà:
+    \[ \dim(\mathbb{H}) = n - \rho = 4 - 1 = 3 \]
+    (Si tratta quindi di un \textit{iperpiano} affine).
+
+    \textbf{2. Calcolo della Giacitura (\(\vec{\mathbb{H}}\))}
+    Risolviamo il sistema omogeneo associato \( \Sigma_0: 3x_1 - x_2 + 4x_3 + x_4 = 0 \).
+    Possiamo esplicitare \( x_2 \) (che ha coefficiente -1, comodo per i calcoli):
+    \[ x_2 = 3x_1 + 4x_3 + x_4 \]
+    Le variabili libere sono \( x_1, x_3, x_4 \). Assegniamo loro i parametri per trovare una base di \( S_0 \):
+    \begin{itemize}
+        \item \( x_1=1, x_3=0, x_4=0 \implies x_2 = 3 \cdot 1 = 3 \to v_1 = (1, 3, 0, 0) \)
+        \item \( x_1=0, x_3=1, x_4=0 \implies x_2 = 4 \cdot 1 = 4 \to v_2 = (0, 4, 1, 0) \)
+        \item \( x_1=0, x_3=0, x_4=1 \implies x_2 = 1 \cdot 1 = 1 \to v_3 = (0, 1, 0, 1) \)
+    \end{itemize}
+    La giacitura è \( \vec{\mathbb{H}} = L(v_1, v_2, v_3) \).
+
+    \textbf{3. Punto di Passaggio}
+    Cerchiamo una soluzione particolare del sistema completo (non omogeneo).
+    Poniamo le variabili libere a 0 (\(x_1=0, x_3=0, x_4=0\)):
+    \[ -x_2 = 2 \implies x_2 = -2 \]
+    Un punto di passaggio è \( P \equiv (0, -2, 0, 0) \).
+    
+    \textbf{Conclusione:}
+    Il sottospazio è \( \mathbb{H} = P + L(v_1, v_2, v_3) \).
+}

@@ -1,0 +1,501 @@
+\chapter{Lezione 20 - 5/12}
+
+\section{Posizione Reciproca di due Rette}
+
+\Teorema{Posizione reciproca di due rette nel piano (\(\dim \mathcal{E} = 2\))}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione 2 con riferimento \( R = (O, \mathcal{B}) \).
+    Consideriamo due rette \( r \) e \( r' \) definite da equazioni cartesiane:
+    \[
+    r: ax + by = c \quad \text{con } (a,b) \neq (0,0)
+    \]
+    \[
+    r': a'x + b'y = c' \quad \text{con } (a',b') \neq (0,0)
+    \]
+    
+    L'intersezione \( r \cap r' \) è data dalle soluzioni del sistema lineare:
+    \[
+    \begin{cases}
+    ax + by = c \\
+    a'x + b'y = c'
+    \end{cases}
+    \]
+    
+    Costruiamo le matrici del sistema:
+    \[
+    A = \begin{pmatrix} a & b \\ a' & b' \end{pmatrix} \quad \text{(Matrice incompleta)}
+    \]
+    \[
+    C = (A|b) = \begin{pmatrix} a & b & c \\ a' & b' & c' \end{pmatrix} \quad \text{(Matrice completa)}
+    \]
+    
+    In base al rango delle matrici, abbiamo i seguenti casi (per Rouché-Capelli):
+    \begin{enumerate}
+        \item \(\operatorname{rango}(A) = 1\) e \(\operatorname{rango}(C) = 1\) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^1\) soluzioni. Le equazioni sono proporzionali. \\
+        \(\implies r = r'\) (\textbf{Rette Coincidenti}).
+        
+        \item \(\operatorname{rango}(A) = 1\) e \(\operatorname{rango}(C) = 2\) \\
+        \(\implies\) Il sistema è incompatibile. Le giaciture sono uguali (\(\vec{r} = \vec{r'}\)) ma i termini noti non sono proporzionali. \\
+        \(\implies r \cap r' = \emptyset\) e \(r \parallel r'\) (\textbf{Rette Parallele e distinte}).
+        
+        \item \(\operatorname{rango}(A) = 2\) (che implica automaticamente \(\operatorname{rango}(C)=2\)) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{2-2}=1\) soluzione unica. Le giaciture sono diverse (\(\vec{r} \cap \vec{r'} = \{\bar{0}\}\)). \\
+        \(\implies r \cap r' = \{P\}\) (\textbf{Rette Incidenti}).
+    \end{enumerate}
+
+    \textbf{Nota sulla giacitura:}
+    La giacitura (direzione) è data dall'equazione omogenea \(ax + by = 0\).
+    Se \(\vec{r} = L(v)\), un vettore direttore è \(v = (-b, a)\) (oppure \((b, -a)\)).
+}
+
+\Teorema{Posizione reciproca di due rette nello spazio (\(\dim \mathcal{E} = 3\))}{
+    Sia \( \dim \mathcal{E} = 3 \). Una retta nello spazio è definita come intersezione di due piani.
+    Consideriamo due rette \( r \) e \( r' \):
+    \[
+    r: \begin{cases} a_1 x + b_1 y + c_1 z = d_1 \\ a_2 x + b_2 y + c_2 z = d_2 \end{cases}
+    \quad
+    r': \begin{cases} a_3 x + b_3 y + c_3 z = d_3 \\ a_4 x + b_4 y + c_4 z = d_4 \end{cases}
+    \]
+    
+    Per studiare l'intersezione \( r \cap r' \), consideriamo il sistema complessivo delle 4 equazioni.
+    
+    Le matrici sono:
+    \[
+    A = \begin{pmatrix} 
+    a_1 & b_1 & c_1 \\ 
+    a_2 & b_2 & c_2 \\ 
+    a_3 & b_3 & c_3 \\ 
+    a_4 & b_4 & c_4 
+    \end{pmatrix}
+    \quad \text{e} \quad
+    C = \begin{pmatrix} 
+    a_1 & b_1 & c_1 & d_1 \\ 
+    a_2 & b_2 & c_2 & d_2 \\ 
+    a_3 & b_3 & c_3 & d_3 \\ 
+    a_4 & b_4 & c_4 & d_4 
+    \end{pmatrix}
+    \]
+    
+    Poiché \(r\) e \(r'\) sono rette vere, il rango delle sottomatrici associate a ciascuna coppia di equazioni è 2. Quindi \( 2 \leq \operatorname{rango}(A) \leq \operatorname{rango}(C) \leq 4 \).
+
+    \begin{enumerate}
+        \item \(\operatorname{rango}(A) = 2\) e \(\operatorname{rango}(C) = 2\) \\
+        \(\implies\) Tutte le equazioni dipendono dalle prime due. \\
+        \(\implies r = r'\) (\textbf{Rette Coincidenti}).
+
+        \item \(\operatorname{rango}(A) = 2\) e \(\operatorname{rango}(C) = 3\) \\
+        \(\implies\) I vettori direttori sono proporzionali (\(\vec{r} = \vec{r'}\)), ma il sistema è incompatibile. \\
+        \(\implies r \cap r' = \emptyset\) e \(r \parallel r'\) (\textbf{Rette Parallele e distinte}).
+
+        \item \(\operatorname{rango}(A) = 3\) e \(\operatorname{rango}(C) = 3\) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{3-3}=1\) soluzione. I vettori direttori non sono proporzionali. \\
+        \(\implies r \cap r' = \{P\}\) (\textbf{Rette Incidenti}).
+
+        \item \(\operatorname{rango}(A) = 3\) e \(\operatorname{rango}(C) = 4\) \\
+        \(\implies\) Il sistema è incompatibile (nessuna intersezione). Inoltre, i vettori direttori sono linearmente indipendenti (\(\vec{r} \cap \vec{r'} = \{\bar{0}\}\)). \\
+        \(\implies r\) e \(r'\) sono \textbf{Sghembe}.
+    \end{enumerate}
+}
+
+\Teorema{Posizione reciproca di retta e piano nello spazio (\(\dim \mathcal{E} = 3\))}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione 3 con riferimento \( R = (O, \mathcal{B}) \).
+    
+    Consideriamo una retta \( r \) (definita come intersezione di due piani) e un piano \( H \):
+    \[
+    r: \begin{cases} ax + by + cz = d \\ a'x + b'y + c'z = d' \end{cases}
+    \quad \text{e} \quad
+    H: \alpha x + \beta y + \gamma z = \delta
+    \]
+
+    Le loro \textbf{giaciture} (direzioni) sono definite dai sistemi omogenei associati:
+    \[
+    \vec{r}: \begin{cases} ax + by + cz = 0 \\ a'x + b'y + c'z = 0 \end{cases}
+    \quad \text{e} \quad
+    \vec{H}: \alpha x + \beta y + \gamma z = 0
+    \]
+
+    L'intersezione \( r \cap H \) è data dalle soluzioni del sistema complessivo delle 3 equazioni:
+    \[
+    \begin{cases}
+    ax + by + cz = d \\ 
+    a'x + b'y + c'z = d' \\
+    \alpha x + \beta y + \gamma z = \delta
+    \end{cases}
+    \]
+
+    Costruiamo le matrici del sistema:
+    \[
+    A = \begin{pmatrix} 
+    a & b & c \\ 
+    a' & b' & c' \\ 
+    \alpha & \beta & \gamma 
+    \end{pmatrix}
+    \quad \text{e} \quad
+    C = \begin{pmatrix} 
+    a & b & c & d \\ 
+    a' & b' & c' & d' \\ 
+    \alpha & \beta & \gamma & \delta
+    \end{pmatrix}
+    \]
+
+    Poiché \( r \) è una retta, le prime due righe sono linearmente indipendenti. Quindi vale sempre:
+    \[ 2 \leq \operatorname{rango}(A) \leq \operatorname{rango}(C) \leq 3 \]
+
+    Abbiamo i seguenti 3 casi:
+
+    \begin{enumerate}
+        \item \( 2 = \operatorname{rango}(A) = \operatorname{rango}(C) \) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{3-2}= \infty^1\) soluzioni. L'equazione del piano \(H\) dipende da quelle della retta. \\
+        \(\implies r \subseteq H\) (\textbf{Retta giacente sul piano}).
+
+        \item \( 2 = \operatorname{rango}(A) < \operatorname{rango}(C) = 3 \) \\
+        \(\implies\) Il sistema è incompatibile (nessuna intersezione).
+        Le giaciture sono dipendenti (\(\vec{r} \subseteq \vec{H}\), cioè il vettore direttore della retta è ortogonale alla normale del piano). \\
+        \(\implies r \cap H = \emptyset\) e \(r \parallel H\) (\textbf{Retta parallela al piano e esterna}).
+
+        \item \( 3 = \operatorname{rango}(A) = \operatorname{rango}(C) \) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{3-3}=1\) soluzione unica. La retta non è parallela al piano. \\
+        \(\implies r \cap H = \{P\}\) (\textbf{Retta incidente il piano in un punto}).
+    \end{enumerate}
+}
+
+\Teorema{Posizione reciproca di due piani nello spazio (\(\dim \mathcal{E} = 3\))}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione 3 con riferimento \( R = (O, \mathcal{B}) \).
+    
+    Consideriamo due piani \( H \) e \( H' \) definiti da equazioni cartesiane:
+    \[
+    H: ax + by + cz = d
+    \]
+    \[
+    H': a'x + b'y + c'z = d'
+    \]
+    
+    Le loro \textbf{giaciture} (direzioni) sono definite dai sistemi omogenei associati:
+    \[
+    \vec{H}: ax + by + cz = 0
+    \]
+    \[
+    \vec{H'}: a'x + b'y + c'z = 0
+    \]
+    
+    L'intersezione \( H \cap H' \) è data dalle soluzioni del sistema delle due equazioni:
+    \[
+    \begin{cases}
+    ax + by + cz = d \\
+    a'x + b'y + c'z = d'
+    \end{cases}
+    \]
+    
+    Costruiamo le matrici del sistema:
+    \[
+    A = \begin{pmatrix} a & b & c \\ a' & b' & c' \end{pmatrix} \quad \text{(Matrice incompleta)}
+    \]
+    \[
+    C = (A|b) = \begin{pmatrix} a & b & c & d \\ a' & b' & c' & d' \end{pmatrix} \quad \text{(Matrice completa)}
+    \]
+    
+    Poiché \(H\) e \(H'\) sono piani, i coefficienti non sono tutti nulli, quindi vale:
+    \[ 1 \leq \operatorname{rango}(A) \leq \operatorname{rango}(C) \leq 2 \]
+    
+    Abbiamo i seguenti 3 casi:
+    
+    \begin{enumerate}
+        \item \( 1 = \operatorname{rango}(A) = \operatorname{rango}(C) \) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{3-1}=\infty^2\) soluzioni. Le equazioni sono proporzionali. \\
+        \(\implies H = H'\) (\textbf{Piani Coincidenti}).
+        
+        \item \( 1 = \operatorname{rango}(A) < \operatorname{rango}(C) = 2 \) \\
+        \(\implies\) Il sistema è incompatibile (nessuna intersezione).
+        Le giaciture sono uguali (\(\vec{H} = \vec{H'}\), cioè i vettori normali sono paralleli), ma i termini noti non sono proporzionali. \\
+        \(\implies H \cap H' = \emptyset\) e \(H \parallel H'\) (\textbf{Piani Paralleli e distinti}).
+        
+        \item \( 2 = \operatorname{rango}(A) = \operatorname{rango}(C) \) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{3-2}=\infty^1\) soluzioni. Le giaciture sono diverse. \\
+        \(\implies H \cap H' = r\) (\textbf{Piani Incidenti in una retta}).
+    \end{enumerate}
+}
+
+\Teorema{Posizione reciproca di Retta e Iperpiano in dimensione \( n \)}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione \( n \).
+    
+    Consideriamo:
+    \begin{itemize}
+        \item Un iperpiano \( H \): definito da un'unica equazione lineare:
+        \[ a_1 x_1 + \dots + a_n x_n = b \]
+        
+        \item Una retta \( r \): definita da un sistema di \( n-1 \) equazioni linearmente indipendenti:
+        \[
+        \begin{cases}
+        \alpha_{11} x_1 + \dots + \alpha_{1n} x_n = \beta_1 \\
+        \vdots \\
+        \alpha_{(n-1)1} x_1 + \dots + \alpha_{(n-1)n} x_n = \beta_{n-1}
+        \end{cases}
+        \]
+    \end{itemize}
+
+    L'intersezione \( r \cap H \) è data dal sistema complessivo di \(\mathbf{n}\) equazioni in \( n \) incognite (le \(n-1\) della retta più quella dell'iperpiano).
+    
+    Costruiamo le matrici del sistema:
+    \begin{itemize}
+        \item \( A \in M_{n,n}(K) \): Matrice incompleta (dei coefficienti).
+        \item \( C \in M_{n, n+1}(K) \): Matrice completa (con i termini noti).
+    \end{itemize}
+
+    Poiché le \(n-1\) equazioni che definiscono la retta sono indipendenti per definizione, il rango di \(A\) deve essere almeno \(n-1\).
+    Quindi vale la relazione:
+    \[
+    n-1 \leq \operatorname{rango}(A) \leq \operatorname{rango}(C) \leq n
+    \]
+
+    Si distinguono i seguenti 3 casi:
+
+    \begin{enumerate}
+        \item \(\operatorname{rango}(A) = \operatorname{rango}(C) = n-1\) \\
+        \(\implies\) Il sistema è compatibile e ammette \(\infty^{n-(n-1)} = \infty^1\) soluzioni. 
+        Le soluzioni formano un sottospazio di dimensione 1, che è proprio la retta \(r\). L'equazione di \(H\) è combinazione lineare di quelle di \(r\). \\
+        \(\implies r \subseteq H\) (\textbf{Retta giacente nell'Iperpiano}).
+
+        \item \(\operatorname{rango}(A) = n-1\) e \(\operatorname{rango}(C) = n\) \\
+        \(\implies\) Il sistema è incompatibile (\(r \cap H = \emptyset\)). 
+        Tuttavia, \(\operatorname{rango}(A) < n\) implica che il determinante dei coefficienti è nullo, quindi il vettore normale di \(H\) è dipendente dai vettori normali che definiscono \(r\). Questo significa che la direzione della retta è contenuta nella giacitura dell'iperpiano (\(\vec{r} \subseteq \vec{H}\)). \\
+        \(\implies r \cap H = \emptyset\) e \(r \parallel H\) (\textbf{Retta parallela all'Iperpiano}).
+
+        \item \(\operatorname{rango}(A) = \operatorname{rango}(C) = n\) \\
+        \(\implies\) La matrice \(A\) è quadrata e ha rango massimo (determinante non nullo). Il sistema è determinato (Cramer) e ammette un'unica soluzione. \\
+        \(\implies r \cap H = \{P\}\) (\textbf{Retta incidente l'Iperpiano in un punto}).
+    \end{enumerate}
+}
+
+\Teorema{Posizione reciproca di Retta e Piano in dimensione 4}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione 4.
+    
+    Consideriamo:
+    \begin{itemize}
+        \item Una retta \( r \): definita da un sistema di 3 equazioni indipendenti.
+        \item Un piano \( H \): definito da un sistema di 2 equazioni indipendenti.
+    \end{itemize}
+
+    L'intersezione \( r \cap H \) è data dal sistema complessivo di 5 equazioni in 4 incognite.
+    Costruiamo la matrice incompleta \( A \) (di dimensione \( 5 \times 4 \)) e la matrice completa \( C \) (di dimensione \( 5 \times 5 \)).
+
+    Poiché le 3 equazioni della retta sono indipendenti, il rango di \( A \) deve essere almeno 3. Inoltre, avendo 4 incognite, il rango di \( A \) non può superare 4.
+    Vale la relazione:
+    \[
+    3 \leq \operatorname{rango}(A) \leq \operatorname{rango}(C) \leq 5
+    \]
+
+    Si distinguono i seguenti 4 casi:
+
+    \begin{enumerate}
+        \item \(\operatorname{rango}(A) = 3\) e \(\operatorname{rango}(C) = 3\) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{4-3} = \infty^1\) soluzioni. L'intersezione è una retta.
+        Le equazioni del piano dipendono da quelle della retta. \\
+        \(\implies r \subseteq H\) (\textbf{Retta giacente nel Piano}).
+
+        \item \(\operatorname{rango}(A) = 3\) e \(\operatorname{rango}(C) = 4\) \\
+        \(\implies\) Il sistema è incompatibile (\(r \cap H = \emptyset\)).
+        Tuttavia, il rango della matrice omogenea \(A\) è 3, quindi lo spazio delle direzioni comuni ha dimensione \(4-3=1\) (che è proprio la direzione della retta).
+        Significa che la giacitura della retta è contenuta in quella del piano (\(\vec{r} \subseteq \vec{H}\)). \\
+        \(\implies r \cap H = \emptyset\) e \(r \parallel H\) (\textbf{Retta parallela al Piano}).
+
+        \item \(\operatorname{rango}(A) = 4\) e \(\operatorname{rango}(C) = 4\) \\
+        \(\implies\) Il sistema è compatibile con \(\infty^{4-4} = 1\) soluzione unica.
+        La giacitura dell'intersezione ha dimensione \(4-4=0\), quindi \(\vec{r} \cap \vec{H} = \{\bar{0}\}\) (le direzioni sono trasversali). \\
+        \(\implies r \cap H = \{P\}\) (\textbf{Retta incidente il Piano in un punto}).
+
+        \item \(\operatorname{rango}(A) = 4\) e \(\operatorname{rango}(C) = 5\) \\
+        \(\implies\) Il sistema è incompatibile (\(r \cap H = \emptyset\)).
+        Anche le giaciture hanno intersezione nulla (\(\vec{r} \cap \vec{H} = \{\bar{0}\}\)) perché il rango di \(A\) è massimo. Non c'è parallelismo né incidenza. \\
+        \(\implies r\) e \(H\) sono \textbf{Sghembi} (non complanari).
+    \end{enumerate}
+}
+
+
+\BoxBlue{Osservazione}{Rette Complanari e Piano passante per due rette}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione 3 con riferimento \( R = (O, \mathcal{B}) \).
+    Siano \( r \) e \( r' \) due rette nello spazio.
+
+    Ci chiediamo se esiste un piano \( \mathbb{H} \) che le contiene entrambe.
+    \begin{itemize}
+        \item Se tale piano esiste, \( r \) e \( r' \) si dicono \textbf{complanari}.
+        \item \( r \) e \( r' \) sono complanari \(\iff\) \textbf{non sono sghembe}.
+        \item Le rette non sono sghembe in due casi:
+        \begin{enumerate}
+            \item Sono \textbf{incidenti} (\( r \cap r' = \{P\} \)).
+            \item Sono \textbf{parallele} (\( r \parallel r' \)).
+        \end{enumerate}
+    \end{itemize}
+
+    Vediamo come costruire l'equazione del piano \( \mathbb{H} \) in questi due casi.
+}
+
+\BoxBlue{Caso 1}{Rette Incidenti (\( r \cap r' = \{P\} \))}{
+    Se le rette si intersecano in un punto \( P \), il piano che le contiene è generato dal punto di intersezione e dai due vettori direttori delle rette.
+    \[
+    \mathbb{H} = (P, L(u, u'))
+    \]
+    dove \( u \) è il vettore direttore di \( r \) e \( u' \) è il vettore direttore di \( r' \).
+
+    \textbf{Esempio:}
+    Siano date le rette parametriche con punto di incidenza \( P(5, 1, -3) \):
+    \begin{itemize}
+        \item \( r: \begin{cases} x = 5 + t \\ y = 1 - 2t \\ z = -3 - t \end{cases} \implies \text{Giacitura } \vec{r} = L(u) \text{ con } u = (1, -2, -1) \)
+        \item \( r': \begin{cases} x = 5 + 2t' \\ y = 1 \\ z = -3 + t' \end{cases} \implies \text{Giacitura } \vec{r'} = L(u') \text{ con } u' = (2, 0, 1) \)
+    \end{itemize}
+
+    \textit{Forma Parametrica:} Basta sommare i generatori al punto:
+    \[ \mathbb{H}: \begin{cases} x = 5 + t + 2t' \\ y = 1 - 2t \\ z = -3 - t + t' \end{cases} \]
+
+    \textit{Forma Cartesiana:} Un punto generico \( Q(x,y,z) \) appartiene al piano se il vettore \( \vec{PQ} \) è complanare a \( u \) e \( u' \).
+    Costruiamo la matrice con \( u, u' \) e \( \vec{PQ} = (x-5, y-1, z+3) \):
+    \[
+    A = \begin{pmatrix} 1 & 2 & x-5 \\ -2 & 0 & y-1 \\ -1 & 1 & z+3 \end{pmatrix}
+    \]
+    Imponiamo \(\det(A) = 0\). Sviluppiamo (ad esempio con Laplace sulla seconda riga):
+    \[
+    -(-2) \cdot \left| \begin{matrix} 2 & x-5 \\ 1 & z+3 \end{matrix} \right| + 0 - (y-1) \cdot \left| \begin{matrix} 1 & 2 \\ -1 & 1 \end{matrix} \right| = 0
+    \]
+    \[
+    2 [2(z+3) - 1(x-5)] - (y-1)[1 - (-2)] = 0
+    \]
+    \[
+    2 [2z + 6 - x + 5] - 3(y-1) = 0
+    \]
+    \[
+    4z - 2x + 22 - 3y + 3 = 0 \implies -2x - 3y + 4z + 25 = 0
+    \]
+    L'equazione del piano è \( 2x + 3y - 4z - 25 = 0 \).
+}
+
+\newpage
+
+\BoxBlue{Caso 2}{Rette Parallele (\( r \parallel r' \))}{
+    Se le rette sono parallele, hanno la stessa giacitura (\( u \parallel u' \)). Non possiamo usare \( L(u, u') \) perché ha dimensione 1 (è una retta, non un piano).
+    Ci serve una seconda direzione. Prendiamo due punti a caso: \( P \in r \) e \( P' \in r' \).
+    Il vettore \( \vec{PP'} \) fornisce la direzione "trasversale" che mancava.
+    \[
+    \mathbb{H} = (P, L(u, \vec{PP'}))
+    \]
+
+    \textbf{Esempio:}
+    Siano date le rette cartesiane:
+    \begin{itemize}
+        \item \( r: \begin{cases} x - y + 2z = 3 \\ y + z = -1 \end{cases} \)
+        \item \( r': \begin{cases} x - y + 2z = 0 \\ y + z = 2 \end{cases} \)
+    \end{itemize}
+    (Nota: le parti omogenee \( x-y+2z \) e \( y+z \) sono identiche, quindi le rette sono parallele).
+
+    \textit{1. Troviamo il vettore direttore \( u \) (comune):}
+    Risolviamo il sistema omogeneo: \( \{x - y + 2z = 0; y + z = 0\} \).
+    \( y = -z \implies x = y - 2z = -z - 2z = -3z \).
+    Ponendo \( z=1 \), otteniamo \( u = (-3, -1, 1) \).
+
+    \textit{2. Troviamo un punto \( P \) su \( r \):}
+    Poniamo \( z=0 \) nel sistema di \( r \):
+    \( y = -1 \).
+    \( x - (-1) + 0 = 3 \implies x + 1 = 3 \implies x = 2 \).
+    Punto \( P(2, -1, 0) \).
+
+    \textit{3. Troviamo un punto \( P' \) su \( r' \):}
+    Poniamo \( z=0 \) nel sistema di \( r' \):
+    \( y = 2 \).
+    \( x - 2 + 0 = 0 \implies x = 2 \).
+    Punto \( P'(2, 2, 0) \).
+
+    \textit{4. Costruiamo il piano:}
+    Vettori direttori: \( u = (-3, -1, 1) \) e \( \vec{PP'} = P' - P = (0, 3, 0) \).
+    (Nota: possiamo semplificare \( \vec{PP'} \) usando il vettore parallelo \( (0, 1, 0) \)).
+    
+    Imponiamo \(\det(A) = 0\) con punto di passaggio \( P(2, -1, 0) \):
+    \[
+    \det \begin{pmatrix} -3 & 0 & x-2 \\ -1 & 1 & y+1 \\ 1 & 0 & z \end{pmatrix} = 0
+    \]
+    Sviluppiamo lungo la seconda colonna:
+    \[
+    1 \cdot \left| \begin{matrix} -3 & x-2 \\ 1 & z \end{matrix} \right| = 0
+    \]
+    \[
+    -3z - (x-2) = 0 \implies -x - 3z + 2 = 0
+    \]
+    L'equazione del piano è \( x + 3z = 2 \).
+}
+
+\Proposizione{Fascio di piani di asse \( r \)}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione 3 con riferimento \( R = (O, \mathcal{B}) \).
+    Sia \( r \) una retta definita dall'intersezione di due piani:
+    \[
+    r: \begin{cases}
+    ax + by + cz = d \\
+    a'x + b'y + c'z = d'
+    \end{cases}
+    \]
+    
+    Un piano \( \mathbb{H} \) contiene la retta \( r \) se e solo se è rappresentato in \( R \) da un'equazione del tipo:
+    \[
+    \lambda (ax + by + cz - d) + \mu (a'x + b'y + c'z - d') = 0
+    \]
+    con \( (\lambda, \mu) \in \mathbb{R}^2 \setminus \{(0,0)\} \).
+    
+    L'insieme di tutti questi piani al variare di \(\lambda\) e \(\mu\) si chiama \textbf{Fascio di piani di asse \( r \)}.
+}
+
+\BoxBlue{Osservazione}{Risoluzione alternativa con il Fascio di Piani}{
+    Riprendiamo l'esempio precedente delle due rette parallele:
+    \[
+    r: \begin{cases} x - y + 2z - 3 = 0 \\ y + z + 1 = 0 \end{cases}
+    \quad
+    r': \begin{cases} x - y + 2z = 0 \\ y + z - 2 = 0 \end{cases}
+    \]
+    
+    Vogliamo trovare il piano \(\mathbb{H}\) che le contiene entrambe.
+    Invece di calcolare giaciture e determinanti, usiamo il **fascio di piani di asse \(r\)**.
+    
+    Qualsiasi piano che contiene \(r\) ha equazione:
+    \[
+    \lambda (x - y + 2z - 3) + \mu (y + z + 1) = 0
+    \]
+    
+    Per trovare il piano specifico che contiene anche \(r'\), basta imporre il passaggio per un \textbf{qualsiasi punto} \(P' \in r'\).
+    Scegliamo un punto comodo di \(r'\), ad esempio ponendo \(z=0\):
+    \begin{itemize}
+        \item \(y + 0 - 2 = 0 \implies y = 2\)
+        \item \(x - 2 + 0 = 0 \implies x = 2\)
+    \end{itemize}
+    Quindi usiamo \(P'(2, 2, 0)\).
+    
+    Sostituiamo le coordinate di \(P'\) nell'equazione del fascio per trovare \(\lambda\) e \(\mu\):
+    \[
+    \lambda (2 - 2 + 2(0) - 3) + \mu (2 + 0 + 1) = 0
+    \]
+    \[
+    \lambda (-3) + \mu (3) = 0 \implies -3\lambda + 3\mu = 0 \implies \lambda = \mu
+    \]
+    
+    Possiamo scegliere dei valori semplici che rispettino l'uguaglianza, ad esempio \(\lambda = 1\) e \(\mu = 1\).
+    Sostituiamo nell'equazione originale del fascio:
+    \[
+    1 \cdot (x - y + 2z - 3) + 1 \cdot (y + z + 1) = 0
+    \]
+    \[
+    x - y + 2z - 3 + y + z + 1 = 0
+    \]
+    Sommando i termini simili:
+    \[
+    x + 3z - 2 = 0 \implies x + 3z = 2
+    \]
+    Otteniamo lo stesso identico risultato del metodo precedente, ma in modo molto più rapido.
+}
+
+\Proposizione{Fascio improprio di piani (Piani paralleli)}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine di dimensione 3 con riferimento \( R = (O, \mathcal{B}) \).
+    Sia \( H \) un piano definito dall'equazione cartesiana:
+    \[ H: ax + by + cz = d \]
+    
+    Un piano \( H' \) è \textbf{parallelo} ad \( H \) (\( H' \parallel H \)) se e solo se è rappresentato da un'equazione del tipo:
+    \[
+    ax + by + cz = k
+    \]
+    al variare del parametro \( k \in \mathbb{R} \).
+    
+    L'insieme di tutti questi piani (che condividono la stessa giacitura \( ax+by+cz=0 \) ma hanno termini noti diversi) si chiama \textbf{Fascio improprio di piani} paralleli ad \( H \).
+}
