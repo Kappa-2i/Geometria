@@ -1,0 +1,345 @@
+\chapter{Lezione 21 - 10/12 (Teams)}
+
+\section{Rette ortogonali}
+
+\Definizione{Rette Ortogonali}{
+    Siano date due rette \( r \) e \( r' \) in uno spazio affine euclideo \( \mathcal{E} \) di dimensione \( n \), descritte in forma parametrica:
+    \[
+    r: \begin{cases} x_1 = \bar{x}_1 + l_1 t \\ \vdots \\ x_n = \bar{x}_n + l_n t \end{cases} 
+    \quad \implies \vec{r} = L(u) \text{ con } u = (l_1, \dots, l_n)
+    \]
+    \[
+    r': \begin{cases} x_1 = \bar{x}'_1 + l'_1 t' \\ \vdots \\ x_n = \bar{x}'_n + l'_n t' \end{cases} 
+    \quad \implies \vec{r'} = L(u') \text{ con } u' = (l'_1, \dots, l'_n)
+    \]
+
+    Due rette \( r \) e \( r' \) si dicono \textbf{ortogonali} se i loro vettori direttori sono ortogonali, ovvero:
+    \[
+    \langle u, u' \rangle = 0
+    \]
+    
+    Equivalentemente, usando la nozione di complemento ortogonale:
+    \[
+    \vec{r} \subseteq \vec{r'}^\perp \quad \text{(oppure } \vec{r'} \subseteq \vec{r}^\perp \text{)}
+    \]
+    
+    \bigskip
+    \textbf{Richiamo (Complemento Ortogonale):}
+    Dato un sottospazio \( W \subseteq \vec{\mathcal{E}} \), il suo complemento ortogonale è definito come:
+    \[
+    W^\perp = \{ v \in \vec{\mathcal{E}} \mid \langle v, w \rangle = 0, \ \forall w \in W \}
+    \]
+    Valgono le seguenti proprietà fondamentali:
+    \begin{enumerate}
+        \item \( W \subseteq U \implies W^\perp \supseteq U^\perp \) (L'operazione inverte le inclusioni);
+        \item \( (W^\perp)^\perp = W \) (Riflessività per spazi finito-dimensionali).
+    \end{enumerate}
+}
+
+\Esempio{Rette ortogonali nello spazio}{
+    Sia \(\dim \mathcal{E} = 3\) con riferimento \(R = (O, \mathcal{B})\).
+    Vogliamo svolgere due compiti:
+    \begin{enumerate}
+        \item Rappresentare la retta \(r\) passante per \(P(1, -2, 0)\) con giacitura \(\vec{r} = L(u)\) dove \(u = (3, -1, 1)\).
+        \item Trovare una retta \(r'\) ortogonale a \(r\) e passante per l'origine \(O(0,0,0)\).
+    \end{enumerate}
+
+    \textbf{1. Rappresentazione di \(r\)}
+    Partiamo dalla rappresentazione parametrica:
+    \[
+    r : \begin{cases}
+    x_1 = 1 + 3t \\
+    x_2 = -2 - t \\
+    x_3 = 0 + t
+    \end{cases}
+    \]
+    Per passare alla cartesiana, ricaviamo \(t\) dalla terza equazione (\(t = x_3\)) e sostituiamo nelle altre:
+    \[
+    \begin{cases}
+    x_1 = 1 + 3x_3 \\
+    x_2 = -2 - x_3
+    \end{cases}
+    \implies
+    \begin{cases}
+    x_1 - 3x_3 - 1 = 0 \\
+    x_2 + x_3 + 2 = 0
+    \end{cases}
+    \]
+    La giacitura (sistema omogeneo) è quindi \(\vec{r}: \{ x_1 - 3x_3 = 0; \ x_2 + x_3 = 0 \}\).
+
+    \textbf{2. Ricerca di \(r'\) (Ortogonale)}
+    La retta \(r'\) deve avere giacitura \(\vec{r'} = L(u')\) con \(u'=(l_1, l_2, l_3)\) tale che:
+    \[ \langle u', u \rangle = 0 \]
+    Sostituendo le componenti di \(u(3, -1, 1)\):
+    \[
+    3l_1 - l_2 + l_3 = 0
+    \]
+    Questa equazione descrive un piano di vettori ortogonali. Per definire una retta, ci basta sceglierne \textbf{una} soluzione particolare non nulla.
+    
+    \textit{Esempio di soluzione:}
+    Fissiamo \(l_1 = 1\) e \(l_3 = 0\).
+    \[ 3(1) - l_2 + 0 = 0 \implies l_2 = 3 \]
+    Il vettore direttore è \(u' = (1, 3, 0)\).
+    (Un'altra soluzione valida proposta nel testo era \((1, 2, -1)\) poiché \(3(1) - 2 + (-1) = 0\)).
+
+    \textbf{Rappresentazione di \(r'\):}
+    La retta passa per l'origine \(O(0,0,0)\) ed ha direzione \((1, 3, 0)\):
+    \[
+    r' : \begin{cases}
+    x_1 = t' \\
+    x_2 = 3t' \\
+    x_3 = 0
+    \end{cases}
+    \]
+}
+
+\section{Retta-Iperpiano Ortogonali}
+
+\Definizione{Ortogonalità Retta-Iperpiano}{
+    Sia \( \dim \mathcal{E} = n \).
+    Sappiamo che un iperpiano \( H \) ha giacitura di dimensione \( n-1 \). Di conseguenza, il suo complemento ortogonale ha dimensione 1:
+    \[ \dim(\vec{H}) = n-1 \implies \dim(\vec{H}^\perp) = n - (n-1) = 1 \]
+    
+    Una retta \( r \) e un iperpiano \( H \) si dicono \textbf{ortogonali} se la direzione della retta coincide con il complemento ortogonale del piano:
+    \[ \vec{r} = \vec{H}^\perp \]
+    
+    Siamo quindi interessati a determinare il generatore di \( \vec{H}^\perp \) (detto vettore normale) a partire dall'equazione del piano.
+}
+
+\Proposizione{Vettore normale di un Iperpiano}{
+    Sia \( \mathcal{E} \) uno spazio affine euclideo di dimensione \( n \) e \( R = (O, \mathcal{B}) \) un riferimento cartesiano dove \(\mathcal{B}\) è una \textbf{base ortonormale}.
+    
+    Sia \( H \) un iperpiano definito dall'equazione cartesiana:
+    \[ H: a_1 x_1 + a_2 x_2 + \dots + a_n x_n = b \]
+    
+    Allora il complemento ortogonale della giacitura è generato dal vettore composto dai coefficienti delle incognite:
+    \[ \vec{H}^\perp = L(w) \quad \text{con } w = (a_1, a_2, \dots, a_n) \]
+
+    \Dimostrazione{
+        La giacitura \( \vec{H} \) è rappresentata dall'equazione omogenea associata:
+        \[ a_1 x_1 + \dots + a_n x_n = 0 \]
+        
+        Sia \( u \in \vec{H} \) un generico vettore della giacitura con componenti \( (c_1, \dots, c_n) \) rispetto alla base \( \mathcal{B} \).
+        La condizione di appartenenza \( u \in \vec{H} \) si traduce in:
+        \[ a_1 c_1 + \dots + a_n c_n = 0 \]
+        
+        Consideriamo ora il vettore \( w = (a_1, \dots, a_n) \).
+        Calcoliamo il prodotto scalare \( \langle w, u \rangle \). Poiché la base \( \mathcal{B} \) è \textbf{ortonormale}, il prodotto scalare standard è la somma dei prodotti delle componenti omologhe:
+        \[ \langle w, u \rangle = a_1 c_1 + \dots + a_n c_n \]
+        
+        Confrontando le due espressioni, osserviamo che:
+        \[ \forall u \in \vec{H}, \quad \langle w, u \rangle = 0 \]
+        
+        Questo implica che \( w \) è ortogonale a tutti i vettori di \( \vec{H} \), quindi \( w \in \vec{H}^\perp \).
+        Poiché i coefficienti non sono tutti nulli, \( w \neq \vec{0} \). Dato che \( \dim(\vec{H}^\perp) = 1 \), il sottospazio generato da \( w \) coincide con l'intero complemento ortogonale:
+        \[ \vec{H}^\perp = L(w) \]
+    }
+}
+
+\Esempio{Verifica di Ortogonalità in \(\mathbb{R}^4\)}{
+    Sia \(\dim \mathcal{E} = 4\). Consideriamo l'iperpiano \(H\) definito da:
+    \[ H: -x_1 + 3x_2 - 2x_4 = 3 \]
+    La sua giacitura è data dall'equazione omogenea \(-x_1 + 3x_2 - 2x_4 = 0\).
+    Il complemento ortogonale \(\vec{H}^\perp\) è generato dal vettore dei coefficienti (notando che il coefficiente di \(x_3\) è 0):
+    \[ w = (-1, 3, 0, -2) \]
+    
+    Una retta \(r\) è ortogonale ad \(H\) se e solo se il suo vettore direttore è multiplo di \(w\):
+    \[ \vec{r} = L(w) \]
+
+    \textbf{Caso 1: Retta \(r\)}
+    \[ r: \begin{cases} x_1 = 3 + t \\ x_2 = -7 - 3t \\ x_3 = \pi \\ x_4 = 8 + 2t \end{cases} \]
+    Il vettore direttore è \(v_r = (1, -3, 0, 2)\).
+    Notiamo che \(v_r = -1 \cdot w\). I vettori sono proporzionali, quindi \textbf{\(r \perp H\)}.
+
+    \textbf{Caso 2: Retta \(s\)}
+    \[ s: \begin{cases} x_1 = 3 + 3t' \\ x_2 = -7 - t' \\ x_3 = \pi \\ x_4 = 8 + 4t' \end{cases} \]
+    Il vettore direttore è \(v_s = (3, -1, 0, 4)\).
+    Questo vettore non è proporzionale a \(w\) (le componenti non sono scalari l'una dell'altra).
+    Quindi \textbf{\(s \not\perp H\)}.
+}
+
+\BoxGreen{Esempio}{Costruzione di una retta ortogonale in \(\mathbb{R}^3\)}{
+    Sia \(\dim \mathcal{E} = 3\) con riferimento \(R=(O, \mathcal{B})\).
+    Consideriamo il piano:
+    \[ H: -3x_1 - x_2 + 2x_3 = 1 \]
+    Il vettore normale (che genera \(\vec{H}^\perp\)) è:
+    \[ w = (-3, -1, 2) \]
+
+    Vogliamo rappresentare una retta \(r\) ortogonale ad \(H\) (ad esempio passante per l'origine).
+    La condizione è \(\vec{r} = L(w)\).
+
+    \textbf{Forma Parametrica:}
+    Usiamo \(w\) come vettore direttore e l'origine come punto di passaggio:
+    \[
+    r: \begin{cases}
+    x_1 = -3t \\
+    x_2 = -t \\
+    x_3 = 2t
+    \end{cases}
+    \]
+
+    \textbf{Forma Cartesiana:}
+    Eliminiamo il parametro \(t\). Dalla seconda equazione ricaviamo \(t = -x_2\).
+    Sostituendo nelle altre due:
+    \begin{itemize}
+        \item \(x_1 = -3(-x_2) \implies x_1 - 3x_2 = 0\)
+        \item \(x_3 = 2(-x_2) \implies 2x_2 + x_3 = 0\)
+    \end{itemize}
+    
+    Il sistema cartesiano della retta è:
+    \[
+    r: \begin{cases}
+    x_1 - 3x_2 = 0 \\
+    2x_2 + x_3 = 0
+    \end{cases}
+    \]
+}
+
+
+\section{Ortogonalità Iperpiano-Iperpiano}
+
+\Definizione{Iperpiani Ortogonali}{
+    Siano \( H \) e \( H' \) due iperpiani di uno spazio affine euclideo \( \mathcal{E} \) di dimensione \( n \).
+    
+    Essi si dicono \textbf{ortogonali} se la direzione normale dell'uno è contenuta nella giacitura dell'altro:
+    \[
+    \vec{H}^\perp \subseteq \vec{H'} \quad \text{oppure} \quad \vec{H'}^\perp \subseteq \vec{H}
+    \]
+
+    \textbf{Equivalentemente (in coordinate):}
+    Fissato un riferimento con base ortonormale, se gli iperpiani sono definiti dalle equazioni:
+    \[ H: a_1 x_1 + \dots + a_n x_n = b \]
+    \[ H': a'_1 x_1 + \dots + a'_n x_n = b' \]
+    
+    Allora \( H \perp H' \) se e solo se il prodotto scalare tra i rispettivi vettori normali \( w=(a_1, \dots, a_n) \) e \( w'=(a'_1, \dots, a'_n) \) è nullo:
+    \[
+    \langle w, w' \rangle = a_1 a'_1 + \dots + a_n a'_n = 0
+    \]
+}
+
+\Esempio{Piano ortogonale a un altro piano}{
+    Sia \( \dim \mathcal{E} = 3 \) e \( R=(O, \mathcal{B}) \) con \( \mathcal{B} \) base ortonormale.
+    Consideriamo il piano \( H \) e il punto \( P \):
+    \[ H: x_1 - 4x_2 + 2x_3 = 1 \quad \implies \quad \vec{w} = (1, -4, 2) \]
+    \[ P = (3, 1, -3) \]
+
+    Vogliamo determinare un piano \( H' \) tale che \( H' \perp H \) e \( P \in H' \).
+    L'equazione generica di \( H' \) è \( a'_1 x_1 + a'_2 x_2 + a'_3 x_3 + k = 0 \).
+    La condizione di ortogonalità tra piani equivale all'ortogonalità dei loro vettori normali:
+    \[ \langle w', w \rangle = 0 \iff 1(a'_1) - 4(a'_2) + 2(a'_3) = 0 \]
+    
+    Questa equazione ammette infinite soluzioni. Ne scegliamo una comoda, ad esempio:
+    \begin{itemize}
+        \item Se poniamo \( a'_2 = 1 \) e \( a'_3 = 1 \), allora \( a'_1 - 4 + 2 = 0 \implies a'_1 = 2 \).
+        \item Vettore scelto: \( w' = (2, 1, 1) \).
+    \end{itemize}
+
+    Il fascio di piani paralleli è quindi:
+    \[ 2x_1 + x_2 + x_3 + k = 0 \]
+    
+    Imponiamo il passaggio per \( P(3, 1, -3) \):
+    \[ 2(3) + 1 + (-3) + k = 0 \implies 6 + 1 - 3 + k = 0 \implies 4 + k = 0 \implies k = -4 \]
+
+    L'equazione del piano cercato è:
+    \[ H': 2x_1 + x_2 + x_3 - 4 = 0 \]
+}
+
+\Esempio{Piano per un punto ortogonale a una retta}{
+    Sia \( \dim \mathcal{E} = 3 \) e \( R=(O, \mathcal{B}) \).
+    Sia \( r \) la retta passante per \( B(4, 1, -2) \) e \( C(0, 2, 1) \).
+    Vogliamo determinare il piano \( H \) passante per \( B \) e ortogonale a \( r \).
+
+    \textbf{1. Calcolo del vettore direttore della retta}
+    La direzione della retta è data dal vettore differenza:
+    \[ \vec{r} = L(\vec{BC}) \]
+    \[ \vec{BC} = (0-4, \ 2-1, \ 1-(-2)) = (-4, 1, 3) \]
+
+    \textbf{2. Condizione di ortogonalità}
+    Affinché il piano \( H \) sia ortogonale alla retta \( r \), il vettore normale del piano \( \vec{n}_H \) deve essere parallelo al vettore direttore della retta \( \vec{r} \).
+    Poniamo \( \vec{n}_H = (-4, 1, 3) \).
+    
+    L'equazione del piano è del tipo:
+    \[ -4x_1 + x_2 + 3x_3 + k = 0 \]
+
+    \textbf{3. Passaggio per il punto}
+    Il piano deve passare per \( B(4, 1, -2) \). Sostituiamo le coordinate:
+    \[ -4(4) + 1 + 3(-2) + k = 0 \]
+    \[ -16 + 1 - 6 + k = 0 \]
+    \[ -21 + k = 0 \implies k = 21 \]
+
+    L'equazione del piano è:
+    \[ H: -4x_1 + x_2 + 3x_3 + 21 = 0 \]
+    (O equivalentemente, cambiando i segni: \( 4x_1 - x_2 - 3x_3 - 21 = 0 \)).
+}
+
+\section{Distanza}
+
+\Definizione{Distanza Euclidea}{
+    Sia \( (\vec{\mathcal{E}}, \mathcal{E}, \pi) \) uno spazio affine euclideo con \(\dim \mathcal{E} = n\).
+    La distanza tra due punti \( P, Q \in \mathcal{E} \) è definita come la norma del vettore che li collega:
+    \[ d(P,Q) = \| \vec{PQ} \| \]
+
+    \BoxBlue{Osservazioni}{Proprietà della metrica}{
+        \begin{itemize}
+            \item \textbf{Positività:} \( \forall P,Q, \ d(P,Q) \geq 0 \), con \( d(P,Q)=0 \iff P=Q \).
+            \item \textbf{Simmetria:}
+            \[
+            d(P,Q) = \| \vec{PQ} \| = \| -\vec{QP} \| = |-1| \cdot \| \vec{QP} \| = \| \vec{QP} \| = d(Q,P)
+            \]
+        \end{itemize}
+    }
+}
+
+\Definizione{Distanza tra sottoinsiemi}{
+    Dati due sottoinsiemi non vuoti \( X, Y \subseteq \mathcal{E} \), la distanza tra loro è l'estremo inferiore delle distanze tra i punti:
+    \[ d(X,Y) = \inf \{ d(P,Q) \mid P \in X, Q \in Y \} \]
+}
+
+\BoxBlue{Distanza Punto-Iperpiano}{Proiezione Ortogonale}{
+    Sia \( H \) un iperpiano e \( P \) un punto.
+    Sia \( r \) la retta passante per \( P \) e ortogonale ad \( H \) (\( \vec{r} = \vec{H}^\perp \)).
+    Il punto di intersezione \( \bar{P} = r \cap H \) si chiama \textbf{proiezione ortogonale} di \( P \) su \( H \).
+    
+    La distanza tra il punto e il piano è la distanza tra il punto e la sua proiezione:
+    \[ d(P,H) = d(P, \bar{P}) = \| \vec{P\bar{P}} \| \]
+    Infatti, \( \bar{P} \) è il punto di \( H \) di minima distanza da \( P \):
+    \[ \forall Q \in H \setminus \{\bar{P}\}, \quad \| \vec{PQ} \| > \| \vec{P\bar{P}} \| \]
+}
+
+\Esempio{Calcolo distanza Punto-Iperpiano in \(\mathbb{R}^4\)}{
+    Sia \(\dim \mathcal{E} = 4\) con riferimento \(R=(O, \mathcal{B})\).
+    Consideriamo:
+    \[ H: x_1 - x_2 + 2x_3 - 5x_4 + 3 = 0 \]
+    \[ P(2, 3, -1, 1) \]
+
+    \textbf{1. Costruzione della retta normale}
+    Il vettore normale all'iperpiano è \( w = (1, -1, 2, -5) \).
+    La retta \( r \) ortogonale ad \( H \) passante per \( P \) ha equazioni parametriche:
+    \[ r : \begin{cases} 
+    x_1 = 2 + t \\ 
+    x_2 = 3 - t \\ 
+    x_3 = -1 + 2t \\ 
+    x_4 = 1 - 5t 
+    \end{cases} \]
+
+    \textbf{2. Intersezione \( r \cap H \)}
+    Sostituiamo le equazioni parametriche di \( r \) nell'equazione cartesiana di \( H \):
+    \[ (2+t) - (3-t) + 2(-1+2t) - 5(1-5t) + 3 = 0 \]
+    Svolgiamo i calcoli:
+    \[ 2 + t - 3 + t - 2 + 4t - 5 + 25t + 3 = 0 \]
+    Raggruppiamo i termini con \( t \) e le costanti:
+    \[ (1 + 1 + 4 + 25)t + (2 - 3 - 2 - 5 + 3) = 0 \]
+    \[ 31t - 5 = 0 \implies 31t = 5 \implies \bar{t} = \frac{5}{31} \]
+
+    \textbf{3. Calcolo della proiezione \(\bar{P}\) e del vettore \(\vec{P\bar{P}}\)}
+    Sostituendo \(\bar{t}\) nella retta otteniamo \(\bar{P}\). Tuttavia, per la distanza ci basta il vettore differenza:
+    \[ \vec{P\bar{P}} = \bar{P} - P = \bar{t} \cdot w = \frac{5}{31}(1, -1, 2, -5) \]
+    \[ \vec{P\bar{P}} = \left( \frac{5}{31}, -\frac{5}{31}, \frac{10}{31}, -\frac{25}{31} \right) \]
+
+    \textbf{4. Calcolo della norma (Distanza)}
+    \[ d(P, H) = \| \vec{P\bar{P}} \| = \sqrt{ \left(\frac{5}{31}\right)^2 + \left(-\frac{5}{31}\right)^2 + \left(\frac{10}{31}\right)^2 + \left(-\frac{25}{31}\right)^2 } \]
+    Raccogliamo \( \frac{1}{31^2} \):
+    \[ = \sqrt{ \frac{25 + 25 + 100 + 625}{31^2} } = \sqrt{ \frac{775}{31^2} } \]
+    Poiché \( 775 = 25 \times 31 \):
+    \[ = \sqrt{ \frac{25 \cdot 31}{31 \cdot 31} } = \sqrt{ \frac{25}{31} } = \frac{5}{\sqrt{31}} \]
+}

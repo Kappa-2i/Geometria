@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  5 DEC 2025 13:29
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.10.1)  10 DEC 2025 12:36
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"/Users/kappone/Desktop/,/UNI/2°ANNO/GEOM CIOFFI/App.tex"
@@ -976,7 +976,7 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \mult@nat@firstbox=\box160
 \colbreak@box=\box161
 \mc@col@check@num=\count394
-)) (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux) (./build/Lezione19/Lez19.aux) (./build/Lezione20/Lez20.aux))
+)) (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux) (./build/Lezione19/Lez19.aux) (./build/Lezione20/Lez20.aux) (./build/Lezione21/Lez21.aux))
 \openout1 = App.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -1162,6 +1162,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2]
+
+[3]
 \openout2 = Lezione1/Lez1.aux
  (./Lezione1/Lez1.tex
 Capitolo 1.
@@ -1172,7 +1174,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
 
 
-[3
+[4
 
 
 ]
@@ -1192,30 +1194,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
 
 
-[4]
-
 [5]
 
-[6])
+[6]
 
-[7]
+[7])
+
+[8]
 \openout2 = Lezione2/Lez2.aux
  (./Lezione2/Lez2.tex
 Capitolo 2.
 
 
-[8
+[9
 
 
 
 
 ]
 
-[9]
+[10]
 
-[10])
+[11])
 
-[11]
+[12]
 \openout2 = Lezione3/Lez3.aux
  (./Lezione3/Lez3.tex
 Capitolo 3.
@@ -1231,14 +1233,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--76
 
 
 
-[12
+[13
 
 
 
 
 ]
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 125--125
 
  []
@@ -1250,27 +1252,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--154
 
 
 
-[14]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 222--222
 
  []
 
 )
 
-[15]
+[16]
 \openout2 = Lezione4/Lez4.aux
  (./Lezione4/Lez4.tex
 Capitolo 4.
 
 
-[16
+[17
 
 
 
 
 ]
 
-[17]
+[18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 199.
@@ -1281,45 +1283,45 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[18])
+[19])
 
-[19]
+[20]
 \openout2 = Lezione5/Lez5.aux
  (./Lezione5/Lez5.tex
 Capitolo 5.
 
 
-[20
+[21
 
 
 
 
 ]
 
-[21])
+[22])
 
-[22]
+[23]
 \openout2 = Lezione6/Lez6.aux
  (./Lezione6/Lez6.tex
 Capitolo 6.
 
 
-[23
+[24
 
 
 
 
 ]
 
-[24]
+[25]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 187.
 
 
 
-[25]
+[26]
 
-[26
+[27
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 366--366
@@ -1328,47 +1330,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 366--366
 
 
 
-[27])
+[28])
 
-[28]
+[29]
 \openout2 = Lezione7/Lez7.aux
  (./Lezione7/Lez7.tex
 Capitolo 7.
 
 
-[29
+[30
 
 
 
 
 ]
 
-[30]
-
 [31]
+
+[32]
 Underfull \hbox (badness 1117) in paragraph at lines 271--271
 \TU/lmr/m/n/10 Que-sto è esat-ta-men-te il ri-sul-ta-to del pro-dot-to per sca-la-re (de-fi-ni-to com-po-nen-te per
  []
 
 
 
-[32]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 287--287
 
  []
 
 
 
-[33]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 356--356
 
  []
 
 )
 
-[34]
-
 [35]
+
+[36]
 \openout2 = Lezione8/Lez8.aux
  (./Lezione8/Lez8.tex
 Capitolo 8.
@@ -1379,21 +1381,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
 
 
-[36
+[37
 
 
 
 
 ]
 
-[37]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 195--195
 
  []
 
 
-
-[38]
 
 [39]
 
@@ -1401,121 +1401,121 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--195
 
 [41]
 
-[42])
+[42]
 
-[43]
+[43])
+
+[44]
 \openout2 = Lezione9/Lez9.aux
  (./Lezione9/Lez9.tex
 Capitolo 9.
 
 
-[44
+[45
 
 
 
 
 ]
 
-[45]
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 193--193
 
  []
 
 
 
-[46]
-
 [47]
 
-[48])
+[48]
 
-[49]
+[49])
+
+[50]
 \openout2 = Lezione10/Lez10.aux
  (./Lezione10/Lez10.tex
 Capitolo 10.
 
 
-[50
+[51
 
 
 
 
 ]
 
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
-
- []
-
-
-
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 
  []
 
 
 
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 315--315
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 315--315
+Underfull \hbox (badness 10000) in paragraph at lines 241--241
 
  []
 
 
 
 [54]
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
 
-[55])
+ []
 
-[56]
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
+
+ []
+
+
+
+[55]
+
+[56])
+
+[57]
 \openout2 = Lezione11/Lez11.aux
  (./Lezione11/Lez11.tex
 Capitolo 11.
 
 
-[57
+[58
 
 
 
 
 ]
-
-[58]
 
 [59]
 
@@ -1523,48 +1523,50 @@ Capitolo 11.
 
 [61]
 
-[62])
+[62]
 
-[63]
+[63])
+
+[64]
 \openout2 = Lezione12/Lez12.aux
  (./Lezione12/Lez12.tex
 Capitolo 12.
 
 
-[64
+[65
 
 
 
 
 ]
 
-[65]
-
 [66]
+
+[67]
 Underfull \hbox (badness 10000) in paragraph at lines 231--231
 
  []
 
 
 
-[67]
+[68]
 Underfull \hbox (badness 10000) in paragraph at lines 285--285
 
  []
 
 
 
-[68]
+[69]
 
-[69])
+[70])
 
-[70]
+[71]
 \openout2 = Lezione13/Lez13.aux
  (./Lezione13/Lez13.tex
 Capitolo 13.
 
 
-[71
+[72
 
 
 
@@ -1574,8 +1576,6 @@ Overfull \vbox (44.62881pt too high) has occurred while \output is active []
 
 
 
-[72]
-
 [73]
 
 [74]
@@ -1583,27 +1583,29 @@ Overfull \vbox (44.62881pt too high) has occurred while \output is active []
 [75]
 
 [76]
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
-
- []
-
-
 
 [77]
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+
+ []
+
+
+
+[78]
 Underfull \hbox (badness 10000) in paragraph at lines 441--441
 
  []
 
 
 
-[78])
+[79])
 
-[79]
+[80]
 \openout2 = Lezione14/Lez14.aux
  (./Lezione14/Lez14.tex
 Capitolo 14.
@@ -1614,42 +1616,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 
 
 
-[80
+[81
 
 
 
 
 ]
 
-[81]
-
 [82]
+
+[83]
 Underfull \hbox (badness 10000) in paragraph at lines 242--242
 
  []
 
 
 
-[83])
-
-[84]
+[84])
 
 [85]
+
+[86]
 \openout2 = Lezione15/Lez15.aux
  (./Lezione15/Lez15.tex
 Capitolo 15.
 
 
-[86
+[87
 
 
 
 
 ]
 
-[87])
+[88])
 
-[88]
+[89]
 \openout2 = Lezione16/Lez16.aux
  (./Lezione16/Lez16.tex
 Capitolo 16.
@@ -1660,36 +1662,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
 
 
-[89
+[90
 
 
 
 
 ]
 
-[90]
+[91]
 Underfull \hbox (badness 10000) in paragraph at lines 158--158
 
  []
 
 
 
-[91])
+[92])
 
-[92]
+[93]
 \openout2 = Lezione17/Lez17.aux
  (./Lezione17/Lez17.tex
 Capitolo 17.
 
 
-[93
+[94
 
 
 
 
 ]
-
-[94]
 
 [95]
 
@@ -1700,70 +1700,70 @@ Capitolo 17.
 [98]
 
 [99]
+
+[100]
 Underfull \hbox (badness 10000) in paragraph at lines 391--391
 
  []
 
 )
 
-[100]
-
 [101]
+
+[102]
 \openout2 = Lezione18/Lez18.aux
  (./Lezione18/Lez18.tex
 Capitolo 18.
 
 
-[102
+[103
 
 
 
 
 ]
-
-[103]
 
 [104]
 
 [105]
 
-[106])
+[106]
 
-[107]
+[107])
+
+[108]
 \openout2 = Lezione19/Lez19.aux
  (./Lezione19/Lez19.tex
 Capitolo 19.
 
 
-[108
+[109
 
 
 
 
 ]
-
-[109]
 
 [110]
 
 [111]
 
-[112])
+[112]
 
-[113]
+[113])
+
+[114]
 \openout2 = Lezione20/Lez20.aux
  (./Lezione20/Lez20.tex
 Capitolo 20.
 
 
-[114
+[115
 
 
 
 
 ]
-
-[115]
 
 [116]
 
@@ -1773,31 +1773,66 @@ Capitolo 20.
 
 [119]
 
-[120])
+[120]
 
-[121] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux) (./build/Lezione19/Lez19.aux) (./build/Lezione20/Lez20.aux))
+[121])
+
+[122]
+\openout2 = Lezione21/Lez21.aux
+ (./Lezione21/Lez21.tex
+Capitolo 21.
+
+
+[123
+
+
+
+
+]
+Underfull \hbox (badness 1028) in paragraph at lines 107--107
+[]\TU/lmr/m/n/10 Sia-mo quin-di in-te-res-sa-ti a de-ter-mi-na-re il ge-ne-ra-to-re di $[]$ (det-to vet-to-re nor-ma-le) a par-ti-re
+ []
+
+
+
+[124]
+
+[125]
+
+[126]
+
+[127]
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+
+ []
+
+)
+
+[128]
+
+[129] (./build/App.aux (./build/Lezione1/Lez1.aux) (./build/Lezione2/Lez2.aux) (./build/Lezione3/Lez3.aux) (./build/Lezione4/Lez4.aux) (./build/Lezione5/Lez5.aux) (./build/Lezione6/Lez6.aux) (./build/Lezione7/Lez7.aux) (./build/Lezione8/Lez8.aux) (./build/Lezione9/Lez9.aux) (./build/Lezione10/Lez10.aux) (./build/Lezione11/Lez11.aux) (./build/Lezione12/Lez12.aux) (./build/Lezione13/Lez13.aux) (./build/Lezione14/Lez14.aux) (./build/Lezione15/Lez15.aux) (./build/Lezione16/Lez16.aux) (./build/Lezione17/Lez17.aux) (./build/Lezione18/Lez18.aux) (./build/Lezione19/Lez19.aux) (./build/Lezione20/Lez20.aux) (./build/Lezione21/Lez21.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `App.out' has not changed.
-(rerunfilecheck)             Checksum: 1940BFB4B6248B0BA05C28D799C8B896;15396.
+(rerunfilecheck)             Checksum: B251E89AD3400C99C427989FFCC256CF;16239.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44324 strings out of 475506
+ 44401 strings out of 475506
  156420,1648299 words of node,token memory allocated
- 5145 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 sub_mlist, 1 glyph, 1535 attribute, 62 glue_spec, 769 attribute_list, 4 write nodes
-   avail lists: 1:1,2:3493,3:1584,4:453,5:710,6:167,7:11454,8:59,9:1660,10:38,11:1165
- 65733 multiletter control sequences out of 65536+600000
+ 5508 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 sub_mlist, 1 glyph, 1659 attribute, 62 glue_spec, 831 attribute_list, 4 write nodes
+   avail lists: 1:1,2:3307,3:1584,4:453,5:715,6:167,7:11454,8:66,9:1661,10:38,11:1165
+ 65772 multiletter control sequences out of 65536+600000
  70 fonts using 6846399 bytes
  116i,20n,114p,590b,2087s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on App.pdf (121 pages, 735589 bytes).
+Output written on App.pdf (129 pages, 767645 bytes).
 
-PDF statistics: 1191 PDF objects out of 1200 (max. 8388607)
- 1020 compressed objects within 11 object streams
- 324 named destinations out of 1000 (max. 131072)
- 704 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1253 PDF objects out of 1440 (max. 8388607)
+ 1074 compressed objects within 11 object streams
+ 341 named destinations out of 1000 (max. 131072)
+ 744 words of extra memory for PDF output out of 10000 (max. 100000000)
 

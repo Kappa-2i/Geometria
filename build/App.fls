@@ -274,6 +274,7 @@ INPUT ./build/Lezione17/Lez17.aux
 INPUT ./build/Lezione18/Lez18.aux
 INPUT ./build/Lezione19/Lez19.aux
 INPUT ./build/Lezione20/Lez20.aux
+INPUT ./build/Lezione21/Lez21.aux
 OUTPUT build/App.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -375,6 +376,8 @@ OUTPUT build/Lezione19/Lez19.aux
 INPUT ./Lezione19/Lez19.tex
 OUTPUT build/Lezione20/Lez20.aux
 INPUT ./Lezione20/Lez20.tex
+OUTPUT build/Lezione21/Lez21.aux
+INPUT ./Lezione21/Lez21.tex
 INPUT ./build/App.aux
 INPUT ./build/Lezione1/Lez1.aux
 INPUT ./build/Lezione2/Lez2.aux
@@ -396,6 +399,7 @@ INPUT ./build/Lezione17/Lez17.aux
 INPUT ./build/Lezione18/Lez18.aux
 INPUT ./build/Lezione19/Lez19.aux
 INPUT ./build/Lezione20/Lez20.aux
+INPUT ./build/Lezione21/Lez21.aux
 INPUT ./build/App.out
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
